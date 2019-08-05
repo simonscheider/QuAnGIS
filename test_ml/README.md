@@ -2,7 +2,7 @@ This module tests the MarkLogic server.
 
 ## Requirements
 
-* [Python 3.7.x](https://www.python.org/downloads/)
+* [Python 3.6.x+](https://www.python.org/downloads/)
 * [Virtualenv](https://virtualenv.pypa.io/en/latest/)
 * (If on Windows) [Git Bash](https://git-scm.com/downloads)
 
@@ -39,7 +39,7 @@ source ./venv/bin/activate
 
 (in Git Bash for Windows)
 ```sh
- source ./venv/Scripts/activate
+source ./venv/Scripts/activate
 ```
 
 You will have to activate the virtual environment every time you open a new shell.
