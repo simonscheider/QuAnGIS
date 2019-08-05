@@ -32,3 +32,7 @@ if __name__ == '__main__':
     # Upload some JSON
     with open('test_data/test_data.json') as file_handle:
         client.create_json('json/test', file_handle)
+    
+    # Upload a triple
+    with open('test_data/test_data.ttl') as file_handle:
+        client.create_triples_ttl(file_handle)

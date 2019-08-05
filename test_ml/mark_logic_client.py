@@ -17,6 +17,17 @@ class MarkLogicClient:
     
     def create_json(self, uri, data):
         self.create_document(uri, data, 'application/json')
+    
+    def create_triples_ttl(self, data, graph=None):
+        params = {'graph': 'default'}
+        if graph is not None:
+            params['graph'] = graph
+        self.session.post(
+            f'{self.url}/{self.api_version}/graphs',
+            data=data,
+            params=params,
+            headers={'Content-type': 'text/turtle'}
+        )
 
 def start_session(username, password):
     import requests
