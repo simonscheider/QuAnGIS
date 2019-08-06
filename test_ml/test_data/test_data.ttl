@@ -1,1 +1,0 @@
-<http://example.org/item/item22> <http://example.org/details/shipped> "2013-05-14"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

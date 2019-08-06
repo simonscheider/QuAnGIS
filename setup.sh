@@ -3,7 +3,7 @@
 echo "Setting up new virtual Python environment...";
 
 if [ -d "venv" ]; then
-  echo "Virtual Python environment already exists. Run \`uninstall.sh\` if you want to remove it.";
+  echo "Virtual Python environment already exists! Run \`clean.sh\` if you want to remove it.";
 else
     if [[ "$OSTYPE" == "msys" ]]; then
       # Assume that `virtualenv` installs a Python 3 environment.
