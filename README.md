@@ -46,9 +46,9 @@ source ./venv/Scripts/activate
 
 You will have to activate the virtual environment every time you open a new shell.
 
-## Running the script
+## Running the tests
 
 Now you can run the tests:
 ```sh
-pytest
+python -m pytest
 ```
