@@ -18,19 +18,26 @@ _:wf1 a wf:Workflow;
 	wf:source pdok:cbs-gebiedsindelingen; #municipalities
 	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
 	wf:source pdok:cbs-vierkantstatistieken; #peoplecounts
-	wf:edge _:wf1_1, _:wf1_2, _:wf1_3.
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3,_:wf1_4, _:wf1_5.
 
-# Workflow Node 1
-#
+# Workflow nodes
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
 		wf:input1 pdok:cbs-gebiedsindelingen;
+		wf:outout _:utrecht0.
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+		wf:input1 _:utrecht0;
 		wf:outout _:utrecht.
-_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm>;
+		
+_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm>;
 		wf:input1 pdok:cbs-wijken-en-buurten;
 		wf:input2 _:utrecht;
+		wf:output _:neighborhoodsutrecht0.
+		
+_:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+		wf:input1 _:neighborhoodsutrecht0;		
 		wf:output _:neighborhoodsutrecht.
 		
-_:wf1_3 tools:implements tools:SpatialJoinSumTessCount;
+_:wf1_5 tools:implements tools:SpatialJoinSumTessCount;
 		wf:input1 pdok:cbs-vierkantstatistieken;
 		wf:input2 _:neighborhoodsutrecht;
 		wf:output _:countneighborhoodsutrecht.
