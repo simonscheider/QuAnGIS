@@ -1,0 +1,42 @@
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
+Warning 1: dimension #1 (time) is not a Longitude/X dimension.
+Warning 1: dimension #0 (station) is not a Latitude/Y dimension.
+ERROR 1: netcdf error #-45 : NetCDF: Not a valid data type or _FillValue type mismatch .
+at (netcdfdataset.cpp,SetProjectionFromVar,2862)
+
+ERROR 1: Cannot invert geotransform
