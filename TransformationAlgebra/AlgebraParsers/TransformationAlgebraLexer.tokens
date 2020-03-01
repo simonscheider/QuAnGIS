@@ -1,0 +1,14 @@
+FCONT=1
+RATIO=2
+INTERPOL=3
+SIGMA1=4
+DATAPM=5
+DATAPAMOUNT=6
+WHITESPACE=7
+KEYWORD=8
+WS=9
+'fcont '=1
+'ratio '=2
+'interpol '=3
+'sigma1 '=4
+' '=7
