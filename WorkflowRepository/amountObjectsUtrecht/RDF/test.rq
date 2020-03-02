@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>
+PREFIX tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>
+PREFIX arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>
+PREFIX pdok: <https://www.pdok.nl/introductie/-/article/>
+
+SELECT DISTINCT ?tool
+WHERE { 
+	?wf wf:edge ?node. 
+	?node tools:implements ?tool .     
+} 

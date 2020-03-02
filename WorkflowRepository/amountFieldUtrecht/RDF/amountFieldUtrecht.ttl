@@ -23,4 +23,19 @@ _:wf2 a wf:Workflow;
 
 # Workflow nodes
 
-
+_:wf2_1  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/make-xy-event-layer.htm>;
+		wf:input1 <http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi>; #KNMI weather stations	
+		wf:output _:stations_layer.
+		
+_:wf2_2  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/project.htm>;
+		wf:input1 _:stations_layer	;
+		wf:output _:knmi_shp.
+		
+_:wf2_2  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>;
+		wf:input1 _:knmi_shp	;
+		wf:input2 _:temp ;
+		wf:output _:knmi_shp2.	
+		
+_:wf2_4  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/excel-to-table.htm>;
+		wf:input1 _:stations_layer	;
+		wf:output _:knmi_. 
