@@ -1,0 +1,26 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+
+# @author: Simon Scheider
+
+
+
+# Workflow amounts of temperature in Utrecht
+# Workflow metadata (result and data sources)
+_:wf2 a wf:Workflow;
+	rdfs:comment "What is the average temperature for each neighborhood in Utrecht?"@en;
+	rdfs:comment "What is the distribution of temperature in Utrecht across neighborhoods?"@en;
+	wf:source pdok:cbs-gebiedsindelingen; #municipalities
+	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
+	wf:source <http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi>; #KNMI weather stations
+	wf:edge _:wf2_1, _:wf2_2, _:wf2_3,_:wf2_4, _:wf2_5.
+
+# Workflow nodes
+
+
