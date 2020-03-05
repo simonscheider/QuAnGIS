@@ -71,17 +71,17 @@
 	onom : oord ;
 	oq : SIGMAE2 lq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
 	
-	//sint : sratio ;
-	sord : sint ;
-	//snom : sord ; 
-	sq : snom ;
-	
+		
 	//lord : lint ;
 	lnom : lord ; 
 	//lq : lnom ;
 	lint : INTERPOL sint | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   |   lratio   ;
 	lord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l  |lint ;
-	lq : SIGMAE2 lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;
+	lq : SIGMAE2 lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;	
+	//sint : sratio ;
+	sord : sint ;
+	//snom : sord ; 
+	sq : snom ;
 	
 	
 	
