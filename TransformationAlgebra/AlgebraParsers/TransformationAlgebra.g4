@@ -1,7 +1,7 @@
 	grammar TransformationAlgebra;
-
-	 //ratio fcont interpol pointmeasures temperature fcont sigma1 interpol pointmeasures temperature
-	 //
+	// Examples:
+	 //ratio fcont interpol pointmeasures temperature fcont pi interpol pointmeasures temperature
+	 //reify pi sigma<= interpol pointmeasures noise deify get pi sigma= objectregions Utrecht 20
      /*
      * Parser Rules
      */
@@ -14,22 +14,22 @@
 	
 	
 	//value rules
-	countv : OCONT o | GET  count ; 
+	countv : OCONT o | GET  count | DATAV ; 
 	ratiov : FCONT lint | FCONT l  
 		| RATIO  ratiov WHITESPACE ratiov 
-		| OCONT oratio | GET ratio| countv;	
-	intv : AVG lint | AVG oint | ratiov  |GET int;  
+		| OCONT oratio | GET ratio| countv | DATAV ;	
+	intv : AVG lint | AVG oint | ratiov  |GET int | DATAV ;  
 	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ord | intv;  	
 	//ratiov : countv;
 	//intv : ratiov;
 	//ordv : intv ;
-	nomv : ordv | GET nom;
+	nomv : ordv | GET nom ;
 	//qv : nomv ;
 	qv : GET  q | nomv ;
 	sv : REIFY l | GET  s  ;
 	//l : DEIFY sv ;
 	lv : GET l ;		
-	ov : GET  o  ;
+	ov : GET  o | DATAN ;
 	
 	
 	
@@ -65,18 +65,18 @@
 	//ords : ints ;
 	noms : ords ; 
 	qs : noms ;
-	oratio :BOWTIE oratio WHITESPACE o | DATAOBJQ ; 
-	oint : SIGMASE2 oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  |oratio	;
-	oord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  |  oint ;
+	oratio :BOWTIE oratio WHITESPACE o | GROUPBY AVG oratioo | DATAOBJQ ; 
+	oint : SIGMASE2 oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBY AVG ointo |oratio	;
+	oord : SIGMASE2 oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | GROUPBY aggord oordo |  oint ;
 	onom : oord ;
-	oq : SIGMAE2 lq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
+	oq : SIGMAE2 oq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
 	
 		
 	//lord : lint ;
 	lnom : lord ; 
 	//lq : lnom ;
-	lint : INTERPOL sint | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   |   lratio   ;
-	lord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l  |lint ;
+	lint : INTERPOL sint | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBY AVG lintl |   lratio   ;
+	lord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | GROUPBY aggord lordl |lint ;
 	lq : SIGMAE2 lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;	
 	//sint : sratio ;
 	sord : sint ;
@@ -91,21 +91,25 @@
 	lratiol : LDIST l WHITESPACE l ;
 	lratioo : LODIST l WHITESPACE o ;
 	onomo : OTOPO os WHITESPACE os  | SIGMAE2 onomo WHITESPACE nomv   |  oordo 	;
-	lnomo : LOTOPO l WHITESPACE  os ;
-	lbooll : LVIS l WHITESPACE l WHITESPACE oint  ;  	
+	lnomo : LOTOPO l WHITESPACE  os ;	
 	
-	lordl :  SIGMASE2 lordl WHITESPACE ordv  | lintl ; 	
-	lnoml :  SIGMAE2 lnoml WHITESPACE nomv  |lordl; 	
 	lintl : BOWTIE lnoml WHITESPACE lint  | lratiol ;
+	lordl :  SIGMASE2 lordl WHITESPACE ordv  | lintl ; 	
+	lnoml :  SIGMAE2 lnoml WHITESPACE nomv |lbooll |lordl; 	
+	lbooll : LVIS l WHITESPACE l WHITESPACE oint  |  
+	SIGMAE2 lbooll WHITESPACE BOOLV ; 	
+	
 	oordo :  SIGMASE2 oordo WHITESPACE ordv  |  ointo  ;	
 	ointo : BOWTIE onomo WHITESPACE oint  | oratioo ;		
 	
-		
-	    
+	//Group by		
+	agg :  AVG |	aggord   ;
+	aggord : MIN |	MAX;
 	/*
-     * Lexer Rules
-     */
+     	* Lexer Rules
+     	*/
 	//Functions: 
+	BOOLV : 'true '| 'false ';
 	AVG : 'average ' ;
 	MIN : 'min ' ;
 	MAX : 'max ' ;
@@ -118,15 +122,16 @@
 	INTERPOL : 'interpol ' ;
 	PI1 : 'pi ' ;
 	PI2 : 'pi ' ;
-	SIGMAE2 : 'sigma= '  ;
-	SIGMASE2 : 'sigma<= '  ;
-	BOWTIE : 'bowtie' ;
+	SIGMAE2 : 'sigma1 '  ; // =
+	SIGMASE2 : 'sigma2 '  ; // <=
+	BOWTIE : 'bowtie ' ;
+	GROUPBY : 'groupby ' ;
 	
 	ODIST : 'odist ' ;
 	LDIST : 'ldist ';
-	LODIST : 'lodist' ;
-	OTOPO : 'otopo' ;
-	LOTOPO : 'lotopo' ;
+	LODIST : 'lodist ' ;
+	OTOPO : 'otopo ' ;
+	LOTOPO : 'lotopo ' ;
 	NDIST : 'ndist ' ;
 	LVIS : 'lvis ' ;
 	
@@ -139,6 +144,12 @@
 	DATACONTOURLINE : 'contourline' | 'contourline ' KEYWORD  ;
 	DATAOBJCOUNT : 'objectcounts' | 'objectcounts' KEYWORD  ;
 	DATAFIELD : 'field' | 'field' KEYWORD ;
+	
+	DATAV : '20' ;
+	DATAN : 'Utrecht' ;
+	
+	
+	
      //ID     : [0-9]+ ;
     	WHITESPACE : ' ' ;	
 	KEYWORD : ('a'..'z' | 'A'..'Z' | '0'..'9' | '-' | '_')+ ;
