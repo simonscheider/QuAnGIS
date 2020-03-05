@@ -51,5 +51,5 @@
 	
     WHITESPACE : ' ' ;	
 	KEYWORD : ('a'..'z' | 'A'..'Z' | '0'..'9' | '-' | '_')+ ;
-	WS  : [ \t\r\n]+ -> skip ;
+	//WS  : [ \t\r\n]+ -> skip ;
 	

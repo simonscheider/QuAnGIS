@@ -9,5 +9,5 @@ with java (to test):
 
 antlr4 grammar.g4
 javac grammar*.java
-grun Hello startrule -tree (or -gui, -token)
+grun grammar startrule -tree (or -gui, -tokens) "Test to be parsed"
 
