@@ -23,9 +23,9 @@ from pyparsing import *
 def toNestedArray(treeasString):
     enclosed = Forward()
     nestedParens = nestedExpr('(', ')', content=enclosed)
-    enclosed << (Word(alphanums+'.') | ',' | nestedParens)
+    enclosed << (Word(alphanums+'.'+'_') | ',' | nestedParens)
     tree =  enclosed.parseString(treeasString).asList()[0]
-    print tree
+    #print tree
     return tree
 
 
@@ -35,13 +35,14 @@ def toNestedArray(treeasString):
 
 def parse(line):
     input = InputStream(line)
+    print
     print input
     lexer = TransformationAlgebraLexer(input)
     stream = CommonTokenStream(lexer)
     # Parse all tokens until EOF
     stream.fill()
     # Print tokens as text (EOF is stripped from the end)
-    #print([token.text for token in stream.tokens][:-1])
+    print([token.text for token in stream.tokens][:-1])
     parser = TransformationAlgebraParser(stream)
     tree = parser.start()
     #print tree.getChildCount()
@@ -54,7 +55,7 @@ def main(argv):
     with open(argv) as fp:
         line = fp.readline()
         while line:
-            parse(line)
+            parse(line.rstrip())
             line = fp.readline()
         fp.close()
 

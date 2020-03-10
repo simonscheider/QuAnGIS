@@ -382,6 +382,15 @@ class TransformationAlgebraListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by TransformationAlgebraParser#ocounto.
+    def enterOcounto(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#ocounto.
+    def exitOcounto(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by TransformationAlgebraParser#oratioo.
     def enterOratioo(self, ctx):
         pass
@@ -481,21 +490,12 @@ class TransformationAlgebraListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by TransformationAlgebraParser#agg.
-    def enterAgg(self, ctx):
+    # Enter a parse tree produced by TransformationAlgebraParser#groupbyaggord.
+    def enterGroupbyaggord(self, ctx):
         pass
 
-    # Exit a parse tree produced by TransformationAlgebraParser#agg.
-    def exitAgg(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#aggord.
-    def enterAggord(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#aggord.
-    def exitAggord(self, ctx):
+    # Exit a parse tree produced by TransformationAlgebraParser#groupbyaggord.
+    def exitGroupbyaggord(self, ctx):
         pass
 
 

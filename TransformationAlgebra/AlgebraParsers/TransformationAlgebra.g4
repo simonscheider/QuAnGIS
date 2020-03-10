@@ -1,7 +1,8 @@
 	grammar TransformationAlgebra;
 	// Examples:
-	 //ratio fcont interpol pointmeasures temperature fcont pi1 interpol pointmeasures temperature
-	 //reify pi1 sigmale interpol pointmeasures noise 20    //deify get pi2 sigmae objectregions Utrecht 
+	 //ratio fcont interpol pointmeasures temperature deify get pi2 sigmae objectregions Utrecht fcont pi1 interpol pointmeasures temperature deify get pi2 sigmae objectregions Utrecht
+	 //reify pi1 sigmale interpol pointmeasures noise deify get pi2 sigmae objectregions Utrecht 20    
+	 //sigmae otopo objectregions neighborhoods sigmae objectregions municipalities Utrecht in
      /*
      * Parser Rules
      */
@@ -23,7 +24,7 @@
 	//ratiov : countv;
 	//intv : ratiov;
 	//ordv : intv ;
-	nomv : ordv | GET nom ;
+	nomv : ordv | GET nom | TOPOV;
 	//qv : nomv ;
 	qv : GET  q | nomv ;
 	sv : REIFY l | GET  s  ;
@@ -40,7 +41,7 @@
 	//q : nom ;
 	l : DEIFY sv | PI1  lint  | PI1  lord  | PI1  lnom | PI1  lq ;	//First apply the most specific function
 	s : PI1  sint  | PI1  sord  | PI1  snom | PI1  lq | PI2 os ;	//First apply the most specific function
-	o : PI1  os  | PI1  oratio  |  PI1  oint  |  PI1  oord  | PI1  onom| PI1  oq;
+	o : PI1  os  | PI1  oratio  |  PI1  oint  |  PI1  oord  | PI1  onom| PI1  oq | PI1 onomo |PI2 onomo;
 	count : PI2 ocount ;   
 	ratio : PI2 oratio | PI2 lratio | count;
 	intt : PI1 ints | PI2 oint |  PI2 lint |ratio ;	
@@ -55,19 +56,19 @@
 	snom : DATAAMOUNT | sint ;	
 	ords : DATACONTOUR ;	
 	
-	os : SIGMAE2 os WHITESPACE ov | DATAOBJS ;
+	os : SIGMAE2 os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;
 	ints : DATACONTOURLINE ; 
-	ocount : SIGMAE2 ocount WHITESPACE ov | DATAOBJCOUNT ;
+	ocount : SIGMAE2 ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYSUM ocounto | DATAOBJCOUNT ;
 	lratio : DATAFIELD ;
 	
-	//Type rules:		
+			
 	//ints : ratios ;
 	//ords : ints ;
 	noms : ords ; 
-	qs : noms ;
-	oratio :BOWTIE oratio WHITESPACE o | GROUPBY AVG oratioo | DATAOBJQ ; 
-	oint : SIGMASE2 oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBY AVG ointo |oratio	;
-	oord : SIGMASE2 oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | GROUPBY aggord oordo |  oint ;
+	qs : noms ;	
+	oratio :BOWTIE oratio WHITESPACE o | GROUPBYAVG oratioo | DATAOBJQ | ocount ; 
+	oint : SIGMASE2 oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBYAVG ointo |oratio	;
+	oord : SIGMASE2 oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | groupbyaggord oordo |  oint ;
 	onom : oord ;
 	oq : SIGMAE2 oq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
 	
@@ -75,8 +76,8 @@
 	//lord : lint ;
 	lnom : lord ; 
 	//lq : lnom ;
-	lint : INTERPOL sint | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBY AVG lintl |   lratio   ;
-	lord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | GROUPBY aggord lordl |lint ;
+	lint : INTERPOL sint WHITESPACE l | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl |   lratio   ;
+	lord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
 	lq : SIGMAE2 lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;	
 	//sint : sratio ;
 	sord : sint ;
@@ -87,32 +88,32 @@
 	
 	
 	//RRR rules
-	oratioo : ODIST os WHITESPACE os  |NDIST o WHITESPACE o WHITESPACE oratioo ;
-	lratiol : LDIST l WHITESPACE l ;
+	ocounto : BOWTIESTAR onomo WHITESPACE ocount ;
+	oratioo : ODIST os WHITESPACE os  |NDIST o WHITESPACE o WHITESPACE oratioo | BOWTIESTAR onomo WHITESPACE oratio ;
+	lratiol : LDIST l WHITESPACE l | BOWTIESTAR lnoml WHITESPACE lratio;
 	lratioo : LODIST l WHITESPACE o ;
 	onomo : OTOPO os WHITESPACE os  | SIGMAE2 onomo WHITESPACE nomv   |  oordo 	;
 	lnomo : LOTOPO l WHITESPACE  os ;	
 	
-	lintl : BOWTIE lnoml WHITESPACE lint  | lratiol ;
+	lintl : BOWTIESTAR lnoml WHITESPACE lint  | lratiol ;
 	lordl :  SIGMASE2 lordl WHITESPACE ordv  | lintl ; 	
 	lnoml :  SIGMAE2 lnoml WHITESPACE nomv |lbooll |lordl; 	
-	lbooll : LVIS l WHITESPACE l WHITESPACE oint  |  
-	SIGMAE2 lbooll WHITESPACE BOOLV ; 	
+	lbooll : LVIS l WHITESPACE l WHITESPACE oint  | SIGMAE2 lbooll WHITESPACE BOOLV ; 	
 	
 	oordo :  SIGMASE2 oordo WHITESPACE ordv  |  ointo  ;	
-	ointo : BOWTIE onomo WHITESPACE oint  | oratioo ;		
+	ointo : BOWTIESTAR onomo WHITESPACE oint  | oratioo ;		
 	
-	//Group by		
-	agg :  AVG |	aggord   ;
-	aggord : MIN |	MAX;
+	//Group by functions		
+	groupbyaggord : GROUPBYMIN |	GROUPBYMAX;
+	
 	/*
      	* Lexer Rules
      	*/
-	//Functions: 
-	BOOLV : 'true '| 'false ';
-	AVG : 'average ' ;
+	//Functions: 	
+	AVG : 'avg ' ;
 	MIN : 'min ' ;
 	MAX : 'max ' ;
+	SUM : 'sum ' ;
 	REIFY : 'reify ' ;
 	DEIFY : 'deify ';
 	GET : 'get ' ;
@@ -125,7 +126,12 @@
 	SIGMAE2 : 'sigmae '  ; // =
 	SIGMASE2 : 'sigmale '  ; // <=
 	BOWTIE : 'bowtie ' ;
-	GROUPBY : 'groupby ' ;
+	BOWTIESTAR : 'bowtie* ';
+	//GROUPBY : 'groupby ' ;
+	GROUPBYAVG : 'groupby_avg ' ;
+	GROUPBYSUM : 'groupby_sum ' ;
+	GROUPBYMIN : 'groupby_min ' ;
+	GROUPBYMAX : 'groupby_max ' ;
 	
 	ODIST : 'odist ' ;
 	LDIST : 'ldist ';
@@ -136,14 +142,16 @@
 	LVIS : 'lvis ' ;
 	
 	//Data:
-	DATAPM : 'pointmeasures' | 'pointmeasures ' KEYWORD ;
-	DATAAMOUNT  : 'amountpatches' | 'amountpatches ' KEYWORD ;
-  	DATACONTOUR : 'contour' | 'contour'  KEYWORD  ;
-	DATAOBJQ :  'objects' | 'objects' KEYWORD  ;
-	DATAOBJS : 'objectregions' | 'objectregions' KEYWORD;
-	DATACONTOURLINE : 'contourline' | 'contourline ' KEYWORD  ;
-	DATAOBJCOUNT : 'objectcounts' | 'objectcounts' KEYWORD  ;
-	DATAFIELD : 'field' | 'field' KEYWORD ;
+	DATAPM : 'pointmeasures ' KEYWORD ;
+	DATAAMOUNT  :  'amountpatches ' KEYWORD ;
+  	DATACONTOUR :  'contour '  KEYWORD  ;
+	DATAOBJQ :  'objects ' KEYWORD  ;
+	DATAOBJS :  'objectregions ' KEYWORD;
+	DATACONTOURLINE :  'contourline ' KEYWORD  ;
+	DATAOBJCOUNT :  'objectcounts ' KEYWORD  ;
+	DATAFIELD :  'field ' KEYWORD ;
+	TOPOV : 'in' ;
+	BOOLV : 'true '| 'false ';
 	
 	DATAV : [0-9]+ ;     
     WHITESPACE : ' ';	
