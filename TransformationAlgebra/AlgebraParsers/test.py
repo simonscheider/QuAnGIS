@@ -23,12 +23,25 @@ from pyparsing import *
 def toNestedArray(treeasString):
     enclosed = Forward()
     nestedParens = nestedExpr('(', ')', content=enclosed)
-    enclosed << (Word(alphanums+'.'+'_') | ',' | nestedParens)
+    enclosed << (Word(alphanums+'_'+'*') | ',' | nestedParens)
     tree =  enclosed.parseString(treeasString).asList()[0]
     #print tree
     return tree
 
-
+def bracket(tree):
+    out = ''
+    for ix, node in enumerate(tree):
+        if ix >0:
+            if isinstance(node, list):
+                inner = bracket(node)
+                if inner.startswith('(') and inner.endswith(')'):
+                    out += inner[1:-1]
+                else:
+                     out +='('+ inner +')'
+            else:
+                out+= node + ' '
+    #print out
+    return out
 
 
 
@@ -48,7 +61,8 @@ def parse(line):
     #print tree.getChildCount()
     treeasString = Trees.toStringTree(tree, None, parser)
     print(treeasString)
-    toNestedArray(treeasString)
+    treearray = toNestedArray(treeasString)
+    print bracket(treearray)
 
 
 def main(argv):
