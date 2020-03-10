@@ -1,1 +1,2 @@
-ratio fcont interpol pointmeasures temperature fcont sigma1 interpol pointmeasures temperature
+ratio fcont interpol pointmeasures temperature fcont pi1 interpol pointmeasures temperature
+reify pi1 sigmale interpol pointmeasures noise 20

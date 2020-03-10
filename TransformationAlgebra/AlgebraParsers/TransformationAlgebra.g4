@@ -1,7 +1,7 @@
 	grammar TransformationAlgebra;
 	// Examples:
-	 //ratio fcont interpol pointmeasures temperature fcont pi interpol pointmeasures temperature
-	 //reify pi sigma<= interpol pointmeasures noise deify get pi sigma= objectregions Utrecht 20
+	 //ratio fcont interpol pointmeasures temperature fcont pi1 interpol pointmeasures temperature
+	 //reify pi1 sigmale interpol pointmeasures noise 20    //deify get pi2 sigmae objectregions Utrecht 
      /*
      * Parser Rules
      */
@@ -16,10 +16,10 @@
 	//value rules
 	countv : OCONT o | GET  count | DATAV ; 
 	ratiov : FCONT lint | FCONT l  
-		| RATIO  ratiov WHITESPACE ratiov 
+		| RATIO ratiov WHITESPACE ratiov 
 		| OCONT oratio | GET ratio| countv | DATAV ;	
-	intv : AVG lint | AVG oint | ratiov  |GET int | DATAV ;  
-	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ord | intv;  	
+	intv : AVG lint | AVG oint | ratiov  |GET intt | DATAV ;  
+	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ordinal | intv;  	
 	//ratiov : countv;
 	//intv : ratiov;
 	//ordv : intv ;
@@ -29,23 +29,23 @@
 	sv : REIFY l | GET  s  ;
 	//l : DEIFY sv ;
 	lv : GET l ;		
-	ov : GET  o | DATAN ;
+	ov : GET  o | KEYWORD ;
 	
 	
 	
 	// R rules
 	//ratio : count ;
-	//ord : int ;
-	//nom : ord ; 
+	//ordinal : intt ;
+	//nom : ordinal ; 
 	//q : nom ;
 	l : DEIFY sv | PI1  lint  | PI1  lord  | PI1  lnom | PI1  lq ;	//First apply the most specific function
-	s : PI1  sint  | PI1  sord  | PI1  snom | PI1  lq;	//First apply the most specific function
+	s : PI1  sint  | PI1  sord  | PI1  snom | PI1  lq | PI2 os ;	//First apply the most specific function
 	o : PI1  os  | PI1  oratio  |  PI1  oint  |  PI1  oord  | PI1  onom| PI1  oq;
 	count : PI2 ocount ;   
 	ratio : PI2 oratio | PI2 lratio | count;
-	int : PI1 ints | PI2 oint |  PI2 lint |ratio ;	
-	ord : PI1  ords | int ;
-	nom : PI1 noms | ord ;
+	intt : PI1 ints | PI2 oint |  PI2 lint |ratio ;	
+	ordinal : PI1  ords | intt ;
+	nom : PI1 noms | ordinal ;
 	q : PI1  qs | nom ;
 	
 	// RR rules
@@ -55,9 +55,9 @@
 	snom : DATAAMOUNT | sint ;	
 	ords : DATACONTOUR ;	
 	
-	os : DATAOBJS ;
+	os : SIGMAE2 os WHITESPACE ov | DATAOBJS ;
 	ints : DATACONTOURLINE ; 
-	ocount : DATAOBJCOUNT ;
+	ocount : SIGMAE2 ocount WHITESPACE ov | DATAOBJCOUNT ;
 	lratio : DATAFIELD ;
 	
 	//Type rules:		
@@ -120,10 +120,10 @@
 	OCONT :  'ocont ' ;
 	RATIO : 'ratio '  ;
 	INTERPOL : 'interpol ' ;
-	PI1 : 'pi ' ;
-	PI2 : 'pi ' ;
-	SIGMAE2 : 'sigma1 '  ; // =
-	SIGMASE2 : 'sigma2 '  ; // <=
+	PI1 : 'pi1 ' ;
+	PI2 : 'pi2 ' ;
+	SIGMAE2 : 'sigmae '  ; // =
+	SIGMASE2 : 'sigmale '  ; // <=
 	BOWTIE : 'bowtie ' ;
 	GROUPBY : 'groupby ' ;
 	
@@ -145,13 +145,8 @@
 	DATAOBJCOUNT : 'objectcounts' | 'objectcounts' KEYWORD  ;
 	DATAFIELD : 'field' | 'field' KEYWORD ;
 	
-	DATAV : '20' ;
-	DATAN : 'Utrecht' ;
-	
-	
-	
-     //ID     : [0-9]+ ;
-    	WHITESPACE : ' ' ;	
-	KEYWORD : ('a'..'z' | 'A'..'Z' | '0'..'9' | '-' | '_')+ ;
-	//WS  : [ \t\r\n]+ -> skip ;
+	DATAV : [0-9]+ ;     
+    WHITESPACE : ' ';	
+	KEYWORD : ('a'..'z' | 'A'..'Z' | '-' | '_')+ ;
+	WS  : [ \t\r\n]+ -> skip ;
 	
