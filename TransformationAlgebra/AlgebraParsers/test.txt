@@ -1,4 +1,4 @@
 deify get pi2 sigmae objectregions muni Utrecht
 ratio fcont interpol pointmeasures temperature deify get pi2 sigmae objectregions muni Utrecht fcont pi1 interpol pointmeasures temperature deify get pi2 sigmae objectregions muni Utrecht
-reify pi1 sigmale interpol pointmeasures noise deify get pi2 sigmae objectregions muni Utrecht 20
+reify pi1 sigmale interpol pointmeasures noise deify get pi2 sigmae objectregions muni Utrecht 70
 groupby_sum bowtie* sigmae otopo objectregions households bowtie objectregions neighborhoods pi1 sigmae otopo objectregions neighborhoods sigmae objectregions muni Utrecht in in objectcounts households

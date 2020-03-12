@@ -15,7 +15,9 @@ from TransformationAlgebraListener import TransformationAlgebraListener
 from TransformationAlgebraParser import TransformationAlgebraParser
 from antlr4 import *
 from antlr4.tree.Trees import Trees
-import sys
+import sys, os
+import pprint
+import json
 
 from pyparsing import *
 
@@ -30,23 +32,64 @@ def toNestedArray(treeasString):
 
 def bracket(tree):
     out = ''
+    function =False
+    size = len(tree)
     for ix, node in enumerate(tree):
-        if ix >0:
+        comma = ', ' if function == True and ix >2 else ''
+        if ix ==0:
+            type = node
+        else:
             if isinstance(node, list):
                 inner = bracket(node)
-                if inner.startswith('(') and inner.endswith(')'):
-                    out += inner[1:-1]
+                out+=comma+inner
+            elif isinstance(node,basestring) :
+                if ix == 1 and size > 2:
+                    out+= node + '('
+                    function = True
                 else:
-                     out +='('+ inner +')'
-            else:
-                out+= node + ' '
+                    out+= comma+node
+    if function:
+        out+= ')'
+        function = False
+        out +=' :'+type #return type
+    if ix == 1 and isinstance(node,basestring):
+        out +=' :'+type #data type
+    #print out
+    return out
+
+
+def todict(tree):
+    out = {}
+    function =False
+    size = len(tree)
+    for ix, node in enumerate(tree):
+        comma = ', ' if function == True and ix >2 else ''
+        if ix ==0:
+            type = node
+        else:
+            if isinstance(node, list):
+                inner = todict(node)
+                if out != {}:
+                    out['input'+str(ix-1)]=inner
+                else:
+                    out = inner
+            elif isinstance(node,basestring) :
+                if ix == 1 and size > 2:
+                    out['function']= node
+                    function = True
+                else:
+                    out['input'+str(ix-1)]=node
+    if function:
+        function = False
+        out['type']=type #return type
+    if ix == 1 and isinstance(node,basestring):
+        out['type']=type #data type
     #print out
     return out
 
 
 
-
-def parse(line):
+def parse(line, format=json):
     input = InputStream(line)
     print
     print input
@@ -62,16 +105,30 @@ def parse(line):
     treeasString = Trees.toStringTree(tree, None, parser)
     print(treeasString)
     treearray = toNestedArray(treeasString)
-    print bracket(treearray)
+
+    #pp = pprint.PrettyPrinter(indent=2)
+    outjson = todict(treearray)
+    outbracket = bracket(treearray)
+    #print
+    #pp.pprint()
+    return (outjson if format==json else outbracket)
 
 
-def main(argv):
-    with open(argv) as fp:
+
+def main(file):
+    base = os.path.basename(file).split('.')[0]
+    outfile = base+'.json'
+    lines = []
+    with open(file) as fp:
         line = fp.readline()
         while line:
-            parse(line.rstrip())
+            lines.append(parse(line.rstrip()))
             line = fp.readline()
         fp.close()
+    with open(outfile, 'w') as fout:
+        json.dump(lines, fout)
+        fout.close()
+
 
 
 if __name__ == '__main__':
