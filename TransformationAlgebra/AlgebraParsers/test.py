@@ -54,7 +54,6 @@ def bracket(tree):
         out +=' :'+type #return type
     if ix == 1 and isinstance(node,basestring):
         out +=' :'+type #data type
-    #print out
     return out
 
 
@@ -98,18 +97,18 @@ def parse(line, format=json):
     # Parse all tokens until EOF
     stream.fill()
     # Print tokens as text (EOF is stripped from the end)
-    print([token.text for token in stream.tokens][:-1])
+    #print([token.text for token in stream.tokens][:-1])
     parser = TransformationAlgebraParser(stream)
     tree = parser.start()
     #print tree.getChildCount()
     treeasString = Trees.toStringTree(tree, None, parser)
-    print(treeasString)
+    #print(treeasString)
     treearray = toNestedArray(treeasString)
 
     #pp = pprint.PrettyPrinter(indent=2)
     outjson = todict(treearray)
     outbracket = bracket(treearray)
-    #print
+    print outbracket
     #pp.pprint()
     return (outjson if format==json else outbracket)
 

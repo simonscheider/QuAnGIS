@@ -303,6 +303,30 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSord(TransformationAlgebraParser.SordContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSord(TransformationAlgebraParser.SordContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSq(TransformationAlgebraParser.SqContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSq(TransformationAlgebraParser.SqContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterOrds(TransformationAlgebraParser.OrdsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -315,18 +339,6 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOs(TransformationAlgebraParser.OsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOs(TransformationAlgebraParser.OsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterInts(TransformationAlgebraParser.IntsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -334,30 +346,6 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitInts(TransformationAlgebraParser.IntsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOcount(TransformationAlgebraParser.OcountContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOcount(TransformationAlgebraParser.OcountContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterLratio(TransformationAlgebraParser.LratioContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLratio(TransformationAlgebraParser.LratioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -382,6 +370,30 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitQs(TransformationAlgebraParser.QsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOs(TransformationAlgebraParser.OsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOs(TransformationAlgebraParser.OsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOcount(TransformationAlgebraParser.OcountContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOcount(TransformationAlgebraParser.OcountContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -447,13 +459,13 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLnom(TransformationAlgebraParser.LnomContext ctx) { }
+	@Override public void enterLratio(TransformationAlgebraParser.LratioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLnom(TransformationAlgebraParser.LnomContext ctx) { }
+	@Override public void exitLratio(TransformationAlgebraParser.LratioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -483,6 +495,18 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLnom(TransformationAlgebraParser.LnomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLnom(TransformationAlgebraParser.LnomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLq(TransformationAlgebraParser.LqContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -495,25 +519,13 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSord(TransformationAlgebraParser.SordContext ctx) { }
+	@Override public void enterOcounto(TransformationAlgebraParser.OcountoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSord(TransformationAlgebraParser.SordContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSq(TransformationAlgebraParser.SqContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSq(TransformationAlgebraParser.SqContext ctx) { }
+	@Override public void exitOcounto(TransformationAlgebraParser.OcountoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -531,25 +543,25 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLratiol(TransformationAlgebraParser.LratiolContext ctx) { }
+	@Override public void enterOinto(TransformationAlgebraParser.OintoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLratiol(TransformationAlgebraParser.LratiolContext ctx) { }
+	@Override public void exitOinto(TransformationAlgebraParser.OintoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLratioo(TransformationAlgebraParser.LratiooContext ctx) { }
+	@Override public void enterOordo(TransformationAlgebraParser.OordoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLratioo(TransformationAlgebraParser.LratiooContext ctx) { }
+	@Override public void exitOordo(TransformationAlgebraParser.OordoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -567,6 +579,30 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLratioo(TransformationAlgebraParser.LratiooContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLratioo(TransformationAlgebraParser.LratiooContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLinto(TransformationAlgebraParser.LintoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLinto(TransformationAlgebraParser.LintoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLnomo(TransformationAlgebraParser.LnomoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -574,6 +610,18 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLnomo(TransformationAlgebraParser.LnomoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLratiol(TransformationAlgebraParser.LratiolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLratiol(TransformationAlgebraParser.LratiolContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -627,49 +675,13 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOordo(TransformationAlgebraParser.OordoContext ctx) { }
+	@Override public void enterGroupbyaggord(TransformationAlgebraParser.GroupbyaggordContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOordo(TransformationAlgebraParser.OordoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOinto(TransformationAlgebraParser.OintoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOinto(TransformationAlgebraParser.OintoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAgg(TransformationAlgebraParser.AggContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAgg(TransformationAlgebraParser.AggContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAggord(TransformationAlgebraParser.AggordContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAggord(TransformationAlgebraParser.AggordContext ctx) { }
+	@Override public void exitGroupbyaggord(TransformationAlgebraParser.GroupbyaggordContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
