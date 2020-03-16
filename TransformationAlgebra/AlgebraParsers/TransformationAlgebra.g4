@@ -23,7 +23,7 @@
 	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ordinal | intv;  	
 	nomv : ordv | GET nom | TOPOV;
 	qv : GET  q | nomv ;
-	sv : REIFY l | GET  s  ;
+	sv : REIFY l | GET  s | MERGE s ;
 	lv : GET l ;		
 	ov : GET  o | DATAOBJV ;
 	
@@ -101,6 +101,7 @@
 	REIFY : 'reify ' ;
 	DEIFY : 'deify ';
 	GET : 'get ' ;
+	MERGE : 'merge ';
 	FCONT :  'fcont ' ;
 	OCONT :  'ocont ' ;
 	SIZE : 'size ';
