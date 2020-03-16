@@ -46,7 +46,7 @@
 	sord : sint ;	
 	sq : snom ;
 	
-	ords : DATACONTOUR ;
+	ords : INVERT lord | DATACONTOUR ;
 	ints : DATACONTOURLINE ; 
 	noms : ords ; 
 	qs : noms ;	
@@ -62,7 +62,7 @@
 		
 	lratio : DATAFIELD ;		
 	lint : INTERPOL sint WHITESPACE l | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl | lratio   ;
-	lord : SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
+	lord : REVERT ords | SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
 	lnom : lord ; 
 	lq : SIGMAE2 lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;		
 	
@@ -101,6 +101,8 @@
 	REIFY : 'reify ' ;
 	DEIFY : 'deify ';
 	GET : 'get ' ;
+	INVERT: 'invert ';
+	REVERT: 'revert ';
 	MERGE : 'merge ';
 	FCONT :  'fcont ' ;
 	OCONT :  'ocont ' ;

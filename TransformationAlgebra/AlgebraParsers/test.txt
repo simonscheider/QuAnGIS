@@ -1,7 +1,8 @@
 deify merge pi2 sigmae objectregions muni object Utrecht
 ratio fcont interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht size pi1 interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht
-reify pi1 sigmale interpol pointmeasures noise deify merge pi2 sigmae objectregions muni object Utrecht 70
-ratio size pi1 sigmale interpol pointmeasures noise deify merge pi2 sigmae objectregions muni object Utrecht 70 size deify merge pi2 sigmae objectregions muni object Utrecht
+revert contour noise
+reify pi1 sigmale bowtie revert contour noise deify merge pi2 sigmae objectregions muni object Utrecht 70
+ratio size pi1 sigmale bowtie revert contour noise deify merge pi2 sigmae objectregions muni object Utrecht 70 size deify merge pi2 sigmae objectregions muni object Utrecht
 groupby_sum bowtie* sigmae otopo objectregions households bowtie objectregions neighborhoods pi1 sigmae otopo objectregions neighborhoods sigmae objectregions muni object Utrecht in in objectcounts households
 deify merge pi2 sigmae objectregions muni object Utrecht
 bowtie objectregions neighborhoods pi1 sigmae otopo objectregions neighborhoods sigmae objectregions muni object Utrecht in
