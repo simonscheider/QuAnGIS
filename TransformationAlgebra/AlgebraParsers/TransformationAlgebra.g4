@@ -53,7 +53,7 @@
 	
 	os : SIGMAE2 os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;	
 	ocount : SIGMAE2 ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYSUM ocounto | DATAOBJCOUNT ;			
-	oratio :BOWTIE oratio WHITESPACE o | GROUPBYAVG oratioo | GROUPBYAVG lratioo | DATAOBJQ | ocount ; 
+	oratio :BOWTIE oratio WHITESPACE o | BOWTIERATIO oratio WHITESPACE oratio | GROUPBYAVG oratioo | GROUPBYAVG lratioo | GROUPBYCOUNT onomo | GROUPBYSIZE lnomo | DATAOBJQ | ocount ; 
 	oint : SIGMASE2 oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBYAVG ointo | GROUPBYAVG linto | oratio	;
 	oord : SIGMASE2 oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | groupbyaggord oordo |  oint ;
 	onom : oord ;
@@ -115,11 +115,13 @@
 	SIGMASE2 : 'sigmale '  ; // <=
 	BOWTIE : 'bowtie ' ;
 	BOWTIESTAR : 'bowtie* ';
-	//GROUPBY : 'groupby ' ;
+	BOWTIERATIO : 'bowtie_ratio ';	
 	GROUPBYAVG : 'groupby_avg ' ;
 	GROUPBYSUM : 'groupby_sum ' ;
 	GROUPBYMIN : 'groupby_min ' ;
 	GROUPBYMAX : 'groupby_max ' ;
+	GROUPBYSIZE : 'groupby_size ' ;
+	GROUPBYCOUNT : 'groupby_count ' ;
 	
 	ODIST : 'odist ' ;
 	LDIST : 'ldist ';
