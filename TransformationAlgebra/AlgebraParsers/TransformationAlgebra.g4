@@ -20,8 +20,8 @@
 		| RATIO ratiov WHITESPACE ratiov 
 		| OCONT oratio | GET ratio| countv | DATAV ;	
 	intv : AVG lint | AVG oint | ratiov  |GET intt | DATAV ;  
-	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ordinal | intv;  	
-	nomv : ordv | GET nom | TOPOV;
+	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ordinal | intv | ORDV;  	
+	nomv : ordv | GET nom | TOPOV | NOMV;
 	qv : GET  q | nomv ;
 	sv : REIFY l | GET  s | MERGE s ;
 	lv : GET l ;		
@@ -42,47 +42,47 @@
 	
 	// RR rules	
 	sint : DATAPM ;
-	snom : DATAAMOUNT | sint ;	
+	snom : DATAAMOUNT | SIGMAE snom WHITESPACE nomv | sint ;	
 	sord : sint ;	
 	sq : snom ;
 	
 	ords : INVERT lord | DATACONTOUR ;
 	ints : DATACONTOURLINE ; 
-	noms : ords ; 
+	noms : SIGMAE noms WHITESPACE nomv | ords ; 
 	qs : noms ;	
 	
-	os : SIGMAE2 os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;	
-	ocount : SIGMAE2 ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYSUM ocounto | DATAOBJCOUNT ;			
+	os : SIGMAE os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;	
+	ocount : SIGMAE ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYSUM ocounto | DATAOBJCOUNT ;			
 	oratio :BOWTIE oratio WHITESPACE o | BOWTIERATIO oratio WHITESPACE oratio | GROUPBYAVG oratioo | GROUPBYAVG lratioo | GROUPBYCOUNT onomo | GROUPBYSIZE lnomo | DATAOBJQ | ocount ; 
-	oint : SIGMASE2 oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBYAVG ointo | GROUPBYAVG linto | oratio	;
-	oord : SIGMASE2 oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | groupbyaggord oordo |  oint ;
-	onom : oord ;
-	oq : SIGMAE2 oq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
+	oint : SIGMASE oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBYAVG ointo | GROUPBYAVG linto | oratio	;
+	oord : SIGMASE oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | groupbyaggord oordo |  oint ;
+	onom : SIGMAE onom WHITESPACE nomv | oord ;
+	oq : SIGMAE oq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
 	
 		
 	lratio : DATAFIELD ;		
-	lint : INTERPOL sint WHITESPACE l | SIGMASE2 lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl | lratio   ;
-	lord : REVERT ords | SIGMASE2 lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
-	lnom : lord ; 
-	lq : SIGMAE2 lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;		
+	lint : INTERPOL sint WHITESPACE l | SIGMASE lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl | lratio   ;
+	lord : REVERT ords | SIGMASE lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
+	lnom : SIGMAE lnom WHITESPACE nomv | lord ; 
+	lq : SIGMAE lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;		
 	
 	
 	//RRR rules
 	ocounto : BOWTIESTAR onomo WHITESPACE ocount ;
 	oratioo : ODIST os WHITESPACE os  |NDIST o WHITESPACE o WHITESPACE oratioo | BOWTIESTAR onomo WHITESPACE oratio ;		
 	ointo : BOWTIESTAR onomo WHITESPACE oint  | oratioo ;	
-	oordo :  SIGMASE2 oordo WHITESPACE ordv  |  ointo  ;
-	onomo : OTOPO os WHITESPACE os  | SIGMAE2 onomo WHITESPACE nomv   |  oordo 	;
+	oordo :  SIGMASE oordo WHITESPACE ordv  |  ointo  ;
+	onomo : OTOPO os WHITESPACE os  | SIGMAE onomo WHITESPACE nomv   |  oordo 	;
 	
 	lratioo : LODIST l WHITESPACE o | BOWTIESTAR lnomo WHITESPACE lratio ;
 	linto : BOWTIESTAR lnomo WHITESPACE lint | lratioo ;	
-	lnomo : LOTOPO l WHITESPACE  os | SIGMAE2 lnomo WHITESPACE nomv  ;
+	lnomo : LOTOPO l WHITESPACE  os | SIGMAE lnomo WHITESPACE nomv  ;
 	
 	lratiol : LDIST l WHITESPACE l | BOWTIESTAR lnoml WHITESPACE lratio;
 	lintl : BOWTIESTAR lnoml WHITESPACE lint  | lratiol ;
-	lordl :  SIGMASE2 lordl WHITESPACE ordv  | lintl ; 	
-	lnoml :  SIGMAE2 lnoml WHITESPACE nomv |lbooll |lordl; 	
-	lbooll : LVIS l WHITESPACE l WHITESPACE oint  | SIGMAE2 lbooll WHITESPACE BOOLV ; 	
+	lordl :  SIGMASE lordl WHITESPACE ordv  | lintl ; 	
+	lnoml :  SIGMAE lnoml WHITESPACE nomv |lbooll |lordl; 	
+	lbooll : LVIS l WHITESPACE l WHITESPACE oint  | SIGMAE lbooll WHITESPACE BOOLV ; 	
 	
 		
 	
@@ -111,8 +111,8 @@
 	INTERPOL : 'interpol ' ;
 	PI1 : 'pi1 ' ;
 	PI2 : 'pi2 ' ;
-	SIGMAE2 : 'sigmae '  ; // =
-	SIGMASE2 : 'sigmale '  ; // <=
+	SIGMAE : 'sigmae '  ; // =
+	SIGMASE : 'sigmale '  ; // <=
 	BOWTIE : 'bowtie ' ;
 	BOWTIESTAR : 'bowtie* ';
 	BOWTIERATIO : 'bowtie_ratio ';	
@@ -143,6 +143,8 @@
 	DATAFIELD :  'field ' KEYWORD ;	
 	TOPOV : 'in' ;
 	BOOLV : 'true'| 'false';
+	NOMV : 'nominal ' KEYWORD ;
+	ORDV : 'ordinal ' KEYWORD ;
 	
 	DATAV : [0-9]+ ;     
     WHITESPACE : ' ';	

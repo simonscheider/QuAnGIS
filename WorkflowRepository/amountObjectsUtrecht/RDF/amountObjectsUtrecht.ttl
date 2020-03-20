@@ -37,23 +37,9 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 		wf:input1 _:neighborhoodsutrecht0;		
 		wf:output _:neighborhoodsutrecht.
 		
-_:wf1_5 tools:implements tools:SpatialJoinSumTessCount;
+_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm>;
 		wf:input1 pdok:cbs-vierkantstatistieken;
 		wf:input2 _:neighborhoodsutrecht;
 		wf:output _:countneighborhoodsutrecht.
-
-
-
-# Workflow amounts of temperature in Utrecht
-# Workflow metadata (result and data sources)
-_:wf2 a wf:Workflow;
-	rdfs:comment "What is the average temperature for each neighborhood in Utrecht?"@en;
-	rdfs:comment "What is the distribution of temperature in Utrecht across neighborhoods?"@en;
-	wf:source pdok:cbs-gebiedsindelingen; #municipalities
-	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
-	wf:source <http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi>; #KNMI weather stations
-	wf:edge _:wf2_1, _:wf2_2, _:wf2_3,_:wf2_4, _:wf2_5.
-
-# Workflow nodes
 
 

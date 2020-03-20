@@ -1,0 +1,55 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+
+# @author: Simon Scheider
+
+
+
+# Workflow noisy region proportion in Amsterdam
+# Workflow metadata (result and data sources)
+_:wf3 a wf:Workflow;
+	rdfs:comment "What  is  the  proportion  of  the  region  where  noise  is  greater  than  70  dB  in Amsterdam?"@en;	
+	wf:source pdok:cbs-gebiedsindelingen; #municipalities		
+	wf:source <https://maps.amsterdam.nl/geluid>;	#Amsterdam noise map
+	wf:edge _:wf3_1, _:wf3_2, _:wf3_3,_:wf3_4, _:wf3_5, _:wf3_6, _:wf3_7, _:wf3_8.
+	
+_:wf3_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm>;
+		wf:input1 <https://maps.amsterdam.nl/geluid>; #noise map	
+		wf:output _:noise_raster.
+
+_:wf3_2  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>;
+		wf:input1 _:noise_raster;				
+		wf:output _:noisy_raster.
+		
+_:wf3_3  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
+		wf:input1 pdok:cbs-gebiedsindelingen;
+		wf:output _:amsterdam_selection.
+		
+_:wf3_4  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+		wf:input1 _:amsterdam_selection;		
+		wf:output _:amsterdam_shp.		
+	
+_:wf3_5  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>;
+		wf:input1 _:noisy_raster;	
+		wf:input2 _:amsterdam_shp;			
+		wf:output _:noisy_areasize.		
+		
+_:wf3_6  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm>;
+		wf:input1 _:amsterdam_shp;				
+		wf:output _:amsterdam_area_shp.	
+
+_:wf3_7  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>;
+		wf:input1 _:noisy_areasize;
+		wf:input2  _:amsterdam_area_shp;
+		wf:output _:amsterdam_area_area_shp.	
+
+_:wf3_8 tools:implements  <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm>;
+		wf:input1 _:amsterdam_area_area_shp;		
+		wf:output _:amsterdam_final_shp.
+		

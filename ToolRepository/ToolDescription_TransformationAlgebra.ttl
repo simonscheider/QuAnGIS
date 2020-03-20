@@ -1,0 +1,32 @@
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix ccd: <http://geographicknowledge.de/vocab/CoreConceptData.rdf#>.
+@prefix exm: <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#>.
+
+#### Select layer by attribute
+tools:FullSelectByAttribute tools:implements tools:SelectObjects, tools:SelectFeaturesContourToExistenceVector,tools:SelectFeaturesCoverageToExistenceVector;
+    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
+    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ) ;
+    rdfs:label "a SQL query to select features matching a selection criteria.You build a query expression to generate the subset. You can query a dataset based on a field in a layer or a table. Using this selection a new Feature dataset is created with only the selected features using the Copy Features tool. This feature dataset represents all the area's that denounce the presence of a certain criteria".
+#### Select by attribute is always followed by copy features (treated as one tool in the annotation
+
+#### Object selection variant, needs a nominal attribute
+tools:SelectObjects    
+	wf:input1 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:ObjectVector ];
+    tools:algebraexpression	"sigmae objectregions x object y".
+
+#### Contour to Existence Vector
+tools:SelectFeaturesContourToExistenceVector 
+    wf:input1 [ a ccd:Contour ];
+    wf:output [ a ccd:ExistenceVector ];
+    tools:algebraexpression	"sigmae ".
+
+#### Coverage to Existence Vector
+
+tools:SelectFeaturesCoverageToExistenceVector 
+    wf:input1 [ a ccd:Coverage ];
+    wf:output [ a ccd:ExistenceVector ];
+    tools:algebraexpression	"".

@@ -17,9 +17,10 @@ _:wf2 a wf:Workflow;
 	rdfs:comment "What is the average temperature for each neighborhood in Utrecht?"@en;
 	rdfs:comment "What is the distribution of temperature in Utrecht across neighborhoods?"@en;
 	wf:source pdok:cbs-gebiedsindelingen; #municipalities
-	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
+	wf:source pdok:cbs-wijken-en-buurten; #CBS neighborhoodregions
+	wf:source pdok:cbs-vierkantstatistieken;	#CBS grid statistics
 	wf:source <http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi>; #KNMI weather stations
-	wf:edge _:wf2_1, _:wf2_2, _:wf2_3,_:wf2_4, _:wf2_5.
+	wf:edge _:wf2_1, _:wf2_2, _:wf2_3,_:wf2_4, _:wf2_5, _:wf2_6, _:wf2_7, _:wf2_8,_:wf2_9, _:wf2_10, _:wf2_11.
 
 # Workflow nodes
 
@@ -37,5 +38,37 @@ _:wf2_2  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data
 		wf:output _:knmi_shp2.	
 		
 _:wf2_4  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/excel-to-table.htm>;
-		wf:input1 _:stations_layer	;
-		wf:output _:knmi_. 
+		wf:input1 <http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi>	;
+		wf:output _:temp. 
+		
+_:wf2_5  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/idw.htm>;
+		wf:input1 _:knmi_shp2	;
+		wf:output _:tempraster. 		
+
+_:wf2_6  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
+		wf:input1 pdok:cbs-gebiedsindelingen;
+		wf:output _:utrecht_selection.
+		
+_:wf2_7  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+		wf:input1 _:utrecht_selection;		
+		wf:output _:utrecht_shp.	
+		
+_:wf2_8  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm>;
+		wf:input1 pdok:cbs-wijken-en-buurten	;
+		wf:input2 _:utrecht_shp ;
+		wf:output _:buurt_selection. 
+		
+_:wf2_9  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+		wf:input1 _:buurt_selection	;
+		wf:output _:utrecht_buurten. 
+
+_:wf2_10  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>;
+		wf:input1 _:tempraster	;
+		wf:input2 _:utrecht_buurten;
+		wf:output _:agg_temp_table. 
+
+_:wf2_11  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>;
+		wf:input1 _:agg_temp_table	;
+		wf:input2 _:utrecht_buurten;
+		wf:output _:utrecht_buurten_agg_temp. 
+		
