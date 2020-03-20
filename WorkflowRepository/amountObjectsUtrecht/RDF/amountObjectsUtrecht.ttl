@@ -23,10 +23,10 @@ _:wf1 a wf:Workflow;
 # Workflow nodes
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
 		wf:input1 pdok:cbs-gebiedsindelingen;
-		wf:outout _:utrecht0.
+		wf:output _:utrecht0.
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
 		wf:input1 _:utrecht0;
-		wf:outout _:utrecht.
+		wf:output _:utrecht.
 		
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm>;
 		wf:input1 pdok:cbs-wijken-en-buurten;
