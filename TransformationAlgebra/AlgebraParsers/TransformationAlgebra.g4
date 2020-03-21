@@ -46,14 +46,14 @@
 	sord : sint ;	
 	sq : snom ;
 	
-	ords : INVERT lord | DATACONTOUR ;
+	ords : INVERT lord | SIGMASE ords WHITESPACE ordv | DATACONTOUR ;
 	ints : DATACONTOURLINE ; 
 	noms : SIGMAE noms WHITESPACE nomv | ords ; 
 	qs : noms ;	
 	
 	os : SIGMAE os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;	
-	ocount : SIGMAE ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYSUM ocounto | DATAOBJCOUNT ;			
-	oratio :BOWTIE oratio WHITESPACE o | BOWTIERATIO oratio WHITESPACE oratio | GROUPBYAVG oratioo | GROUPBYAVG lratioo | GROUPBYCOUNT onomo | GROUPBYSIZE lnomo | DATAOBJQ | ocount ; 
+	ocount : SIGMAE ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYCOUNT onomo | GROUPBYAVG ocounto | GROUPBYSUM ocounto | DATAOBJCOUNT ;			
+	oratio :BOWTIE oratio WHITESPACE o | BOWTIERATIO oratio WHITESPACE oratio | GROUPBYAVG oratioo | GROUPBYSUM oratioo | GROUPBYAVG lratioo | GROUPBYSIZE lnomo | DATAOBJQ | ocount ; 
 	oint : SIGMASE oint WHITESPACE intv|  BOWTIE oint WHITESPACE o  | GROUPBYAVG ointo | GROUPBYAVG linto | oratio	;
 	oord : SIGMASE oord WHITESPACE ordv |  BOWTIE oord WHITESPACE o  | groupbyaggord oordo |  oint ;
 	onom : SIGMAE onom WHITESPACE nomv | oord ;

@@ -5,15 +5,18 @@
 @prefix ccd: <http://geographicknowledge.de/vocab/CoreConceptData.rdf#>.
 @prefix exm: <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#>.
 
+
+##from example AmountsObjectsUtrecht
+
 #### Select layer by attribute
-tools:FullSelectByAttribute tools:implements tools:SelectObjects, tools:SelectFeaturesContourToExistenceVector,tools:SelectFeaturesCoverageToExistenceVector;
+tools:FullSelectLayerByAttribute tools:implements tools:SelectLayerByAttributeObjects, tools:SelectFeaturesContourToExistenceVector,tools:SelectFeaturesCoverageToExistenceVector;
     rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
     rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ) ;
     rdfs:label "a SQL query to select features matching a selection criteria.You build a query expression to generate the subset. You can query a dataset based on a field in a layer or a table. Using this selection a new Feature dataset is created with only the selected features using the Copy Features tool. This feature dataset represents all the area's that denounce the presence of a certain criteria".
 #### Select by attribute is always followed by copy features (treated as one tool in the annotation
 
 #### Object selection variant, needs a nominal attribute
-tools:SelectObjects    
+tools:SelectLayerByAttributeObjects    
 	wf:input1 [ a ccd:ObjectVector ];
     wf:output [ a ccd:ObjectVector ];
     tools:algebraexpression	"sigmae objectregions x object y".
@@ -22,11 +25,86 @@ tools:SelectObjects
 tools:SelectFeaturesContourToExistenceVector 
     wf:input1 [ a ccd:Contour ];
     wf:output [ a ccd:ExistenceVector ];
-    tools:algebraexpression	"sigmae ".
+    tools:algebraexpression	"sigmale contour x ordinal y".
 
 #### Coverage to Existence Vector
 
 tools:SelectFeaturesCoverageToExistenceVector 
     wf:input1 [ a ccd:Coverage ];
     wf:output [ a ccd:ExistenceVector ];
-    tools:algebraexpression	"".
+    tools:algebraexpression	"sigmae amountpatches x nominal y".
+    
+    
+#### Select layer by location
+tools:FullSelectLayerByLocation tools:implements tools:SelectLayerByLocationObjects;
+rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
+    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ) .   
+    
+tools:SelectLayerByLocationObjects     
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:input2 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:ObjectVector ];
+    tools:algebraexpression	"bowtie objectregions x pi1 sigmae otopo objectregions x objectregions y in".
+    
+
+#### Spatial join
+
+######### Spatial join with sum rule
+# with JOIN_ONE_TO_ONE parameter, with Merge_RULe sum for Ratio data.
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinSumTessRatio.
+tools:SpatialJoinSumTessRatio rdfs:label "Sums the attributes at ratio measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:RatioA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:ERA ];
+    tools:algebraexpression	"groupby_sum bowtie* sigmae otopo objectregions x objectregions y in objects z".
+
+# with JOIN_ONE_TO_ONE parameter, with Merge_RULe sum for Count data.
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinSumTessCount.
+tools:SpatialJoinSumTessCount rdfs:label "Sums the attributes at Count measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:CountA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ];
+    tools:algebraexpression	"groupby_sum bowtie* sigmae otopo objectregions x objectregions y in objectcounts z".
+
+#### spatial join with mean rule
+# with JOIN_ONE_TO_ONE parameter, with Merge_RULe mean for interval data.
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinMeanTessInterval.
+tools:SpatialJoinMeanTessInterval rdfs:label "Averages the attributes at interval measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:IntervalA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ];
+    tools:algebraexpression	"groupby_avg bowtie* sigmae otopo objectregions x objectregions y in objects z".
+    
+# with JOIN_ONE_TO_ONE parameter, with Merge_RULe mean for Ratio data.
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinMeanTessRatio.
+tools:SpatialJoinMeanTessRatio rdfs:label "Averages the attributes at Ratio measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:RatioA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ];
+    tools:algebraexpression	"groupby_avg bowtie* sigmae otopo objectregions x objectregions y in objects z".
+
+# with JOIN_ONE_TO_ONE parameter, with Merge_RULe mean for Count data.
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinMeanTessCount.
+tools:SpatialJoinMeanTessCount rdfs:label "Averages the attributes at Count measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:CountA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ];
+    tools:algebraexpression	"groupby_avg bowtie* sigmae otopo objectregions x objectregions y in objectcounts z".
+    
+#### spatial join with the count rule
+# with JOIN_ONE_TO_ONE parameter and with Merge_RULe count.
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinCountTess.
+tools:SpatialJoinCountTess rdfs:label "Counts the number of features from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ];
+    tools:algebraexpression	"groupby_count sigmae otopo objectregions x objectregions y in".
+
+
+#Noise proportion amsterdam
+
+#<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm>
+#<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>  
+#<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
+#<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm>
+#<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm>

@@ -5,3 +5,10 @@ groupby_sum bowtie* sigmae otopo objectregions households bowtie objectregions n
 groupby_avg bowtie* sigmae lotopo deify merge pi2 sigmae objectregions muni object Utrecht bowtie objectregions neighborhoods pi1 sigmae otopo objectregions neighborhoods sigmae objectregions muni object Utrecht in in interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht
 sigmae objectregions x object y
 sigmae amountpatches x nominal y
+sigmale contour x ordinal y
+bowtie objectregions x pi1 sigmae otopo objectregions x objectregions y in
+groupby_sum bowtie* sigmae otopo objectregions x objectregions y in objectcounts z
+groupby_sum bowtie* sigmae otopo objectregions x objectregions y in objects z
+groupby_avg bowtie* sigmae otopo objectregions x objectregions y in objects z
+groupby_avg bowtie* sigmae otopo objectregions x objectregions y in objectcounts z
+groupby_count sigmae otopo objectregions x objectregions y in

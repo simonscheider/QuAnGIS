@@ -9,8 +9,6 @@
 
 # @author: Simon Scheider
 
-
-
 # Workflow noisy region proportion in Amsterdam
 # Workflow metadata (result and data sources)
 _:wf3 a wf:Workflow;
