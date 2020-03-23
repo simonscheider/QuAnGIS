@@ -1,12 +1,13 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
+# Name:        parseTA
+# Purpose:     Python script for parsing a textfile of lines written in "TransformationAlgebra.g4" to make use of the parse tree.
+#              The parse tree is read and turned into different forms (typed workflow string, latex, json).
 #
 # Author:      Schei008
 #
 # Created:     29-02-2020
 # Copyright:   (c) Schei008 2020
-# Licence:     <your licence>
+# Licence:     MIT
 #-------------------------------------------------------------------------------
 
 
