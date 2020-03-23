@@ -1,3 +1,8 @@
+# This folder contains a grammar of the Geo-analytical Transformation Algebra.
+
+The algebra can be used for describing and formalizing transformations of spatial information with GIS functions. 
+
+## Usage of grammar witrh antlr4 (to generate parser)
 given: grammar.g4
 
 with python:
