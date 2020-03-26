@@ -325,12 +325,12 @@ tools:RasterToCoverageOrdinal rdfs:label "Converts a field raster to a Coverage 
     wf:output [ a ccd:Coverage, ccd:OrdinalA ].
 
 <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> tools:implements tools:RasterToCoverageNominal.
-tools:RasterToCoverageNominal rdfs:label "Converts a field raster to a Coverage dataset by summing values into intervals or using data with a measurements level of ordinal or lower";
+tools:RasterToCoverageNominal rdfs:label "Converts a field raster to a Coverage using data with a measurements level of nominal";
     wf:input1 [ a ccd:FieldRaster, ccd:NominalA ];
     wf:output [ a ccd:Coverage, ccd:NominalA ].
 
 <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> tools:implements tools:RasterToCoverageBoolean.
-tools:RasterToCoverageBoolean rdfs:label "Converts a field raster to a Coverage dataset by summing values into intervals or using data with a measurements level of ordinal or lower";
+tools:RasterToCoverageBoolean rdfs:label "Converts a field raster to a boolean Coverage dataset using data with a measurements level of boolean";
     wf:input1 [ a ccd:FieldRaster, ccd:BooleanA ];
     wf:output [ a ccd:Coverage, ccd:BooleanA ].
 

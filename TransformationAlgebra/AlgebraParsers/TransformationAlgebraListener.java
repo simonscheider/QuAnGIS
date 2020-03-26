@@ -227,46 +227,6 @@ public interface TransformationAlgebraListener extends ParseTreeListener {
 	 */
 	void exitQ(TransformationAlgebraParser.QContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link TransformationAlgebraParser#sint}.
-	 * @param ctx the parse tree
-	 */
-	void enterSint(TransformationAlgebraParser.SintContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TransformationAlgebraParser#sint}.
-	 * @param ctx the parse tree
-	 */
-	void exitSint(TransformationAlgebraParser.SintContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link TransformationAlgebraParser#snom}.
-	 * @param ctx the parse tree
-	 */
-	void enterSnom(TransformationAlgebraParser.SnomContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TransformationAlgebraParser#snom}.
-	 * @param ctx the parse tree
-	 */
-	void exitSnom(TransformationAlgebraParser.SnomContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link TransformationAlgebraParser#sord}.
-	 * @param ctx the parse tree
-	 */
-	void enterSord(TransformationAlgebraParser.SordContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TransformationAlgebraParser#sord}.
-	 * @param ctx the parse tree
-	 */
-	void exitSord(TransformationAlgebraParser.SordContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link TransformationAlgebraParser#sq}.
-	 * @param ctx the parse tree
-	 */
-	void enterSq(TransformationAlgebraParser.SqContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TransformationAlgebraParser#sq}.
-	 * @param ctx the parse tree
-	 */
-	void exitSq(TransformationAlgebraParser.SqContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link TransformationAlgebraParser#ords}.
 	 * @param ctx the parse tree
 	 */
@@ -306,6 +266,46 @@ public interface TransformationAlgebraListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitQs(TransformationAlgebraParser.QsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraParser#sint}.
+	 * @param ctx the parse tree
+	 */
+	void enterSint(TransformationAlgebraParser.SintContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraParser#sint}.
+	 * @param ctx the parse tree
+	 */
+	void exitSint(TransformationAlgebraParser.SintContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraParser#snom}.
+	 * @param ctx the parse tree
+	 */
+	void enterSnom(TransformationAlgebraParser.SnomContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraParser#snom}.
+	 * @param ctx the parse tree
+	 */
+	void exitSnom(TransformationAlgebraParser.SnomContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraParser#sord}.
+	 * @param ctx the parse tree
+	 */
+	void enterSord(TransformationAlgebraParser.SordContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraParser#sord}.
+	 * @param ctx the parse tree
+	 */
+	void exitSord(TransformationAlgebraParser.SordContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraParser#sq}.
+	 * @param ctx the parse tree
+	 */
+	void enterSq(TransformationAlgebraParser.SqContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraParser#sq}.
+	 * @param ctx the parse tree
+	 */
+	void exitSq(TransformationAlgebraParser.SqContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TransformationAlgebraParser#os}.
 	 * @param ctx the parse tree

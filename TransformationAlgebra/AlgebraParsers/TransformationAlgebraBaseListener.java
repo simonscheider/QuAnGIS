@@ -279,54 +279,6 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSint(TransformationAlgebraParser.SintContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSint(TransformationAlgebraParser.SintContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSnom(TransformationAlgebraParser.SnomContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSnom(TransformationAlgebraParser.SnomContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSord(TransformationAlgebraParser.SordContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSord(TransformationAlgebraParser.SordContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSq(TransformationAlgebraParser.SqContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSq(TransformationAlgebraParser.SqContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterOrds(TransformationAlgebraParser.OrdsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -370,6 +322,54 @@ public class TransformationAlgebraBaseListener implements TransformationAlgebraL
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitQs(TransformationAlgebraParser.QsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSint(TransformationAlgebraParser.SintContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSint(TransformationAlgebraParser.SintContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSnom(TransformationAlgebraParser.SnomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSnom(TransformationAlgebraParser.SnomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSord(TransformationAlgebraParser.SordContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSord(TransformationAlgebraParser.SordContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSq(TransformationAlgebraParser.SqContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSq(TransformationAlgebraParser.SqContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

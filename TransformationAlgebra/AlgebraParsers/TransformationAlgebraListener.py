@@ -202,42 +202,6 @@ class TransformationAlgebraListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by TransformationAlgebraParser#sint.
-    def enterSint(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#sint.
-    def exitSint(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#snom.
-    def enterSnom(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#snom.
-    def exitSnom(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#sord.
-    def enterSord(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#sord.
-    def exitSord(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#sq.
-    def enterSq(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#sq.
-    def exitSq(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by TransformationAlgebraParser#ords.
     def enterOrds(self, ctx):
         pass
@@ -271,6 +235,42 @@ class TransformationAlgebraListener(ParseTreeListener):
 
     # Exit a parse tree produced by TransformationAlgebraParser#qs.
     def exitQs(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#sint.
+    def enterSint(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#sint.
+    def exitSint(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#snom.
+    def enterSnom(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#snom.
+    def exitSnom(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#sord.
+    def enterSord(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#sord.
+    def exitSord(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#sq.
+    def enterSq(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#sq.
+    def exitSq(self, ctx):
         pass
 
 

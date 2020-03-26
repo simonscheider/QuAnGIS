@@ -15,14 +15,14 @@
 	
 	
 	//value rules
-	countv : COUNT o | GET  count | DATAV ; 
+	countv : COUNT o | GET  count | COUNTV ; 
 	ratiov : FCONT lint | SIZE l  
 		| RATIO ratiov WHITESPACE ratiov 
-		| OCONT oratio | GET ratio| countv | DATAV ;	
-	intv : AVG lint | AVG oint | ratiov  |GET intt | DATAV ;  
+		| OCONT oratio | GET ratio| countv | RATIOV ;	
+	intv : AVG lint | AVG oint | ratiov  |GET intt | INTV ;  
 	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ordinal | intv | ORDV;  	
 	nomv : ordv | GET nom | TOPOV | NOMV;
-	qv : GET  q | nomv ;
+	qv : GET  q | nomv | ordv | intv | ratiov | countv;
 	sv : REIFY l | GET  s | MERGE s ;
 	lv : GET l ;		
 	ov : GET  o | DATAOBJV ;
@@ -40,16 +40,16 @@
 	nom : PI1 noms | ordinal ;
 	q : PI1  qs | nom ;
 	
-	// RR rules	
-	sint : DATAPM ;
-	snom : DATAAMOUNT | SIGMAE snom WHITESPACE nomv | sint ;	
-	sord : sint ;	
-	sq : snom ;
-	
+	// RR rules		
 	ords : INVERT lord | SIGMASE ords WHITESPACE ordv | DATACONTOUR ;
 	ints : DATACONTOURLINE ; 
 	noms : SIGMAE noms WHITESPACE nomv | ords ; 
 	qs : noms ;	
+	
+	sint : DATAPM ;
+	snom : DATAAMOUNT | INVERT lnom | SIGMAE snom WHITESPACE nomv | sint ;	
+	sord : sint ;	
+	sq : snom ;
 	
 	os : SIGMAE os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;	
 	ocount : SIGMAE ocount WHITESPACE ov | BOWTIE ocount WHITESPACE o | GROUPBYCOUNT onomo | GROUPBYAVG ocounto | GROUPBYSUM ocounto | DATAOBJCOUNT ;			
@@ -63,7 +63,7 @@
 	lratio : DATAFIELD ;		
 	lint : INTERPOL sint WHITESPACE l | SIGMASE lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl | lratio   ;
 	lord : REVERT ords | SIGMASE lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
-	lnom : SIGMAE lnom WHITESPACE nomv | lord ; 
+	lnom : REVERT snom | SIGMAE lnom WHITESPACE nomv | lord ; 
 	lq : SIGMAE lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;		
 	
 	
@@ -142,9 +142,16 @@
 	DATAOBJCOUNT :  'objectcounts ' KEYWORD  ;
 	DATAFIELD :  'field ' KEYWORD ;	
 	TOPOV : 'in' ;
-	BOOLV : 'true'| 'false';
+	COUNTV : 'count ' DATAV ;
+	RATIOV : 'ratio ' DATAV ;
+	INTV : 'interval ' DATAV ;
+	ORDV : 'ordinal ' DATAV | 'ordinal ' KEYWORD ;	
+	BOOLV : 'true' | 'false';
 	NOMV : 'nominal ' KEYWORD ;
-	ORDV : 'ordinal ' KEYWORD ;
+	
+	
+	
+	
 	
 	DATAV : [0-9]+ ;     
     WHITESPACE : ' ';	

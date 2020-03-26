@@ -104,7 +104,48 @@ tools:SpatialJoinCountTess rdfs:label "Counts the number of features from one fe
 #Noise proportion amsterdam
 
 #<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm>
+###Field Polygon to raster
+<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> tools:implements tools:CoverageToNominalFieldRaster.
+tools:CoverageToNominalFieldRaster rdfs:label "Converts Field polygons to nominal field Rasters";
+    wf:input1 [ a ccd:Coverage, ccd:NominalA ];
+    wf:output [ a ccd:FieldRaster, ccd:NominalA ];
+    tools:algebraexpression	"revert amountpatches x".
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> tools:implements tools:CoverageToOrdinalFieldRaster.
+tools:CoverageToOrdinalFieldRaster rdfs:label "Converts Field polygons to ordinal field Rasters";
+    wf:input1 [ a ccd:Coverage, ccd:OrdinalA ];
+    wf:output [ a ccd:FieldRaster, ccd:OrdinalA ];
+    tools:algebraexpression	"revert contour x".
+
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>  
+
+### local map algebra with only a single input layer
+<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm> tools:implements tools:LocalMapAlgebraSubOrder.
+tools:LocalMapAlgebraSubOrder rdfs:label "Builds and executes a Local Map Algebra expression (smaller than or greater than some number) using Python syntax using rasters with an ordinal level";
+    wf:input1 [ a ccd:FieldRaster, ccd:OrdinalA ];    
+    wf:output [ a ccd:FieldRaster, ccd:BooleanA ];
+   tools:algebraexpression "sigmale field x ordinal y".
+
+tools:RasterToContour tools:implements tools:RasterToContourInterval ;
+    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/reclassify.htm> ;
+    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> ) .
+
+tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour dataset. The raster is first reclassified to an ordinal raster, and then converted to a polygon layer.";
+    wf:input1 [ a ccd:FieldRaster, ccd:IntervalA ];
+    wf:output [ a ccd:Contour, ccd:OrdinalA ];
+    tools:algebraexpression "invert field x".
+
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
+
+tools:ZonalStatistics tools:implements tools:ZonalStatisticsSize ;
+    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
+    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm> ) .
+    
+tools:ZonalStatisticsSize rdfs:label "Measures the size of a given field raster inside object regions.";
+	wf:input1 [ a ccd:FieldRaster ];
+	wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ];
+tools:algebraexpression "groupby_size sigmae lotopo pi1 field x objectregions y in". 
+
 #<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm>
 #<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm>
