@@ -202,6 +202,51 @@ class TransformationAlgebraListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by TransformationAlgebraParser#lratio.
+    def enterLratio(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#lratio.
+    def exitLratio(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#lint.
+    def enterLint(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#lint.
+    def exitLint(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#lord.
+    def enterLord(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#lord.
+    def exitLord(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#lnom.
+    def enterLnom(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#lnom.
+    def exitLnom(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#lq.
+    def enterLq(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#lq.
+    def exitLq(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by TransformationAlgebraParser#ords.
     def enterOrds(self, ctx):
         pass
@@ -247,21 +292,21 @@ class TransformationAlgebraListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by TransformationAlgebraParser#snom.
-    def enterSnom(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#snom.
-    def exitSnom(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by TransformationAlgebraParser#sord.
     def enterSord(self, ctx):
         pass
 
     # Exit a parse tree produced by TransformationAlgebraParser#sord.
     def exitSord(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by TransformationAlgebraParser#snom.
+    def enterSnom(self, ctx):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraParser#snom.
+    def exitSnom(self, ctx):
         pass
 
 
@@ -334,51 +379,6 @@ class TransformationAlgebraListener(ParseTreeListener):
 
     # Exit a parse tree produced by TransformationAlgebraParser#oq.
     def exitOq(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#lratio.
-    def enterLratio(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#lratio.
-    def exitLratio(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#lint.
-    def enterLint(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#lint.
-    def exitLint(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#lord.
-    def enterLord(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#lord.
-    def exitLord(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#lnom.
-    def enterLnom(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#lnom.
-    def exitLnom(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by TransformationAlgebraParser#lq.
-    def enterLq(self, ctx):
-        pass
-
-    # Exit a parse tree produced by TransformationAlgebraParser#lq.
-    def exitLq(self, ctx):
         pass
 
 

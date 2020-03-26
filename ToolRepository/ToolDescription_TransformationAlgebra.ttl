@@ -17,7 +17,7 @@ tools:FullSelectLayerByAttribute tools:implements tools:SelectLayerByAttributeOb
 
 #### Object selection variant, needs a nominal attribute
 tools:SelectLayerByAttributeObjects    
-	wf:input1 [ a ccd:ObjectVector ];
+	wf:input1 [ a ccd:ObjectVector, ccd:NominalA ];
     wf:output [ a ccd:ObjectVector ];
     tools:algebraexpression	"sigmae objectregions x object y".
 
@@ -111,12 +111,13 @@ tools:CoverageToNominalFieldRaster rdfs:label "Converts Field polygons to nomina
     wf:output [ a ccd:FieldRaster, ccd:NominalA ];
     tools:algebraexpression	"revert amountpatches x".
 
-<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> tools:implements tools:CoverageToOrdinalFieldRaster.
-tools:CoverageToOrdinalFieldRaster rdfs:label "Converts Field polygons to ordinal field Rasters";
-    wf:input1 [ a ccd:Coverage, ccd:OrdinalA ];
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> tools:implements tools:ContourToFieldRaster.
+tools:ContourToFieldRaster rdfs:label "Converts contour maps to field Rasters";
+    wf:input1 [ a ccd:Contour ];
     wf:output [ a ccd:FieldRaster, ccd:OrdinalA ];
     tools:algebraexpression	"revert contour x".
-
+    
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>  
 
 ### local map algebra with only a single input layer
@@ -137,7 +138,7 @@ tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour d
 
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
 
-tools:ZonalStatistics tools:implements tools:ZonalStatisticsSize ;
+tools:ZonalStatistics tools:implements tools:ZonalStatisticsSize, tools:ZonalStatisticsMeanInterval ;
     rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
     rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm> ) .
     
@@ -148,4 +149,75 @@ tools:ZonalStatisticsSize rdfs:label "Measures the size of a given field raster 
 tools:algebraexpression "groupby_size sigmae lotopo pi1 field x objectregions y in". 
 
 #<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm>
+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm> tools:implements tools:AddArea.
+tools:AddArea rdfs:label "Adds an area attribute to an object layer.";
+wf:input1 [ a  ccd:ObjectVector ];
+wf:output [ a ccd:ObjectVector, ccd:RatioA];
+tools:algebraexpression "groupby_size sigmae lotopo deify merge pi2 objectregions x objectregions x in".
+
+
 #<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm>
+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm> tools:implements tools:CalculateRatio.
+tools:CalculateRatio rdfs:label "Calculates a ratio of two ratio scaled object attributes.";
+wf:input1 [ a  ccd:ObjectVector, ccd:RatioA ];
+wf:input2 [ a  ccd:ObjectVector, ccd:RatioA ];
+wf:output [ a ccd:ObjectVector, ccd:RatioA];
+tools:algebraexpression "bowtie_ratio objects x objects y".
+
+
+##from example FieldAmountUtrecht
+
+tools:MakeLayerFromTable tools:implements tools:MakePointMeasuresFromTable ;
+    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/make-xy-event-layer.htm> ;
+    rdf:rest ( 
+    	rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/project.htm>
+    	rdf:rest (
+    		rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
+    		rdf:rest (<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/excel-to-table.htm>)
+    		)	   
+    	)  .
+    
+tools:MakePointMeasuresFromTable rdfs:label "Makes a layer of pointmeasures from some XY table.";
+wf:input1 [ a  ccd:PointMeasures, ccd:IntervalA ];
+wf:output [ a  ccd:PointMeasures, ccd:IntervalA ];
+tools:algebraexpression "pointmeasures x" .
+
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/idw.htm> tools:implements tools:IDWInterval. 
+tools:IDWInterval rdfs:label "Standard point interpolation for interval measurements.";
+    wf:input1 [ a ccd:PointMeasures, ccd:IntervalA ];
+    wf:output [ a ccd:FieldRaster, ccd:IntervalA ];
+tools:algebraexpression "interpol pointmeasures x deify merge pi2 objectregions y".
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/kriging.htm> tools:implements tools:KrigingInterval. 
+tools:KrigingInterval rdfs:label "Kriging point interpolation for interval measurements.";
+    wf:input1 [ a ccd:PointMeasures, ccd:IntervalA ];
+    wf:output [ a ccd:FieldRaster, ccd:IntervalA ];
+tools:algebraexpression "interpol pointmeasures x deify merge pi2 objectregions y".
+
+#Zonal Statistics
+tools:ZonalStatisticsMeanInterval  rdfs:label "Calculates the average value for values with a Interval measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:Lattice, ccd:VectorA ];
+    wf:input2 [ a ccd:FieldRaster, ccd:IntervalA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ];
+    tools:algebraexpression "groupby_avg bowtie* sigmae lotopo pi1 field x objectregions y in field x".
+
+
+#From example Noise portion
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/clip.htm> tools:implements tools:ClipField2ObjectExtent.
+tools:ClipField2ObjectExtent rdfs:label "Clips some field raster to the extent of an object layer.";
+    wf:input1 [ a ccd:FieldRaster, ccd:IntervalA ];
+    wf:input2 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:FieldRaster, ccd:IntervalA];
+    tools:algebraexpression "bowtie field x deify merge pi2 objectregions x".
+    
+<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> tools:implements tools:RegionFromRasterExtent.
+tools:RegionFromRasterExtent rdfs:label "Make a region layer from the extent of a raster.";
+    wf:input1 [ a ccd:FieldRaster ];    
+    wf:output [ a ccd:VectorRegionA ];
+    tools:algebraexpression "reify pi1 field x".
+
+    
+    
+   

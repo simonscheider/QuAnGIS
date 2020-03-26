@@ -220,8 +220,7 @@ def parse(line, format=json):
     outbracket = bracket(treearray)
     outlatex = latex(treearray)
     print outbracket
-    print outlatex
-    #pp.pprint()
+    #print outlatex
     return (outjson if format==json else outbracket)
 
 

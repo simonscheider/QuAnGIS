@@ -1,8 +1,9 @@
 	grammar TransformationAlgebra;
 	// Examples:
-	 //ratio fcont interpol pointmeasures temperature deify get pi2 sigmae objectregions Utrecht fcont pi1 interpol pointmeasures temperature deify get pi2 sigmae objectregions Utrecht
-	 //reify pi1 sigmale interpol pointmeasures noise deify get pi2 sigmae objectregions Utrecht 20    
-	 //sigmae otopo objectregions neighborhoods sigmae objectregions municipalities Utrecht in
+	//ratio fcont interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht size pi1 interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht
+	//sigmae objectregions x object y
+	
+	
      /*
      * Parser Rules
      */
@@ -41,14 +42,20 @@
 	q : PI1  qs | nom ;
 	
 	// RR rules		
+	lratio : DATAFIELD ;		
+	lint : INTERPOL sint WHITESPACE l | SIGMASE lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl | lratio   ;
+	lord : REVERT ords | SIGMASE lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
+	lnom : REVERT snom | SIGMAE lnom WHITESPACE nomv  | lord; 
+	lq : SIGMAE lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;		
+	
 	ords : INVERT lord | SIGMASE ords WHITESPACE ordv | DATACONTOUR ;
 	ints : DATACONTOURLINE ; 
 	noms : SIGMAE noms WHITESPACE nomv | ords ; 
 	qs : noms ;	
 	
-	sint : DATAPM ;
-	snom : DATAAMOUNT | INVERT lnom | SIGMAE snom WHITESPACE nomv | sint ;	
+	sint : DATAPM ;		
 	sord : sint ;	
+	snom : DATAAMOUNT | INVERT lnom | SIGMAE snom WHITESPACE nomv | sord ;
 	sq : snom ;
 	
 	os : SIGMAE os WHITESPACE ov | BOWTIE os WHITESPACE o | DATAOBJS ;	
@@ -59,12 +66,6 @@
 	onom : SIGMAE onom WHITESPACE nomv | oord ;
 	oq : SIGMAE oq WHITESPACE qv |  BOWTIE oq WHITESPACE o  | onom;
 	
-		
-	lratio : DATAFIELD ;		
-	lint : INTERPOL sint WHITESPACE l | SIGMASE lint WHITESPACE intv|  BOWTIE lint WHITESPACE l   | GROUPBYAVG lintl | lratio   ;
-	lord : REVERT ords | SIGMASE lord WHITESPACE ordv |  BOWTIE lord WHITESPACE l   | groupbyaggord lordl | lint ;
-	lnom : REVERT snom | SIGMAE lnom WHITESPACE nomv | lord ; 
-	lq : SIGMAE lq WHITESPACE qv | BOWTIE lq WHITESPACE l  |lnom;		
 	
 	
 	//RRR rules
