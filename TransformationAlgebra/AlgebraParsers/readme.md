@@ -1,9 +1,9 @@
 # Grammar of the Geo-analytical Transformation Algebra.
 
-The algebra can be used for describing and formalizing transformations of spatial information with GIS functions. 
+The algebra can be used for describing and formalizing transformations (abstract workflows) of spatial information with GIS functions. 
 
 * *TransformationAlgebra.g4* contains the antlr4 grammar (under development).
-* *ParseTA.py* contains a parse script that parses the lines written in *test.txt* in terms of the algebra, and turns workflows into a typed form.
+* *ParseTA.py* contains a parse script that parses each line written in *test.txt* in terms of the algebra, and turns each parse tree into a workflow into a typed form. The typed workflows are stored in json format into *test.json*.
 
 ## Usage of grammar witrh antlr4 to compile parser
 given: grammar.g4
