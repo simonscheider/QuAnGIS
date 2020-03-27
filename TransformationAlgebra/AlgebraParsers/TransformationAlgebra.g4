@@ -1,8 +1,12 @@
 	grammar TransformationAlgebra;
-	// Examples:
-	//ratio fcont interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht size pi1 interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht
-	//sigmae objectregions x object y
 	
+	/*
+    * This grammar can be used to parse strings of the Geo-Analytical Transformation Algebra. Each string is an abstract representation of a GIS workflow.
+	*
+	* Example strings:
+	* ratio fcont interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht size pi1 interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht
+	* sigmae objectregions x object y
+	*/
 	
      /*
      * Parser Rules
@@ -15,7 +19,7 @@
 	
 	
 	
-	//value rules
+	//Value rules
 	countv : COUNT o | GET  count | COUNTV ; 
 	ratiov : FCONT lint | SIZE l  
 		| RATIO ratiov WHITESPACE ratiov 
@@ -86,44 +90,55 @@
 	lbooll : LVIS l WHITESPACE l WHITESPACE oint  | SIGMAE lbooll WHITESPACE BOOLV ; 	
 	
 		
-	
-	//Group by functions		
+	//Group by superfunction		
 	groupbyaggord : GROUPBYMIN |	GROUPBYMAX;
 	
 	/*
      	* Lexer Rules
-     	*/
-	//Functions: 	
-	AVG : 'avg ' ;
+     */
+	//Functions:
+	
+ 	//Value Derivations
+	RATIO : 'ratio '  ;
+	
+	// Statistical operations
+	AVG : 'avg ' ; 
 	MIN : 'min ' ;
 	MAX : 'max ' ;
-	SUM : 'sum ' ;
+	
+	// Aggregations of collections
 	COUNT : 'count ';
+	SIZE : 'size ';
+	MERGE : 'merge ';
+	
+	//Conversions
 	REIFY : 'reify ' ;
 	DEIFY : 'deify ';
 	GET : 'get ' ;
 	INVERT: 'invert ';
 	REVERT: 'revert ';
-	MERGE : 'merge ';
+	
+	//Amount operations
 	FCONT :  'fcont ' ;
 	OCONT :  'ocont ' ;
-	SIZE : 'size ';
-	RATIO : 'ratio '  ;
-	INTERPOL : 'interpol ' ;
-	PI1 : 'pi1 ' ;
-	PI2 : 'pi2 ' ;
-	SIGMAE : 'sigmae '  ; // =
-	SIGMASE : 'sigmale '  ; // <=
-	BOWTIE : 'bowtie ' ;
-	BOWTIESTAR : 'bowtie* ';
-	BOWTIERATIO : 'bowtie_ratio ';	
-	GROUPBYAVG : 'groupby_avg ' ;
+	
+	//Relational operations
+	PI1 : 'pi1 ' ; //project 1
+	PI2 : 'pi2 ' ; //project 2
+	SIGMAE : 'sigmae '  ; //Select  =
+	SIGMASE : 'sigmale '  ; //Select <=
+	BOWTIE : 'bowtie ' ; //Subset relation
+	BOWTIESTAR : 'bowtie* '; //Join quality with quantifed relation
+	BOWTIERATIO : 'bowtie_ratio ';	//Join two qualities
+	GROUPBYAVG : 'groupby_avg ' ; //Group by
 	GROUPBYSUM : 'groupby_sum ' ;
 	GROUPBYMIN : 'groupby_min ' ;
 	GROUPBYMAX : 'groupby_max ' ;
 	GROUPBYSIZE : 'groupby_size ' ;
 	GROUPBYCOUNT : 'groupby_count ' ;
 	
+	//Geometric transformations
+	INTERPOL : 'interpol ' ;
 	ODIST : 'odist ' ;
 	LDIST : 'ldist ';
 	LODIST : 'lodist ' ;
@@ -132,7 +147,7 @@
 	NDIST : 'ndist ' ;
 	LVIS : 'lvis ' ;
 	
-	//Data:
+	//Data inputs:
 	DATAPM : 'pointmeasures ' KEYWORD ;
 	DATAAMOUNT  :  'amountpatches ' KEYWORD ;
   	DATACONTOUR :  'contour '  KEYWORD  ;
@@ -152,8 +167,7 @@
 	
 	
 	
-	
-	
+	//Basic lexer rules
 	DATAV : [0-9]+ ;     
     WHITESPACE : ' ';	
 	KEYWORD : ('a'..'z' | 'A'..'Z' | '-' | '_')+ ; // used for naming data
