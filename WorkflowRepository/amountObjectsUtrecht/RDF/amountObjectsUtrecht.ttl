@@ -21,23 +21,23 @@ _:wf1 a wf:Workflow;
 	wf:edge _:wf1_1, _:wf1_2, _:wf1_3,_:wf1_4, _:wf1_5.
 
 # Workflow nodes
-_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
+_:wf1_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
 		wf:input1 pdok:cbs-gebiedsindelingen;
 		wf:output _:utrecht0.
-_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+_:wf1_2 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
 		wf:input1 _:utrecht0;
 		wf:output _:utrecht.
 		
-_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm>;
+_:wf1_3 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm>;
 		wf:input1 pdok:cbs-wijken-en-buurten;
 		wf:input2 _:utrecht;
 		wf:output _:neighborhoodsutrecht0.
 		
-_:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+_:wf1_4 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
 		wf:input1 _:neighborhoodsutrecht0;		
 		wf:output _:neighborhoodsutrecht.
 		
-_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm>;
+_:wf1_5 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm>;
 		wf:input1 pdok:cbs-vierkantstatistieken;
 		wf:input2 _:neighborhoodsutrecht;
 		wf:output _:countneighborhoodsutrecht.

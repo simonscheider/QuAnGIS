@@ -1,15 +1,17 @@
 #-------------------------------------------------------------------------------
-# Name:        workflowAnalaysis
-# Purpose:      Analyse workflows in RDF, linking toolnodes with tooldescriptions
+# Name:        workflowAnalysis
+# Purpose:     Analyse some workflow in RDF, linking toolnodes with tooldescriptions
 #
 # Author:      Schei008
 #
 # Created:     26-03-2020
 # Copyright:   (c) Schei008 2020
-# Licence:     <your licence>
+# Licence:     MIT
 #-------------------------------------------------------------------------------
 
 import rdflib
+import logging
+#logging.basicConfig()
 import os
 from pprint import pprint
 
@@ -29,30 +31,30 @@ def load_RDF( g, fn ):
     n_triples(g)
     return g
 
+def getTooldescriptions(toolfile):
+    print("load tool descriptions:")
+    g = rdflib.Graph()
+    load_RDF(g, toolfile)
+    return g
 
 
 def getWorkflowGraph(wffile):
     """Reads a separate workflow graph for a workflow file"""
-    print("get workflow graph: "+wffile)
+    print("load workflow graph:")
     g = rdflib.Graph()
     gout = rdflib.Graph()
     g = load_RDF(g, wffile)
+    #Here we substitute ordered inputs with a single input property to make search easier
     input  = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#input")
     input1 = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#input1")
     input2 = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#input2")
+    input3 = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#input3")
     for s,p,o in g:
-        if p == input1 or p == input2:
+        if p == input1 or p == input2 or p == input3:
             gout.add((s,input,o))
         else:
             gout.add((s,p,o))
     return gout
-
-
-
-
-
-
-    return g
 
 
 def getNeighbours(wg, n, forward=True):
@@ -85,72 +87,62 @@ def getRoot(wg):
     while (len(objects)>0):
         start = objects[0]
         objects = getNeighbours(wg,start)
-    print('Root: '+ start)
+    print('Root of the workflow: '+ start)
     return start
 
 def traversetools(wg, root, toolgraph):
-    implements = rdflib.URIRef("http://geographicknowledge.de/vocab/GISTools.rdf#implements")
+    applicationOf = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#applicationOf")
     nodes = getNeighbours(wg,root,forward=False)
     if len(nodes) > 0:
         node = nodes[0]
-        tool = wg.value(node, implements)
-        print tool
+        tool = wg.value(node, applicationOf)
         describeTool(tool, toolgraph)
         inputs = getNeighbours(wg,node,forward=False)
         for i in inputs:
             traversetools(wg, i, toolgraph)
 
 
-def getlist(node,g):
-    print node
-    first = rdflib.URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#first")
-    rest = rdflib.URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#rest")
-    f = g.value(node, first)
-    print f
-    if g.value(node, rest):
-        getlist(g.value(node, rest),g)
-
-
 
 def describeTool(tool, toolgraph):
+    print "... Tool:"
+    print tool
     first = rdflib.URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#first")
+    applicationOf = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#applicationOf")
+    edge = rdflib.URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#edge")
     implements = rdflib.URIRef("http://geographicknowledge.de/vocab/GISTools.rdf#implements")
     algebraex = rdflib.URIRef("http://geographicknowledge.de/vocab/GISTools.rdf#algebraexpression")
-    toolimplementations = toolgraph.objects(subject=tool, predicate=implements)
+
+    toolimplementations = []
+    print "Available tool descriptions:"
+    toolworkflows = []
     #toolimplementations2 = toolgraph.triples((None, first, tool))
-    for i in toolimplementations:
+    for t in toolgraph.subjects(predicate=edge, object=None):
+        if (t, edge/applicationOf, tool) in toolgraph:
+            if t not in toolworkflows:
+                print "... as part of larger workflow: " + t
+                toolworkflows.append(t)
+                for tt in toolgraph.objects(subject=t, predicate=implements):
+                    print "(typed tool: "+tt +")"
+                    print toolgraph.value(tt, algebraex)
+    for i in toolgraph.objects(subject=tool, predicate=implements):
+        print "... as single tool:"
         print toolgraph.value(i, algebraex)
+        break
 
 
-
-
-
-def graph_to_file( g, output_filepath = None ):
-    """ Serializes graph g to an XML/RDF file """
-    if not output_filepath:
-        _outfn = 'output/workflows_output.rdf'
-    else: _outfn = output_filepath
-    g.serialize( _outfn )
-    print("Written "+str(len(g))+" triples to " + _outfn)
-
-
-
-path = r"C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS"
+path = "../" #data needs to be accessed one folder up in QuAnGIS
 def main():
-    g = rdflib.Graph()
-    toolgraph = load_RDF( g, os.path.join(path,"ToolRepository/ToolDescription_TransformationAlgebra.ttl") )
-    wfg = getWorkflowGraph(os.path.join(path,"WorkflowRepository/amountNoiseAmsterdam/RDF/noiseProPortionAmsterdam.ttl"))
+    #First we load tool descriptions
+    toolgraph =getTooldescriptions(os.path.join(path,"ToolRepository/ToolDescription_TransformationAlgebra.ttl"))
+    #Now we load workflows
+    #wfg = getWorkflowGraph(os.path.join(path,"WorkflowRepository/amountNoiseAmsterdam/RDF/noiseProPortionAmsterdam.ttl"))
+    #wfg = getWorkflowGraph(os.path.join(path,"WorkflowRepository/amountNoiseAmsterdam/RDF/noisePortionAmsterdam.ttl"))
+    #wfg = getWorkflowGraph(os.path.join(path,"WorkflowRepository/amountFieldUtrecht/RDF/amountFieldUtrecht.ttl"))
+    wfg = getWorkflowGraph(os.path.join(path,"WorkflowRepository/amountObjectsUtrecht/RDF/amountObjectsUtrecht.ttl"))
+    #getting the root node of the workflow
     root = getRoot(wfg)
+    #Traversing tools in the workflow and deting their descriptions
     traversetools(wfg, root, toolgraph)
-    first = rdflib.URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#first")
-    rest = rdflib.URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#rest")
-    print "nd now something completely different \n"
-    for i in toolgraph.subjects(predicate= first, object=None):
-        if (None, rest, i) not in toolgraph:
-            getlist(i,toolgraph)
-
-
-
 
 
 

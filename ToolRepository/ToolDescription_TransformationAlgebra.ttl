@@ -10,10 +10,16 @@
 
 #### Select layer by attribute
 tools:FullSelectLayerByAttribute tools:implements tools:SelectLayerByAttributeObjects, tools:SelectFeaturesContourToExistenceVector,tools:SelectFeaturesCoverageToExistenceVector;
-    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
-    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ) ;
+    wf:edge _:wf1_1, _:wf1_2; 
+	wf:source _:in11;   
     rdfs:label "a SQL query to select features matching a selection criteria.You build a query expression to generate the subset. You can query a dataset based on a field in a layer or a table. Using this selection a new Feature dataset is created with only the selected features using the Copy Features tool. This feature dataset represents all the area's that denounce the presence of a certain criteria".
 #### Select by attribute is always followed by copy features (treated as one tool in the annotation
+_:wf1_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
+		wf:input1 _:in11;
+		wf:output _:out11.
+_:wf1_2 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>  ;
+	wf:input1 _:out11;
+		wf:output _:out12.
 
 #### Object selection variant, needs a nominal attribute
 tools:SelectLayerByAttributeObjects    
@@ -37,8 +43,15 @@ tools:SelectFeaturesCoverageToExistenceVector
     
 #### Select layer by location
 tools:FullSelectLayerByLocation tools:implements tools:SelectLayerByLocationObjects;
-rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ) .   
+    wf:edge _:wf2_1, _:wf2_2; 
+	wf:source _:in211, _:in212. 
+_:wf2_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
+	wf:input1 _:in211;
+	wf:input2 _:in212;
+	wf:output _:out21.
+_:wf2_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
+	wf:input1  _:out21;
+	wf:output  _:out22.	
     
 tools:SelectLayerByLocationObjects     
 	wf:input1 [ a ccd:ObjectVector ];
@@ -127,9 +140,15 @@ tools:LocalMapAlgebraSubOrder rdfs:label "Builds and executes a Local Map Algebr
     wf:output [ a ccd:FieldRaster, ccd:BooleanA ];
    tools:algebraexpression "sigmale field x ordinal y".
 
-tools:RasterToContour tools:implements tools:RasterToContourInterval ;
-    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/reclassify.htm> ;
-    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> ) .
+tools:RasterToContour tools:implements tools:RasterToContourInterval;
+    wf:edge _:wf3_1, _:wf3_2; 
+	wf:source _:in31. 
+_:wf3_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/reclassify.htm> ;
+	wf:input1 _:in31;
+	wf:output _:out31.
+_:wf3_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> ;
+	wf:input1  _:out31;
+	wf:output  _:out32.	
 
 tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour dataset. The raster is first reclassified to an ordinal raster, and then converted to a polygon layer.";
     wf:input1 [ a ccd:FieldRaster, ccd:IntervalA ];
@@ -138,9 +157,17 @@ tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour d
 
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
 
-tools:ZonalStatistics tools:implements tools:ZonalStatisticsSize, tools:ZonalStatisticsMeanInterval ;
-    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
-    rdf:rest ( <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm> ) .
+tools:ZonalStatistics tools:implements tools:ZonalStatisticsSize, tools:ZonalStatisticsMeanInterval ;    
+    wf:edge _:wf4_1, _:wf4_2; 
+	wf:source _:in411, _:in412. 
+_:wf4_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
+	wf:input1 _:in411;
+	wf:input2 _:in412;
+	wf:output _:out41.
+_:wf4_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm> ;
+	wf:input1  _:out41;
+	wf:input2 _:in412;
+	wf:output  _:out42.	    
     
 tools:ZonalStatisticsSize rdfs:label "Measures the size of a given field raster inside object regions.";
 	wf:input1 [ a ccd:FieldRaster ];
@@ -167,15 +194,27 @@ tools:algebraexpression "bowtie_ratio objects x objects y".
 
 ##from example FieldAmountUtrecht
 
-tools:MakeLayerFromTable tools:implements tools:MakePointMeasuresFromTable ;
-    rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/make-xy-event-layer.htm> ;
-    rdf:rest ( 
-    	rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/project.htm>
-    	rdf:rest (
-    		rdf:first <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
-    		rdf:rest (<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/excel-to-table.htm>)
-    		)	   
-    	)  .
+tools:MakeLayerFromTable tools:implements tools:MakePointMeasuresFromTable ;   
+    wf:edge _:wf5_1, _:wf5_2, _:wf5_3,_:wf5_4;
+    wf:source _:in51.
+    
+  	_:wf5_1  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/make-xy-event-layer.htm>;
+		wf:input1 _:in51;	
+		wf:output _:out51.
+		
+	_:wf5_2  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/project.htm>;
+		wf:input1 _:out51	;
+		wf:output _:out52.
+		
+	_:wf5_3  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>;
+		wf:input1 _:out52	;
+		wf:input2 _:temp ;
+		wf:output _:out53.	
+		
+	_:wf5_4  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/excel-to-table.htm>;
+		wf:input1 _:in51	;
+		wf:output _:temp. 
+ 
     
 tools:MakePointMeasuresFromTable rdfs:label "Makes a layer of pointmeasures from some XY table.";
 wf:input1 [ a  ccd:PointMeasures, ccd:IntervalA ];

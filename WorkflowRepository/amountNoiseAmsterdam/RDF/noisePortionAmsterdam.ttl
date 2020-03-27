@@ -20,28 +20,28 @@ _:wf3 a wf:Workflow;
 	wf:source <https://maps.amsterdam.nl/geluid>;	#Amsterdam noise map
 	wf:edge _:wf3_1, _:wf3_2, _:wf3_3,_:wf3_4, _:wf3_5, _:wf3_6.
 	
-_:wf3_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm>;
+_:wf3_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm>;
 		wf:input1 <https://maps.amsterdam.nl/geluid>; #noise map	
 		wf:output _:noise_raster.
 		
-_:wf3_2  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
+_:wf3_2  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm>;
 		wf:input1 pdok:cbs-gebiedsindelingen;
 		wf:output _:amsterdam_selection.
 		
-_:wf3_3  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
+_:wf3_3  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm>;
 		wf:input1 _:amsterdam_selection;		
 		wf:output _:amsterdam_shp.	
 		
-_:wf3_4  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/clip.htm>;
+_:wf3_4  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/clip.htm>;
 		wf:input1 _:amsterdam_shp;
 		wf:input2 _:noise_raster;			
 		wf:output _:noise_amsterdam.
 		
-_:wf3_5  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>;
+_:wf3_5  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>;
 		wf:input1 _:noise_amsterdam;				
 		wf:output _:noisy_amsterdam.
 		
-_:wf3_6  tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm>;
+_:wf3_6  wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm>;
 		wf:input1 _:noisy_amsterdam;				
 		wf:output _:noisy_amsterdam_shp.		
 		
