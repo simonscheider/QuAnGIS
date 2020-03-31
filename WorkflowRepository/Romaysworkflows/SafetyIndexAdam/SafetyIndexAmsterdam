@@ -1,0 +1,48 @@
+
+
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+@prefix ois: <https://data.amsterdam.nl/>.
+
+#author: Romay Evers
+
+# Workflow Safety Index per district in Amsterdam
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow ;
+	rdfs:comment "What is the Safety Index per district in Amsterdam?"@en;
+	wf:source pdok:cbs-gebiedsindelingen; #municipalities
+	wf:source pdok:cbs-wijken-en-buurten; #districtregions
+	wf:source ois:data.amsterdam.nl/specials/dashboard/dashboard-veiligheid/d6006969-9d2a-413d-80a4-308932ed36f8/; #Safetyindex
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5, _:wf1_6, _:wf1_7. 
+
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
+	wf:input pdok:cbs-gebiedsindelingen ; #ccd:coverage
+	wf:output _:Amsterdam0. #ccd:existencevector
+
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
+	wf:input _:Amsterdam0 ; #ccd:existencevector
+	wf:output _:Amsterdam. #ccd:existencevector
+
+_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
+	wf:input1 _:Amsterdam ; #ccd:existencevector
+	wf:input2 pdok:cbs-wijken-en-buurten ; #ccd:existencevector
+	wf:output _:districtsAmsterdam0. #ccd:objectvector
+
+_:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
+	wf:input _:districtsAmsterdam0 ; #ccd:objectvector
+	wf:output _:districtsAmsterdam. #ccd:objectvector
+
+_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
+	wf:input1 _:districtsAmsterdam
+	wf:input2 _:safetyindex
+	wf:output _:safetyindexperdistrictAmsterdam.
