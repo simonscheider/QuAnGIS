@@ -1,7 +1,6 @@
 
 
 
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
@@ -10,19 +9,19 @@
 @prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
 @prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
 @prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
-@prefix dataamsterdam: <https://data.amsterdam.nl/>.
+@prefix maps: <https://maps.amsterdam.nl/>.
 
-#author: Romay Evers
+# @author: Romay Evers
 
-# Workflow Safety Index per district in Amsterdam
+# Workflow Mean distance to tram station per neighborhood in Amsterdam
 # Workflow metadata (result and data sources)
 
 _:wf1 a wf:Workflow ;
-	rdfs:comment "What is the Safety Index per district in Amsterdam?"@en;
+	rdfs:comment "What is the mean distance to a tram station per neighborhood in Amsterdam?"@en;
 	wf:source pdok:cbs-gebiedsindelingen; #municipalities
-	wf:source pdok:cbs-wijken-en-buurten; #districtregions
-	wf:source dataamsterdam:specials/dashboard/dashboard-veiligheid/d6006969-9d2a-413d-80a4-308932ed36f8/; #Safetyindex
-	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5. 
+	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
+	wf:source maps:trammetro; #tramstations
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5, _:wf1_6, _:wf1_7. 
 
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
@@ -36,13 +35,27 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
 	wf:input1 _:Amsterdam ; #ccd:existencevector
 	wf:input2 pdok:cbs-wijken-en-buurten ; #ccd:existencevector
-	wf:output _:districtsAmsterdam0. #ccd:objectvector
+	wf:output _:neighborhoodAmsterdam0. #ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
-	wf:input _:districtsAmsterdam0 ; #ccd:objectvector
-	wf:output _:districtsAmsterdam. #ccd:objectvector
+	wf:input _:neighborhoodAmsterdam0 ; #ccd:objectvector
+	wf:output _:neighborhoodAmsterdam. #ccd:objectvector
 
-_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:districtsAmsterdam ;
-	wf:input2 dataamsterdam:specials/dashboard/dashboard-veiligheid/d6006969-9d2a-413d-80a4-308932ed36f8/ ;
-	wf:output _:safetyindexperdistrictAmsterdam.
+_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
+	wf:input2 maps:trammetro ; #ccd:objectvector
+	wf:output1 _:outputbackdirectionraster ; 
+	wf:output2 _:outputdirectionraster ;
+	wf:output3 _:euclideandistanceneighb. #ccd:fieldraster
+
+_:wf1_6 tools:implements <https://desktop.arcgis.com/en/arcmap/latest/tools/spatial-analyst-toolbox/zonal-statistics-as-table.htm> ;
+	wf:input2 _:euclideandistanceneighb ;	#ccd:fieldraster
+	wf:output _:meandistancetram.	#ccd:lattice
+
+_:wf1_7 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
+	wf:input1 _:meandistancetram ; #ccd:table? / #ccd:lattice
+	wf:input2 _:neighborhoodAmsterdam ; #ccd:objectvector
+	wf:output _:meandistancetramneighb. 
+
+
+
+
