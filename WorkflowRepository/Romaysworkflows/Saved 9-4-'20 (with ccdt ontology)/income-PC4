@@ -1,0 +1,36 @@
+ 
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+@prefix maps: <https://maps.amsterdam.nl/open_geodata/>.
+@prefix data: <https://data.amsterdam.nl/>.
+
+# @author Romay Evers
+
+#Workflow the average income per PC4 area in Amsterdam
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow;
+	rdfs:comment "What is the average income per PC4 area in Amsterdam?"@en;
+	wf:source maps:?k=192;	#PC4 areas
+	wf:source data:datasets/468V7Fy2ECy-HQ/kerncijfers-wijken/;	#income
+	wf:edge _:wf1_1, _:wf1_2. 
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/union.htm> ;
+	wf:input1 maps:?k=192 ;	#ccd:coverage
+	wf:input2 data:datasets/468V7Fy2ECy-HQ/kerncijfers-wijken/ ;	#ccd:coverage
+	wf:output _:incomeunion.	#ccd:coverage
+
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/dissolve.htm> ;
+	wf:input _:incomeunion ;	#ccd:coverage
+	wf:output _:meanincomepc4.	#ccd:coverage
+
+
+

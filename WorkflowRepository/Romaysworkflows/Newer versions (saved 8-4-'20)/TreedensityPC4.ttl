@@ -1,0 +1,60 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+@prefix maps: <https://maps.amsterdam.nl/>.
+
+# @author Romay Evers
+
+#Workflow the average tree density per PC4 area in Amsterdam
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow;
+	rdfs:comment "What is the average tree density per PC4 area in Amsterdam?"@en;
+	wf:source maps:open_geodata/?k=192;	#PC4 areas
+	wf:source maps:bomen/; #trees
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5, _:wf1_6.
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
+	wf:input1 maps:bomen/ ; #trees1
+	wf:input2 maps:open_geodata/?k=192 ;
+	wf:output _:treesPC41.
+
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
+	wf:input1 maps:bomen/ ; #trees2
+	wf:input2 _:treesPC41 ;
+	wf:output _:treesPC42.
+
+_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
+	wf:input1 maps:bomen/ ; #trees3
+	wf:input2 _:treesPC42 ;
+	wf:output _:treesPC43.
+
+_:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
+	wf:input1 maps:bomen/ ; #trees4
+	wf:input2 _:treesPC43 ;
+	wf:output _:alltreesPC4.
+
+_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #calculate total trees 
+	wf:input _:alltreesPC4 ;
+	wf:output _:alltreesPC4.
+
+_:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-geometry-attributes.htm> ;
+	wf:input _:alltreesPC4 ;
+	wf:output _:alltreesPC4.
+
+_:wf1_7 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #density: calculate field, total trees/geometry 
+	wf:input _:alltreesPC4 ;
+	wf:output _:treedensityPC4.
+
+
+
+
+
+

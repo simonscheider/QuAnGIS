@@ -1,0 +1,35 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+@prefix maps: <https://maps.amsterdam.nl/>.
+
+# @author Romay Evers
+
+#Workflow the average green roof density per PC4 area in Amsterdam
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow;
+	rdfs:comment "What is the average green roof density per PC4 area in Amsterdam?"@en;
+	wf:source maps:open_geodata/?k=192/;	#PC4 areas
+	wf:source maps:groene_daken/; #green roofs
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3.
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/summarize-within.htm> ;
+	wf:input1 maps:open_geodata/?k=192/ ;
+	wf:input2 maps:groene_daken/ ; # removed outliers
+	wf:output _:greenroofsperPC4.
+
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #calculate geometry (km2)
+	wf:input _:greenroofsperPC4 ;
+	wf:output _:greenroofsperPC4.
+
+_:wf1_3 tools:implements  <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #density: amount green roofs / geometry
+	wf:input _:greenroofsperPC4 ;
+	wf:output _:greenroofdensity. 
