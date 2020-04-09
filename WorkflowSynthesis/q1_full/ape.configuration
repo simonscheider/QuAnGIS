@@ -1,12 +1,16 @@
 {
-  "solutions_path": "./q1_sota/sat_solutions.txt",
-  "solution_graphs_folder": "./q1_sota/figs",
-  "tool_annotations_path": "./ToolDescription_ct_fl.json",
-  "ontology_path": "./GISTaxonomy_fl.rdf",
-  "constraints_path": "./q1_sota/constraints.json",
+  "solutions_path": "./q1_full/sat_solutions.txt",
+  "solution_graphs_folder": "./q1_full/figs",
+  "tool_annotations_path": "./ToolDescription.json",
+  "ontology_path": "./GISTaxonomy.rdf",  
+  "constraints_path": "./q1_full/constraints.json",
   "toolsTaxonomyRoot": "Tool",
-  "dataTaxonomyRoot": "DType",
-  "dataSubTaxonomyRoot": "DType",
+  "dataTaxonomyRoot": "",
+  "dataSubTaxonomyRoot": [
+    "CoreConceptQ",
+    "LayerA",
+	"NominalA"
+  ],
   "shared_memory": "true",
   "solution_min_length": "1",
   "solution_max_length": "8",
@@ -15,15 +19,21 @@
   "number_of_generated_graphs": "20",
   "inputs": [
     {
-      "DType": ["PointA"]
+	"CoreConceptQ": ["FieldQ"] 
+    "LayerA": ["PointA"],
+	"NominalA": ["IntervalA"]      
     },
     {
-      "DType": ["VectorRegionA"]
+	"CoreConceptQ": ["ObjectQ"] 
+    "LayerA": ["TessellationA", "VectorA"],
+	"NominalA": []    
     }
   ],
   "outputs": [
     {
-      "DType": ["VectorRegionA"]
+    "CoreConceptQ": ["ObjectQ"] 
+    "LayerA": ["TessellationA", "VectorA"],
+	"NominalA": ["IntervalA"] 
     }
   ],
   "debug_mode": "true",
