@@ -5,6 +5,7 @@
   "ontology_path": "./GISTaxonomy.rdf",  
   "constraints_path": "./q1_full/constraints.json",
   "toolsTaxonomyRoot": "Tool",
+  "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
   "dataTaxonomyRoot": "",
   "dataSubTaxonomyRoot": [
     "CoreConceptQ",
@@ -19,21 +20,21 @@
   "number_of_generated_graphs": "20",
   "inputs": [
     {
-	"CoreConceptQ": ["FieldQ"], 
-    "LayerA": ["PointA"],
-	"NominalA": ["IntervalA"]      
+	"CoreConceptQ": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"], 
+    "LayerA": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointA"],
+	"NominalA": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"]      
     },
     {
-	"CoreConceptQ": ["ObjectQ"],
-    "LayerA": ["TessellationA", "VectorA"],
+	"CoreConceptQ": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"],
+    "LayerA": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA", "http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"],
 	"NominalA": []    
     }
   ],
   "outputs": [
     {
-    "CoreConceptQ": ["ObjectQ"], 
-    "LayerA": ["TessellationA", "VectorA"],
-	"NominalA": ["IntervalA"] 
+    "CoreConceptQ": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"], 
+    "LayerA": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA", "http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"],
+	"NominalA": ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"] 
     }
   ],
   "debug_mode": "true",

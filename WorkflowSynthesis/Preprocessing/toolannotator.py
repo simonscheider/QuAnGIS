@@ -72,10 +72,13 @@ def n_triples( g, n=None ):
 
 
 def shortURInames(URI):
-    if "#" in URI:
-        return URI.split('#')[1]
+    if shortenURIs:
+        if "#" in URI:
+            return URI.split('#')[1]
+        else:
+            return os.path.basename(os.path.splitext(URI)[0])
     else:
-        return os.path.basename(os.path.splitext(URI)[0])
+        return URI
 
 
 def getinoutypes(g, predicate, subject, project, dimix):
@@ -123,7 +126,7 @@ def getToollistasDict(toolsinrdf, project, dimnodes):
         print(toolobj)
     return toollist
 
-
+shortenURIs = False
 def main(toolsinrdf, project, dimnodes):
     """Read tool annotations from TTL file, convert it to a JSON format that
     APE understands, and write it to a file."""
