@@ -19,19 +19,19 @@
   "number_of_generated_graphs": "20",
   "inputs": [
     {
-	"CoreConceptQ": ["FieldQ"] 
+	"CoreConceptQ": ["FieldQ"], 
     "LayerA": ["PointA"],
 	"NominalA": ["IntervalA"]      
     },
     {
-	"CoreConceptQ": ["ObjectQ"] 
+	"CoreConceptQ": ["ObjectQ"],
     "LayerA": ["TessellationA", "VectorA"],
 	"NominalA": []    
     }
   ],
   "outputs": [
     {
-    "CoreConceptQ": ["ObjectQ"] 
+    "CoreConceptQ": ["ObjectQ"], 
     "LayerA": ["TessellationA", "VectorA"],
 	"NominalA": ["IntervalA"] 
     }
