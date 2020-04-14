@@ -81,7 +81,7 @@ def shortURInames(URI):
         return URI
 
 
-def getinoutypes(g, predicate, subject, project, dimix):
+def getinoutypes(g, predicate, subject, project, dimix, dim):
     """Returns a list of names of types of some tool input or output for a given dimension"""
     output = g.value(predicate = predicate, subject = subject, any = False)
     if not output:
@@ -92,7 +92,10 @@ def getinoutypes(g, predicate, subject, project, dimix):
             if project[outputtype][dimix] is not None:
                 outputtypes.append(project[outputtype][dimix])      
 
-    return [shortURInames(t) for t in outputtypes]
+    out = [shortURInames(t) for t in outputtypes]
+    if out == []: #In case there is no type, just use the highest level type of the dimension
+        out = [shortURInames(dim)]
+    return out
 
 
 def getToollistasDict(toolsinrdf, project, dimnodes):
@@ -109,16 +112,16 @@ def getToollistasDict(toolsinrdf, project, dimnodes):
             if trdf.value(subject=t, predicate=p, default=None) != None:
                 d = {}
                 for ix,dim in enumerate(dimnodes):      
-                    d[shortURInames(dim)] = getinoutypes(trdf, p, t, project, ix)                
+                    d[shortURInames(dim)] = getinoutypes(trdf, p, t, project, ix, dim)                
                 inputs += [d]
         
         d = {}                
         for ix,dim in enumerate(dimnodes):
-            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix)         
+            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix, dim)         
         outputs = [d]
         
         name = shortURInames(t)
-        toolobj ={'id': name, 'label': name}
+        toolobj ={'id': t, 'label': name}
         toolobj['inputs']= inputs
         toolobj['outputs']= outputs
         toolobj['taxonomyOperations'] = [name]
@@ -126,7 +129,7 @@ def getToollistasDict(toolsinrdf, project, dimnodes):
         print(toolobj)
     return toollist
 
-shortenURIs = False
+shortenURIs = True
 def main(toolsinrdf, project, dimnodes):
     """Read tool annotations from TTL file, convert it to a JSON format that
     APE understands, and write it to a file."""
