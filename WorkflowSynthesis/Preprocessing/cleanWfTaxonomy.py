@@ -22,6 +22,8 @@ import os
 
 TOOLS=rdflib.Namespace("http://geographicknowledge.de/vocab/GISTools.rdf#")
 ADA = rdflib.Namespace("http://geographicknowledge.de/vocab/AnalysisData.rdf#")
+CCD= rdflib.Namespace("http://geographicknowledge.de/vocab/CoreConceptData.rdf#")
+EXT= rdflib.Namespace("http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#")  
 
 """Helper stuff"""
 def load_rdf( g, rdffile, format='turtle' ):
@@ -48,6 +50,26 @@ def n_triples( g, n=None ):
         print(( '  Triples: +'+str(len(g)-n) ))
     return len(g)
 
+#Checks if concept is subsumed by concept in graph
+#def subsumedby(concept, superconcept, graph):
+#    out = False    
+#    for s in graph.objects(subject=concept, predicate=RDFS.subClassOf):
+#        if s == superconcept:
+#            out= True            
+#        else:
+#            out = subsumedby(s,superconcept,graph)
+#        if out:
+#            break
+#    return out
+#        
+#def testDimensionality(concept,dimnodes,graph):
+#    nodim = 0
+#    for dim in dimnodes:
+#        if subsumedby(concept, dim, graph):
+#            nodim+=1
+#    return nodim
+                              
+
 def cleanOWLOntology(ontologyfile= 'CoreConceptData_ct.ttl'): #This takes the combined types version as input
     print('Clean OWL ontology!')
     ccdontology = load_rdf(rdflib.Graph(),ontologyfile)
@@ -58,12 +80,15 @@ def cleanOWLOntology(ontologyfile= 'CoreConceptData_ct.ttl'): #This takes the co
     taxonomy += ccdontology.triples( (None, RDFS.subClassOf, None) ) #Keeping only subClassOf statements and classes
     taxonomy += ccdontology.triples( (None, RDF.type, OWL.Class) )
     n_triples(taxonomy)
-    print('Cleaning blank node triples and loops:')
+    print('Cleaning blank node triples and loops, as well as nodes intersecting more than 1 dimenion')
     taxonomyclean = rdflib.Graph()
-    for (s,p,o) in taxonomy: #Removing triples that stem from blanknodes as well as loops
+    for (s,p,o) in taxonomy: #Removing triples that stem from blanknodes as well as loops        
         if type(s) != BNode and type(o) != BNode:
-            if s != o and  s!= OWL.Nothing:
-                taxonomyclean.add((s,p,o))
+            if s != o and  s!= OWL.Nothing:                 
+                #if p==RDFS.subClassOf: #Removing nodes intersecting with more or less than one of the given dimensions
+                #   if testDimensionality(s,dimnodes,taxonomy)==1:
+                taxonomyclean.add((s,p,o))             
+            
     n_triples(taxonomyclean)
     #add common upper class for all data types, including spatial attributes and spatial data sets
     taxonomyclean.add((ADA.ValueList,RDFS.subClassOf,TOOLS.DType))

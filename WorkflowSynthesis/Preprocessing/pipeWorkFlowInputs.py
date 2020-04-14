@@ -15,6 +15,10 @@ import cleanWfTaxonomy, toolannotator, projectSemDimensions
 import rdflib
 
 CCD= rdflib.Namespace("http://geographicknowledge.de/vocab/CoreConceptData.rdf#")
+                      
+
+    
+                      
 
 def pipe(tooldescfile = 'ToolDescription.ttl', ontologyfile = 'CoreConceptData.ttl'):
     
@@ -26,11 +30,11 @@ def pipe(tooldescfile = 'ToolDescription.ttl', ontologyfile = 'CoreConceptData.t
     #print(project)    
     
     final = rdflib.Graph()
-    final.parse('CoreConceptData_tax.ttl', format='turtle')
+    final.parse('CoreConceptData_tax_core.ttl', format='turtle')
     final.parse('ToolDescription_tax.ttl', format='turtle')
     final.serialize(destination='GISTaxonomy.rdf', format = "application/rdf+xml")
     #Then generates a JSON version of the tooldescription for the full taxonomy (to be used with GISTaxonomy.rdf)
-    toolannotator.main(tooldescfile, project, dimnodes)
+    toolannotator.main(tooldescfile, project, dimnodes, mainprefix=CCD)
    
    
 def main():

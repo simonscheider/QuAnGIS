@@ -29,6 +29,7 @@ import json
 
 TOOLS=rdflib.Namespace("http://geographicknowledge.de/vocab/GISTools.rdf#")
 WF= rdflib.Namespace("http://geographicknowledge.de/vocab/Workflow.rdf#")
+CCD= rdflib.Namespace("http://geographicknowledge.de/vocab/CoreConceptData.rdf#")
 
 # def prettify(elem):
 #     """Return a pretty-printed XML string for the Element.
@@ -81,7 +82,7 @@ def shortURInames(URI):
         return URI
 
 
-def getinoutypes(g, predicate, subject, project, dimix, dim):
+def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix):
     """Returns a list of names of types of some tool input or output for a given dimension"""
     output = g.value(predicate = predicate, subject = subject, any = False)
     if not output:
@@ -91,14 +92,14 @@ def getinoutypes(g, predicate, subject, project, dimix, dim):
         if outputtype is not None and outputtype in project:
             if project[outputtype][dimix] is not None:
                 outputtypes.append(project[outputtype][dimix])      
-
-    out = [shortURInames(t) for t in outputtypes]
+                
+    out = [shortURInames(t) if str(mainprefix) in t else t for t in outputtypes]
     if out == []: #In case there is no type, just use the highest level type of the dimension
         out = [shortURInames(dim)]
     return out
 
 
-def getToollistasDict(toolsinrdf, project, dimnodes):
+def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
     """Read the tool annotations from the TTL file, and return a string
     representation in JSON format that APE understands."""
     toollist= {'functions': []}
@@ -112,12 +113,12 @@ def getToollistasDict(toolsinrdf, project, dimnodes):
             if trdf.value(subject=t, predicate=p, default=None) != None:
                 d = {}
                 for ix,dim in enumerate(dimnodes):      
-                    d[shortURInames(dim)] = getinoutypes(trdf, p, t, project, ix, dim)                
+                    d[shortURInames(dim)] = getinoutypes(trdf, p, t, project, ix, dim,mainprefix)                
                 inputs += [d]
         
         d = {}                
         for ix,dim in enumerate(dimnodes):
-            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix, dim)         
+            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix, dim,mainprefix)         
         outputs = [d]
         
         name = shortURInames(t)
@@ -130,11 +131,11 @@ def getToollistasDict(toolsinrdf, project, dimnodes):
     return toollist
 
 shortenURIs = True
-def main(toolsinrdf, project, dimnodes):
+def main(toolsinrdf, project, dimnodes, mainprefix=CCD):
     """Read tool annotations from TTL file, convert it to a JSON format that
     APE understands, and write it to a file."""
 
-    dict_form = getToollistasDict(toolsinrdf, project, dimnodes)
+    dict_form = getToollistasDict(toolsinrdf, project, dimnodes, mainprefix)
     outpath = os.path.splitext(toolsinrdf)[0]+".json"
     with open(outpath, 'w') as f:
         json.dump(dict_form, f, sort_keys=True, indent=2)

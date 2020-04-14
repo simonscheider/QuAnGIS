@@ -141,6 +141,7 @@ Any node that is subsumed by at least one tree can be projected to the closest p
 The index of the list indicates the dimension. If a node cannot be projected to a given dimension, then project maps to None."""
 def project2Dimensions(nodes, listoftrees):    
     project = {}
+    notcore = set()
     for n in nodes:
         project[n] = []              
         for idx,tree in enumerate(listoftrees):            
@@ -151,11 +152,12 @@ def project2Dimensions(nodes, listoftrees):
                 p = n
                 #p needs to belong to the core of the given dimension (tree)
                 while not dimcore(p,parent,idx, listoftrees):
+                    notcore.add(p)
                     p = parent[p]
             project[n].append(p)
     #remove nodes that cannot be projected in any way
-    project = {key:val for key, val in project.items() if set(val) != {None}}
-    return project
+    project = {key:val for key, val in project.items() if set(val) != {None}}     
+    return (project,notcore)
 
 """Determines whether a given node is at the core of a dimension (i.e. not subsumed by any other dimension)"""      
 def dimcore(n,parent,idxc, listoftrees) :
@@ -194,12 +196,17 @@ def test(project):
             print("node not present!")
             
         
-        
+def getcoretaxonomy(g, notcore, out='CoreConceptData_tax_core.ttl'):  
+    outgraph = rdflib.Graph()
+    for (s,p,o) in g.triples( (None, RDFS.subClassOf, None) ):
+        if s not in notcore:
+            outgraph.add((s,p,o))
+    outgraph.serialize(destination=out, format='turtle')     
         
                
         
 """This method takes some (subsumption) taxonomy and a list of supertypes for each dimension. It constructs a tree for each dimension and
- returns a projection of all nodes that intersect with one of these dimensions into the core of the dimension."""      
+ returns a projection of all nodes that intersect with one of these dimensions into the core of the dimension. It also generates a corresponding core taxonomy (containing only core classes for each dimension)"""      
 def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA]):
     """Read taxonomy and generate tree."""
     g = load_rdf(rdflib.Graph(), taxonomy)
@@ -207,9 +214,10 @@ def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.Laye
     listofdimtrees = []
     for dim in dimnodes:
         listofdimtrees.append(getSubsumptionTree2(g,dim,leafnodes)) 
-    project = project2Dimensions(nodes, listofdimtrees)
+    (project,notcore) = project2Dimensions(nodes, listofdimtrees)
     test(project)
-    return project    
+    getcoretaxonomy(g, notcore, out='CoreConceptData_tax_core.ttl')
+    return project
     
     
 
