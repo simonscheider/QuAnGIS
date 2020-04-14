@@ -124,7 +124,7 @@ def getToollistasDict(toolsinrdf, project, dimnodes):
         toolobj ={'id': t, 'label': name}
         toolobj['inputs']= inputs
         toolobj['outputs']= outputs
-        toolobj['taxonomyOperations'] = [name]
+        toolobj['taxonomyOperations'] = [t]
         toollist['functions'].append(toolobj)
         print(toolobj)
     return toollist
