@@ -96,6 +96,10 @@
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainRatioA> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA> .
 
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA>,
+        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
+
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#Point> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial> .
 
@@ -130,8 +134,7 @@
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellationA> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA>,
-        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA>,
-        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA> .
+        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#ZeroExistenceRaster> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#ExistenceRaster> .
@@ -180,10 +183,6 @@
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet> a <http://www.w3.org/2002/07/owl#Class> .
-
-<http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA> a <http://www.w3.org/2002/07/owl#Class> ;
-    rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA>,
-        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
 
 <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA> .

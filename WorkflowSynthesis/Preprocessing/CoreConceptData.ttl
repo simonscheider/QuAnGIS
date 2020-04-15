@@ -515,26 +515,69 @@
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainIntervalA
 :PlainIntervalA rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :IntervalA
+                                                           [ rdf:type owl:Class ;
+                                                             owl:complementOf :RatioA
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
                 rdfs:subClassOf :IntervalA ;
                 rdfs:comment "An interval attribute that is plain/proper"@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainNominalA
 :PlainNominalA rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :NominalA
+                                                          [ rdf:type owl:Class ;
+                                                            owl:complementOf :OrdinalA
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :NominalA ;
                rdfs:comment "A nominal attribute that is plain/proper (not ordinal or boolean)"@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainOrdinalA
 :PlainOrdinalA rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :OrdinalA
+                                                          [ rdf:type owl:Class ;
+                                                            owl:complementOf :IntervalA
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :OrdinalA ;
                rdfs:comment "An ordinal attribute that is plain/proper (not interval)"@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainRatioA
 :PlainRatioA rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :RatioA
+                                                        [ rdf:type owl:Class ;
+                                                          owl:complementOf :CountA
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
              rdfs:subClassOf :RatioA ;
              rdfs:comment "A ratio attribute that is plain/proper"@en .
+
+
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA
+:PlainVectorRegionA rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :RegionA
+                                                               :VectorA
+                                                               [ rdf:type owl:Class ;
+                                                                 owl:complementOf :TessellationA
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :RegionA ,
+                                    :VectorA ;
+                    rdfs:comment "An attribute of a vector region layer that is not a tessellation"@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#Point
@@ -737,18 +780,6 @@
          rdfs:comment "Attribute of some vector data set"@en .
 
 
-###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA
-:VectorRegionA rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( :RegionA
-                                                          :VectorA
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
-               rdfs:subClassOf :RegionA ,
-                               :VectorA ;
-               rdfs:comment "An attribute of a region vector data set"@en .
-
-
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellation
 :VectorTessellation rdf:type owl:Class ;
                     owl:equivalentClass [ owl:intersectionOf ( :Tessellation
@@ -768,8 +799,7 @@
                                            rdf:type owl:Class
                                          ] ;
                      rdfs:subClassOf :TessellationA ,
-                                     :VectorA ,
-                                     :VectorRegionA ;
+                                     :VectorA ;
                      rdfs:comment "An attribute of a vector tessellation"@en .
 
 

@@ -47,6 +47,9 @@
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainRatioA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA> .
 
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA>,
+        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
+
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#Point> rdfs:subClassOf <http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
@@ -65,8 +68,7 @@
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellation> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellationA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA>,
-        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA>,
-        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA> .
+        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
 
 <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA> .
 
@@ -79,9 +81,6 @@
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
-
-<http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA>,
-        <http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#AmountDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
 

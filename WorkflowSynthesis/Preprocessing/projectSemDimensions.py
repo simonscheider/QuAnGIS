@@ -207,7 +207,7 @@ def getcoretaxonomy(g, notcore, out='CoreConceptData_tax_core.ttl'):
         
 """This method takes some (subsumption) taxonomy and a list of supertypes for each dimension. It constructs a tree for each dimension and
  returns a projection of all nodes that intersect with one of these dimensions into the core of the dimension. It also generates a corresponding core taxonomy (containing only core classes for each dimension)"""      
-def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA]):
+def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA], targetfolder='../test'):
     """Read taxonomy and generate tree."""
     g = load_rdf(rdflib.Graph(), taxonomy)
     (nodes,leafnodes)=measureTaxonomy(g)
@@ -216,7 +216,9 @@ def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.Laye
         listofdimtrees.append(getSubsumptionTree2(g,dim,leafnodes)) 
     (project,notcore) = project2Dimensions(nodes, listofdimtrees)
     test(project)
-    getcoretaxonomy(g, notcore, out='CoreConceptData_tax_core.ttl')
+    tax, ext = os.path.splitext(os.path.basename(taxonomy))#'CoreConceptData_tax_core.ttl'
+    coretax = os.path.join(targetfolder,tax+'_core'+ext)
+    getcoretaxonomy(g, notcore, out=coretax)
     return project
     
     

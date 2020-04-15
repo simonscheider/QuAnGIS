@@ -109,8 +109,9 @@ def extractToolOntology(tooldesc='ToolDescription_ct.ttl'):
     return output
 
 
-def main(ontologyfile = 'CoreConceptData.ttl', tooldesc='ToolDescription.ttl', tool_tax_output='ToolDescription_tax.ttl'):
-    dt = 'CoreConceptData_tax.ttl'
+def main(ontologyfile = 'CoreConceptData.ttl', tooldesc='ToolDescription.ttl', targetfolder='../test'):
+    tool_tax_output=os.path.join(targetfolder,'ToolDescription_tax.ttl')
+    dt = os.path.join(targetfolder,'CoreConceptData_tax.ttl')
     tax = cleanOWLOntology(ontologyfile)
     tooltax =extractToolOntology(tooldesc=tooldesc)
     tax.serialize(destination=dt,format = "turtle")

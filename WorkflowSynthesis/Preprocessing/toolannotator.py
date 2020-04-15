@@ -131,12 +131,13 @@ def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
     return toollist
 
 shortenURIs = True
-def main(toolsinrdf, project, dimnodes, mainprefix=CCD):
+def main(toolsinrdf, project, dimnodes, mainprefix=CCD, targetfolder='../test'):
     """Read tool annotations from TTL file, convert it to a JSON format that
     APE understands, and write it to a file."""
 
     dict_form = getToollistasDict(toolsinrdf, project, dimnodes, mainprefix)
-    outpath = os.path.splitext(toolsinrdf)[0]+".json"
+    outpath = os.path.join(targetfolder,os.path.splitext(os.path.basename(toolsinrdf))[0]+".json")
+    #outpath = os.path.splitext(toolsinrdf)[0]+".json"
     with open(outpath, 'w') as f:
         json.dump(dict_form, f, sort_keys=True, indent=2)
 

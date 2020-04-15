@@ -2,8 +2,8 @@
   "solutions_path": "./test/sat_solutions.txt",
   "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
   "solution_graphs_folder": "./test/figs",
-  "tool_annotations_path": "./ToolDescription.json",
-  "ontology_path": "./GISTaxonomy.rdf",  
+  "tool_annotations_path": "./test/ToolDescription.json",
+  "ontology_path": "./test/GISTaxonomy.rdf",  
   "constraints_path": "./test/constraints.json",
   "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",
   "dataTaxonomyRoot": "Attribute",
@@ -15,25 +15,25 @@
   "shared_memory": "true",
   "solution_min_length": "1",
   "solution_max_length": "8",
-  "max_solutions": "20",
+  "max_solutions": "40",
   "number_of_execution_scripts": "0",
-  "number_of_generated_graphs": "20",
+  "number_of_generated_graphs": "40",
   "inputs": [
     {
 	"CoreConceptQ": ["FieldQ"], 
     "LayerA": ["PointA"],
-	"NominalA": ["IntervalA"]      
+	"NominalA": ["PlainIntervalA"]      
     },
     {
 	"CoreConceptQ": ["ObjectQ"],
-    "LayerA": ["VectorA", "TessellationA"],
-	"NominalA": ["NominalA"]    
+    "LayerA": ["VectorTessellationA"],
+	"NominalA": ["PlainNominalA"]    
     }
   ],
   "outputs": [
     {
     "CoreConceptQ": ["ObjectQ"], 
-    "LayerA": ["VectorA", "TessellationA"],
+    "LayerA": ["VectorTessellationA"],
 	"NominalA": ["IntervalA"] 
     }
   ],
