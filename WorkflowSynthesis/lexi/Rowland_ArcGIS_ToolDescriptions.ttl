@@ -6,7 +6,7 @@
 @prefix exm: <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#>.
 
 ########### Supertool: Adding and Calculating a Field 
-tools:FullAddCalculateField tools:implements tools:AddCalculateObjectFieldRatio, tools:AddCalculateObjectFieldInterval, tools:AddCalculateObjectFieldCount, tools:AddCalculateRasterField;
+tools:FullAddCalculateField tools:implements tools:AddCalculateObjectFieldRatio, tools:AddCalculateObjectFieldInterval, tools:AddCalculateObjectFieldCount, tools:AddCalculateRasterFieldRatio, tools:AddCalculateRasterFieldInterval, tools:AddCalculateRasterFieldOrdinal, tools:AddCalculateRasterFieldNominal;
 	wf:edge _:wf1_1, _:wf1_2;
 		wf:source _:in11;
 	rdfs:label "Adding a field to an attribute table and calculating an input for that field based on a SQL expression. This is added to the attribute table of the existing dataset.".
@@ -61,7 +61,7 @@ tools:AddCalculateRasterFieldNominal rdfs:label "Adds a new field to a raster da
 ########### Add Field 
 # to Object
 <https://desktop.arcgis.com/en/arcmap/latest/tools/data-management-toolbox/add-field.htm> tools:implements tools:AddFieldObjectVector.
-tools:AddFieldObject rdfs:label "Adds an attribute field to the attribute table of an object layer.";
+tools:AddFieldObjectVector rdfs:label "Adds an attribute field to the attribute table of an object layer.";
 	wf:input1 [ a ccd:ObjectVector ];
 	wf:output [ a ccd:ObjectVector ].
 
@@ -82,7 +82,7 @@ _:wf2_1 wf:ApplicationOf <https://desktop.arcgis.com/en/arcmap/latest/tools/spat
 	wf:output _:out21.
 _:wf2_2 wf:ApplicationOf <https://desktop.arcgis.com/en/arcmap/latest/tools/data-management-toolbox/join-field.htm>;
 	wf:input1 _:out21;
-	wf:input2 _:in21.
+	wf:input2 _:in21;
 	wf:output _:out22.
 
 ########### Zonal Statistics 
@@ -162,28 +162,28 @@ tools:ZonalStatisticsSumCount  rdfs:label "Calculates the total value for values
 #### object datasets
 # for nominal data 
 <https://desktop.arcgis.com/en/arcmap/latest/tools/data-management-toolbox/join-field.htm> tools:implements tools:JoinFieldObjectVectorNominal.
-tools:JoinFieldObjectNominal rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with a nominal scaled field.";
+tools:JoinFieldObjectVectorNominal rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with a nominal scaled field.";
 	wf:input1 [ a ccd:ObjectVector, ccd:NominalA ];
 	wf:input2 [ a ccd:ObjectVector, ccd:NominalA ];
 	wf:output [ a ccd:ObjectVector, ccd:NominalA ].
 
 # for ordinal data
 <https://desktop.arcgis.com/en/arcmap/latest/tools/data-management-toolbox/join-field.htm> tools:implements tools:JoinFieldObjectVectorOrdinal.
-tools:JoinFieldObjectOrdinal rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with a ordinal scaled field.";
+tools:JoinFieldObjectVectorOrdinal rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with a ordinal scaled field.";
 	wf:input1 [ a ccd:ObjectVector, ccd:OrdinalA ];
 	wf:input2 [ a ccd:ObjectVector, ccd:OrdinalA ];
 	wf:output [ a ccd:ObjectVector, ccd:OrdinalA ].
 
 # for ratio data
 <https://desktop.arcgis.com/en/arcmap/latest/tools/data-management-toolbox/join-field.htm> tools:implements tools:JoinFieldObjectVectorRatio.
-tools:JoinFieldObjectRatio rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with a ratio scaled field.";
+tools:JoinFieldObjectVectorRatio rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with a ratio scaled field.";
 	wf:input1 [ a ccd:ObjectVector, ccd:RatioA ];
 	wf:input2 [ a ccd:ObjectVector, ccd:RatioA ];
 	wf:output [ a ccd:ObjectVector, ccd:RatioA ].
 
 # for interval data
 <https://desktop.arcgis.com/en/arcmap/latest/tools/data-management-toolbox/join-field.htm> tools:implements tools:JoinFieldObjectVectorInterval.
-tools:JoinFieldObjectInterval rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with an interval scaled field.";
+tools:JoinFieldObjectVectorInterval rdfs:label "Joins the contents of a ObjectVector table to another ObjectVector table based on a common attribute field with an interval scaled field.";
 	wf:input1 [ a ccd:ObjectVector, ccd:IntervalA ];
 	wf:input2 [ a ccd:ObjectVector, ccd:IntervalA ];
 	wf:output [ a ccd:ObjectVector, ccd:IntervalA ].
@@ -653,7 +653,7 @@ tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour d
 tools:ArealInterpolationAverage rdfs:label "Makes polygon to polygon predictions of the mean of a measured attribute";
 	wf:input1 [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA, exm:IRA ];
 	wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-	wf:output2 [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:IRA ]. 
+	wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:IRA ]. 
 
 # Areal Interpolation with Rate Rule
 <https://desktop.arcgis.com/en/arcmap/latest/extensions/geostatistical-analyst/using-areal-interpolation-to-predict-to-new-polygons.htm> tools:implements tools:ArealInterpolationRate.

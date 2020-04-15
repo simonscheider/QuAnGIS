@@ -27,14 +27,14 @@
     {
 	"CoreConceptQ": ["ObjectQ"],
     "LayerA": ["VectorTessellationA"],
-	"NominalA": ["NominalA"]    
+	"NominalA": ["PlainNominalA"]    
     }
   ],
   "outputs": [
     {
     "CoreConceptQ": ["ObjectQ"], 
     "LayerA": ["VectorTessellationA"],
-	"NominalA": ["RatioA"] 
+	"NominalA": ["PlainRatioA"] 
     }
   ],
   "debug_mode": "true",

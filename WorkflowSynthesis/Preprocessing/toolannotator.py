@@ -82,7 +82,7 @@ def shortURInames(URI):
         return URI
 
 
-def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix):
+def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix, dodowncast =False):
     """Returns a list of names of types of some tool input or output for a given dimension"""
     output = g.value(predicate = predicate, subject = subject, any = False)
     if not output:
@@ -92,7 +92,8 @@ def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix):
         if outputtype is not None and outputtype in project:
             if project[outputtype][dimix] is not None:
                 outputtypes.append(project[outputtype][dimix])      
-                
+    if dodowncast:
+            outputtypes = [downcast(t) for t in outputtypes]    
     out = [shortURInames(t) if str(mainprefix) in t else t for t in outputtypes]
     if out == []: #In case there is no type, just use the highest level type of the dimension
         out = [shortURInames(dim)]
@@ -118,7 +119,7 @@ def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
         
         d = {}                
         for ix,dim in enumerate(dimnodes):
-            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix, dim,mainprefix)         
+            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix, dim,mainprefix, dodowncast =True)     #Tool outputs should always be downcasted    
         outputs = [d]
         
         name = shortURInames(t)
@@ -129,6 +130,22 @@ def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
         toollist['functions'].append(toolobj)
         print(toolobj)
     return toollist
+
+def downcast(node):
+    #a function that downcasts certain nodes to identifiable leafnodes
+    if node == CCD.NominalA:
+        return CCD.PlainNominalA
+    elif node == CCD.OrdinalA:
+        return CCD.PlainOrdinalA
+    elif node == CCD.IntervalA:
+        return CCD.PlainIntervalA
+    elif node == CCD.RatioA:
+        return CCD.PlainRatioA
+    else:
+        return node
+    
+        
+        
 
 shortenURIs = True
 def main(toolsinrdf, project, dimnodes, mainprefix=CCD, targetfolder='../test'):

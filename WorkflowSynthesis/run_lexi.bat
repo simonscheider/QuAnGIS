@@ -1,5 +1,5 @@
 @echo off
 
-java -jar APE-0.9.1.jar ./lexi/ape.configuration
+java -jar APE-0.9.4.jar ./lexi/ape.configuration
 
 pause

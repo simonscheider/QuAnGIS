@@ -101,8 +101,8 @@ def getSubsumptionTree2(g,root, leafnodes):
     traverse(tuple, count, distance, parent, visitednodes)   
     
     print("size of tree: " +str(len(distance.keys())))
-    size = max(distance.values())
-    print("depth of tree: "+str(size))
+    depth = max(distance.values())
+    print("depth of tree: "+str(depth))
     for n in leafnodes.intersection(visitednodes):
         print(distance[n])
         print(n)
@@ -140,7 +140,7 @@ def measureTaxonomy(g):
 Any node that is subsumed by at least one tree can be projected to the closest parent in that tree which belongs to its core (thus not to any other tree). 
 The index of the list indicates the dimension. If a node cannot be projected to a given dimension, then project maps to None."""
 def project2Dimensions(nodes, listoftrees):    
-    project = {}
+    project = {}    
     notcore = set()
     for n in nodes:
         project[n] = []              
@@ -154,7 +154,7 @@ def project2Dimensions(nodes, listoftrees):
                 while not dimcore(p,parent,idx, listoftrees):
                     notcore.add(p)
                     p = parent[p]
-            project[n].append(p)
+            project[n].append(p)            
     #remove nodes that cannot be projected in any way
     project = {key:val for key, val in project.items() if set(val) != {None}}     
     return (project,notcore)

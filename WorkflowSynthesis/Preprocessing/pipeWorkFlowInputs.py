@@ -21,8 +21,10 @@ CCD= rdflib.Namespace("http://geographicknowledge.de/vocab/CoreConceptData.rdf#"
     
                       
 
-def pipe(tooldescfile = 'ToolDescription.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../test'):    
-   
+#def pipe(tooldescfile = '../lexi/Rowland_ArcGIS_ToolDescriptions.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../lexi'): 
+#def pipe(tooldescfile = 'ToolDescription.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../test'):  
+def pipe(tooldescfile = '../../ToolRepository/ToolDescription_TransformationAlgebra.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../testwfalgebra'): 
+    
     dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA]    
     #Generates a taxonomy (_tax) version of the ontology as well as of the given tool hierarchy (=subClassOf), by applying reasoning and removing all other statements
     cleanWfTaxonomy.main(ontologyfile=ontologyfile, tooldesc=tooldescfile, targetfolder=targetfolder)
