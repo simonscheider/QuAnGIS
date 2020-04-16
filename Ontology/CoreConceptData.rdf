@@ -7,10 +7,38 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf">
-        <owl:imports rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf"/>
         <rdfs:comment xml:lang="en">This ontology pattern describes geodata types representing core concepts of spatial information (Kuhn 2012) we well as further semantic attribute distinctions relevant for geocomputation and geo-analysis.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://spatial.ucsb.edu/core-concepts-of-spatial-information/"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement -->
+
+    <owl:ObjectProperty rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet -->
+
+    <owl:ObjectProperty rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/GISConcepts.rdf#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://geographicknowledge.de/vocab/GISConcepts.rdf#hasAttribute"/>
     
 
 
@@ -27,9 +55,27 @@
 
     <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#Attribute -->
 
-    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Attribute">
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Attribute">
         <owl:equivalentClass rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
-    </rdf:Description>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial"/>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialData -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialData"/>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialDataSet -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialDataSet"/>
     
 
 
@@ -79,7 +125,6 @@
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute">
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ValueList"/>
         <rdfs:comment xml:lang="en">Attributes of a tabular dataset. Each attribute corresponds to a column in the table.</rdfs:comment>
     </owl:Class>
     
@@ -140,6 +185,15 @@
     
 
 
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ">
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:comment xml:lang="en">Superclass of all core concept qualities.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#CountA -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CountA">
@@ -163,6 +217,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
         <rdfs:comment xml:lang="en">Coverages are tessellated layers that represent a continuous field. For example, landuse polygons.</rdfs:comment>
     </owl:Class>
@@ -204,7 +259,7 @@
                 <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventDS"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
         <rdfs:comment xml:lang="en">This attribute represents a quality of an event (core concept). For example, the duration.</rdfs:comment>
     </owl:Class>
     
@@ -224,6 +279,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">Events represented in terms of an attribute of a vector data set. For example, the magnitude of earthquakes represented as an attribute of a point data set.</rdfs:comment>
     </owl:Class>
@@ -241,6 +297,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BooleanA"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BoundedPhen"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldRaster"/>
         <rdfs:comment xml:lang="en">Existence rasters are rasters representing boolean fields (fields denoting whether something is present at a cell location or not).</rdfs:comment>
     </owl:Class>
     
@@ -257,6 +316,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BooleanA"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BoundedPhen"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldVector"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">A vector layer attribute that satisfies a boolean expression and thus denotes the &apos;existence&apos; of some attribute encoded phenomenon across space. Example is a layer of polygons of &apos;&apos;forest&apos;&apos; landuse or a layer of &quot;parks&quot;.</rdfs:comment>
     </owl:Class>
@@ -274,6 +336,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Lattice"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"/>
         <rdfs:comment xml:lang="en">This type of lattice has an extensive attribute. For example, a spatial dataset about the population number of municipalities</rdfs:comment>
     </owl:Class>
     
@@ -297,7 +361,7 @@
                 <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
         <rdfs:comment xml:lang="en">An attribute which represents the quality of a field (core concept). This implies that the spatial data items in this data set are self-similar (their parts have the same attribute)</rdfs:comment>
     </owl:Class>
     
@@ -317,6 +381,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RasterA"/>
         <rdfs:comment xml:lang="en">Field rasters are raster representations of continuous fields. For example, raster layers representing a terrain height (DTM).</rdfs:comment>
     </owl:Class>
@@ -354,6 +419,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">A vector representation of a field. Can be a point or line measure, or a coverage</rdfs:comment>
     </owl:Class>
@@ -383,6 +449,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
         <rdfs:comment xml:lang="en">A lattice is a spatial tessellation that represents objects and their qualities. For example, a set of municipalities with average income.</rdfs:comment>
     </owl:Class>
@@ -402,6 +469,15 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectDS"/>
         <rdfs:comment xml:lang="en">A dataset of objects which tesselate space and contain statistical summaries. For example, the municipalities of the Netherlands</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA">
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:comment xml:lang="en">Superclass of of attribute types that characterize a geometric layer property</rdfs:comment>
     </owl:Class>
     
 
@@ -429,7 +505,6 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">Attribute of some Line data set</rdfs:comment>
     </owl:Class>
@@ -488,7 +563,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldVector"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineA"/>
         <rdfs:comment xml:lang="en">Linear representations of fields. Examples are isoline maps</rdfs:comment>
     </owl:Class>
@@ -530,7 +605,7 @@
                 <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
         <rdfs:comment xml:lang="en">This attribute represents the quality of a network edge.</rdfs:comment>
     </owl:Class>
     
@@ -578,7 +653,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineA"/>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectVector"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
         <rdfs:comment xml:lang="en">An attribute of an object line dataset</rdfs:comment>
     </owl:Class>
     
@@ -598,7 +673,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectVector"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointA"/>
         <rdfs:comment xml:lang="en">An attribute of an object point dataset</rdfs:comment>
     </owl:Class>
@@ -614,7 +689,7 @@
                 <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectDS"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
         <rdfs:comment xml:lang="en">An attribute that represents the quality of an object (core concept)</rdfs:comment>
     </owl:Class>
     
@@ -634,7 +709,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectVector"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
     </owl:Class>
     
@@ -654,7 +729,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BoundedPhen"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">Object vectors are vector representation of a set of objecs and their quality. For example, a point layer denoting points of Interest (POI) or buildings in a city together with their quality, e.g. the building height.</rdfs:comment>
     </owl:Class>
@@ -687,6 +763,103 @@
     
 
 
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainIntervalA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainIntervalA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
+        <rdfs:comment xml:lang="en">An interval attribute that is plain/proper</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainNominalA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainNominalA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
+        <rdfs:comment xml:lang="en">A nominal attribute that is plain/proper (not ordinal or boolean)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainOrdinalA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainOrdinalA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA"/>
+        <rdfs:comment xml:lang="en">An ordinal attribute that is plain/proper (not interval)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainRatioA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainRatioA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CountA"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+        <rdfs:comment xml:lang="en">A ratio attribute that is plain/proper</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+        <rdfs:comment xml:lang="en">An attribute of a vector region layer that is not a tessellation</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#Point -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Point">
@@ -710,7 +883,6 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">Attribute of some point data set</rdfs:comment>
     </owl:Class>
@@ -768,7 +940,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldVector"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointA"/>
         <rdfs:comment xml:lang="en">Point measures are point-like representations of fields. For example, point data sets denoting the locations of measured temperature values.</rdfs:comment>
     </owl:Class>
@@ -815,7 +987,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
         <rdfs:comment xml:lang="en">Attribute of some Raster</rdfs:comment>
     </owl:Class>
     
@@ -853,7 +1025,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA"/>
         <rdfs:comment xml:lang="en">Atrribute of some region data sets</rdfs:comment>
     </owl:Class>
     
@@ -918,7 +1090,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
         <rdfs:comment xml:lang="en">An attribute of a tesselation data set</rdfs:comment>
     </owl:Class>
     
@@ -975,26 +1147,11 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA"/>
         <rdfs:comment xml:lang="en">Attribute of some vector data set</rdfs:comment>
     </owl:Class>
     
 
-    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA -->
-
-    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
-        <rdfs:comment xml:lang="en">An attribute of a region vector data set</rdfs:comment>
-    </owl:Class>
-    
 
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellation -->
 
@@ -1009,6 +1166,24 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation"/>
         <rdfs:comment xml:lang="en">This is a vector data set which is tessellated (and no raster)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellationA -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellationA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+        <rdfs:comment xml:lang="en">An attribute of a vector tessellation</rdfs:comment>
     </owl:Class>
     
 
