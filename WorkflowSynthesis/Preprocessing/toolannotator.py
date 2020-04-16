@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # Name:        Tool Annotator
 # Purpose:      Takes an RDF based specification of tools with typed inputs and outputs
-#               turns it into an tool description in XML according to the APE format
+#               and turns it into an tool description in JSON according to the APE format
 #
 # Author:      Schei008
 #
@@ -12,18 +12,10 @@
 
 
 import rdflib
-import rdflib.plugins.sparql as sparql
-import glob
-
 from rdflib.namespace import RDFS, RDF, OWL
-from rdflib import URIRef, BNode, Literal
-from rdflib import Namespace
-from urllib.parse import urlparse
 import os
 
-from xml.etree.ElementTree import Element, SubElement, Comment, tostring
-from xml.etree import ElementTree
-from xml.dom import minidom
+
 
 import json
 
@@ -81,9 +73,9 @@ def shortURInames(URI):
     else:
         return URI
 
-
+"""Returns a list of types of some tool input/output which are all projected to given semantic dimension"""
 def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix, dodowncast =False):
-    """Returns a list of names of types of some tool input or output for a given dimension"""
+    
     output = g.value(predicate = predicate, subject = subject, any = False)
     if not output:
         raise Exception(f'Could not find object with subject {subject} and predicate {predicate}!')
@@ -99,17 +91,15 @@ def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix, dodownc
         out = [shortURInames(dim)]
     return out
 
-
-def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
-    """Read the tool annotations from the TTL file, and return a string
-    representation in JSON format that APE understands."""
+"""Read the tool annotations from the TTL file, project them to semantic dimensions and return a string
+representation in JSON format that APE understands."""
+def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):   
     toollist= {'functions': []}
     trdf = load_rdf(rdflib.Graph(), toolsinrdf)
     trdf = setprefixes(trdf)
     tools = [tool for tool in trdf.objects(None, TOOLS.implements)]
     for t in tools:
-        inputs = []
-        
+        inputs = []        
         for p in [WF.input1, WF.input2, WF.input3]:
             if trdf.value(subject=t, predicate=p, default=None) != None:
                 d = {}
@@ -132,7 +122,7 @@ def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
     return toollist
 
 def downcast(node):
-    #a function that downcasts certain nodes to identifiable leafnodes
+    #A function that downcasts certain nodes to identifiable leafnodes. This is good practice to prevent APE from considering too many subnodes
     if node == CCD.NominalA:
         return CCD.PlainNominalA
     elif node == CCD.OrdinalA:
@@ -147,10 +137,10 @@ def downcast(node):
         
         
 
-shortenURIs = True
+shortenURIs = True #Parameter should be set to true
 def main(toolsinrdf, project, dimnodes, mainprefix=CCD, targetfolder='../test'):
-    """Read tool annotations from TTL file, convert it to a JSON format that
-    APE understands, and write it to a file."""
+    """Read tool annotations from TTL file, project them with the projection function, convert it to a dictionary that
+    APE understands, and write it to a JSON file."""
 
     dict_form = getToollistasDict(toolsinrdf, project, dimnodes, mainprefix)
     outpath = os.path.join(targetfolder,os.path.splitext(os.path.basename(toolsinrdf))[0]+".json")

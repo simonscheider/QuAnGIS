@@ -15,8 +15,6 @@ closed with reasoning. The graph needs to contain a minimal set of subsumption r
 
 import rdflib
 from rdflib.namespace import RDFS, RDF, OWL
-from rdflib import URIRef, BNode, Literal
-from rdflib import Namespace
 import os
 
 TOOLS=rdflib.Namespace("http://geographicknowledge.de/vocab/GISTools.rdf#")
@@ -40,51 +38,6 @@ def n_triples( g, n=None ):
     else:
         print(( '  Triples: +'+str(len(g)-n) ))
     return len(g)
-
-"""This method takes a taxonomy (a graph of raw subsumption relations) and an arbitrary root and generates 
-a tree with unique parent relations towards the root for each node. Uses longest path algorithm. Note: not unique!"""
-def getSubsumptionTree(g,root=TOOLS.DType):    
-    queue = []
-    visited = {}
-    distance = {}
-    longest_distance = {}
-    parent = {}
-    leafnodes = set()
-    visitednodes = set()
-    
-    nodes = list(g.subjects(predicate=RDFS.subClassOf,object=None) )   
-    count= 0   
-    nodes.append(root)                      
-    for node in nodes:
-        count +=1
-        distance[node] = 0
-        visited[node] = False
-        parent[node] = None        
-        longest_distance[node] = 0        
-        if not (None,RDFS.subClassOf,node) in g:
-            leafnodes.add(node)            
-    print("size of taxonomy (without root): "+str(count))
-    print("leafnodes: "+str(leafnodes))    
-    
-    queue.append(root)
-    while len(queue) != 0:
-        current = queue.pop(0)
-        visited[current] = True          
-        visitednodes.add(current)          
-        for child in g.subjects(predicate=RDFS.subClassOf,object=current):                            
-            if visited[child] == False:
-                distance[child] = distance[current] + 1
-                if distance[child] > longest_distance[child]:
-                    longest_distance[child] = distance[child]
-                    parent[child] = current
-                    queue.append(child)
-    print("size of tree: " +str(len(visitednodes)))
-    size = max(longest_distance.values())
-    print("depth of tree: "+str(size))
-    for n in leafnodes:
-        print(n)
-        backtrack(parent,n)     
-   
 
 """This method takes a taxonomy (a graph of raw subsumption relations) and an arbitrary root and generates 
 a tree with unique parent relations towards the root for each node. Uses rdflib's built in get_tree. Note: not unique!"""        
@@ -136,8 +89,8 @@ def measureTaxonomy(g):
     #print("leafnodes: "+str(leafnodes)) 
     return (nodes,leafnodes)  
     
-"""This method projects given nodes to all dimensions given as a list of subsumption trees. 
-Any node that is subsumed by at least one tree can be projected to the closest parent in that tree which belongs to its core (thus not to any other tree). 
+"""This method projects given nodes to all dimensions given as a list of dimensions (as subsumption trees). 
+Any node that is subsumed by at least one tree can be projected to the closest parent in that tree which belongs to its core. 
 The index of the list indicates the dimension. If a node cannot be projected to a given dimension, then project maps to None."""
 def project2Dimensions(nodes, listoftrees):    
     project = {}    
@@ -178,12 +131,12 @@ def shortURInames(URI):
     else:
         return os.path.basename(os.path.splitext(URI)[0])
 
-#To test the correctness of the projection        
+#To test the correctness of the class projection based on a list of examples    
 def test(project):
-    testnodes = [CCD.ExistenceRaster, CCD.RasterA, CCD.FieldRaster, CCD.ExistenceVector, CCD.PointMeasures, CCD.LineMeasures, CCD.Contour, CCD.Coverage, CCD.ObjectVector, CCD.ObjectPoint, CCD.ObjectLine, CCD.ObjectRegion, CCD.Lattice, CCD.VectorRegionA, CCD.ExtLattice]
-    correctCC = [CCD.FieldQ, None, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ, None,CCD.ObjectQ]
-    correctLayerA = [CCD.RasterA, CCD.RasterA, CCD.RasterA, CCD.VectorA, CCD.PointA, CCD.LineA, CCD.TessellationA, CCD.TessellationA, CCD.VectorA, CCD.PointA, CCD.LineA, CCD.RegionA, CCD.TessellationA, CCD.VectorRegionA, CCD.TessellationA]
-    correctNominalA = [CCD.BooleanA, None, None, CCD.BooleanA, None, None, CCD.OrdinalA, None, None, None, None, None, None, None,EXT.ERA]
+    testnodes = [CCD.ExistenceRaster, CCD.RasterA, CCD.FieldRaster, CCD.ExistenceVector, CCD.PointMeasures, CCD.LineMeasures, CCD.Contour, CCD.Coverage, CCD.ObjectVector, CCD.ObjectPoint, CCD.ObjectLine, CCD.ObjectRegion, CCD.Lattice, CCD.ExtLattice]
+    correctCC = [CCD.FieldQ, None, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.FieldQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ, CCD.ObjectQ]
+    correctLayerA = [CCD.RasterA, CCD.RasterA, CCD.RasterA, CCD.VectorA, CCD.PointA, CCD.LineA, CCD.TessellationA, CCD.TessellationA, CCD.VectorA, CCD.PointA, CCD.LineA, CCD.RegionA, CCD.TessellationA, CCD.TessellationA]
+    correctNominalA = [CCD.BooleanA, None, None, CCD.BooleanA, None, None, CCD.OrdinalA, None, None, None, None, None, None, EXT.ERA]
     for ix,n in enumerate(testnodes):
         print("Test:")       
         print(shortURInames(n))
@@ -195,7 +148,7 @@ def test(project):
         else:
             print("node not present!")
             
-        
+"""This method generates a taxonomy where nodes intersecting with more than one dimension (= not core) are removed. This is needed because APE should reason only within any of the dimensions."""        
 def getcoretaxonomy(g, notcore, out='CoreConceptData_tax_core.ttl'):  
     outgraph = rdflib.Graph()
     for (s,p,o) in g.triples( (None, RDFS.subClassOf, None) ):
@@ -207,7 +160,7 @@ def getcoretaxonomy(g, notcore, out='CoreConceptData_tax_core.ttl'):
         
 """This method takes some (subsumption) taxonomy and a list of supertypes for each dimension. It constructs a tree for each dimension and
  returns a projection of all nodes that intersect with one of these dimensions into the core of the dimension. It also generates a corresponding core taxonomy (containing only core classes for each dimension)"""      
-def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA], targetfolder='../test'):
+def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA], targetfolder='../test', coretax= 'CoreConceptData_tax_core.ttl'):
     """Read taxonomy and generate tree."""
     g = load_rdf(rdflib.Graph(), taxonomy)
     (nodes,leafnodes)=measureTaxonomy(g)
@@ -215,9 +168,7 @@ def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.Laye
     for dim in dimnodes:
         listofdimtrees.append(getSubsumptionTree2(g,dim,leafnodes)) 
     (project,notcore) = project2Dimensions(nodes, listofdimtrees)
-    test(project)
-    tax, ext = os.path.splitext(os.path.basename(taxonomy))#'CoreConceptData_tax_core.ttl'
-    coretax = os.path.join(targetfolder,tax+'_core'+ext)
+    test(project)       
     getcoretaxonomy(g, notcore, out=coretax)
     return project
     

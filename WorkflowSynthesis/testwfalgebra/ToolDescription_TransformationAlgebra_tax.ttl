@@ -1,0 +1,116 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#AddArea> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#CalculateRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ClipField2ObjectExtent> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/clip.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ContourToFieldRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#CoverageToNominalFieldRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#IDWInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/idw.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#KrigingInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/kriging.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#LocalMapAlgebraSubOrder> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#MakePointMeasuresFromTable> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#MakeLayerFromTable> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#RasterToContourInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#RasterToContour> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#RegionFromRasterExtent> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectFeaturesContourToExistenceVector> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectFeaturesCoverageToExistenceVector> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByAttributeObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByLocationObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinCountTess> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinMeanTessCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinMeanTessInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinMeanTessRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinSumTessCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinSumTessRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatisticsMeanInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatistics> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatisticsSize> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatistics> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#MakeLayerFromTable> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#RasterToContour> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/clip.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/idw.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/kriging.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatistics> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+

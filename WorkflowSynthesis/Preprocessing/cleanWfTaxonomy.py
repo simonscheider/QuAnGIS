@@ -11,14 +11,9 @@
 # Licence:     MIT
 #-------------------------------------------------------------------------------
 import rdflib
-import rdflib.plugins.sparql as sparql
-import glob
-import owlrl
 from rdflib.namespace import RDFS, RDF, OWL
-from rdflib import URIRef, BNode, Literal
-from rdflib import Namespace
-from urllib.parse import urlparse
-import os
+from rdflib import BNode
+
 
 TOOLS=rdflib.Namespace("http://geographicknowledge.de/vocab/GISTools.rdf#")
 ADA = rdflib.Namespace("http://geographicknowledge.de/vocab/AnalysisData.rdf#")
@@ -69,7 +64,7 @@ def n_triples( g, n=None ):
 #            nodim+=1
 #    return nodim
                               
-
+"""This method takes some ontology in Turtle and returns a taxonomy (consisting only of rdfs:subClassOf statements)"""
 def cleanOWLOntology(ontologyfile= 'CoreConceptData_ct.ttl'): #This takes the combined types version as input
     print('Clean OWL ontology!')
     ccdontology = load_rdf(rdflib.Graph(),ontologyfile)
@@ -90,11 +85,12 @@ def cleanOWLOntology(ontologyfile= 'CoreConceptData_ct.ttl'): #This takes the co
                 taxonomyclean.add((s,p,o))             
             
     n_triples(taxonomyclean)
-    #add common upper class for all data types, including spatial attributes and spatial data sets
+    #add common upper class for all data types, including spatial attributes and spatial data sets. They are not needed otherwise
     taxonomyclean.add((ADA.ValueList,RDFS.subClassOf,TOOLS.DType))
     taxonomyclean.add((ADA.SpatialDataSet,RDFS.subClassOf,TOOLS.DType))
     return taxonomyclean
 
+"""Ëxtracts a taxonomy of toolnames from the tool description."""
 def extractToolOntology(tooldesc='ToolDescription_ct.ttl'):
     print('Extract Tool ontology!')
     output = rdflib.Graph()
@@ -109,13 +105,10 @@ def extractToolOntology(tooldesc='ToolDescription_ct.ttl'):
     return output
 
 
-def main(ontologyfile = 'CoreConceptData.ttl', tooldesc='ToolDescription.ttl', targetfolder='../test'):
-    tool_tax_output=os.path.join(targetfolder,'ToolDescription_tax.ttl')
-    dt = os.path.join(targetfolder,'CoreConceptData_tax.ttl')
+def main(ontologyfile = 'CoreConceptData.ttl', tooldesc='ToolDescription.ttl', to='ToolDescription_tax.ttl',   dto = 'CoreConceptData_tax.ttl'):    
     tax = cleanOWLOntology(ontologyfile)
     tooltax =extractToolOntology(tooldesc=tooldesc)
-    tax.serialize(destination=dt,format = "turtle")
-    to = tool_tax_output
+    tax.serialize(destination=dto,format = "turtle")    
     tooltax.serialize(destination=to,format = "turtle")
 
 
