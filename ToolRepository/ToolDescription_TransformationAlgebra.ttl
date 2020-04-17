@@ -254,7 +254,7 @@ tools:ClipField2ObjectExtent rdfs:label "Clips some field raster to the extent o
 <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/raster-to-polygon.htm> tools:implements tools:RegionFromRasterExtent.
 tools:RegionFromRasterExtent rdfs:label "Make a region layer from the extent of a raster.";
     wf:input1 [ a ccd:FieldRaster ];    
-    wf:output [ a ccd:VectorRegionA ];
+    wf:output [ a ccd:RegionA, ccd:VectorA ];
     tools:algebraexpression "reify pi1 field x".
 
     

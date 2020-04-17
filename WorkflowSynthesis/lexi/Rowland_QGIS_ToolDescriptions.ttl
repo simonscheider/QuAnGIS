@@ -1,0 +1,432 @@
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix ccd: <http://geographicknowledge.de/vocab/CoreConceptData.rdf#>.
+@prefix exm: <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#>.
+@prefix qtools: <http://geographicknowledge.de/vocab/QGISTools.rdf#>. #this needs to be checked with Simon. 
+
+########### Union Tool
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#union> tools:implements qtools:Union.
+qtools:Union rdfs:label "Checks overlaps between features within the input layer and creates separate features for overlapping and non-overlapping parts.";
+  wf:input1 [ a ccd:ObjectVector ];
+  wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+  wf:output [ a ccd:Lattice, ccd:VectorA ]. 
+
+########### Add Field to Attribute Table
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectortable.html#add-field-to-attributes-table> tools:implements qtools:AddFieldToAttributesTable.
+qtools:AddFieldToAttributesTable rdfs:label "Adds a new field to a vector layer. The name, characteristics and field values, calculated based on a given expression, of the attributes are defined as parameters.";
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:output [ a ccd:ObjectVector ].
+
+########### Add Geometry Attributes
+# for Area
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> tools:implements qtools:AddGeometryAttributesArea.
+qtools:AddGeometryAttributesArea rdfs:label "Computes and adds an area attribute to an object layer.";
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:output [ a ccd:ObjectVector, ccd:RatioA ]. 
+
+#for Line
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> tools:implements qtools:AddGeometryAttributesLine.
+qtools:AddGeometryAttributesLine rdfs:label "Computes and adds an area attribute to an object layer.";
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:output [ a ccd:ObjectVector, ccd:NominalA ]. 
+
+#for Point
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> tools:implements qtools:AddGeometryAttributesPoint.
+qtools:AddGeometryAttributesPoint rdfs:label "Computes and adds an area attribute to an object layer.";
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:output [ a ccd:ObjectVector, ccd:NominalA ]. 
+
+########### Dissolve
+#### Sum Statistic 
+# for Ratio Data 
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveSumRatio.
+qtools:DissolveSumRatio rdfs:label "Aggregates features based on specified attributes using the Sum rule with Ratio data.";
+	wf:input1 [ a ccd:ObjectVector, ccd:RatioA ];
+	wf:output [ a ccd:ObjectVector, ccd:RatioA ]. 
+
+# for Count Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveSumCount.
+qtools:DissolveSumCount rdfs:label "Aggregates features based on specified attributes using the Sum rule with Count data.";
+	wf:input1 [ a ccd:ObjectVector, ccd:CountA ];
+	wf:output [ a ccd:ObjectVector, ccd:CountA ]. 
+	
+# for Interval Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveSumInterval.
+qtools:DissolveSumInterval rdfs:label "Aggregates features based on specified attributes using the Sum rule with Interval data.";
+	wf:input1 [ a ccd:ObjectVector, ccd:IntervalA ];
+	wf:output [ a ccd:ObjectVector, ccd:IntervalA ]. 
+
+#### Mean Statistic
+# for Ratio Data 
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveMeanRatio.
+qtools:DissolveMeanRatio rdfs:label "Aggregates features based on specified attributes using the Mean rule with Ratio data.";
+	wf:input1 [ a ccd:ObjectVector, ccd:RatioA ];
+	wf:output [ a ccd:ObjectVector, ccd:RatioA ].
+	
+# for Count Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveMeanCount.
+qtools:DissolveMeanCount rdfs:label "Aggregates features based on specified attributes using the Mean rule with Count data.";
+	wf:input1 [ a ccd:ObjectVector, ccd:CountA ];
+	wf:output [ a ccd:ObjectVector, ccd:CountA ]. 
+
+# for Interval Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveMeanInterval.
+qtools:DissolveMeanInterval rdfs:label "Aggregates features based on specified attributes using the Mean rule with Interval data.";
+	wf:input1 [ a ccd:ObjectVector, ccd:IntervalA ];
+	wf:output [ a ccd:ObjectVector, ccd:IntervalA ]. 
+	
+#### Count Statistic
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> tools:implements qtools:DissolveCount.
+qtools:DissolveCount rdfs:label "Aggregates features based on specified attributes using the Count rule.";
+	wf:input1 [ a ccd:ObjectVector, ccd:CountA ];
+	wf:output [ a ccd:ObjectVector, ccd:CountA ]. 
+
+########### Join Attributes by Location 
+#### Join Attributes by Location with Sum Rule
+# with JOIN_ONE_TO_ONE parameter, with sum rule for Ratio data. 
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinSumTessRatio.
+qtools:AttributesJoinSumTessRatio rdfs:label "Sums the attributes at ratio measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:RatioA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:ERA ].
+
+# with JOIN_ONE_TO_ONE parameter, with sum rule for Count data.
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinSumTessCount.
+qtools:AttributesJoinSumTessCount rdfs:label "Sums the attributes at Count measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:CountA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ].
+    
+#### Join Attributes by Location with Mean Rule
+# with JOIN_ONE_TO_ONE parameter, with mean rule for Interval data.
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinMeanTessInterval.
+tools:AttributesJoinMeanTessInterval rdfs:label "Averages the attributes at interval measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:IntervalA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ].
+
+# with JOIN_ONE_TO_ONE parameter, with mean rule for Ratio data.
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinMeanTessRatio.
+qtools:AttributesJoinMeanTessRatio rdfs:label "Averages the attributes at Ratio measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:RatioA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ].
+
+# with JOIN_ONE_TO_ONE parameter, with mean rule for Count data.
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinMeanTessCount.
+qtools:AttributesJoinMeanTessCount rdfs:label "Averages the attributes at Count measurement level from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector, ccd:CountA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ].
+    
+#### Join Attributes by Location with the Count Rule
+# with JOIN_ONE_TO_ONE parameter and with count rule.
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinCountTess.
+qtools:AttributesJoinCountTess rdfs:label "Counts the number of features from one feature to another based on the spatial relation";
+    wf:input1 [ a ccd:ObjectVector ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ].
+
+########### Supertool: Select by Attribute and Extract Selected Features
+qtools:FullSelectAttributesAndExtractFeatures tools:implements qtools:SelectAttributesObjectsAndExtractFeatures;
+  wf:edge _:wf1_1, _:wf1_2;
+    wf:source _:in11;
+  rdfs:label "Selects attributes based on a set of input criteria/expression and then extracts the selected features into a new feature class.".
+_:wf1_1 wf:ApplicationOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorselection.html#select-by-attribute>;
+  wf:input1 _:in11;
+  wf:output _:out11.
+_:wf1_2 wf:applicationOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-field-value>;
+  wf:input1 _:out11;
+  wf:output _:out12. 
+
+qtools:SelectAttributesObjectsAndExtractFeatures rdfs:label "Select object attributes based on a set of input criteria or expressions and extracts these into a new feature class.";
+  wf:input1 [ a ccd:ObjectVector, ccd:NominalA ];
+  wf:output [ a ccd:ObjectVector ]. 
+
+########### Select by Attributes
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorselection.html#select-by-attribute> tools:implements qtools:SelectByAttribute.
+qtools:SelectByAttribute rdfs:label "The criteria for selecting features is based on the values of an attribute from the input layer.";
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:output [ a ccd:ObjectVector ]. 
+
+########### Extract Selected Features
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#extract-selected-features> tools:implements qtools:ExtractSelectedFeatures.
+qtools:ExtractSelectedFeatures rdfs:label "Copies features from the input feature class or layer to a new feature class.";
+	wf:input1 [ a ccd:ObjectVector ];
+	wf:output [ a ccd:ObjectVector ]. 
+
+########### Supertool: Rasterise Object Dataset and Perform Proximity Analysis
+qtools:FullRasteriseAndProximityAnalysis tools:implements qtools:RasteriseGeneralObjectAndProximityAnalysis, qtools:RasteriseObjectLineAndProximityAnalysis, qtools:RasteriseObjectPointAndProximityAnalysis, qtools:RasteriseObjectRegionAndProximityAnalysis;
+  wf:edge _:wf2_1, _:wf2_2;
+    wf:source _:in21;
+  rdfs:label "Rasterises an object dataset and performs a proximity analysis on the resulting raster dataset.". 
+_:wf2_1 wf:ApplicationOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster>;
+  wf:input1 _:in21;
+  wf:output _:out21.
+_:wf2_2 wf:ApplicationOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#proximity-raster-distance>;
+  wf:input1 _:out21;
+  wf:output _:out22. 
+
+#supertool for object region
+qtools:RasteriseObjectRegionAndProximityAnalysis rdfs:label "Rasterises an object region and performs a proxmity analysis on the output raster.";
+  wf:input1 [ a ccd:ObjectRegion ];
+  wf:output [ a ccd:FieldRaster, ccd:RatioA ]. 
+
+#supertool for object point
+qtools:RasteriseObjectPointAndProximityAnalysis rdfs:label "Rasterises an object point and performs a proxmity analysis on the output raster.";
+  wf:input1 [ a ccd:ObjectPoint ];
+  wf:output [ a ccd:FieldRaster, ccd:RatioA ]. 
+
+#supertool for object line
+qtools:RasteriseObjectLineAndProximityAnalysis rdfs:label "Rasterises an object line and performs a proxmity analysis on the output raster.";
+  wf:input1 [ a ccd:ObjectRegion ];
+  wf:output [ a ccd:FieldRaster, ccd:RatioA ]. 
+
+#supertool for general object vector
+qtools:RasteriseGeneralObjectAndProximityAnalysis rdfs:label "Rasterises general object vector, including a lattice, and performs a proxmity analysis on the output raster.";
+  wf:input1 [ a ccd:ObjectVector ];
+  wf:output [ a ccd:FieldRaster, ccd:RatioA ]. 
+
+########### Rasterise
+#### Object Vector to Existence Raster (only kept the object vector to boolean as this method only denotes the existence of polygons, if it also would give a value it would be a field raster). The input can only be boolean, but every input is already boolean for the purpose of this analysis (it exists or it doesn't)
+# for ObjectRegion
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> tools:implements qtools:ObjectRegionToExistenceRaster.
+qtools:ObjectRegionToExistenceRaster rdfs:label "Converts object regions with any measurement level to a raster denoting the existence of a feature at a location in the raster";
+    wf:input1 [ a ccd:ObjectRegion ];
+    wf:output [ a ccd:NoDataExistenceRaster ].
+    
+#for ObjectPoint
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> tools:implements qtools:ObjectPointToExistenceRaster.
+qtools:ObjectPointToExistenceRaster rdfs:label "Converts object points with any measurement level to a raster denoting the existence of a feature at a location in the raster";
+    wf:input1 [ a ccd:ObjectPoint ];
+    wf:output [ a ccd:NoDataExistenceRaster ].
+    
+# for ObjectLine
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> tools:implements qtools:ObjectLineToExistenceRaster.
+qtools:ObjectLineToExistenceRaster rdfs:label "Converts Object lines with any measurement level to a raster denoting the existence of a feature at a location in the raster";
+    wf:input1 [ a ccd:ObjectLine ];
+    wf:output [ a ccd:NoDataExistenceRaster ].
+    
+# for General Object Vector    
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> tools:implements qtools:ObjectVectorToExistenceRaster.
+qtools:ObjectVectorToExistenceRaster rdfs:label "Converts Object vectors with any measurement level to a raster denoting the existence of a feature at a location in the raster";
+    wf:input1 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:NoDataExistenceRaster ].
+    
+#### Field Polygon to Raster
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> tools:implements qtools:CoverageToFieldRaster.
+qtools:CoverageToFieldRaster rdfs:label "Converts Field polygons to field Rasters";
+    wf:input1 [ a ccd:Coverage ];
+    wf:output [ a ccd:FieldRaster, ccd:NominalA ].
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> tools:implements qtools:ContourToFieldRaster.
+qtools:ContourToFieldRaster rdfs:label "Converts contour maps to field Rasters";
+    wf:input1 [ a ccd:Contour ];
+    wf:output [ a ccd:FieldRaster, ccd:OrdinalA ].
+
+########### Proximity
+#NoDataExistenceRaster input
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#proximity-raster-distance> tools:implements qtools:NoDataExistenceRasterProximity.
+qtools:NoDataExistenceRasterProximity rdfs:label "Generates a raster proximity map indicating the distance from the centre of each pixel to the centre of the nearest pixel identified as a target pixel.";
+	wf:input1 [ a ccd:NoDataExistenceRaster ];
+	wf:output [ a ccd:FieldRaster, ccd:RatioA ]. 
+
+# FieldRaster input
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#proximity-raster-distance> tools:implements qtools:FieldRasterProximity.
+qtools:FieldRasterProximity rdfs:label "Generates a raster proximity map indicating the distance from the centre of each pixel to the centre of the nearest pixel identified as a target pixel.";
+	wf:input1 [ a ccd:FieldRaster ];
+	wf:output [ a ccd:FieldRaster, ccd:RatioA ]. 
+
+########### r.reclass
+<https://grass.osgeo.org/grass78/manuals/r.reclass.html> tools:implements qtools:r.reclass.
+qtools:r.reclass rdfs:label "Reclassify raster map based on category values. Creates a new raster map whose category values are based upon a reclassification of the categories in an existing raster map.";
+	wf:input1 [ a ccd:FieldRaster ];
+	wf:input2 [ a ccd:FieldRaster, ccd:NominalA ];
+	wf:output [ a ccd:FieldRaster, ccd:NominalA ].
+
+########### Supertool: Zonal Statistics and Join Table
+qtools:JoinToZonalStatisticsTable tools:implements qtools:ZonalStatisticsMajorityBoolean, qtools:ZonalStatisticsMajorityNominal, qtools:ZonalStatisticsMedOrdinal, qtools:ZonalStatisticsMeanInterval, qtools:ZonalStatisticsMeanIntervalIRA, qtools:ZonalStatisticsMeanRatio, qtools:ZonalStatisticsMeanRatioIRA, qtools:ZonalStatisticsMeanCount, qtools:ZonalStatisticsSumRatio, qtools:ZonalStatisticsSumCount;
+	wf:edge _:wf3_1, _:wf3_2;
+		wf:source _:in31, _:in32;
+	rdfs:label "Performs a zonal statistics related calculation and joins the output table to the original input dataset.".
+_:wf3_1 wf:ApplicationOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics>;
+	wf:input1 _:in31;
+	wf:input2 _:in32;
+	wf:output _:out31.
+_:wf3_2 wf:ApplicationOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-field>;
+	wf:input1 _:out31;
+	wf:input2 _:in32;
+	wf:output _:out32. 
+
+########### Zonal Statistics
+#### Zonal Statistics with Majority Rule
+# with Boolean Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMajorityBoolean.
+qtools:ZonalStatisticsMajorityBoolean  rdfs:label "Calculates the most common value on values with a Boolean measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:BooleanA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:BooleanA ].
+    
+# with Nominal Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMajorityNominal.
+qtools:ZonalStatisticsMajorityNominal  rdfs:label "Calculates the most common value on values with a Nominal measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:NominalA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:NominalA ].
+    
+#### Zonal Statistics with Median Rule
+# for Ordinal Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMedOrdinal.
+qtools:ZonalStatisticsMedOrdinal  rdfs:label "Calculates the median on values with an Ordinal measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:OrdinalA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:OrdinalA ].
+
+#### Zonal Statistics with Mean Rule 
+#for Interval Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMeanInterval.
+qtools:ZonalStatisticsMeanInterval  rdfs:label "Calculates the average value for values with a Interval measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:IntervalA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ].
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMeanIntervalIRA.
+qtools:ZonalStatisticsMeanIntervalIRA  rdfs:label "Calculates the average value for values with a Interval measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:IntervalA, exm:IRA ]; #IRA This was added because of the APE leaf problem. !!!
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ]; 
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ].
+	
+#for Ratio Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMeanRatio.
+qtools:ZonalStatisticsMeanRatio  rdfs:label "Calculates the average value for values with a Ratio measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ].
+    
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMeanRatioIRA.
+qtools:ZonalStatisticsMeanRatioIRA  rdfs:label "Calculates the average value for values with a Ratio measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA, exm:IRA ]; #IRA This was added because of the APE leaf problem. !!!
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ]; 
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ].
+    
+#for Count Data    
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsMeanCount.
+qtools:ZonalStatisticsMeanCount  rdfs:label "Calculates the average value for values with a Count measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:CountA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ]. 
+    
+#### Zonal Statistics with Sum Rule
+# for Ratio Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsSumRatio.
+qtools:ZonalStatisticsSumRatio  rdfs:label "Calculates the total value for values with a Ratio measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:ERA ].
+    
+# for Count Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> tools:implements qtools:ZonalStatisticsSumCount.
+qtools:ZonalStatisticsSumCount  rdfs:label "Calculates the total value for values with a Count measurement level of a raster within the zones of another dataset, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Both raster and feature datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:CountA, exm:ERA ];
+    wf:input2 [ a ccd:Lattice, ccd:VectorA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ].
+
+########### Raster Layer Zonal Statistics
+# double check.
+#### Zonal Statistics with Mean Rule 
+#for Interval Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsMeanInterval.
+qtools:RasterZonalStatisticsMeanInterval  rdfs:label "Calculates the average value for values with a Interval measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:IntervalA ];
+    wf:input2 [ a ccd:FieldRaster ];
+    wf:output [ a ccd:ObjectVector, ccd:IntervalA ].
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsMeanIntervalIRA.
+qtools:RasterZonalStatisticsMeanIntervalIRA  rdfs:label "Calculates the average value for values with a Interval measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:IntervalA, exm:IRA ]; #IRA This was added because of the APE leaf problem. !!!
+    wf:input2 [ a ccd:FieldRaster ]; 
+    wf:output [ a ccd:ObjectVector, ccd:IntervalA ].
+	
+#for Ratio Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsMeanRatio.
+qtools:RasterZonalStatisticsMeanRatio  rdfs:label "Calculates the average value for values with a Ratio measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA ];
+    wf:input2 [ a ccd:FieldRaster ];
+    wf:output [ a ccd:ObjectVector, ccd:RatioA ].
+    
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsMeanRatioIRA.
+qtools:RasterZonalStatisticsMeanRatioIRA  rdfs:label "Calculates the average value for values with a Ratio measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA, exm:IRA ]; #IRA This was added because of the APE leaf problem. !!!
+    wf:input2 [ a ccd:FieldRaster ]; 
+    wf:output [ a ccd:ObjectVector, ccd:RatioA ].
+    
+#for Count Data    
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsMeanCount.
+qtools:RasterZonalStatisticsMeanCount  rdfs:label "Calculates the average value for values with a Count measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:CountA ];
+    wf:input2 [ a ccd:FieldRaster ];
+    wf:output [ a ccd:ObjectVector, ccd:RatioA ]. 
+    
+#### Zonal Statistics with Sum Rule
+# for Ratio Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsSumRatio.
+qtools:RasterZonalStatisticsSumRatio  rdfs:label "Calculates the total value for values with a Ratio measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA, exm:ERA ];
+    wf:input2 [ a ccd:FieldRaster ];
+    wf:output [ a ccd:ObjectVector, ccd:RatioA, exm:ERA ].
+    
+# for Count Data
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> tools:implements qtools:RasterZonalStatisticsSumCount.
+qtools:RasterZonalStatisticsSumCount  rdfs:label "Calculates the total value for values with a Count measurement level of a raster within the zones of another raster layer, a zone is defined as all areas in the input that have the same value. The areas do not have to be contiguous. Only raster datasets can be used for the zone input.";
+    wf:input1 [ a ccd:FieldRaster, ccd:CountA, exm:ERA ];
+    wf:input2 [ a ccd:FieldRaster ];
+    wf:output [ a ccd:ObjectVector, ccd:CountA, exm:ERA ].
+        
+########### r.neighbours
+<https://grass.osgeo.org/grass78/manuals/r.neighbors.html> tools:implements qtools:r.neighbours.
+qtools:r.neighbours rdfs:label "Makes each cell category value a function of the category values assigned to the cells around it, and stores new cell values in an output raster map layer.";
+	wf:input1 [ a ccd:FieldRaster, NominalA ];
+	wf:output [ a ccd:FieldRaster ]. 
+
+########### Raster Calculator
+#### Multiply ratio and ratio
+<https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> tools:implements qtools:CalculatorMultiplyRatioRatio.
+qtools:CalculatorMultiplyRatioRatio rdfs:label "Builds and executes a Local Map Algebra expression using Python syntax using rasters with a ratio measurement level, in this case it multiplies the rasters with eachother";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA ];
+    wf:input2 [ a ccd:FieldRaster, ccd:RatioA ];
+    wf:output [ a ccd:FieldRaster, ccd:RatioA ].
+    
+#### Multiply count and count
+<https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> tools:implements qtools:CalculatorMultiplyCountCount.
+qtools:CalculatorMultiplyCountCount rdfs:label "Builds and executes a Local Map Algebra expression using Python syntax using rasters with a Count measurement level, in this case it multiplies the rasters with eachother";
+    wf:input1 [ a ccd:FieldRaster, ccd:CountA ];
+    wf:input2 [ a ccd:FieldRaster, ccd:CountA ];
+    wf:output [ a ccd:FieldRaster, ccd:CountA ].
+    
+#### Multiply count and ratio
+<https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> tools:implements qtools:CalculatorMultiplyCountRatio.
+qtools:CalculatorMultiplyCountRatio rdfs:label "Builds and executes a Local Map Algebra expression using Python syntax using rasters with a Count measurement level, in this case it multiplies a count value with a ratio value";
+    wf:input1 [ a ccd:FieldRaster, ccd:CountA ];
+    wf:input2 [ a ccd:FieldRaster, ccd:RatioA ];
+    wf:output [ a ccd:FieldRaster, ccd:RatioA ].
+
+#### Multiply ratio and count
+<https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> tools:implements qtools:CalculatorMultiplyRatioCount.
+qtools:CalculatorMultiplyRatioCount rdfs:label "Builds and executes a Local Map Algebra expression using Python syntax using rasters with a Count measurement level, in this case it multiplies a ratio value with a count value";
+    wf:input1 [ a ccd:FieldRaster, ccd:RatioA ];
+    wf:input2 [ a ccd:FieldRaster, ccd:CountA ];
+    wf:output [ a ccd:FieldRaster, ccd:RatioA ].
+
+########### Slope
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#slope> tools:implements qtools:Slope.
+qtools:Slope rdfs:label "Generates a slope map from any GDAL-supported elevation raster. Slope is the angle of inclination to the horizontal.";
+	wf:input1 [ a ccd:FieldRaster, ccd:RatioA ];
+	wf:output [ a ccd:FieldRaster, ccd:RatioA ].
+
+########### r.clump 
+<https://grass.osgeo.org/grass78/manuals/r.clump.html> tools:implements qtools:r.clump.
+qtools:r.clump rdfs:label "Recategorizes data in a raster map by grouping cells that form physically discrete areas into unique categories.";
+	wf:input1 [ a ccd:FieldRaster ];
+	wf:output [ a ccd:FieldRaster, NominalA ]. 
