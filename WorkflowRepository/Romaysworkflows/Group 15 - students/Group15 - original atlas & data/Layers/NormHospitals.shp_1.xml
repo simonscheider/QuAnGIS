@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="nl"><Esri><CreaDate>20191021</CreaDate><CreaTime>10534300</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.7\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191021" Time="105317">CalculateField Distancehospitalgeodesic norm_hospi "1 - (([MEAN] -353.753483) /(7331.764313-353.753483))" VB #</Process></lineage></DataProperties></Esri></metadata>
