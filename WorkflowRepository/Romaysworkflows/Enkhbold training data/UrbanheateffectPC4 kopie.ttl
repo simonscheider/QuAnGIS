@@ -1,0 +1,40 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix pdok: <https://www.pdok.nl/introductie/-/article/>.
+@prefix maps: <https://maps.amsterdam.nl/open_geodata/>.
+@prefix rivm: <https://www.atlasnatuurlijkkapitaal.nl/>.
+
+# @author Romay Evers
+
+#Workflow the average urban heat island effect per PC4 area in Amsterdam
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow;
+	rdfs:comment "What is the average urban heat island effect per PC4 area in Amsterdam?"@en;
+	wf:source maps:%3Fk%3D192%2F;	#PC4 areas
+	wf:source rivm:kaarten;	#urban heat island effect
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3. 
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/clip.htm> ;
+	wf:input1 maps:%3Fk%3D192%2F;	#ccd:coverage
+	wf:input2 rivm:kaarten ;	#ccd:coverage
+	wf:output _:UHIams.	#ccd:coverage
+
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
+	wf:input _:UHIams ;	#ccd:coverage
+	wf:output _:zonalUHIams.	#ccd:lattice/table
+
+_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
+	wf:input1 _:zonalUHIams ;	#ccd:lattice/table
+	wf:input2 maps:%3Fk%3D192%2F ;	#ccd:coverage
+	wf:output _:meanUHIpc4. #ccd:lattice/table
+
+
+# Shouldn't there be an extra step between 'clip' and 'zonal statistics', e.g. 'polygon to raster'?

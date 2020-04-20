@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="nl"><Esri><CreaDate>20191021</CreaDate><CreaTime>10572100</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.7\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191021" Time="105652">CalculateField Distancefromrescare norm_carec 1-(([MEAN] -219.822396) /(5004.385027 - 219.822396)) VB #</Process></lineage></DataProperties></Esri></metadata>
