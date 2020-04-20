@@ -1,0 +1,246 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AddFieldToAttributesTable> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectortable.html#add-field-to-attributes-table> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesArea> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesLine> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesPoint> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinCountTess> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinSumTessCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinSumTessRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyCountCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyCountRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyRatioCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyRatioRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ContourToFieldRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#CoverageToFieldRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ExtractSelectedFeatures> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#extract-selected-features> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#FieldRasterProximity> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#proximity-raster-distance> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#NoDataExistenceRasterProximity> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#proximity-raster-distance> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectLineToExistenceRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectPointToExistenceRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectRegionToExistenceRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectVectorToExistenceRaster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanIntervalIRA> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanRatioIRA> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsSumCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsSumRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseGeneralObjectAndProximityAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#FullRasteriseAndProximityAnalysis> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectLineAndProximityAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#FullRasteriseAndProximityAnalysis> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectPointAndProximityAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#FullRasteriseAndProximityAnalysis> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectRegionAndProximityAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#FullRasteriseAndProximityAnalysis> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#SelectAttributesObjectsAndExtractFeatures> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#FullSelectAttributesAndExtractFeatures> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#SelectByAttribute> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorselection.html#select-by-attribute> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#Slope> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#slope> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#Union> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#union> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityBoolean> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityNominal> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanInterval> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanIntervalIRA> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatioIRA> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMedOrdinal> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumCount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumRatio> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable>,
+        <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#r.clump> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://grass.osgeo.org/grass78/manuals/r.clump.html> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#r.neighbours> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://grass.osgeo.org/grass78/manuals/r.neighbors.html> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#r.reclass> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://grass.osgeo.org/grass78/manuals/r.reclass.html> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#FullSelectAttributesAndExtractFeatures> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#slope> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#extract-selected-features> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#union> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorselection.html#select-by-attribute> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectortable.html#add-field-to-attributes-table> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://grass.osgeo.org/grass78/manuals/r.clump.html> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://grass.osgeo.org/grass78/manuals/r.neighbors.html> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://grass.osgeo.org/grass78/manuals/r.reclass.html> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/rasteranalysis.html#proximity-raster-distance> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#add-geometry-attributes> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#FullRasteriseAndProximityAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#dissolve> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/QGISTools.rdf#JoinToZonalStatisticsTable> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#zonal-statistics> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+

@@ -1,0 +1,2756 @@
+{
+  "functions": [
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsSumCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityNominal",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMajorityNominal",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityNominal"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#r.reclass",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "r.reclass",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#r.reclass"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectRegionAndProximityAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasteriseObjectRegionAndProximityAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectRegionAndProximityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectPointToExistenceRaster",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "PointA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ObjectPointToExistenceRaster",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectPointToExistenceRaster"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "label": "DissolveCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#FieldRasterProximity",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "FieldRasterProximity",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#FieldRasterProximity"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectPointAndProximityAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "PointA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasteriseObjectPointAndProximityAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectPointAndProximityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinSumTessCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AttributesJoinSumTessCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinSumTessCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanInterval",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "IntervalA"
+          ]
+        }
+      ],
+      "label": "DissolveMeanInterval",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanInterval"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#CoverageToFieldRaster",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "CoverageToFieldRaster",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#CoverageToFieldRaster"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatioIRA",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanRatioIRA",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatioIRA"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanRatioIRA",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA",
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsMeanRatioIRA",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanRatioIRA"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanInterval",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "IntervalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanInterval",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanInterval"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#SelectAttributesObjectsAndExtractFeatures",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "SelectAttributesObjectsAndExtractFeatures",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#SelectAttributesObjectsAndExtractFeatures"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AttributesJoinMeanTessRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AttributesJoinMeanTessCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityBoolean",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMajorityBoolean",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityBoolean"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectRegionToExistenceRaster",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ObjectRegionToExistenceRaster",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectRegionToExistenceRaster"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectLineToExistenceRaster",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ObjectLineToExistenceRaster",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectLineToExistenceRaster"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "label": "DissolveSumCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityBoolean",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMajorityBoolean",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityBoolean"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsMeanCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsSumCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinSumTessRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA",
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AttributesJoinSumTessRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA",
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinSumTessRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatioIRA",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanRatioIRA",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatioIRA"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#r.neighbours",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "r.neighbours",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#r.neighbours"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanIntervalIRA",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "IntervalA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanIntervalIRA",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanIntervalIRA"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyCountRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        }
+      ],
+      "label": "CalculatorMultiplyCountRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyCountRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ContourToFieldRaster",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "TessellationA"
+          ],
+          "NominalA": [
+            "OrdinalA"
+          ]
+        }
+      ],
+      "label": "ContourToFieldRaster",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainOrdinalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ContourToFieldRaster"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyRatioCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "label": "CalculatorMultiplyRatioCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyRatioCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "label": "DissolveMeanCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ExtractSelectedFeatures",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ExtractSelectedFeatures",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ExtractSelectedFeatures"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#SelectByAttribute",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "SelectByAttribute",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#SelectByAttribute"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanIntervalIRA",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "IntervalA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsMeanIntervalIRA",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanIntervalIRA"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesArea",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AddGeometryAttributesArea",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesArea"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinCountTess",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AttributesJoinCountTess",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinCountTess"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsMeanRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanIntervalIRA",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "IntervalA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanIntervalIRA",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanIntervalIRA"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesPoint",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AddGeometryAttributesPoint",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesPoint"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AddFieldToAttributesTable",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AddFieldToAttributesTable",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AddFieldToAttributesTable"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesLine",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AddGeometryAttributesLine",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AddGeometryAttributesLine"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsSumRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsSumRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsSumRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#Slope",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        }
+      ],
+      "label": "Slope",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#Slope"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectLineAndProximityAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasteriseObjectLineAndProximityAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseObjectLineAndProximityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        }
+      ],
+      "label": "DissolveSumRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#NoDataExistenceRasterProximity",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "label": "NoDataExistenceRasterProximity",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#NoDataExistenceRasterProximity"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseGeneralObjectAndProximityAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasteriseGeneralObjectAndProximityAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasteriseGeneralObjectAndProximityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#r.clump",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "r.clump",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#r.clump"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMedOrdinal",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "OrdinalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMedOrdinal",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainOrdinalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMedOrdinal"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        }
+      ],
+      "label": "DissolveMeanRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveMeanRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectVectorToExistenceRaster",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ObjectVectorToExistenceRaster",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "BooleanA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ObjectVectorToExistenceRaster"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#Union",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "Union",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#Union"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMedOrdinal",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "OrdinalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMedOrdinal",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainOrdinalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMedOrdinal"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessInterval",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "IntervalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "AttributesJoinMeanTessInterval",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#AttributesJoinMeanTessInterval"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyCountCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "label": "CalculatorMultiplyCountCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyCountCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityNominal",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMajorityNominal",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMajorityNominal"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsSumCount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "CountA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsSumCount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA",
+            "CountA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsSumCount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanInterval",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "IntervalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanInterval",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanInterval"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsSumRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA",
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumInterval",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "IntervalA"
+          ]
+        }
+      ],
+      "label": "DissolveSumInterval",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#DissolveSumInterval"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsMeanRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "TessellationA",
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsMeanRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA",
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "ZonalStatisticsSumRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA",
+            "TessellationA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA",
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#ZonalStatisticsSumRatio"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanInterval",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "IntervalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "RasterZonalStatisticsMeanInterval",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorA"
+          ],
+          "NominalA": [
+            "PlainIntervalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#RasterZonalStatisticsMeanInterval"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyRatioRatio",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "RatioA"
+          ]
+        }
+      ],
+      "label": "CalculatorMultiplyRatioRatio",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "FieldQ"
+          ],
+          "LayerA": [
+            "RasterA"
+          ],
+          "NominalA": [
+            "PlainRatioA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/QGISTools.rdf#CalculatorMultiplyRatioRatio"
+      ]
+    }
+  ]
+}

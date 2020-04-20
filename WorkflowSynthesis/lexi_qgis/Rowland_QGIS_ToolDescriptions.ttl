@@ -102,7 +102,7 @@ qtools:AttributesJoinSumTessCount rdfs:label "Sums the attributes at Count measu
 #### Join Attributes by Location with Mean Rule
 # with JOIN_ONE_TO_ONE parameter, with mean rule for Interval data.
 <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#join-attributes-by-location> tools:implements qtools:AttributesJoinMeanTessInterval.
-tools:AttributesJoinMeanTessInterval rdfs:label "Averages the attributes at interval measurement level from one feature to another based on the spatial relation";
+qtools:AttributesJoinMeanTessInterval rdfs:label "Averages the attributes at interval measurement level from one feature to another based on the spatial relation";
     wf:input1 [ a ccd:ObjectVector, ccd:IntervalA ];
     wf:input2 [ a ccd:Lattice, ccd:VectorA ];
     wf:output [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ].
@@ -387,7 +387,7 @@ qtools:RasterZonalStatisticsSumCount  rdfs:label "Calculates the total value for
 ########### r.neighbours
 <https://grass.osgeo.org/grass78/manuals/r.neighbors.html> tools:implements qtools:r.neighbours.
 qtools:r.neighbours rdfs:label "Makes each cell category value a function of the category values assigned to the cells around it, and stores new cell values in an output raster map layer.";
-	wf:input1 [ a ccd:FieldRaster, NominalA ];
+	wf:input1 [ a ccd:FieldRaster, ccd:NominalA ];
 	wf:output [ a ccd:FieldRaster ]. 
 
 ########### Raster Calculator
@@ -429,4 +429,4 @@ qtools:Slope rdfs:label "Generates a slope map from any GDAL-supported elevation
 <https://grass.osgeo.org/grass78/manuals/r.clump.html> tools:implements qtools:r.clump.
 qtools:r.clump rdfs:label "Recategorizes data in a raster map by grouping cells that form physically discrete areas into unique categories.";
 	wf:input1 [ a ccd:FieldRaster ];
-	wf:output [ a ccd:FieldRaster, NominalA ]. 
+	wf:output [ a ccd:FieldRaster, ccd:NominalA ]. 

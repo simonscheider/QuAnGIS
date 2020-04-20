@@ -74,21 +74,23 @@ def shortURInames(URI):
         return URI
 
 """Returns a list of types of some tool input/output which are all projected to given semantic dimension"""
-def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix, dodowncast =False):
-    
-    output = g.value(predicate = predicate, subject = subject, any = False)
-    if not output:
+def getinoutypes(g, predicate, subject, project, dimix, dim, mainprefix, dodowncast =False):    
+    inoutput = g.value(predicate = predicate, subject = subject, any = False)
+    if not inoutput:
         raise Exception(f'Could not find object with subject {subject} and predicate {predicate}!')
     outputtypes = []
-    for outputtype in g.objects(output, RDF.type):
+    for outputtype in g.objects(inoutput, RDF.type):
         if outputtype is not None and outputtype in project:
             if project[outputtype][dimix] is not None:
                 outputtypes.append(project[outputtype][dimix])      
-    if dodowncast:
+    if dodowncast: #Downcast is used to enforce leaf nodes for types. Is used to make annotations as specific as possible, used only for output nodes
             outputtypes = [downcast(t) for t in outputtypes]    
     out = [shortURInames(t) if str(mainprefix) in t else t for t in outputtypes]
-    if out == []: #In case there is no type, just use the highest level type of the dimension
-        out = [shortURInames(dim)]
+    if out == []: #In case there is no type, just use the highest level type of the corresponding dimension
+        if dodowncast:
+            out = [shortURInames(downcast(dim))]
+        else:
+            out = [shortURInames(dim)]
     return out
 
 """Read the tool annotations from the TTL file, project them to semantic dimensions and return a string

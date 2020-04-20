@@ -651,35 +651,35 @@ tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour d
 # Areal Interpolation with Average Rule
 <https://desktop.arcgis.com/en/arcmap/latest/extensions/geostatistical-analyst/using-areal-interpolation-to-predict-to-new-polygons.htm> tools:implements tools:ArealInterpolationAverage.
 tools:ArealInterpolationAverage rdfs:label "Makes polygon to polygon predictions of the mean of a measured attribute";
-	wf:input1 [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA, exm:IRA ];
+	wf:input1 [ a ccd:Lattice, ccd:VectorA, ccd:IntervalA ];
 	wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-	wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:IRA ]. 
+	wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ]. 
 
 # Areal Interpolation with Rate Rule
 <https://desktop.arcgis.com/en/arcmap/latest/extensions/geostatistical-analyst/using-areal-interpolation-to-predict-to-new-polygons.htm> tools:implements tools:ArealInterpolationRate.
 tools:ArealInterpolationRate rdfs:label "Makes polygon to polygon predictions of a measured rate attribute";
-    	wf:input1 [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:IRA ];
+    	wf:input1 [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ];
     	wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-    	wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:IRA ].
+    	wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ].
     
 ########### Point Interpolation with Krigings Algorithm to Raster
 # with the standard 12 points setting, and a spherical search radius.
 <https://pro.arcgis.com/en/pro-app/tool-reference/3d-analyst/kriging.htm> tools:implements tools:KrigingInterval.
 tools:KrigingInterval rdfs:label "interpolates a raster surface from points at interval measurement level using the kriging algorithm.";
-    	wf:input1 [ a ccd:PointMeasures, ccd:IntervalA, exm:IRA ];
-    	wf:output [ a ccd:FieldRaster, ccd:IntervalA, exm:IRA ].
+    	wf:input1 [ a ccd:PointMeasures, ccd:IntervalA ];
+    	wf:output [ a ccd:FieldRaster, ccd:IntervalA ].
 
 # with the standard 12 points setting, and a spherical search radius.
 <https://pro.arcgis.com/en/pro-app/tool-reference/3d-analyst/kriging.htm> tools:implements tools:KrigingRatio.
 tools:KrigingRatio rdfs:label "interpolates a raster surface from points at ratio measurement level using the kriging algorithm.";
-    	wf:input1 [ a ccd:PointMeasures, ccd:RatioA, exm:IRA ];
-    	wf:output [ a ccd:FieldRaster, ccd:RatioA, exm:IRA ].
+    	wf:input1 [ a ccd:PointMeasures, ccd:RatioA ];
+    	wf:output [ a ccd:FieldRaster, ccd:RatioA ].
 
 # with the standard 12 points setting, and a spherical search radius.
 <https://pro.arcgis.com/en/pro-app/tool-reference/3d-analyst/kriging.htm> tools:implements tools:KrigingCount.
 tools:KrigingCount rdfs:label "interpolates a raster surface from points at count measurement level using the kriging algorithm.";
-    	wf:input1 [ a ccd:PointMeasures, ccd:CountA, exm:IRA ];
-    	wf:output [ a ccd:FieldRaster, ccd:CountA, exm:IRA ]. # The output may be a floating point number but it still represents a count of discrete entities.
+    	wf:input1 [ a ccd:PointMeasures, ccd:CountA ];
+    	wf:output [ a ccd:FieldRaster, ccd:CountA ]. # The output may be a floating point number but it still represents a count of discrete entities.
 
 ########### Local Map Algebra
 #### Multiply ratio and ratio
