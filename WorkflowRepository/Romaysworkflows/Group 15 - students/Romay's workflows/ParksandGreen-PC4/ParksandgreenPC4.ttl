@@ -20,11 +20,11 @@ _:wf1 a wf:Workflow;
 	rdfs:comment "What is the average distance to parks and green per PC4 area in Amsterdam?"@en;
 	wf:source maps:%3Fk%3D192;	#PC4 areas
 	wf:source maps:%3Fk%3D99%2F;	#parks and green spaces
-	wf:edge _:wf1_1, _:wf1_2. 
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3. 
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
-	wf:input1 maps:%3Fk%3D192;	#ccd:existencevector
-	wf:input2 maps:%3Fk%3D99%2F ;	#ccd:objectvector
+	wf:input maps:%3Fk%3D192;	#ccd:existencevector
+	wf:input maps:%3Fk%3D99%2F ;	#ccd:objectvector
 	wf:output _:parkgreeneuc.	#ccd:fieldraster
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
@@ -32,6 +32,6 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spati
 	wf:output _:parkgreentable.	#ccd:lattice/table
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:parkgreentable ;	#ccd:lattice/table
-	wf:input2 maps:%3Fk%3D192 ;	#ccd:lattice/table
+	wf:input _:parkgreentable ;	#ccd:lattice/table
+	wf:input maps:%3Fk%3D192 ;	#ccd:lattice/table
 	wf:output _:meandistanceparksgreenpc4.	#ccd:lattice/table

@@ -35,15 +35,15 @@ _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:hospitals.	#ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
-	wf:input1 _:hospitals ;	#ccd:objectvector
-	wf:input2 maps:open_geodata%2F%3Fk%3D192%2F;	
+	wf:input _:hospitals ;	#ccd:objectvector
+	wf:input maps:open_geodata%2F%3Fk%3D192%2F;	
 	wf:output _:euclhospitals.	#ccd:fieldraster
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>;
-	wf:input1 _:euclhospitals ;	#ccd:fieldraster
+	wf:input _:euclhospitals ;	#ccd:fieldraster
 	wf:output _:eucltablehospitals.	#table
 
 _:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:eucltablehospitals ;	#table
-	wf:input2 maps:open_geodata%2F%3Fk%3D192%2F ;	
+	wf:input _:eucltablehospitals ;	#table
+	wf:input maps:open_geodata%2F%3Fk%3D192%2F ;	
 	wf:output _:distancehospitals. #ccd:lattice

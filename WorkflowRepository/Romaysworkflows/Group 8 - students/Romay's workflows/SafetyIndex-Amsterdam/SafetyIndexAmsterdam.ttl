@@ -34,8 +34,8 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:Amsterdam. #ccd:existencevector
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-	wf:input1 _:Amsterdam ; #ccd:existencevector
-	wf:input2 pdok:cbs-wijken-en-buurten ; #ccd:existencevector
+	wf:input _:Amsterdam ; #ccd:existencevector
+	wf:input pdok:cbs-wijken-en-buurten ; #ccd:existencevector
 	wf:output _:districtsAmsterdam0. #ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;

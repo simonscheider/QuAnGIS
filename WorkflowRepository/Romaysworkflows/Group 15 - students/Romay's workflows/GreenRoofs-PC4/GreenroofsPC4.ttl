@@ -22,12 +22,12 @@ _:wf1 a wf:Workflow;
 	wf:edge _:wf1_1, _:wf1_2, _:wf1_3.
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/summarize-within.htm> ;
-	wf:input1 maps:open_geodata%2F%3Fk%3D192%2F ;	#ccd:coverage
-	wf:input2 maps:groene_daken ; # removed outliers ccd:ieldraster
-	wf:output _:greenroofsperPC4.	#ccd:fieldraster
+	wf:input maps:open_geodata%2F%3Fk%3D192%2F ;	#ccd:coverage
+	wf:input maps:groene_daken ; # removed outliers ccd:ieldraster
+	wf:output _:greenroofsperPC4sum.	#ccd:fieldraster
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #calculate geometry (km2)
-	wf:input _:greenroofsperPC4 ;	#ccd:fieldraster
+	wf:input _:greenroofsperPC4sum ;	#ccd:fieldraster
 	wf:output _:greenroofsperPC4.	#ccd:fieldraster
 
 _:wf1_3 tools:implements  <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #density: amount green roofs / geometry

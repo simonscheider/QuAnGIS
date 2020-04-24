@@ -32,8 +32,8 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:Amsterdam. #ccd:existencevector
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-	wf:input1 _:Amsterdam ; #ccd:existencevector
-	wf:input2 pdok:cbs-wijken-en-buurten ; #ccd:existencevector
+	wf:input _:Amsterdam ; #ccd:existencevector
+	wf:input pdok:cbs-wijken-en-buurten ; #ccd:existencevector
 	wf:output _:neighborhoodAmsterdam0. #ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
@@ -45,13 +45,13 @@ _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/conve
 	wf:output _:pointvarietysport. #ccd:fieldraster
 
 _:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
-	wf:input1 _:pointvarietysport ; #ccd:fieldraster
-	wf:input2 _:neighborhoodAmsterdam ; 
+	wf:input _:pointvarietysport ; #ccd:fieldraster
+	wf:input _:neighborhoodAmsterdam ; 
 	wf:output _:zonalstatsporttable. #ccd:lattice or ccd:table
 
 _:wf1_7 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-join.htm>;
-	wf:input1 _:zonalstatsporttable ;
-	wf:input2 _:neighborhoodAmsterdam ;
+	wf:input _:zonalstatsporttable ;
+	wf:input _:neighborhoodAmsterdam ;
 	wf:output _:varietysportfacilitiesneighborhood. #ccd:lattice
 
 

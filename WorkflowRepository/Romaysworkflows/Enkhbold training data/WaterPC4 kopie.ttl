@@ -42,8 +42,8 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ;
 	wf:input _:waterPC4 ;	#table
-	wf:ouput _:waterPC4.	#table
+	wf:ouput _:waterPC4added.	#table
 
 _:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/calculate-field.htm> ;
-	wf:input _:waterPC4 ;	#table
-	wf:output _:waterPC4.	#table
+	wf:input _:waterPC4added ;	#table
+	wf:output _:totalwaterPC4.	#table

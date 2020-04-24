@@ -33,8 +33,8 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:Amsterdam. #ccd:existencevector
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-	wf:input1 _:Amsterdam ; #ccd:existencevector
-	wf:input2 pdok:cbs-wijken-en-buurten ; #ccd:existencevector
+	wf:input _:Amsterdam ; #ccd:existencevector
+	wf:input pdok:cbs-wijken-en-buurten ; #ccd:existencevector
 	wf:output _:neighborhoodAmsterdam0. #ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
@@ -42,18 +42,18 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:neighborhoodAmsterdam. #ccd:objectvector
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
-	wf:input2 maps:trammetro ; #ccd:objectvector
-	wf:output1 _:outputbackdirectionraster ; 
-	wf:output2 _:outputdirectionraster ;
-	wf:output3 _:euclideandistanceneighb. #ccd:fieldraster
+	wf:input maps:trammetro ; #ccd:objectvector
+	wf:output _:outputbackdirectionraster ; 
+	wf:output _:outputdirectionraster ;
+	wf:output _:euclideandistanceneighb. #ccd:fieldraster
 
-_:wf1_6 tools:implements <https://desktop.arcgis.com/en/arcmap/latest/tools/spatial-analyst-toolbox/zonal-statistics-as-table.htm> ;
-	wf:input2 _:euclideandistanceneighb ;	#ccd:fieldraster
+_:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
+	wf:input _:euclideandistanceneighb ;	#ccd:fieldraster
 	wf:output _:meandistancetram.	#ccd:lattice
 
 _:wf1_7 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:meandistancetram ; #ccd:table? / #ccd:lattice
-	wf:input2 _:neighborhoodAmsterdam ; #ccd:objectvector
+	wf:input _:meandistancetram ; #ccd:table? / #ccd:lattice
+	wf:input _:neighborhoodAmsterdam ; #ccd:objectvector
 	wf:output _:meandistancetramneighb. 
 
 

@@ -34,8 +34,8 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:Amsterdam. #ccd:existencevector
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-	wf:input1 _:Amsterdam ; #ccd:existencevector
-	wf:input2 pdok:cbs-wijken-en-buurten ; #ccd:existencevector
+	wf:input _:Amsterdam ; #ccd:existencevector
+	wf:input pdok:cbs-wijken-en-buurten ; #ccd:existencevector
 	wf:output _:districtsAmsterdam0. #ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
@@ -43,6 +43,6 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:districtsAmsterdam. #ccd:objectvector
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:districtsAmsterdam ;
-	wf:input2 dataamsterdam:specials%2Fdashboard%2Fdashboard-veiligheid%2Fd6006969-9d2a-413d-80a4-308932ed36f8%2F ;
+	wf:input _:districtsAmsterdam ;
+	wf:input dataamsterdam:specials%2Fdashboard%2Fdashboard-veiligheid%2Fd6006969-9d2a-413d-80a4-308932ed36f8%2F ;
 	wf:output _:safetyindexperdistrictAmsterdam.

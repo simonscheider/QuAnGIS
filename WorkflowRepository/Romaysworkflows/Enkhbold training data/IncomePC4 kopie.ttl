@@ -24,8 +24,8 @@ _:wf1 a wf:Workflow;
 	wf:edge _:wf1_1, _:wf1_2. 
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/union.htm> ;
-	wf:input1 maps:%3Fk%3D192%2F;	#ccd:coverage
-	wf:input2 data:datasets%2F468V7Fy2ECy-HQ%2Fkerncijfers-wijken%2F ;	#ccd:coverage
+	wf:input maps:%3Fk%3D192%2F;	#ccd:coverage
+	wf:input data:datasets%2F468V7Fy2ECy-HQ%2Fkerncijfers-wijken%2F ;	#ccd:coverage
 	wf:output _:incomeunion.	#ccd:coverage
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/dissolve.htm> ;

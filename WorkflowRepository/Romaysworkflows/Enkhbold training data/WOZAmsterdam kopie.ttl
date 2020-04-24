@@ -25,16 +25,16 @@ _:wf1 a wf:Workflow ;
 	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5.
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
-	wf:input1 pdok:cbs-gebiedsindelingen ;
+	wf:input pdok:cbs-gebiedsindelingen ;
 	wf:output _:amsterdam0.
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
-	wf:input1 _:amsterdam0 ;
+	wf:input _:amsterdam0 ;
 	wf:output _:amsterdam.
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-	wf:input1 _:amsterdam ;
-	wf:input2 pdok:cbs-wijken-en-buurten ;
+	wf:input _:amsterdam ;
+	wf:input pdok:cbs-wijken-en-buurten ;
 	wf:output _:neighborhoodsamsterdam0.
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
@@ -42,6 +42,6 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:neighborhoodsamsterdam.
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:neighborhoodsamsterdam ;
-	wf:input2 ois:9iEZnQgH7kAzRA%2Fstedelijke-ontwikkeling-buurten%2F ;
+	wf:input _:neighborhoodsamsterdam ;
+	wf:input ois:9iEZnQgH7kAzRA%2Fstedelijke-ontwikkeling-buurten%2F ;
 	wf:output _:wozneighborhoodsamsterdam.

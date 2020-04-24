@@ -31,19 +31,19 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spati
 	wf:output _:reclass_water.
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm> ;
-	wf:input1 _:reclass_water ;	#ccd:join-fieldraster
-	wf:input2 maps:%3Fk%3D192%2F ;	#ccd:coverage
+	wf:input _:reclass_water ;	#ccd:join-fieldraster
+	wf:input maps:%3Fk%3D192%2F ;	#ccd:coverage
 	wf:output _:water-area.	#ccd:lattice/table
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm> ;
-	wf:input1 _:water-area ;	#ccd:lattice/table
-	wf:input2 maps:%3Fk%3D192%2F ; #ccd:coverage/table
+	wf:input _:water-area ;	#ccd:lattice/table
+	wf:input maps:%3Fk%3D192%2F ; #ccd:coverage/table
 	wf:ouput _:waterPC4.	#table
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ;
 	wf:input _:waterPC4 ;	#table
-	wf:ouput _:waterPC4.	#table
+	wf:ouput _:waterPC4added.	#table
 
 _:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/calculate-field.htm> ;
-	wf:input _:waterPC4 ;	#table
-	wf:output _:waterPC4.	#table
+	wf:input _:waterPC4added ;	#table
+	wf:output _:totalwaterPC4.	#table

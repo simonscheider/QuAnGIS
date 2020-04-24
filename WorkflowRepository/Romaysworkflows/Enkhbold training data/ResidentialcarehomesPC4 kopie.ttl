@@ -20,7 +20,7 @@ _:wf1 a wf:Workflow;
 	rdfs:comment "What is the average distance to residential care complexes per PC4 area in Amsterdam?"@en;
 	wf:source maps:open_geodata%2F%3Fk%3D192%2F;	#PC4 areas
 	wf:source maps:functiekaart; #residential care complexes
-	wf:edge _:wf1_1, _:wf1_2, _:wf1_3.
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_4, _:wf1_5, _:wf1_6.
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/select.htm> ;
 	wf:input maps:functiekaart	;
@@ -35,15 +35,15 @@ _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:rescare.	#ccd:objectvector
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
-	wf:input1 _:rescare ;	#ccd:objectvector
-	wf:input2 maps:open_geodata%2F%3Fk%3D192%2F;
+	wf:input _:rescare ;	#ccd:objectvector
+	wf:input maps:open_geodata%2F%3Fk%3D192%2F;
 	wf:output _:euclrescare.	#ccd:fieldraster
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>;
-	wf:input1 _:euclrescare ;	#ccd:fieldraster
+	wf:input _:euclrescare ;	#ccd:fieldraster
 	wf:output _:eucltablerescare.	#table
 
 _:wf1_6 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:eucltablerescare ;	#table
-	wf:input2 maps:open_geodata%2F%3Fk%3D192%2F;
+	wf:input _:eucltablerescare ;	#table
+	wf:input maps:open_geodata%2F%3Fk%3D192%2F;
 	wf:output _:distanceresidentialcare. 	#ccd:lattice

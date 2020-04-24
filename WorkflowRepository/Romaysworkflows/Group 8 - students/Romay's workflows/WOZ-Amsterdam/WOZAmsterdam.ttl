@@ -18,14 +18,14 @@
 
 _:wf1 a wf:Workflow ;
 	rdfs:comment "What is the WOZ-waarde per square meter per neighborhood in Amsterdam?"@en;
-	rdfs:comment "What is the distribution of the WOZ-waarde per square meter per neighborhood in Amsterdam?"@en;
+	#rdfs:comment second question:"What is the distribution of the WOZ-waarde per square meter per neighborhood in Amsterdam?";
 	wf:source pdok:cbs-gebiedsindelingen; #municipalities
 	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
 	wf:source ois:9iEZnQgH7kAzRA%2Fstedelijke-ontwikkeling-buurten%2F; #WOZ-waarde
 	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5.
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
-	wf:input1 pdok:cbs-gebiedsindelingen ;
+	wf:input pdok:cbs-gebiedsindelingen ;
 	wf:output _:amsterdam0.
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
@@ -33,8 +33,8 @@ _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:amsterdam.
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
-	wf:input1 _:amsterdam ;
-	wf:input2 pdok:cbs-wijken-en-buurten ;
+	wf:input _:amsterdam ;
+	wf:input pdok:cbs-wijken-en-buurten ;
 	wf:output _:neighborhoodsamsterdam0.
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
@@ -42,6 +42,6 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:output _:neighborhoodsamsterdam.
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm> ;
-	wf:input1 _:neighborhoodsamsterdam ;
-	wf:input2 ois:9iEZnQgH7kAzRA%2Fstedelijke-ontwikkeling-buurten%2F ;
+	wf:input _:neighborhoodsamsterdam ;
+	wf:input ois:9iEZnQgH7kAzRA%2Fstedelijke-ontwikkeling-buurten%2F ;
 	wf:output _:wozneighborhoodsamsterdam.
