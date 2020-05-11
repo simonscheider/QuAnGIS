@@ -27,4 +27,4 @@ _:wf1 a wf:Workflow;
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/geoanalytics-desktop/join-features.htm>  ;
 	wf:input maps:open_geodata%2F%3Fk%3D192%2F ;	#ccd:coverage
 	wf:input data:energielabels-in-amsterdam ; #modified excel document (PC6 areas needed to be modified into PC4 areas and energy labels (A-G) needed to be transformed into numbers (1-7) in order to calculate the average energy label)
-	wf:ouput _:enerylabelsPC4. 
+	wf:output _:enerylabelsPC4. 

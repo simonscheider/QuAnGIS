@@ -22,23 +22,23 @@ _:wf1 a wf:Workflow;
 	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5, _:wf1_6, _:wf1_7.
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
-	wf:input1 maps:bomen ; #trees1 #ccd:objectvector
-	wf:input2 maps:open_geodata%2F%3Fk%3D192%2F ;	
+	wf:input maps:bomen ; #trees1 #ccd:objectvector
+	wf:input maps:open_geodata%2F%3Fk%3D192%2F ;	
 	wf:output _:treesPC41.	#ccd:lattice
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
-	wf:input1 maps:bomen ; #trees2
-	wf:input2 _:treesPC41 ;	#ccd:lattice
+	wf:input maps:bomen ; #trees2
+	wf:input _:treesPC41 ;	#ccd:lattice
 	wf:output _:treesPC42.	#ccd:lattice
 
 _:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
-	wf:input1 maps:bomen ; #trees3
-	wf:input2 _:treesPC42 ;	#ccd:lattice
+	wf:input maps:bomen ; #trees3
+	wf:input _:treesPC42 ;	#ccd:lattice
 	wf:output _:treesPC43.	#ccd:lattice
 
 _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> ;
-	wf:input1 maps:bomen ; #trees4
-	wf:input2 _:treesPC43 ;	#ccd:lattice
+	wf:input maps:bomen ; #trees4
+	wf:input _:treesPC43 ;	#ccd:lattice
 	wf:output _:treesPC44.	#ccd:lattice
 
 _:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm> ; #calculate total trees 

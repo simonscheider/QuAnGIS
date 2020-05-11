@@ -39,7 +39,7 @@ _:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:input _:neighborhoodsamsterdam0 ;
 	wf:output _:neighborhoodsamsterdam.
 
-_:wf1_5 tool:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
+_:wf1_5 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/euclidean-distance.htm> ;
 	wf:input maps:trammetro ;
 	wf:output _:outputbackdirectionraster ;
 	wf:output _:outputdirectionraster ;

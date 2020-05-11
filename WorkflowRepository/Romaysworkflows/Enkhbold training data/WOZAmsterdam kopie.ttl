@@ -18,7 +18,7 @@
 
 _:wf1 a wf:Workflow ;
 	rdfs:comment "What is the WOZ-waarde per square meter per neighborhood in Amsterdam?"@en;
-	rdfs:comment "What is the distribution of the WOZ-waarde per square meter per neighborhood in Amsterdam?"@en;
+	# rdfs:comment second question "What is the distribution of the WOZ-waarde per square meter per neighborhood in Amsterdam?"@en;
 	wf:source pdok:cbs-gebiedsindelingen; #municipalities
 	wf:source pdok:cbs-wijken-en-buurten; #neighborhoodregions
 	wf:source ois:9iEZnQgH7kAzRA%2Fstedelijke-ontwikkeling-buurten%2F; #WOZ-waarde
