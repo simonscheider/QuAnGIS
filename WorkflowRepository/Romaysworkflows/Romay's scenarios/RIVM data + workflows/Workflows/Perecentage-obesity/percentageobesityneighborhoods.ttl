@@ -1,0 +1,35 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix RIVM: <statline.rivm.nl/#/RIVM/nl/dataset/>.
+@prefix cbs: <https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/>.
+
+# @author Romay Evers
+
+#Workflow the percentage of people suffering from obesity per neighborhood in Amsterdam
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow;
+	rdfs:comment "What is the percentage of people with obesity per neighborhood in Amsterdam?"@en;
+	wf:source cbs:wijk-en-buurtkaart-2019; #neighborhood
+	wf:source RIVM:50052NED%2Ftable%3Fts%3D1590482338197;
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3.
+
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
+	wf:input cbs:wijk-en-buurtkaart-2019 ;
+	wf:output _:neighborhoodsAmsterdam2019_0.
+
+_:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
+	wf:input _:neighborhoodsAmsterdam2019_0 ;
+	wf:output _:neighborhoodsAmsterdam2019.
+
+_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-join.htm> ;
+	wf:input _:neighborhoodsAmsterdam2019 ;
+	wf:input RIVM:50052NED%2Ftable%3Fts%3D1590482338197 ;
+	wf:output _:percentagesmokersneighborhoods.

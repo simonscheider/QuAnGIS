@@ -1,0 +1,581 @@
+WijkBuurt;Regio;SoortRegio;RegioCode;Drank;Obesitas;Roker;LichGez;PsychGez;Eenzaam;GoedGez;SportBew;Mantelzorg
+Amsterdam;Amsterdam;Gemeente;GM0363;41;13;28;33;9;13;74;56;9
+Burgwallen-Oude Zijde;Amsterdam;Wijk;WK036300;25;8;34;27;7;12;82;65;8
+Kop Zeedijk;Amsterdam;Buurt;BU03630000;24;8;35;27;7;12;83;65;8
+Oude Kerk e.o.;Amsterdam;Buurt;BU03630001;26;8;36;27;8;13;81;65;7
+Burgwallen Oost;Amsterdam;Buurt;BU03630002;27;8;34;27;7;13;82;65;7
+Nes e.o.;Amsterdam;Buurt;BU03630003;22;6;34;23;7;11;86;69;6
+BG-terrein e.o.;Amsterdam;Buurt;BU03630004;26;8;32;29;7;11;81;64;9
+Burgwallen-Nieuwe Zijde;Amsterdam;Wijk;WK036301;24;7;35;25;7;12;84;66;7
+Stationsplein e.o.;Amsterdam;Buurt;BU03630100;.;.;.;.;.;.;.;.;.
+Hemelrijk;Amsterdam;Buurt;BU03630101;22;8;36;26;7;12;83;65;7
+Nieuwendijk Noord;Amsterdam;Buurt;BU03630102;26;8;36;25;7;14;83;66;7
+Spuistraat Noord;Amsterdam;Buurt;BU03630103;23;7;34;24;7;12;85;67;7
+Nieuwe Kerk e.o.;Amsterdam;Buurt;BU03630104;23;7;35;23;7;12;86;68;6
+Spuistraat Zuid;Amsterdam;Buurt;BU03630105;23;8;33;27;7;12;82;65;8
+Begijnhofbuurt;Amsterdam;Buurt;BU03630106;29;9;33;31;8;13;79;63;8
+Kalverdriehoek;Amsterdam;Buurt;BU03630107;21;6;34;23;6;11;86;68;7
+Grachtengordel-West;Amsterdam;Wijk;WK036302;23;7;28;28;5;9;84;65;11
+Langestraat e.o.;Amsterdam;Buurt;BU03630200;23;7;27;29;5;9;84;64;12
+Leliegracht e.o.;Amsterdam;Buurt;BU03630201;22;6;29;27;5;10;85;66;10
+Felix Meritisbuurt;Amsterdam;Buurt;BU03630202;22;7;28;28;5;10;84;65;10
+Leidsegracht Noord;Amsterdam;Buurt;BU03630203;23;7;28;28;5;9;84;65;11
+Grachtengordel-Zuid;Amsterdam;Wijk;WK036303;24;7;28;28;5;10;84;66;10
+Spiegelbuurt;Amsterdam;Buurt;BU03630300;24;7;27;27;5;9;84;66;10
+Gouden Bocht;Amsterdam;Buurt;BU03630301;25;7;29;28;5;10;83;66;9
+Van Loonbuurt;Amsterdam;Buurt;BU03630302;24;7;26;29;5;9;83;65;11
+Amstelveldbuurt;Amsterdam;Buurt;BU03630303;24;7;27;29;5;9;83;66;11
+Rembrandtpleinbuurt;Amsterdam;Buurt;BU03630304;25;7;34;25;6;13;84;67;7
+Reguliersbuurt;Amsterdam;Buurt;BU03630305;24;6;37;22;7;13;86;69;5
+Leidsegracht Zuid;Amsterdam;Buurt;BU03630306;23;7;28;27;5;9;84;66;10
+Nieuwmarkt/Lastage;Amsterdam;Wijk;WK036304;29;10;29;32;7;12;78;62;10
+Oosterdokseiland;Amsterdam;Buurt;BU03630400;28;9;30;27;6;11;83;63;10
+Scheepvaarthuisbuurt;Amsterdam;Buurt;BU03630401;22;7;29;27;5;9;84;66;10
+Rapenburg;Amsterdam;Buurt;BU03630402;28;9;32;27;7;12;81;66;9
+Lastage;Amsterdam;Buurt;BU03630403;26;9;29;31;6;10;80;64;10
+Nieuwmarkt;Amsterdam;Buurt;BU03630404;34;12;29;39;8;13;70;57;11
+Uilenburg;Amsterdam;Buurt;BU03630405;29;10;28;32;7;12;79;62;11
+Valkenburg;Amsterdam;Buurt;BU03630406;30;10;27;33;6;11;78;61;11
+Zuiderkerkbuurt;Amsterdam;Buurt;BU03630407;28;10;30;33;7;12;77;62;11
+Waterloopleinbuurt;Amsterdam;Buurt;BU03630408;28;10;30;32;7;12;78;63;10
+Haarlemmerbuurt;Amsterdam;Wijk;WK036305;30;10;29;33;7;11;77;60;11
+Westerdokseiland;Amsterdam;Buurt;BU03630500;32;11;25;32;6;9;78;60;12
+Haarlemmerbuurt Oost;Amsterdam;Buurt;BU03630501;26;10;30;32;7;11;78;62;10
+Haarlemmerbuurt West;Amsterdam;Buurt;BU03630502;30;11;31;34;8;12;75;59;11
+Westelijke eilanden;Amsterdam;Buurt;BU03630503;29;10;29;33;7;11;78;61;12
+Planciusbuurt Noord;Amsterdam;Buurt;BU03630505;29;10;35;29;8;14;78;62;8
+Planciusbuurt Zuid;Amsterdam;Buurt;BU03630506;32;13;36;39;11;17;69;57;11
+Jordaan;Amsterdam;Wijk;WK036306;27;10;31;33;7;12;78;61;10
+Driehoekbuurt;Amsterdam;Buurt;BU03630600;26;9;32;32;7;12;79;62;10
+Bloemgrachtbuurt;Amsterdam;Buurt;BU03630602;26;9;30;31;6;11;80;62;10
+Marnixbuurt Noord;Amsterdam;Buurt;BU03630603;32;12;32;36;9;13;73;58;10
+Zaagpoortbuurt;Amsterdam;Buurt;BU03630604;26;9;38;29;9;15;79;63;7
+Marnixbuurt Midden;Amsterdam;Buurt;BU03630605;23;7;33;23;6;10;86;67;6
+Elandsgrachtbuurt;Amsterdam;Buurt;BU03630606;27;10;30;33;7;12;77;62;10
+Passeerdersgrachtbuurt;Amsterdam;Buurt;BU03630607;26;9;29;33;6;12;78;62;11
+Groenmarktkadebuurt;Amsterdam;Buurt;BU03630608;24;8;33;26;7;11;83;65;8
+Marnixbuurt Zuid;Amsterdam;Buurt;BU03630609;30;9;28;35;7;13;75;58;9
+Anjeliersbuurt Noord;Amsterdam;Buurt;BU03630610;26;9;30;32;6;11;79;61;11
+Anjeliersbuurt Zuid;Amsterdam;Buurt;BU03630611;28;10;31;35;7;12;76;60;11
+De Weteringschans;Amsterdam;Wijk;WK036307;24;7;29;28;6;10;83;66;9
+Leidsebuurt Noordwest;Amsterdam;Buurt;BU03630700;23;7;32;25;6;11;85;68;8
+Leidsebuurt Zuidwest;Amsterdam;Buurt;BU03630701;28;9;34;29;7;13;80;66;8
+Leidsebuurt Noordoost;Amsterdam;Buurt;BU03630702;23;7;33;24;6;11;85;69;7
+Leidsebuurt Zuidoost;Amsterdam;Buurt;BU03630703;25;8;30;29;6;11;81;67;9
+Weteringbuurt;Amsterdam;Buurt;BU03630704;24;7;29;27;6;10;84;67;9
+Den Texbuurt;Amsterdam;Buurt;BU03630705;25;8;26;30;5;9;82;66;11
+Utrechtsebuurt Zuid;Amsterdam;Buurt;BU03630706;24;8;27;30;5;10;81;64;10
+Frederikspleinbuurt;Amsterdam;Buurt;BU03630707;26;7;25;30;5;9;82;65;11
+Weesperbuurt/Plantage;Amsterdam;Wijk;WK036308;29;9;30;31;7;12;78;63;9
+Weesperbuurt;Amsterdam;Buurt;BU03630800;30;10;31;32;8;13;77;62;9
+Sarphatistrook;Amsterdam;Buurt;BU03630801;30;9;32;30;8;13;78;63;9
+Plantage;Amsterdam;Buurt;BU03630803;27;8;27;30;6;10;81;64;11
+Alexanderplein e.o.;Amsterdam;Buurt;BU03630804;23;8;29;27;5;9;84;65;9
+Oostelijke Eilanden/Kadijken;Amsterdam;Wijk;WK036309;34;12;29;34;8;12;75;60;11
+Marine-Etablissement;Amsterdam;Buurt;BU03630900;28;10;29;29;6;11;82;63;11
+Kattenburg;Amsterdam;Buurt;BU03630901;35;13;30;35;9;12;74;58;10
+Wittenburg;Amsterdam;Buurt;BU03630902;36;13;29;36;9;13;74;59;11
+Oostenburg;Amsterdam;Buurt;BU03630903;39;14;31;36;10;14;71;58;10
+Czaar Peterbuurt;Amsterdam;Buurt;BU03630904;34;11;32;32;9;13;75;59;8
+Het Funen;Amsterdam;Buurt;BU03630905;31;10;25;28;6;10;82;62;10
+Kazernebuurt;Amsterdam;Buurt;BU03630907;33;12;31;36;8;13;74;60;12
+Kadijken;Amsterdam;Buurt;BU03630908;30;11;27;34;7;11;77;61;12
+Westelijk Havengebied;Amsterdam;Wijk;WK036310;35;14;35;35;8;16;73;48;10
+Coenhaven/Mercuriushaven;Amsterdam;Buurt;BU03631000;32;10;27;27;6;15;82;57;9
+Alfa-driehoek;Amsterdam;Buurt;BU03631001;38;11;28;23;7;14;84;56;6
+Petroleumhaven;Amsterdam;Buurt;BU03631002;.;.;.;.;.;.;.;.;.
+Westhaven Noord;Amsterdam;Buurt;BU03631003;31;17;28;38;7;10;74;45;15
+Vervoerscentrum;Amsterdam;Buurt;BU03631004;.;.;.;.;.;.;.;.;.
+Amerikahaven;Amsterdam;Buurt;BU03631005;38;16;39;38;10;19;68;44;10
+Afrikahaven;Amsterdam;Buurt;BU03631006;.;.;.;.;.;.;.;.;.
+Westhaven Zuid;Amsterdam;Buurt;BU03631007;24;10;40;27;9;15;81;56;6
+Bedrijventerrein Sloterdijk;Amsterdam;Wijk;WK036311;39;13;35;28;9;18;78;54;8
+Sloterdijk II;Amsterdam;Buurt;BU03631100;38;16;41;31;8;20;73;52;8
+Sloterdijk III Oost;Amsterdam;Buurt;BU03631102;.;.;.;.;.;.;.;.;.
+Sloterdijk III West;Amsterdam;Buurt;BU03631103;34;10;37;24;11;18;81;55;6
+De Heining;Amsterdam;Buurt;BU03631104;38;17;28;34;5;9;77;44;13
+Teleport;Amsterdam;Buurt;BU03631105;45;10;36;23;8;21;81;60;6
+Bretten Oost;Amsterdam;Buurt;BU03631107;.;.;.;.;.;.;.;.;.
+Bretten West;Amsterdam;Buurt;BU03631109;.;.;.;.;.;.;.;.;.
+Houthavens;Amsterdam;Wijk;WK036312;30;9;25;30;5;10;82;62;12
+Houthavens West;Amsterdam;Buurt;BU03631200;28;7;25;22;5;9;88;65;9
+Houthavens Oost;Amsterdam;Buurt;BU03631201;31;10;24;33;5;10;79;60;14
+Spaarndammer- en Zeeheldenbuurt;Amsterdam;Wijk;WK036313;39;14;32;35;10;14;71;56;9
+Zeeheldenbuurt;Amsterdam;Buurt;BU03631300;38;13;31;33;10;14;74;58;10
+Spaarndammerbuurt Noordoost;Amsterdam;Buurt;BU03631301;41;14;32;38;11;16;68;56;10
+Spaarndammerbuurt Zuidoost;Amsterdam;Buurt;BU03631302;35;13;32;36;10;13;72;57;10
+Spaarndammerbuurt Zuidwest;Amsterdam;Buurt;BU03631303;38;13;30;37;10;13;70;54;9
+Spaarndammerbuurt Midden;Amsterdam;Buurt;BU03631304;37;13;33;33;11;14;73;57;9
+Spaarndammerbuurt Noordwest;Amsterdam;Buurt;BU03631305;42;14;31;34;11;15;71;55;9
+Westergasfabriek;Amsterdam;Buurt;BU03631306;.;.;.;.;.;.;.;.;.
+Overbraker Binnenpolder;Amsterdam;Buurt;BU03631307;48;14;35;34;11;18;71;56;10
+Staatsliedenbuurt;Amsterdam;Wijk;WK036314;33;11;32;32;9;12;77;61;9
+De Wittenbuurt Noord;Amsterdam;Buurt;BU03631400;32;11;32;32;9;12;77;61;9
+De Wittenbuurt Zuid;Amsterdam;Buurt;BU03631401;37;14;31;39;10;14;71;58;12
+Staatsliedenbuurt Noordoost;Amsterdam;Buurt;BU03631402;42;16;30;41;11;14;66;53;11
+Fannius Scholtenbuurt;Amsterdam;Buurt;BU03631403;32;11;34;31;9;13;77;62;8
+Westerstaatsman;Amsterdam;Buurt;BU03631404;30;10;33;28;8;12;80;64;8
+Buyskade e.o.;Amsterdam;Buurt;BU03631405;31;10;29;30;7;10;80;63;10
+Centrale Markt;Amsterdam;Wijk;WK036315;37;12;28;33;8;11;76;61;12
+Ecowijk;Amsterdam;Buurt;BU03631500;36;11;26;33;7;10;78;64;13
+Markthallen;Amsterdam;Buurt;BU03631501;28;11;30;29;6;10;81;60;11
+Bedrijvencentrum Westerkwartier;Amsterdam;Buurt;BU03631502;27;10;26;27;5;7;84;63;12
+Marcanti;Amsterdam;Buurt;BU03631503;40;13;31;34;9;13;73;57;10
+Frederik Hendrikbuurt;Amsterdam;Wijk;WK036316;32;10;32;31;8;12;77;61;9
+Frederik Hendrikbuurt Noord;Amsterdam;Buurt;BU03631600;31;10;32;31;8;12;78;62;9
+Frederik Hendrikbuurt Zuidoost;Amsterdam;Buurt;BU03631601;31;10;34;30;9;13;78;62;8
+Frederik Hendrikbuurt Zuidwest;Amsterdam;Buurt;BU03631602;37;12;27;36;8;11;73;56;11
+Da Costabuurt;Amsterdam;Wijk;WK036317;28;9;31;29;7;11;80;63;9
+Da Costabuurt Noord;Amsterdam;Buurt;BU03631700;28;9;31;29;7;11;80;63;9
+Kinkerbuurt;Amsterdam;Wijk;WK036318;32;10;34;30;9;13;77;63;8
+Bellamybuurt Noord;Amsterdam;Buurt;BU03631800;35;11;35;32;10;14;74;61;9
+Bellamybuurt Zuid;Amsterdam;Buurt;BU03631801;30;9;34;28;8;12;79;64;8
+Van Lennepbuurt;Amsterdam;Wijk;WK036319;36;12;32;35;10;14;72;61;9
+Da Costabuurt Zuid;Amsterdam;Buurt;BU03631900;26;8;32;27;7;12;81;66;7
+Borgerbuurt;Amsterdam;Buurt;BU03631901;45;15;30;42;12;16;64;55;10
+Lootsbuurt;Amsterdam;Buurt;BU03631902;32;11;33;32;9;14;75;62;8
+Helmersbuurt;Amsterdam;Wijk;WK036320;27;8;29;29;6;11;81;66;9
+Helmersbuurt Oost;Amsterdam;Buurt;BU03632000;24;7;29;26;5;9;84;68;9
+WG-terrein;Amsterdam;Buurt;BU03632001;31;10;29;34;8;12;76;63;11
+Cremerbuurt Oost;Amsterdam;Buurt;BU03632002;25;8;30;27;6;11;83;67;8
+Overtoomse Sluis;Amsterdam;Wijk;WK036321;26;8;30;28;6;10;82;66;8
+Cremerbuurt West;Amsterdam;Buurt;BU03632100;26;8;30;27;6;11;82;66;8
+Vondelparkbuurt West;Amsterdam;Buurt;BU03632101;27;8;28;29;6;10;81;66;9
+Vondelbuurt;Amsterdam;Wijk;WK036322;30;8;26;31;6;11;79;64;11
+Vondelparkbuurt Oost;Amsterdam;Buurt;BU03632200;26;7;27;28;5;10;83;68;11
+Vondelparkbuurt Midden;Amsterdam;Buurt;BU03632201;33;10;26;35;7;11;74;60;10
+Zuidas;Amsterdam;Wijk;WK036323;36;7;31;22;8;18;85;64;6
+Zuidas Noord;Amsterdam;Buurt;BU03632300;45;9;36;23;9;27;80;64;5
+RAI;Amsterdam;Buurt;BU03632301;.;.;.;.;.;.;.;.;.
+VU-kwartier;Amsterdam;Buurt;BU03632302;41;8;26;22;7;18;85;61;7
+Zuidas Zuid;Amsterdam;Buurt;BU03632303;39;8;27;23;6;17;84;60;7
+Vivaldi;Amsterdam;Buurt;BU03632304;31;5;35;20;11;17;85;67;4
+Oude Pijp;Amsterdam;Wijk;WK036324;27;8;31;28;7;12;80;65;8
+Hemonybuurt;Amsterdam;Buurt;BU03632400;25;7;30;27;6;10;83;65;9
+Gerard Doubuurt;Amsterdam;Buurt;BU03632401;30;9;31;30;8;13;78;64;8
+Frans Halsbuurt;Amsterdam;Buurt;BU03632402;26;8;31;28;7;11;81;66;8
+Hercules Seghersbuurt;Amsterdam;Buurt;BU03632403;30;9;32;29;8;13;78;64;8
+Sarphatiparkbuurt;Amsterdam;Buurt;BU03632404;27;8;32;28;7;11;81;64;8
+Nieuwe Pijp;Amsterdam;Wijk;WK036325;31;9;30;31;8;12;77;61;8
+Willibrordusbuurt;Amsterdam;Buurt;BU03632500;33;10;30;33;8;13;74;58;8
+Van der Helstpleinbuurt;Amsterdam;Buurt;BU03632501;29;8;30;29;8;12;79;62;8
+Lizzy Ansinghbuurt;Amsterdam;Buurt;BU03632502;35;10;29;33;9;12;74;58;8
+Cornelis Troostbuurt;Amsterdam;Buurt;BU03632503;29;9;29;29;7;11;79;63;8
+Zuid Pijp;Amsterdam;Wijk;WK036326;40;13;30;37;10;14;69;56;10
+Diamantbuurt;Amsterdam;Buurt;BU03632600;42;13;30;38;11;14;69;56;10
+Burgemeester Tellegenbuurt Oost;Amsterdam;Buurt;BU03632601;39;12;30;36;10;13;71;57;10
+Burgemeester Tellegenbuurt West;Amsterdam;Buurt;BU03632602;40;13;30;39;10;14;68;56;10
+Weesperzijde;Amsterdam;Wijk;WK036327;27;8;29;28;6;10;82;64;9
+Swammerdambuurt;Amsterdam;Buurt;BU03632700;24;7;28;26;5;9;85;65;9
+Weesperzijde Midden/Zuid;Amsterdam;Buurt;BU03632701;30;9;28;30;7;11;80;62;10
+Parooldriehoek;Amsterdam;Buurt;BU03632702;27;5;40;21;10;16;84;71;4
+Oosterparkbuurt;Amsterdam;Wijk;WK036328;37;12;31;33;9;13;74;59;9
+Oosterparkbuurt Noordwest;Amsterdam;Buurt;BU03632800;35;11;31;32;9;13;75;60;9
+Oosterpark;Amsterdam;Buurt;BU03632801;31;11;37;35;10;17;73;60;8
+Oosterparkbuurt Zuidoost;Amsterdam;Buurt;BU03632802;35;11;29;33;8;12;75;59;9
+Oosterparkbuurt Zuidwest;Amsterdam;Buurt;BU03632803;42;13;32;36;11;15;70;57;8
+Dapperbuurt;Amsterdam;Wijk;WK036329;41;13;31;35;10;14;71;57;9
+Dapperbuurt Noord;Amsterdam;Buurt;BU03632900;42;14;31;36;11;14;70;56;9
+Dapperbuurt Zuid;Amsterdam;Buurt;BU03632901;41;13;31;35;11;14;71;57;9
+Oostpoort;Amsterdam;Buurt;BU03632902;40;12;28;35;10;13;72;56;10
+Transvaalbuurt;Amsterdam;Wijk;WK036330;44;13;31;34;11;14;71;57;8
+Transvaalbuurt West;Amsterdam;Buurt;BU03633000;44;13;31;36;11;15;70;56;8
+Transvaalbuurt Oost;Amsterdam;Buurt;BU03633001;44;12;31;34;11;14;72;58;8
+Indische Buurt West;Amsterdam;Wijk;WK036331;43;13;31;33;11;14;72;56;8
+Noordwestkwadrant Indische buurt Noord;Amsterdam;Buurt;BU03633100;35;11;32;29;9;13;78;60;7
+Noordwestkwadrant Indische buurt Zuid;Amsterdam;Buurt;BU03633101;39;12;32;31;10;13;74;58;7
+Zuidwestkwadrant Indische buurt;Amsterdam;Buurt;BU03633102;56;17;30;39;14;16;63;51;8
+Indische Buurt Oost;Amsterdam;Wijk;WK036332;50;16;31;37;12;15;66;52;9
+Noordoostkwadrant Indische buurt;Amsterdam;Buurt;BU03633200;50;16;31;38;12;16;65;51;8
+Zuidoostkwadrant Indische buurt;Amsterdam;Buurt;BU03633201;51;16;31;36;12;15;67;53;8
+Zeeburgerdijk Oost;Amsterdam;Buurt;BU03633202;38;12;23;31;6;9;79;57;12
+Flevopark;Amsterdam;Buurt;BU03633203;31;8;30;27;6;11;83;61;11
+Oostelijk Havengebied;Amsterdam;Wijk;WK036333;34;11;25;31;6;10;80;59;12
+Oostelijke Handelskade;Amsterdam;Buurt;BU03633300;33;9;26;26;6;10;83;62;9
+Rietlanden;Amsterdam;Buurt;BU03633301;34;11;26;29;7;10;80;61;10
+Java-eiland;Amsterdam;Buurt;BU03633302;33;10;23;31;5;9;81;60;13
+KNSM-eiland;Amsterdam;Buurt;BU03633303;35;12;23;34;6;11;78;57;13
+Sporenburg;Amsterdam;Buurt;BU03633304;32;11;23;30;6;8;81;61;14
+Borneo;Amsterdam;Buurt;BU03633305;33;11;24;29;6;9;81;60;12
+Entrepot-Noordwest;Amsterdam;Buurt;BU03633306;39;14;29;35;9;13;74;57;11
+Architectenbuurt;Amsterdam;Buurt;BU03633307;37;14;29;35;8;12;75;57;12
+Bedrijvengebied Veelaan;Amsterdam;Buurt;BU03633308;30;13;27;36;6;10;77;57;15
+Bedrijvengebied Cruquiusweg;Amsterdam;Buurt;BU03633309;27;8;29;28;5;12;83;59;10
+Bedrijvengebied Zeeburgerkade;Amsterdam;Buurt;BU03633310;27;10;26;29;5;9;82;60;11
+Zeeburgereiland/Nieuwe Diep;Amsterdam;Wijk;WK036334;29;7;32;20;10;14;85;63;5
+Zeeburgereiland Noordwest;Amsterdam;Buurt;BU03633400;26;11;31;31;8;13;78;58;10
+Zeeburgereiland Zuidoost;Amsterdam;Buurt;BU03633402;30;7;35;19;13;17;84;66;3
+Zeeburgereiland Zuidwest;Amsterdam;Buurt;BU03633403;22;6;36;18;10;13;87;67;4
+Nieuwe Diep/Diemerpark;Amsterdam;Buurt;BU03633404;29;11;23;26;4;7;83;54;12
+RI Oost terrein;Amsterdam;Buurt;BU03633405;30;8;29;21;8;13;85;61;6
+Zeeburgereiland Noordoost;Amsterdam;Buurt;BU03633406;.;.;.;.;.;.;.;.;.
+IJburg West;Amsterdam;Wijk;WK036335;46;10;18;29;7;12;81;47;9
+Steigereiland Noord;Amsterdam;Buurt;BU03633500;44;10;20;28;9;12;82;44;8
+Steigereiland Zuid;Amsterdam;Buurt;BU03633501;46;11;18;29;8;12;81;44;10
+Haveneiland Zuidwest/Rieteiland West;Amsterdam;Buurt;BU03633502;39;7;14;27;4;8;86;51;11
+Haveneiland Noordwest;Amsterdam;Buurt;BU03633504;46;10;18;31;8;13;79;44;9
+Haveneiland Noordoost;Amsterdam;Buurt;BU03633505;50;10;18;30;8;13;80;48;9
+Sloterdijk;Amsterdam;Wijk;WK036336;30;8;31;25;8;11;83;61;7
+Woon- en Groengebied Sloterdijk;Amsterdam;Buurt;BU03633600;25;6;28;21;5;8;89;63;6
+Bedrijventerrein Sloterdijk I;Amsterdam;Buurt;BU03633601;54;17;42;40;22;26;58;51;9
+Landlust;Amsterdam;Wijk;WK036337;45;14;33;33;12;14;72;57;8
+Bedrijventerrein Landlust;Amsterdam;Buurt;BU03633700;30;9;34;26;9;13;81;63;6
+Bosleeuw;Amsterdam;Buurt;BU03633702;51;16;33;34;13;15;70;56;8
+Landlust Zuid;Amsterdam;Buurt;BU03633703;39;12;33;32;10;13;74;59;7
+Erasmusparkbuurt Oost;Amsterdam;Buurt;BU03633704;39;12;31;30;9;12;77;60;8
+Gibraltarbuurt;Amsterdam;Buurt;BU03633705;45;14;34;34;12;16;71;56;8
+Landlust Noord;Amsterdam;Buurt;BU03633706;46;14;33;32;12;14;72;57;7
+Erasmuspark;Amsterdam;Wijk;WK036338;36;12;32;29;9;12;78;60;7
+Erasmusparkbuurt West;Amsterdam;Buurt;BU03633802;34;11;31;28;8;11;79;61;7
+Robert Scottbuurt Oost;Amsterdam;Buurt;BU03633803;39;13;32;31;10;13;75;59;8
+De Kolenkit;Amsterdam;Wijk;WK036339;55;16;32;34;14;16;68;54;7
+Robert Scottbuurt West;Amsterdam;Buurt;BU03633900;45;13;33;33;13;16;71;56;6
+Laan van Spartaan;Amsterdam;Buurt;BU03633901;47;14;31;31;12;14;74;56;7
+Kolenkitbuurt Zuid;Amsterdam;Buurt;BU03633902;51;15;31;32;12;14;72;56;7
+Kolenkitbuurt Noord;Amsterdam;Buurt;BU03633903;70;21;32;39;17;19;61;50;8
+Geuzenbuurt;Amsterdam;Wijk;WK036340;31;10;32;28;8;11;80;62;8
+Geuzenhofbuurt;Amsterdam;Buurt;BU03634000;26;8;31;25;6;9;84;64;7
+Trompbuurt;Amsterdam;Buurt;BU03634001;31;9;32;28;8;11;80;62;8
+Pieter van der Doesbuurt;Amsterdam;Buurt;BU03634002;36;12;33;31;9;13;75;59;8
+Van Galenbuurt;Amsterdam;Wijk;WK036341;47;15;35;34;13;17;68;58;8
+John Franklinbuurt;Amsterdam;Buurt;BU03634100;40;13;33;34;11;15;72;58;8
+Jan Maijenbuurt;Amsterdam;Buurt;BU03634101;43;15;34;35;12;16;69;57;8
+Orteliusbuurt Noord;Amsterdam;Buurt;BU03634102;41;14;31;33;10;14;72;57;8
+Mercatorpark;Amsterdam;Buurt;BU03634103;69;18;43;34;18;24;58;57;9
+Hoofdweg e.o.;Amsterdam;Wijk;WK036342;40;13;33;33;11;14;73;58;8
+Balboaplein e.o.;Amsterdam;Buurt;BU03634200;41;14;34;32;11;15;73;58;7
+Columbusplein e.o.;Amsterdam;Buurt;BU03634201;43;15;33;35;11;16;70;57;8
+Orteliusbuurt Midden;Amsterdam;Buurt;BU03634202;35;12;32;31;9;13;76;59;8
+Orteliusbuurt Zuid;Amsterdam;Buurt;BU03634203;36;12;32;33;9;13;74;56;7
+Westindische Buurt;Amsterdam;Wijk;WK036343;29;9;31;28;7;11;80;63;8
+Paramariboplein e.o.;Amsterdam;Buurt;BU03634300;29;9;31;27;7;11;81;64;8
+Postjeskade e.o.;Amsterdam;Buurt;BU03634301;30;10;31;30;7;11;79;61;8
+Hoofddorppleinbuurt;Amsterdam;Wijk;WK036344;28;9;29;28;6;11;81;63;8
+Surinamepleinbuurt;Amsterdam;Buurt;BU03634400;27;8;28;28;6;9;82;64;9
+Westlandgrachtbuurt;Amsterdam;Buurt;BU03634401;29;9;28;29;6;10;81;62;8
+Aalsmeerwegbuurt West;Amsterdam;Buurt;BU03634402;27;8;29;27;6;10;82;64;8
+Aalsmeerwegbuurt Oost;Amsterdam;Buurt;BU03634403;30;9;29;29;7;11;80;63;9
+Legmeerpleinbuurt;Amsterdam;Buurt;BU03634404;28;9;29;29;6;10;81;64;9
+Bedrijventerrein Schinkel;Amsterdam;Buurt;BU03634405;38;10;35;30;10;21;76;62;8
+Schinkelbuurt;Amsterdam;Wijk;WK036345;30;9;31;30;8;12;79;64;8
+Schinkelbuurt Noord;Amsterdam;Buurt;BU03634500;27;8;30;28;7;11;82;66;8
+Schinkelbuurt Zuid;Amsterdam;Buurt;BU03634501;35;11;32;33;9;14;74;60;8
+Willemspark;Amsterdam;Wijk;WK036346;28;7;23;28;4;8;84;65;11
+Valeriusbuurt Oost;Amsterdam;Buurt;BU03634600;27;7;21;28;4;7;85;65;12
+Valeriusbuurt West;Amsterdam;Buurt;BU03634601;29;8;23;29;5;8;83;64;11
+Willemsparkbuurt Noord;Amsterdam;Buurt;BU03634602;25;7;25;27;4;8;84;67;11
+Vondelpark West;Amsterdam;Buurt;BU03634603;.;.;.;.;.;.;.;.;.
+Museumkwartier;Amsterdam;Wijk;WK036347;27;7;23;30;5;8;82;65;11
+Johannnes Vermeerbuurt;Amsterdam;Buurt;BU03634700;26;7;23;29;4;8;83;65;12
+P.C. Hooftbuurt;Amsterdam;Buurt;BU03634701;27;8;25;30;5;9;82;65;11
+Concertgebouwbuurt;Amsterdam;Buurt;BU03634702;26;6;23;28;4;8;84;67;11
+Cornelis Schuytbuurt;Amsterdam;Buurt;BU03634703;26;7;23;28;4;7;85;66;12
+Banpleinbuurt;Amsterdam;Buurt;BU03634704;30;7;18;33;4;7;80;62;14
+Hondecoeterbuurt;Amsterdam;Buurt;BU03634705;28;7;24;30;5;9;81;65;11
+Harmoniehofbuurt;Amsterdam;Buurt;BU03634706;31;10;22;40;5;9;74;57;13
+Museumplein;Amsterdam;Buurt;BU03634707;.;.;.;.;.;.;.;.;.
+Vondelpark Oost;Amsterdam;Buurt;BU03634708;.;.;.;.;.;.;.;.;.
+Duivelseiland;Amsterdam;Buurt;BU03634709;25;7;29;26;6;10;84;67;8
+Stadionbuurt;Amsterdam;Wijk;WK036348;36;11;27;34;8;12;75;59;9
+Bertelmanpleinbuurt;Amsterdam;Buurt;BU03634800;41;13;29;38;10;14;69;57;9
+Marathonbuurt Oost;Amsterdam;Buurt;BU03634801;37;12;28;38;9;13;71;57;10
+Marathonbuurt West;Amsterdam;Buurt;BU03634802;43;14;30;39;11;16;68;56;9
+Olympisch Stadion e.o.;Amsterdam;Buurt;BU03634803;36;10;23;31;6;10;79;58;9
+IJsbaanpad e.o.;Amsterdam;Buurt;BU03634804;33;9;18;30;4;8;83;59;13
+Van Tuyllbuurt;Amsterdam;Buurt;BU03634805;31;9;26;29;6;10;81;62;8
+Apollobuurt;Amsterdam;Wijk;WK036349;29;7;20;29;4;7;83;63;12
+Diepenbrockbuurt;Amsterdam;Buurt;BU03634900;29;6;17;29;3;6;85;64;14
+Beethovenbuurt;Amsterdam;Buurt;BU03634901;30;7;20;30;4;8;81;61;12
+Hiltonbuurt;Amsterdam;Buurt;BU03634902;25;7;22;29;3;5;85;66;15
+Minervabuurt Noord;Amsterdam;Buurt;BU03634903;28;7;20;30;4;7;84;64;12
+Minervabuurt Midden;Amsterdam;Buurt;BU03634904;30;7;21;29;4;8;83;63;11
+Minervabuurt Zuid;Amsterdam;Buurt;BU03634905;29;7;21;29;4;8;83;62;11
+IJburg Oost;;;;.;.;.;.;.;.;.;.;.
+Strandeiland;Amsterdam;Buurt;BU03635000;.;.;.;.;.;.;.;.;.
+Middeneiland Zuidoost;Amsterdam;Buurt;BU03635001;.;.;.;.;.;.;.;.;.
+Middeneiland Zuidwest;Amsterdam;Buurt;BU03635003;.;.;.;.;.;.;.;.;.
+Buiteneiland;Amsterdam;Buurt;BU03635005;.;.;.;.;.;.;.;.;.
+Centrumeiland;Amsterdam;Buurt;BU03635006;.;.;.;.;.;.;.;.;.
+IJburg Zuid;Amsterdam;Wijk;WK036351;47;10;18;28;8;12;80;51;8
+Rieteiland Oost;Amsterdam;Buurt;BU03635100;33;5;12;21;4;5;90;55;11
+Haveneiland Oost;Amsterdam;Buurt;BU03635101;45;9;18;27;8;12;82;52;8
+Haveneiland Noord;Amsterdam;Buurt;BU03635102;54;12;20;32;10;15;75;47;8
+Scheldebuurt;Amsterdam;Wijk;WK036352;28;8;26;29;6;9;81;61;9
+Wielingenbuurt;Amsterdam;Buurt;BU03635200;27;8;26;28;5;9;83;63;10
+Scheldebuurt West;Amsterdam;Buurt;BU03635201;28;9;26;30;6;9;80;60;9
+Scheldebuurt Midden;Amsterdam;Buurt;BU03635202;26;8;27;28;6;8;82;62;9
+Scheldebuurt Oost;Amsterdam;Buurt;BU03635203;26;8;27;28;6;9;82;63;9
+Veluwebuurt;Amsterdam;Buurt;BU03635206;38;11;26;39;9;13;69;50;9
+Kop Zuidas;Amsterdam;Buurt;BU03635207;23;5;25;20;5;8;89;65;6
+IJselbuurt;Amsterdam;Wijk;WK036353;32;10;31;33;8;12;76;60;9
+IJselbuurt West;Amsterdam;Buurt;BU03635300;31;11;31;34;9;12;74;59;9
+IJselbuurt Oost;Amsterdam;Buurt;BU03635301;32;10;31;32;8;12;77;61;9
+Rijnbuurt;Amsterdam;Wijk;WK036354;32;10;29;33;8;12;75;59;9
+Kromme Mijdrechtbuurt;Amsterdam;Buurt;BU03635400;32;10;30;34;9;13;75;60;9
+Rijnbuurt Oost;Amsterdam;Buurt;BU03635401;28;9;29;29;7;10;80;61;9
+Rijnbuurt Midden;Amsterdam;Buurt;BU03635402;28;9;28;30;7;10;80;60;9
+Rijnbuurt West;Amsterdam;Buurt;BU03635403;43;15;30;42;11;17;63;51;10
+Zorgvlied;Amsterdam;Buurt;BU03635404;31;7;17;30;3;8;83;58;14
+Frankendael;Amsterdam;Wijk;WK036355;37;10;29;34;9;13;74;57;9
+De Eenhoorn;Amsterdam;Buurt;BU03635501;31;6;36;24;10;15;81;66;5
+Julianapark;Amsterdam;Buurt;BU03635502;29;9;25;30;5;9;81;60;10
+Don Bosco;Amsterdam;Buurt;BU03635503;33;9;25;31;7;9;79;59;11
+Frankendael;Amsterdam;Buurt;BU03635504;27;7;26;29;4;7;83;61;13
+Tuindorp Amstelstation;Amsterdam;Buurt;BU03635505;49;17;31;46;12;17;60;49;11
+De Wetbuurt;Amsterdam;Buurt;BU03635506;41;12;23;39;8;12;71;52;12
+Tuindorp Frankendael;Amsterdam;Buurt;BU03635507;39;11;29;37;9;14;71;53;10
+Van der Kunbuurt;Amsterdam;Buurt;BU03635508;50;15;31;38;13;16;66;55;9
+Middenmeer;Amsterdam;Wijk;WK036356;30;9;26;29;6;10;81;60;11
+Linnaeusparkbuurt;Amsterdam;Buurt;BU03635600;27;8;25;31;5;8;81;59;12
+Middenmeer Noord;Amsterdam;Buurt;BU03635601;29;9;25;31;6;8;80;59;12
+Middenmeer Zuid;Amsterdam;Buurt;BU03635602;30;9;25;30;5;8;81;57;11
+Sportpark Middenmeer Zuid;Amsterdam;Buurt;BU03635603;39;11;17;41;5;9;70;45;14
+Sportpark Middenmeer Noord;Amsterdam;Buurt;BU03635604;.;.;.;.;.;.;.;.;.
+Park de Meer;Amsterdam;Buurt;BU03635605;40;11;21;34;6;9;77;55;14
+Sportpark Voorland;Amsterdam;Buurt;BU03635606;.;.;.;.;.;.;.;.;.
+Science Park Noord;Amsterdam;Buurt;BU03635607;27;5;34;20;9;15;86;68;5
+Science Park Zuid;Amsterdam;Buurt;BU03635608;37;13;32;29;8;19;77;49;10
+Betondorp;Amsterdam;Wijk;WK036357;46;15;27;43;10;15;65;46;11
+Betondorp;Amsterdam;Buurt;BU03635700;46;15;27;43;10;15;65;46;11
+Nieuwe Oosterbegraafplaats;Amsterdam;Buurt;BU03635701;.;.;.;.;.;.;.;.;.
+Drieburg;Amsterdam;Buurt;BU03635702;.;.;.;.;.;.;.;.;.
+Omval/Overamstel;Amsterdam;Wijk;WK036358;28;6;31;23;10;14;84;66;6
+Weespertrekvaart;Amsterdam;Buurt;BU03635801;32;6;35;23;14;18;81;67;4
+Amstelglorie;Amsterdam;Buurt;BU03635804;31;10;21;29;4;9;84;59;14
+Overamstel;Amsterdam;Buurt;BU03635805;39;13;36;40;21;14;65;54;10
+Amstelkwartier Noord;Amsterdam;Buurt;BU03635806;26;6;31;22;8;12;86;67;6
+De Omval;Amsterdam;Buurt;BU03635807;26;6;23;27;4;8;85;64;10
+Amstelkwartier Zuid;Amsterdam;Buurt;BU03635808;31;8;21;30;6;10;81;58;12
+Amstelkwartier West;Amsterdam;Buurt;BU03635809;27;5;34;19;12;17;86;68;4
+Prinses Irenebuurt e.o.;Amsterdam;Wijk;WK036359;33;7;17;31;3;7;83;60;12
+Prinses Irenebuurt;Amsterdam;Buurt;BU03635900;33;7;17;31;3;7;83;60;12
+Beatrixpark;Amsterdam;Buurt;BU03635901;.;.;.;.;.;.;.;.;.
+Volewijck;Amsterdam;Wijk;WK036360;51;18;31;38;12;17;66;52;10
+Van der Pekbuurt;Amsterdam;Buurt;BU03636000;53;17;32;37;13;18;67;54;9
+Bloemenbuurt Zuid;Amsterdam;Buurt;BU03636001;51;19;31;41;12;17;63;50;10
+Bloemenbuurt Noord;Amsterdam;Buurt;BU03636002;45;19;30;40;10;14;68;50;12
+IJplein/Vogelbuurt;Amsterdam;Wijk;WK036361;51;17;30;37;12;17;68;54;9
+IJplein e.o.;Amsterdam;Buurt;BU03636100;50;17;29;39;12;17;67;54;10
+Vogelbuurt Zuid;Amsterdam;Buurt;BU03636101;52;18;30;37;12;17;67;55;9
+Vogelbuurt Noord;Amsterdam;Buurt;BU03636102;48;17;31;37;12;17;68;53;9
+Vliegenbos;Amsterdam;Buurt;BU03636103;33;10;23;26;5;9;85;61;11
+Tuindorp Nieuwendam;Amsterdam;Wijk;WK036362;43;19;26;42;9;13;67;49;13
+Tuindorp Nieuwendam West;Amsterdam;Buurt;BU03636200;43;19;26;44;9;12;66;47;14
+Tuindorp Nieuwendam Oost;Amsterdam;Buurt;BU03636201;43;18;26;41;9;13;67;49;13
+Tuindorp Buiksloot;Amsterdam;Wijk;WK036363;45;19;29;41;9;14;66;50;13
+Blauwe Zand;Amsterdam;Buurt;BU03636300;45;19;29;41;9;14;66;50;13
+Nieuwendammerdijk/Buiksloterdijk;Amsterdam;Wijk;WK036364;33;10;18;30;3;6;84;60;15
+Buiksloterdijk West;Amsterdam;Buurt;BU03636400;33;11;17;32;4;6;83;58;17
+Buiksloterdijk Oost;Amsterdam;Buurt;BU03636401;39;8;14;34;4;6;80;56;18
+Nieuwendammmerdijk West;Amsterdam;Buurt;BU03636402;32;10;18;29;3;6;84;60;15
+Nieuwendammerdijk Oost;Amsterdam;Buurt;BU03636403;31;9;18;28;3;6;85;61;14
+Nieuwendammerdijk Zuid;Amsterdam;Buurt;BU03636404;.;.;.;.;.;.;.;.;.
+Tuindorp Oostzaan;Amsterdam;Wijk;WK036365;47;18;27;39;10;14;67;48;12
+Tuindorp Oostzaan West;Amsterdam;Buurt;BU03636500;49;19;23;44;10;13;60;41;12
+Tuindorp Oostzaan Oost;Amsterdam;Buurt;BU03636501;45;19;28;40;9;12;67;48;12
+Terrasdorp;Amsterdam;Buurt;BU03636502;49;18;28;41;11;16;65;47;12
+De Bongerd;Amsterdam;Buurt;BU03636503;47;14;23;28;8;11;79;56;10
+Oostzanerwerf;Amsterdam;Wijk;WK036366;45;16;25;35;8;12;72;49;12
+Oostzanerdijk;Amsterdam;Buurt;BU03636601;34;13;23;33;5;9;79;53;14
+Walvisbuurt;Amsterdam;Buurt;BU03636602;43;15;24;32;6;10;77;53;13
+Twiske West;Amsterdam;Buurt;BU03636603;39;14;21;33;6;9;78;53;14
+Noorder IJplas;Amsterdam;Buurt;BU03636604;29;14;21;34;5;7;78;51;18
+Molenwijk;Amsterdam;Buurt;BU03636605;56;19;28;41;11;17;62;43;10
+Circus/Kermisbuurt;Amsterdam;Buurt;BU03636606;42;16;27;33;8;12;75;51;11
+Kadoelen;Amsterdam;Wijk;WK036367;40;15;21;34;6;10;76;52;14
+Kadoelen;Amsterdam;Buurt;BU03636700;38;14;20;33;6;9;77;52;14
+Twiske Oost;Amsterdam;Buurt;BU03636701;42;17;22;35;7;10;75;52;15
+Waterlandpleinbuurt;Amsterdam;Wijk;WK036368;58;19;27;36;11;16;69;50;10
+Baanakkerspark Noord;Amsterdam;Buurt;BU03636800;41;14;24;35;6;12;76;50;12
+Baanakkerspark Zuid;Amsterdam;Buurt;BU03636801;37;13;23;36;5;11;77;53;14
+Werengouw Midden;Amsterdam;Buurt;BU03636802;56;20;29;37;11;17;67;49;10
+Markengouw Midden;Amsterdam;Buurt;BU03636803;64;20;28;34;13;17;68;50;10
+Markengouw Zuid;Amsterdam;Buurt;BU03636804;62;20;27;33;12;18;69;50;10
+Werengouw Zuid;Amsterdam;Buurt;BU03636805;59;19;24;36;11;16;68;51;12
+Buikslotermeer;Amsterdam;Wijk;WK036369;53;18;27;39;11;16;66;46;10
+Rode Kruisbuurt;Amsterdam;Buurt;BU03636900;40;12;21;37;6;9;77;56;16
+Loenermark;Amsterdam;Buurt;BU03636902;50;18;26;41;9;15;65;45;10
+Buikslotermeerplein;Amsterdam;Buurt;BU03636909;53;17;24;43;10;15;62;39;9
+Plan van Gool;Amsterdam;Buurt;BU03636910;53;18;29;37;11;17;67;50;10
+De Kleine Wereld;Amsterdam;Buurt;BU03636911;63;22;29;42;13;19;60;41;11
+Buikslotermeer Noord;Amsterdam;Buurt;BU03636912;45;14;26;36;9;15;72;48;10
+Banne Buiksloot;Amsterdam;Wijk;WK036370;56;19;27;38;11;16;67;47;11
+Banne Zuidwest;Amsterdam;Buurt;BU03637000;61;20;27;39;13;17;64;45;10
+Banne Zuidoost;Amsterdam;Buurt;BU03637001;50;17;27;37;10;15;69;48;11
+Banne Noordwest;Amsterdam;Buurt;BU03637002;60;21;29;38;12;18;65;46;10
+Banne Noordoost;Amsterdam;Buurt;BU03637003;57;20;26;39;11;16;66;46;12
+Buiksloterbreek;Amsterdam;Buurt;BU03637004;34;11;18;30;3;7;83;58;15
+Marjoleinterrein;Amsterdam;Buurt;BU03637005;47;15;28;29;9;14;76;56;9
+Noordelijke IJ-oevers West;Amsterdam;Wijk;WK036371;29;9;28;25;7;11;84;63;9
+Papaverweg e.o.;Amsterdam;Buurt;BU03637102;30;10;26;25;5;9;86;60;10
+Cornelis Douwesterrein;Amsterdam;Buurt;BU03637104;57;17;43;34;19;33;62;56;9
+NDSM terrein;Amsterdam;Buurt;BU03637105;28;6;38;19;13;19;84;68;3
+Buiksloterham;Amsterdam;Buurt;BU03637106;31;9;35;26;8;15;81;61;6
+Overhoeks;Amsterdam;Buurt;BU03637107;28;9;23;29;5;8;84;61;13
+Noordelijke IJ-oevers Oost;Amsterdam;Wijk;WK036372;31;9;33;28;8;14;82;62;8
+Bedrijventerrein Hamerstraat;Amsterdam;Buurt;BU03637200;32;9;34;28;8;14;82;62;8
+Zamenhofstraat e.o.;Amsterdam;Buurt;BU03637201;.;.;.;.;.;.;.;.;.
+Bedrijventerrein Nieuwendammerdijk;Amsterdam;Buurt;BU03637202;23;9;25;29;5;7;88;60;10
+Waterland;Amsterdam;Wijk;WK036373;33;11;19;31;4;6;81;52;16
+Schellingwoude West;Amsterdam;Buurt;BU03637300;26;10;18;28;4;6;84;60;16
+Schellingwoude Oost;Amsterdam;Buurt;BU03637301;31;11;17;28;4;6;83;57;15
+Schellingwoude Noord;Amsterdam;Buurt;BU03637302;.;.;.;.;.;.;.;.;.
+Durgerdam;Amsterdam;Buurt;BU03637303;33;10;18;31;4;5;81;52;17
+Zwarte Gouw;Amsterdam;Buurt;BU03637304;31;7;18;36;3;14;73;56;14
+Ransdorp;Amsterdam;Buurt;BU03637305;37;10;17;31;3;6;81;50;17
+Holysloot;Amsterdam;Buurt;BU03637306;35;10;19;32;3;5;81;50;17
+Zunderdorp;Amsterdam;Buurt;BU03637307;33;12;21;33;5;7;79;50;15
+Noorderstrook West;Amsterdam;Buurt;BU03637308;30;13;27;29;7;13;81;57;13
+Noorderstrook Oost;Amsterdam;Buurt;BU03637309;.;.;.;.;.;.;.;.;.
+Elzenhagen;Amsterdam;Wijk;WK036374;44;12;22;28;6;10;80;54;11
+Nintemanterrein;Amsterdam;Buurt;BU03637400;35;10;17;31;2;5;84;60;18
+Elzenhagen Zuid;Amsterdam;Buurt;BU03637401;44;14;33;33;12;16;72;52;9
+Elzenhagen Noord;Amsterdam;Buurt;BU03637402;45;12;20;28;5;9;82;54;11
+Chassébuurt;Amsterdam;Wijk;WK036375;40;13;32;32;10;13;74;60;9
+Kortenaerkwartier;Amsterdam;Buurt;BU03637500;37;12;31;32;9;12;76;60;9
+Filips van Almondekwartier;Amsterdam;Buurt;BU03637501;31;11;31;28;8;12;79;62;7
+De Wester Quartier;Amsterdam;Buurt;BU03637502;44;14;33;33;11;14;72;59;8
+Van Brakelkwartier;Amsterdam;Buurt;BU03637503;48;16;31;35;12;14;69;57;9
+Slotermeer-Noordoost;Amsterdam;Wijk;WK036376;62;19;31;37;13;17;66;50;9
+Buurt 3;Amsterdam;Buurt;BU03637600;60;18;30;37;13;17;67;50;9
+Buurt 2;Amsterdam;Buurt;BU03637601;66;20;31;37;14;18;65;50;9
+Slotermeer-Zuidwest;Amsterdam;Wijk;WK036377;62;18;30;38;13;17;66;49;9
+Slotermeer Zuid;Amsterdam;Buurt;BU03637700;58;18;32;39;14;19;64;49;8
+Noordoever Sloterplas;Amsterdam;Buurt;BU03637701;48;14;28;34;10;14;73;53;10
+Buurt 4 Oost;Amsterdam;Buurt;BU03637702;59;19;30;37;11;15;69;50;10
+Buurt 5 Noord;Amsterdam;Buurt;BU03637703;74;22;31;39;17;19;61;47;9
+Sloterpark;Amsterdam;Buurt;BU03637704;.;.;.;.;.;.;.;.;.
+Buurt 5 Zuid;Amsterdam;Buurt;BU03637705;67;19;30;39;15;18;63;48;9
+Geuzenveld;Amsterdam;Wijk;WK036378;65;19;30;37;13;17;67;48;9
+Buurt 6;Amsterdam;Buurt;BU03637800;67;20;31;39;15;19;63;47;9
+Buurt 7;Amsterdam;Buurt;BU03637801;63;19;27;36;10;14;70;47;10
+Buurt 8;Amsterdam;Buurt;BU03637802;63;18;31;34;13;17;70;50;8
+Buurt 9;Amsterdam;Buurt;BU03637803;68;20;29;38;13;17;65;47;9
+Eendrachtspark;Amsterdam;Buurt;BU03637804;50;14;29;29;6;13;80;54;11
+Eendracht;Amsterdam;Wijk;WK036379;53;16;23;34;7;12;75;50;12
+Osdorper Binnenpolder;Amsterdam;Buurt;BU03637900;48;10;13;27;4;10;80;53;12
+Buurt 10;Amsterdam;Buurt;BU03637901;53;17;23;34;7;12;75;50;12
+Lutkemeer/Ookmeer;Amsterdam;Wijk;WK036380;38;14;21;33;6;9;77;52;14
+Ookmeer;Amsterdam;Buurt;BU03638000;.;.;.;.;.;.;.;.;.
+Osdorper Bovenpolder;Amsterdam;Buurt;BU03638001;38;14;21;33;6;9;77;52;14
+Bedrijvenpark Lutkemeer;Amsterdam;Buurt;BU03638002;33;14;21;32;4;8;81;52;12
+Osdorp-Oost;Amsterdam;Wijk;WK036381;56;16;26;39;11;16;66;47;10
+Wildeman;Amsterdam;Buurt;BU03638100;66;20;27;44;14;19;58;42;9
+Meer en Oever;Amsterdam;Buurt;BU03638101;51;14;24;35;8;13;73;50;10
+Osdorpplein e.o.;Amsterdam;Buurt;BU03638102;58;16;27;36;11;15;68;50;9
+Calandlaan/Lelylaan;Amsterdam;Buurt;BU03638103;53;17;29;42;11;16;65;48;11
+Osdorp Zuidoost;Amsterdam;Buurt;BU03638104;46;14;27;38;9;14;70;50;10
+Osdorp-Midden;Amsterdam;Wijk;WK036382;62;18;28;36;12;16;67;49;9
+Osdorp Midden Noord;Amsterdam;Buurt;BU03638200;72;21;26;42;15;19;58;42;8
+Osdorp Midden Zuid;Amsterdam;Buurt;BU03638201;63;19;28;38;13;17;65;48;9
+Zuidwestkwadrant Osdorp Noord;Amsterdam;Buurt;BU03638202;63;18;29;37;13;15;67;49;8
+Zuidwestkwadrant Osdorp Zuid;Amsterdam;Buurt;BU03638203;56;15;29;32;10;14;73;53;9
+De Punt;Amsterdam;Wijk;WK036383;55;17;30;36;10;15;69;49;9
+De Punt;Amsterdam;Buurt;BU03638300;55;17;29;35;10;15;70;49;9
+Bedrijvencentrum Osdorp;Amsterdam;Buurt;BU03638301;52;21;45;54;18;32;45;41;10
+Middelveldsche Akerpolder;Amsterdam;Wijk;WK036384;50;16;23;34;7;11;74;51;12
+Middelveldsche Akerpolder;Amsterdam;Buurt;BU03638400;53;18;25;37;8;12;70;47;12
+De Aker West;Amsterdam;Buurt;BU03638401;50;15;21;33;7;11;76;51;13
+De Aker Oost;Amsterdam;Buurt;BU03638402;50;15;23;32;7;10;76;53;12
+Slotervaart Noord;Amsterdam;Wijk;WK036385;54;15;26;37;10;15;69;50;10
+Oostoever Sloterplas;Amsterdam;Buurt;BU03638500;45;12;20;36;6;10;74;52;12
+Emanuel van Meterenbuurt;Amsterdam;Buurt;BU03638501;53;14;24;38;10;14;69;48;10
+Jacob Geelbuurt;Amsterdam;Buurt;BU03638502;63;17;32;37;14;19;65;50;8
+Overtoomse Veld;Amsterdam;Wijk;WK036386;53;14;30;32;12;15;71;55;7
+Overtoomse Veld Noord;Amsterdam;Buurt;BU03638600;63;17;29;35;14;15;67;52;8
+Overtoomse Veld Zuid;Amsterdam;Buurt;BU03638601;53;14;28;34;11;15;70;53;8
+Rembrandtpark Noord;Amsterdam;Buurt;BU03638602;26;6;36;23;8;14;83;65;5
+Rembrandtpark Zuid;Amsterdam;Buurt;BU03638603;27;8;29;25;6;10;84;60;7
+Johan Jongkindbuurt;Amsterdam;Buurt;BU03638604;73;20;28;44;16;19;55;42;8
+Lucas/Andreasziekenhuis e.o.;Amsterdam;Buurt;BU03638605;32;4;43;18;10;24;85;74;3
+Westlandgracht;Amsterdam;Wijk;WK036387;41;10;30;29;10;15;77;59;7
+Koningin Wilhelminaplein;Amsterdam;Buurt;BU03638700;29;7;27;24;5;10;86;62;7
+Andreasterrein;Amsterdam;Buurt;BU03638701;42;11;25;31;8;11;76;57;9
+Delflandpleinbuurt Oost;Amsterdam;Buurt;BU03638702;48;13;35;35;14;19;68;57;8
+Delflandpleinbuurt West;Amsterdam;Buurt;BU03638703;46;13;30;33;11;15;72;56;7
+Riekerhaven;Amsterdam;Buurt;BU03638704;44;5;37;18;14;27;84;70;4
+Schipluidenbuurt;Amsterdam;Buurt;BU03638705;11;5;40;20;4;8;91;64;4
+Sloter-/Riekerpolder;Amsterdam;Wijk;WK036388;44;13;22;34;6;10;76;52;13
+Riekerpolder;Amsterdam;Buurt;BU03638800;43;10;32;22;9;24;80;59;6
+Park Haagseweg;Amsterdam;Buurt;BU03638801;37;11;17;32;4;8;82;56;15
+Nieuwe Meer;Amsterdam;Buurt;BU03638802;34;15;29;32;8;13;76;50;12
+Sloterweg e.o.;Amsterdam;Buurt;BU03638803;37;10;17;30;5;9;81;54;14
+Nieuw Sloten Noordwest;Amsterdam;Buurt;BU03638804;48;14;23;35;7;11;75;52;12
+Nieuw Sloten Noordoost;Amsterdam;Buurt;BU03638805;45;14;23;36;7;10;75;51;13
+Belgiëplein e.o.;Amsterdam;Buurt;BU03638806;49;14;21;40;7;13;69;45;11
+Nieuw Sloten Zuidwest;Amsterdam;Buurt;BU03638807;41;11;20;30;4;8;82;56;14
+Nieuw Sloten Zuidoost;Amsterdam;Buurt;BU03638808;47;13;25;32;7;12;77;51;11
+Dorp Sloten;Amsterdam;Buurt;BU03638809;37;13;20;35;4;8;78;53;15
+Slotervaart Zuid;Amsterdam;Wijk;WK036389;53;15;28;36;12;16;68;51;8
+Louis Crispijnbuurt;Amsterdam;Buurt;BU03638900;55;16;27;39;11;16;66;48;9
+Jacques Veldmanbuurt;Amsterdam;Buurt;BU03638901;48;13;28;34;10;15;72;54;8
+Staalmanbuurt;Amsterdam;Buurt;BU03638902;64;18;26;39;14;17;63;49;8
+Medisch Centrum Slotervaart;Amsterdam;Buurt;BU03638903;38;8;35;26;12;17;78;59;5
+Buitenveldert-West;Amsterdam;Wijk;WK036390;40;11;22;34;6;12;76;52;10
+Gelderlandpleinbuurt;Amsterdam;Buurt;BU03639000;39;11;23;34;6;12;75;52;9
+Buitenveldert Midden Zuid;Amsterdam;Buurt;BU03639002;37;10;25;31;6;11;80;56;9
+Buitenveldert Zuidwest;Amsterdam;Buurt;BU03639003;44;12;20;37;6;12;73;47;11
+Amsterdamse Bos;Amsterdam;Buurt;BU03639004;29;11;21;29;4;9;82;53;13
+Buitenveldert West Midden;Amsterdam;Buurt;BU03639008;40;10;17;36;5;10;76;50;12
+Zuiderhof;Amsterdam;Buurt;BU03639009;.;.;.;.;.;.;.;.;.
+Buitenveldert-Oost;Amsterdam;Wijk;WK036391;44;11;22;37;7;13;72;50;10
+De Klenckebuurt;Amsterdam;Buurt;BU03639100;47;11;17;42;7;11;68;44;11
+Buitenveldert Oost Midden;Amsterdam;Buurt;BU03639101;45;12;22;39;7;14;70;48;11
+Buitenveldert Zuidoost;Amsterdam;Buurt;BU03639102;42;10;22;34;7;13;75;53;10
+Amstelpark;Amsterdam;Buurt;BU03639103;40;10;23;27;5;11;82;56;11
+Amstel III/Bullewijk;Amsterdam;Wijk;WK036392;34;7;33;22;11;20;82;64;4
+Hoofdcentrum Zuidoost;Amsterdam;Buurt;BU03639200;36;8;30;21;6;19;87;63;6
+Amstel III deel A/B Noord;Amsterdam;Buurt;BU03639201;44;9;34;19;9;26;84;62;4
+Amstel III deel C/D Noord;Amsterdam;Buurt;BU03639202;32;8;40;20;8;21;84;64;4
+Amstel III deel A/B Zuid;Amsterdam;Buurt;BU03639203;30;6;32;20;13;18;84;67;3
+Amstel III deel C/D Zuid;Amsterdam;Buurt;BU03639204;.;.;.;.;.;.;.;.;.
+AMC;Amsterdam;Buurt;BU03639205;47;15;40;41;22;29;58;50;7
+Hoge Dijk;Amsterdam;Buurt;BU03639206;32;10;25;27;6;11;81;54;11
+Bijlmer Centrum (D,F,H);Amsterdam;Wijk;WK036393;53;17;31;34;13;20;68;51;7
+Venserpolder West;Amsterdam;Buurt;BU03639300;55;18;31;38;13;21;64;47;8
+Venserpolder Oost;Amsterdam;Buurt;BU03639301;51;17;32;34;12;19;69;50;7
+D-buurt;Amsterdam;Buurt;BU03639302;37;9;39;23;15;21;78;64;4
+F-buurt;Amsterdam;Buurt;BU03639303;51;18;29;31;11;15;72;52;8
+Amsterdamse Poort;Amsterdam;Buurt;BU03639304;54;18;35;38;15;24;62;50;7
+Hoptille;Amsterdam;Buurt;BU03639305;54;16;30;32;13;23;70;53;7
+Rechte H-buurt;Amsterdam;Buurt;BU03639306;61;19;30;38;14;23;63;47;8
+Hakfort/Huigenbos;Amsterdam;Buurt;BU03639307;58;18;30;34;14;23;66;49;7
+Huntum;Amsterdam;Buurt;BU03639308;42;11;17;34;4;9;81;54;12
+Vogeltjeswei;Amsterdam;Buurt;BU03639309;52;18;27;35;9;14;70;50;9
+Nelson Mandelapark;Amsterdam;Buurt;BU03639310;.;.;.;.;.;.;.;.;.
+Bijlmer Oost (E,G,K);Amsterdam;Wijk;WK036394;54;19;28;36;12;18;67;47;8
+E-buurt;Amsterdam;Buurt;BU03639400;46;15;30;27;10;14;78;56;7
+G-buurt West;Amsterdam;Buurt;BU03639401;52;19;28;33;10;16;71;49;8
+Bijlmermuseum Noord;Amsterdam;Buurt;BU03639402;63;24;29;44;16;22;55;42;8
+Kortvoort;Amsterdam;Buurt;BU03639403;58;22;31;42;15;21;58;43;8
+Kelbergen;Amsterdam;Buurt;BU03639404;56;21;27;39;10;16;66;45;10
+K-buurt Midden;Amsterdam;Buurt;BU03639405;58;19;31;35;15;23;65;47;7
+K-buurt Zuidoost;Amsterdam;Buurt;BU03639406;57;17;24;27;9;17;76;51;7
+K-buurt Zuidwest;Amsterdam;Buurt;BU03639407;58;20;26;33;11;16;71;49;8
+Grunder/Koningshoef;Amsterdam;Buurt;BU03639408;55;20;29;33;11;16;71;49;8
+G-buurt Oost;Amsterdam;Buurt;BU03639409;43;14;22;37;7;13;73;48;11
+Kantershof;Amsterdam;Buurt;BU03639410;53;19;23;40;10;17;66;44;10
+Gooisekant;Amsterdam;Buurt;BU03639411;50;13;25;24;8;10;83;46;8
+G-buurt Noord;Amsterdam;Buurt;BU03639412;60;22;35;42;18;26;55;43;8
+Bijlmermuseum Zuid;Amsterdam;Buurt;BU03639413;53;19;31;34;14;20;67;50;7
+Nellestein;Amsterdam;Wijk;WK036395;45;16;23;36;8;14;73;47;10
+L-buurt;Amsterdam;Buurt;BU03639500;45;16;23;36;8;14;72;47;10
+Gaasperpark;Amsterdam;Buurt;BU03639501;32;16;25;36;7;10;73;50;15
+Gaasperplas;Amsterdam;Buurt;BU03639502;31;12;19;34;4;7;79;49;14
+Holendrecht/Reigersbos;Amsterdam;Wijk;WK036396;55;19;26;39;11;17;66;45;10
+Holendrecht West;Amsterdam;Buurt;BU03639600;63;23;28;45;15;22;55;40;9
+Reigersbos Noord;Amsterdam;Buurt;BU03639601;62;21;28;40;14;21;61;44;9
+Holendrecht Oost;Amsterdam;Buurt;BU03639602;46;16;22;38;6;11;73;49;12
+Gaasperdam Noord;Amsterdam;Buurt;BU03639603;53;19;30;37;12;18;67;47;9
+Gaasperdam Zuid;Amsterdam;Buurt;BU03639604;52;19;28;38;11;18;66;46;9
+Reigersbos Midden;Amsterdam;Buurt;BU03639605;55;19;25;38;10;17;67;45;10
+Reigersbos Zuid;Amsterdam;Buurt;BU03639606;50;17;23;37;9;14;72;48;12
+Gein;Amsterdam;Wijk;WK036397;49;18;24;36;9;15;71;49;11
+Gein Noordwest;Amsterdam;Buurt;BU03639700;55;20;28;39;12;20;64;45;9
+Gein Zuidwest;Amsterdam;Buurt;BU03639701;58;21;28;37;13;21;66;47;8
+Gein Noordoost;Amsterdam;Buurt;BU03639702;39;14;18;31;4;9;81;54;13
+Gein Zuidoost;Amsterdam;Buurt;BU03639703;51;19;24;37;9;15;69;47;11
+Driemond;Amsterdam;Wijk;WK036398;34;14;20;32;5;7;78;50;14
+Dorp Driemond;Amsterdam;Buurt;BU03639800;34;14;20;32;5;7;78;49;14
+Landelijk gebied Driemond;Amsterdam;Buurt;BU03639801;29;10;16;27;3;5;85;56;18
+"Bron: SMAP-data RIVM i.s.m. GGD'en; gebaseerd op de Gezondheidsmonitor Volwassenen en Ouderen 2016 van GGD'en, CBS en RIVM";;;;;;;;;;;;

@@ -12,29 +12,25 @@
 
 # @author Romay Evers
 
-#Workflow the percentage of people smoking per neighborhood in Amsterdam
+#Workflow the percentage of people with a high risk of anxiety or depression (mental health) per neighborhood in Amsterdam
 # Workflow metadata (result and data sources)
 
 _:wf1 a wf:Workflow;
-	rdfs:comment "What is the percentage of people smoking per neighborhood in Amsterdam?"@en;
-	wf:source cbs:wijk-en-buurtkaart-2019; #district
-	wf:source RIVM:50052NED%2Ftable%3Fts%3D1587456280527;
-	wf:edge _:wf1_1, _:wf1_2, _:wf1_3, _:wf1_4, _:wf1_5, _:wf1_6.
+	rdfs:comment "What is the percentage of people with a high risk of anxiety or depression (mental health) per neighborhood in Amsterdam?"@en;
+	wf:source cbs:wijk-en-buurtkaart-2019; #neighborhood
+	wf:source RIVM:50052NED%2Ftable%3Fts%3D1590482338197;
+	wf:edge _:wf1_1, _:wf1_2, _:wf1_3.
 
 
 _:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-attribute.htm> ;
 	wf:input cbs:wijk-en-buurtkaart-2019 ;
-	wf:output _:amsterdamdistricts0.
+	wf:output _:neighborhoodsAmsterdam2019_0.
 
 _:wf1_2 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
-	wf:input _:amsterdamdistricts0 ;
-	wf:output _:amsterdamdistricts.
+	wf:input _:neighborhoodsAmsterdam2019_0 ;
+	wf:output _:neighborhoodsAmsterdam2019.
 
-_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/copy-features.htm> ;
-	wf:input RIVM:50052NED%2Ftable%3Fts%3D1587456280527 ;
-	wf:output _:healthamsterdam.
-
-_:wf1_4 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-join.htm> ;
-	wf:input1 _:amsterdamdistricts ;
-	wf:input2 RIVM:50052NED%2Ftable%3Fts%3D1587456280527 ;
-	wf:output _:percentagesmokersdistricts.
+_:wf1_3 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-join.htm> ;
+	wf:input _:neighborhoodsAmsterdam2019 ;
+	wf:input RIVM:50052NED%2Ftable%3Fts%3D1590482338197 ;
+	wf:output _:percentagementalhealthneighborhoods.
