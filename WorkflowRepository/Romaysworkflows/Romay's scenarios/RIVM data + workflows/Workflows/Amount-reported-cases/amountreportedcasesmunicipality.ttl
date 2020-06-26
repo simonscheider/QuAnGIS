@@ -1,0 +1,30 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix arcpro: <https://pro.arcgis.com/en/pro-app/tool-reference/>.
+@prefix RIVM: <https://geodata.rivm.nl/>.
+@prefix cbs: <https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/>.
+
+# @author Romay Evers
+
+#Workflow the amount of reported cases of covid-19 per municipality in the Netherlands
+# Workflow metadata (result and data sources)
+
+_:wf1 a wf:Workflow;
+	rdfs:comment "What is the amount of reported cases of covid-19 per municipality in the Netherlands?"@en;
+	wf:source cbs:wijk-en-buurtkaart-2019; #municipality
+	wf:source RIVM:covid-19%2F; #reportedcasesofcovid19
+	wf:edge _:wf1_1.
+
+_:wf1_1 tools:implements <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-join.htm> ;
+	wf:input _:wijk-en-buurtkaart-2019 ; #gemeente_2019_v1.shp
+	wf:input RIVM:covid-19%2F ; 
+	wf:output _:amountreportedcasespermunicipality.
+
+
+
