@@ -90,7 +90,7 @@ def cleanOWLOntology(ontologyfile= 'CoreConceptData_ct.ttl'): #This takes the co
     taxonomyclean.add((ADA.SpatialDataSet,RDFS.subClassOf,TOOLS.DType))
     return taxonomyclean
 
-"""Ëxtracts a taxonomy of toolnames from the tool description."""
+"""Extracts a taxonomy of toolnames from the tool description."""
 def extractToolOntology(tooldesc='ToolDescription_ct.ttl'):
     print('Extract Tool ontology!')
     output = rdflib.Graph()

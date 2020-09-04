@@ -1,0 +1,585 @@
+{
+  "functions": [
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "label": "TripLengthAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "CoreConceptQ"
+          ],
+          "LayerA": [
+            "LayerA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "label": "ThresholdAmount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "label": "DistanceNetwork",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "NetworkQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis",
+      "inputs": [],
+      "label": "AccessibilityAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "CoreConceptQ"
+          ],
+          "LayerA": [
+            "LayerA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "TradeArea",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "label": "FlowMatrix",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "NetworkQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "NetworkAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "MeasureSize",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "label": "ThresholdDistance",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "FunctionalClustering",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "PlainNominalA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "NetworkQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "FlowAssignment",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "NetworkQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "NetworkQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "DistanceMatrix",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
+      "inputs": [],
+      "label": "FlowSummation",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "MatrixQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "NominalA"
+          ]
+        }
+      ],
+      "label": "CatchmentArea",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "RegionA"
+          ],
+          "NominalA": [
+            "http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
+      ]
+    }
+  ]
+}

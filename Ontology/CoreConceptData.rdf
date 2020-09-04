@@ -587,6 +587,30 @@
     
 
 
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS">
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS"/>
+        <rdfs:comment xml:lang="en">A network relation where the complete cross-product of an object domain forms the key. Examples would be origin-destination matrices.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
+                <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkQ"/>
+        <rdfs:comment xml:lang="en">an attribute of a matrix. For example, distance in an origin-destination matrix.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS">
@@ -606,7 +630,7 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
-        <rdfs:comment xml:lang="en">This attribute represents the quality of a network edge.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This attribute represents the quality of a network edge. Note that spatial networks (as core concepts) are regarded as quantified relations between objects. So O-IRA-O would be an intensive quality measured between two objects, such as their distance from each other.</rdfs:comment>
     </owl:Class>
     
 
@@ -1200,8 +1224,8 @@
     <!-- http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA">
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
-        <rdfs:comment xml:lang="en">Extensive region attribute</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+        <rdfs:comment xml:lang="en">Extensive region attribute. Since attributes are extensive, their values increase with the size of their support regions. Zero size regions are zero then defined to be zero, which implies a ratio scale level.</rdfs:comment>
     </owl:Class>
     
 
@@ -1209,8 +1233,8 @@
     <!-- http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA">
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
-        <rdfs:comment xml:lang="en">Intensive region attribute</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+        <rdfs:comment xml:lang="en">Intensive region attribute. An attribute that is independent from the size of its support region.</rdfs:comment>
     </owl:Class>
     
 

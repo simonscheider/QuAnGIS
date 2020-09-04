@@ -1,0 +1,47 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://flowmap.geo.uu.nl/> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+

@@ -392,6 +392,22 @@
                 rdfs:comment "A representation of a field as a line of homogeneous values"@en .
 
 
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS
+:MatrixDS rdf:type owl:Class ;
+          rdfs:subClassOf :NetworkDS ;
+          rdfs:comment "A network relation where the complete cross-product of an object domain forms the key. Examples would be origin-destination matrices."@en .
+
+
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ
+:MatrixQ rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet> ;
+                               owl:someValuesFrom :MatrixDS
+                             ] ;
+         rdfs:subClassOf :NetworkQ ;
+         rdfs:comment "an attribute of a matrix. For example, distance in an origin-destination matrix."@en .
+
+
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS
 :NetworkDS rdf:type owl:Class ;
            rdfs:subClassOf :CoreConceptDataSet ;
@@ -405,7 +421,7 @@
                                 owl:someValuesFrom :NetworkDS
                               ] ;
           rdfs:subClassOf :CoreConceptQ ;
-          rdfs:comment "This attribute represents the quality of a network edge."@en .
+          rdfs:comment "This attribute represents the quality of a network edge. Note that spatial networks (as core concepts) are regarded as quantified relations between objects. So O-IRA-O would be an intensive quality measured between two objects, such as their distance from each other."@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#NoDataExistenceRaster
@@ -811,14 +827,14 @@
 
 ###  http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA
 <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA> rdf:type owl:Class ;
-                                                                rdfs:subClassOf :IntervalA ;
-                                                                rdfs:comment "Extensive region attribute"@en .
+                                                                rdfs:subClassOf :RatioA ;
+                                                                rdfs:comment "Extensive region attribute. Since attributes are extensive, their values increase with the size of their support regions. Zero size regions are zero then defined to be zero, which implies a ratio scale level."@en .
 
 
 ###  http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA
 <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA> rdf:type owl:Class ;
-                                                                rdfs:subClassOf :IntervalA ;
-                                                                rdfs:comment "Intensive region attribute"@en .
+                                                                rdfs:subClassOf :RatioA ;
+                                                                rdfs:comment "Intensive region attribute. An attribute that is independent from the size of its support region."@en .
 
 
 #################################################################

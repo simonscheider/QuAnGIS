@@ -21,7 +21,7 @@ CCD= rdflib.Namespace("http://geographicknowledge.de/vocab/CoreConceptData.rdf#"
     
                       
 
-def pipe(tooldescfile = '../lexi_qgis/Rowland_QGIS_ToolDescriptions.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../lexi_qgis'): 
+def pipe(tooldescfile = '../../ToolRepository/FlowmapDescription.ttl', ontologyfile = '../../Ontology/CoreConceptData.ttl', targetfolder='../flowmap'):
 #def pipe(tooldescfile = 'ToolDescription.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../test'):  
 #def pipe(tooldescfile = '../../ToolRepository/ToolDescription_TransformationAlgebra.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../testwfalgebra'): 
     

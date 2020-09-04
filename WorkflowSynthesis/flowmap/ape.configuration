@@ -1,0 +1,43 @@
+{
+  "solutions_path": "./flowmap/sat_solutions.txt",
+  "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
+  "solution_graphs_folder": "./flowmap/figs",
+  "tool_annotations_path": "./flowmap/FlowmapDescription.json",
+  "ontology_path": "./flowmap/GISTaxonomy.rdf",  
+  "constraints_path": "./flowmap/constraints.json",
+  "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",
+  "dataTaxonomyRoot": "Attribute",
+  "dataSubTaxonomyRoot": [
+    "CoreConceptQ",
+    "LayerA",
+	"NominalA"
+  ],
+  "shared_memory": "true",
+  "solution_min_length": "1",
+  "solution_max_length": "8",
+  "max_solutions": "10",
+  "number_of_execution_scripts": "0",
+  "number_of_generated_graphs": "10",
+  "inputs": [
+    {
+	"CoreConceptQ": ["ObjectQ"], 
+    "LayerA": ["LineA"],
+	"NominalA": ["NominalA"]      
+    },
+    {
+	"CoreConceptQ": ["ObjectQ"],
+    "LayerA": ["RegionA"],
+	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"]    
+    }
+  ],
+  "outputs": [
+    {
+    "CoreConceptQ": ["CoreConceptQ"], 
+    "LayerA": ["LayerA"],
+	"NominalA": ["NominalA"] 
+    }
+  ],
+  "debug_mode": "true",
+  "use_workflow_input": "all",
+  "use_all_generated_data": "one"
+}
