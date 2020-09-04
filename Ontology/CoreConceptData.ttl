@@ -394,7 +394,7 @@
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS
 :MatrixDS rdf:type owl:Class ;
-          rdfs:subClassOf :NetworkDS ;
+          rdfs:subClassOf :RelationalDS ;
           rdfs:comment "A network relation where the complete cross-product of an object domain forms the key. Examples would be origin-destination matrices."@en .
 
 
@@ -404,13 +404,13 @@
                                owl:onProperty <http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet> ;
                                owl:someValuesFrom :MatrixDS
                              ] ;
-         rdfs:subClassOf :NetworkQ ;
+         rdfs:subClassOf :RelationalQ ;
          rdfs:comment "an attribute of a matrix. For example, distance in an origin-destination matrix."@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS
 :NetworkDS rdf:type owl:Class ;
-           rdfs:subClassOf :CoreConceptDataSet ;
+           rdfs:subClassOf :RelationalDS ;
            rdfs:comment "A spatial dataset representing a spatial network. Note thate a network in the sense of a core concept is a quantified relation between objects. For example, the traffic flow between municipalities or between two intersections. Streets themselves can also be seen as objects if they do not encode such relations"@en .
 
 
@@ -420,7 +420,7 @@
                                 owl:onProperty <http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet> ;
                                 owl:someValuesFrom :NetworkDS
                               ] ;
-          rdfs:subClassOf :CoreConceptQ ;
+          rdfs:subClassOf :RelationalQ ;
           rdfs:comment "This attribute represents the quality of a network edge. Note that spatial networks (as core concepts) are regarded as quantified relations between objects. So O-IRA-O would be an intensive quality measured between two objects, such as their distance from each other."@en .
 
 
@@ -735,6 +735,22 @@
                                                         ) ;
                                      rdf:type owl:Class
                                    ] .
+
+
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS
+:RelationalDS rdf:type owl:Class ;
+              rdfs:subClassOf :CoreConceptDataSet ;
+              rdfs:comment "A dataset that represents some quantified realtionb between other concepts. For example, a network (being a relation between objects)."@en .
+
+
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ
+:RelationalQ rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet> ;
+                                   owl:someValuesFrom :RelationalDS
+                                 ] ;
+             rdfs:subClassOf :CoreConceptQ ;
+             rdfs:comment "An attribute of a dataset that represents some quantified relation between other core concepts. For example a network is relation between objects."@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation

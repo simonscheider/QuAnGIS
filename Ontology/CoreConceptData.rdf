@@ -590,7 +590,7 @@
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS">
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS"/>
         <rdfs:comment xml:lang="en">A network relation where the complete cross-product of an object domain forms the key. Examples would be origin-destination matrices.</rdfs:comment>
     </owl:Class>
     
@@ -605,7 +605,7 @@
                 <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkQ"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ"/>
         <rdfs:comment xml:lang="en">an attribute of a matrix. For example, distance in an origin-destination matrix.</rdfs:comment>
     </owl:Class>
     
@@ -614,7 +614,7 @@
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS">
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS"/>
         <rdfs:comment xml:lang="en">A spatial dataset representing a spatial network. Note thate a network in the sense of a core concept is a quantified relation between objects. For example, the traffic flow between municipalities or between two intersections. Streets themselves can also be seen as objects if they do not encode such relations</rdfs:comment>
     </owl:Class>
     
@@ -629,7 +629,7 @@
                 <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ"/>
         <rdfs:comment xml:lang="en">This attribute represents the quality of a network edge. Note that spatial networks (as core concepts) are regarded as quantified relations between objects. So O-IRA-O would be an intensive quality measured between two objects, such as their distance from each other.</rdfs:comment>
     </owl:Class>
     
@@ -1087,6 +1087,30 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS">
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet"/>
+        <rdfs:comment xml:lang="en">A dataset that represents some quantified realtionb between other concepts. For example, a network (being a relation between objects).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
+                <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+        <rdfs:comment xml:lang="en">An attribute of a dataset that represents some quantified relation between other core concepts. For example a network is relation between objects.</rdfs:comment>
     </owl:Class>
     
 

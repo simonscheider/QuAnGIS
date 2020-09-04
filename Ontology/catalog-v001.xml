@@ -2,6 +2,6 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf" uri="http://geographicknowledge.de/vocab/ExtensiveMeasures.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1599231515340" name="http://geographicknowledge.de/vocab/CoreConceptData.rdf" uri="CoreConceptData.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1599237117964" name="http://geographicknowledge.de/vocab/CoreConceptData.rdf" uri="CoreConceptData.rdf"/>
     </group>
 </catalog>

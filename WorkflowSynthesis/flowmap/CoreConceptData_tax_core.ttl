@@ -28,9 +28,13 @@
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineMeasuresDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS> .
 
-<http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS> .
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS> .
 
-<http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkQ> .
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ> .
+
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS> .
+
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkQ> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ> .
 
@@ -77,10 +81,6 @@
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
 
-<http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
-
-<http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkQ> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ> .
-
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#AmountDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
@@ -92,6 +92,10 @@
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA> .
+
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet> .
+
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation> rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet> .
 
