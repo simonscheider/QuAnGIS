@@ -1,5 +1,5 @@
 @echo off
 
-java -jar APE-0.9.5.jar ./flowmap/ape.configuration
+java -jar APE-1.0.1-executable.jar ./flowmap/ape.configuration
 
 pause

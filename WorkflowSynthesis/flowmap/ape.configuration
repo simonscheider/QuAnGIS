@@ -5,9 +5,8 @@
   "tool_annotations_path": "./flowmap/FlowmapDescription.json",
   "ontology_path": "./flowmap/GISTaxonomy.rdf",  
   "constraints_path": "./flowmap/constraints.json",
-  "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",
-  "dataTaxonomyRoot": "Attribute",
-  "dataSubTaxonomyRoot": [
+  "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",    
+  "dataDimensionsTaxonomyRoots": [
     "CoreConceptQ",
     "LayerA",
 	"NominalA"
@@ -15,9 +14,9 @@
   "shared_memory": "true",
   "solution_min_length": "1",
   "solution_max_length": "8",
-  "max_solutions": "10",
+  "max_solutions": "20",
   "number_of_execution_scripts": "0",
-  "number_of_generated_graphs": "10",
+  "number_of_generated_graphs": "20",
   "inputs": [
     {
 	"CoreConceptQ": ["ObjectQ"], 
@@ -39,5 +38,6 @@
   ],
   "debug_mode": "true",
   "use_workflow_input": "all",
-  "use_all_generated_data": "one"
+  "use_all_generated_data": "one",
+  "tool_seq_repeat": "false"
 }
