@@ -1,6 +1,6 @@
 {
-  "solutions_path": "./flowmap/sat_solutions.txt",
   "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
+  "solutions_path": "./flowmap/sat_solutions.txt",
   "solution_graphs_folder": "./flowmap/figs",
   "tool_annotations_path": "./flowmap/FlowmapDescription.json",
   "ontology_path": "./flowmap/GISTaxonomy.rdf",  
@@ -12,8 +12,8 @@
 	"NominalA"
   ],
   "shared_memory": "true",
-  "solution_min_length": "1",
-  "solution_max_length": "8",
+  "solution_min_length": 1,
+  "solution_max_length": 8,
   "max_solutions": "20",
   "number_of_execution_scripts": "0",
   "number_of_generated_graphs": "20",
