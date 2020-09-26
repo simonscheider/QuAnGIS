@@ -48,7 +48,7 @@ tools:NetworkAnalysis rdfs:label "Takes a distance network (intensive) of lines 
     wf:input1 [ a ccd:NetworkQ, ccd:LineA, exm:IRA ];  
 	wf:input2 [ a ccd:ObjectQ, ccd:RegionA ]; 	
     wf:output [ a ccd:ObjectQ, ccd:LineA,  exm:IRA ];
-    wf:output2 [ a ccd:NetworkQ, ccd:LineA,  ccd:BooleanA ].
+    wf:output2 [ a ccd:ObjectQ, ccd:LineA,  ccd:BooleanA ].
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdDistance.
 tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object amounts which are sums of amounts up to a maximum distance from each object";
@@ -65,7 +65,7 @@ tools:ThresholdAmount rdfs:label "Takes a distance matrix (intensive) of regions
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:AccessibilityAnalysis.
 tools:AccessibilityAnalysis rdfs:label "Generates some statistics over objects with distance measures";
-    wf:input [ a ccd:ObjectQ, exm:IRA ];	  
+    wf:input1 [ a ccd:ObjectQ, exm:IRA ];	  
     wf:output [ a ada:Quality ].
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrix.
@@ -76,7 +76,7 @@ tools:FlowMatrix rdfs:label "Takes a distance matrix (intensive) of regions and 
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:FlowSummation.
 tools:FlowSummation rdfs:label "Takes a flow matrix and summarizes flows over origin objects, to generate object amounts";
-    wf:input [ a ccd:MatrixQ, ccd:RegionA, exm:ERA];	  
+    wf:input1 [ a ccd:MatrixQ, ccd:RegionA, exm:ERA];	  
     wf:output [ a ccd:ObjectQ, ccd:RegionA, exm:ERA ].
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:TripLengthAnalysis.
