@@ -1,10 +1,9 @@
 {
   "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
-  "solutions_path": "./flowmap/sat_solutions3.txt",
-  "solution_graphs_folder": "./flowmap/figs3",
+  "solutions_dir_path": "./flowmap/solution3/",  
   "tool_annotations_path": "./flowmap/FlowmapDescription.json",
   "ontology_path": "./flowmap/GISTaxonomy.rdf",  
-  "constraints_path": "./flowmap/constraints.json",
+  "constraints_path": "./flowmap/constraints3.json",
   "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",    
   "dataDimensionsTaxonomyRoots": [
     "CoreConceptQ",
@@ -12,11 +11,10 @@
 	"NominalA"
   ],
   "shared_memory": "true",
-  "solution_min_length": 2,
-  "solution_max_length": 10,
-  "max_solutions": "3",
+  "solution_length": { "min": 2, "max": 10 },
+  "max_solutions": "5",
   "number_of_execution_scripts": "0",
-  "number_of_generated_graphs": "3",
+  "number_of_generated_graphs": "5",
   "inputs": [
     {
 	"CoreConceptQ": ["ObjectQ"], 
