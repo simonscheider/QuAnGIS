@@ -35,6 +35,10 @@
                                                                  owl:equivalentClass :Attribute .
 
 
+###  http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality
+<http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality> rdf:type owl:Class .
+
+
 ###  http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial
 <http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial> rdf:type owl:Class .
 
@@ -665,6 +669,12 @@
                                      ] ;
                  rdfs:subClassOf :FieldDS ;
                  rdfs:comment "A dataset representing a field in terms of point-wise measures. For example, temperature sensor measurements."@en .
+
+
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#QualityValue
+:QualityValue rdf:type owl:Class ;
+              rdfs:subClassOf <http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality> ;
+              rdfs:comment "A single value of some quality"@en .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#Raster

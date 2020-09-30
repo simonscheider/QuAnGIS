@@ -115,6 +115,9 @@
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointMeasuresDS> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS> .
 
+<http://geographicknowledge.de/vocab/CoreConceptData.rdf#QualityValue> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality> .
+
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf#Raster> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation> .
 
@@ -144,6 +147,9 @@
 
 <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA> .
+
+<http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#DType> .
 
 <http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialDataSet> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#DType> .

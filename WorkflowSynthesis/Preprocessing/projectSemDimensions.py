@@ -168,7 +168,7 @@ def main(taxonomy= 'CoreConceptData_tax.ttl',dimnodes=[CCD.CoreConceptQ,CCD.Laye
     for dim in dimnodes:
         listofdimtrees.append(getSubsumptionTree2(g,dim,leafnodes)) 
     (project,notcore) = project2Dimensions(nodes, listofdimtrees)
-    test(project)       
+    #test(project)
     getcoretaxonomy(g, notcore, out=coretax)
     return project
     

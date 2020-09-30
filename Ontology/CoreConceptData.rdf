@@ -61,6 +61,12 @@
     
 
 
+    <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality"/>
+    
+
+
     <!-- http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial"/>
@@ -984,6 +990,15 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS"/>
         <rdfs:comment xml:lang="en">A dataset representing a field in terms of point-wise measures. For example, temperature sensor measurements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#QualityValue -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#QualityValue">
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality"/>
+        <rdfs:comment xml:lang="en">A single value of some quality</rdfs:comment>
     </owl:Class>
     
 
