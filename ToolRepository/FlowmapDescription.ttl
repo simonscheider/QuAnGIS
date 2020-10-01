@@ -39,8 +39,8 @@ tools:FunctionalClustering rdfs:label "Takes a flow matrix (extensive) and some 
 <http://flowmap.geo.uu.nl/> tools:implements tools:CatchmentArea.
 tools:CatchmentArea rdfs:label "Takes a distance matrix (intensive) and origin/destination object regions and generates a new origin object attribute measuring the distance to the closest destination object";
     wf:input1 [ a ccd:MatrixQ, ccd:VectorRegionA, exm:IRA ];  
-	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];  
-	wf:input3 [ a ccd:ObjectQ, ccd:VectorRegionA ]; 	
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA,  ccd:PlainNominalA];  
+	wf:input3 [ a ccd:ObjectQ, ccd:VectorRegionA, ccd:PlainNominalA]; 	
     wf:output [ a ccd:ObjectQ, ccd:VectorRegionA,  exm:IRA ].
 
 <http://flowmap.geo.uu.nl/> tools:implements tools:NetworkAnalysis.
@@ -51,14 +51,14 @@ tools:NetworkAnalysis rdfs:label "Takes a distance network (intensive) of lines 
     wf:output2 [ a ccd:ObjectQ, ccd:LineA,  ccd:BooleanA ].
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdDistance.
-tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object amounts which are sums of amounts up to a maximum distance from each object";
+tools:ThresholdAmount rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object amounts which are sums of amounts up to a maximum distance from each object";
     wf:input1 [ a ccd:MatrixQ, ccd:VectorRegionA, exm:IRA ];  
 	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA, exm:ERA ];  
     wf:output [ a ccd:ObjectQ, ccd:VectorRegionA, exm:ERA ].
 
 
 <http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdAmount.
-tools:ThresholdAmount rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object distances that contain objects up to a given amount";
+tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object distances that contain objects up to a given amount";
     wf:input1 [ a ccd:MatrixQ, ccd:VectorRegionA, exm:IRA ];  
 	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA, exm:ERA ];  
     wf:output [ a ccd:ObjectQ, ccd:VectorRegionA, exm:IRA ].

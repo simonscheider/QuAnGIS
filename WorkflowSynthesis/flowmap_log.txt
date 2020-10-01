@@ -1,7 +1,6 @@
 [main] WARN org.semanticweb.owlapi.util.SAXParsers - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
 [main] WARN org.semanticweb.owlapi.util.SAXParsers - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'entityExpansionLimit' is not recognized.
 [main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./flowmap/GISTaxonomy.rdf
-Error in file: C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSynthesis\.\flowmap\constraints7.json, at constraint no: 1 (null). Bad format. Constraint skipped.
 -------------------------------------------------------------
 	Constraint templates:
 -------------------------------------------------------------
@@ -238,6 +237,11 @@ Error in file: C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSy
  . . . RatioA[ABSTRACT]
  . . . . ERA[LEAF]
  . . . . IRA[LEAF]
+ . . . . PlainRatioA[LEAF]
+ . . . . CountA[LEAF]
+ . . . PlainIntervalA[LEAF]
+ . . PlainOrdinalA[LEAF]
+ . BooleanA[LEAF]
  . PlainNominalA[LEAF]
 -------------------------------------------------------------
 	Annotated tools:
@@ -245,7 +249,7 @@ Error in file: C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSy
 ______________________________________
 ||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance[tool], Label:ThresholdDistance|,
 |IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
 |______________________________________
 ______________________________________
 ||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering[tool], Label:FunctionalClustering|,
@@ -260,7 +264,7 @@ ______________________________________
 ______________________________________
 ||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
 |IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
 |______________________________________
 ______________________________________
 ||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix[tool], Label:DistanceMatrix|,
@@ -299,27 +303,91 @@ ______________________________________
 |______________________________________
 ______________________________________
 ||ID: http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea[tool], Label:CatchmentArea|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
+|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'PlainNominalA' } { 'ObjectQ' 'VectorRegionA' 'PlainNominalA' } ,
 |OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'MatrixQ' 'VectorRegionA' 'ERA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'PlainNominalA' } 
 |______________________________________
 ______________________________________
 ||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
 |IN:	{ 'MatrixQ' 'VectorRegionA' 'ERA' } ,
 |OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
 |______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
+|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'MatrixQ' 'VectorRegionA' 'ERA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'PlainNominalA' } 
+|______________________________________
 -------------------------------------------------------------
 	Constraints:
 -------------------------------------------------------------
-	No constraints.
+Use type ${parameter_1} in the solution.
 -------------------------------------------------------------
 
 -------------------------------------------------------------
 	Workflow discovery - length 1
+-------------------------------------------------------------
+Automaton encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.018 sec.
+Memory structure encoding setup time: 0.006 sec.
+Tool exclusions encoding setup time: 0.001 sec.
+Tool usage encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.005 sec.
+Type usage encoding setup time: 0.013 sec.
+SLTL constraints setup time: 0.002 sec.
+Reading rows setup time: 0.003 sec.
+
+Total problem setup time: 0.05 sec.
+Found 0 solutions. Solving time: 0.1 sec.
+
+-------------------------------------------------------------
+	Workflow discovery - length 2
+-------------------------------------------------------------
+Automaton encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.0 sec.
+Memory structure encoding setup time: 0.0 sec.
+Tool exclusions encoding setup time: 0.0 sec.
+Tool usage encoding setup time: 0.016 sec.
+Type exclusions encoding setup time: 0.0 sec.
+Type usage encoding setup time: 0.0 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.0 sec.
+
+Total problem setup time: 0.016 sec.
+Found 0 solutions. Solving time: 0.045 sec.
+
+-------------------------------------------------------------
+	Workflow discovery - length 3
+-------------------------------------------------------------
+Automaton encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.015 sec.
+Memory structure encoding setup time: 0.0 sec.
+Tool exclusions encoding setup time: 0.0 sec.
+Tool usage encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.0 sec.
+Type usage encoding setup time: 0.0 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.016 sec.
+
+Total problem setup time: 0.031 sec.
+Found 1 solutions. Solving time: 0.054 sec.
+
+-------------------------------------------------------------
+	Workflow discovery - length 4
+-------------------------------------------------------------
+Automaton encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.015 sec.
+Memory structure encoding setup time: 0.0 sec.
+Tool exclusions encoding setup time: 0.0 sec.
+Tool usage encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.016 sec.
+Type usage encoding setup time: 0.0 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.016 sec.
+
+Total problem setup time: 0.047 sec.
+Found 2 solutions. Solving time: 0.054 sec.
+
+-------------------------------------------------------------
+	Workflow discovery - length 5
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
 Tool I/O constraints setup time: 0.0 sec.
@@ -328,887 +396,377 @@ Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
 Type exclusions encoding setup time: 0.015 sec.
 Type usage encoding setup time: 0.0 sec.
-Reading rows setup time: 0.0 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.032 sec.
 
-Total problem setup time: 0.015 sec.
-Found 0 solutions. Solving time: 0.085 sec.
+Total problem setup time: 0.047 sec.
+Found 4 solutions. Solving time: 0.093 sec.
+
+APE found 4 solutions. Total solving time: 0.717 sec.
 
 -------------------------------------------------------------
-	Workflow discovery - length 2
+	Workflow discovery - length 6
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
 Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.0 sec.
+Memory structure encoding setup time: 0.007 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
 Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.015 sec.
-Reading rows setup time: 0.0 sec.
+Type usage encoding setup time: 0.0 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.031 sec.
 
-Total problem setup time: 0.015 sec.
-Found 0 solutions. Solving time: 0.084 sec.
+Total problem setup time: 0.038 sec.
+Found 5 solutions. Solving time: 0.053 sec.
 
--------------------------------------------------------------
-	Workflow discovery - length 3
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.016 sec.
-Memory structure encoding setup time: 0.0 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.015 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.016 sec.
-Reading rows setup time: 0.054 sec.
-
-Total problem setup time: 0.111 sec.
-Found 0 solutions. Solving time: 0.091 sec.
+APE found 5 solutions. Total solving time: 0.824 sec.
 
 -------------------------------------------------------------
-	Workflow discovery - length 4
+	Geneating graphical representation
+	of the first 5 workflows
+-------------------------------------------------------------
+
+Loading[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizCmdLineEngine
+guru.nidi.graphviz.engine.GraphvizException: [dot.exe, dot.bat, dot.cmd] command not found
+[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Starting V8 runtime...
+[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizV8Engine
+java.lang.IllegalStateException: J2V8 native library not loaded
+	at com.eclipsesource.v8.V8.checkNativeLibraryLoaded(V8.java:195)
+	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
+	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.0000000011508EB0.get(Unknown Source)
+	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
+	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.000000001187E990.accept(Unknown Source)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
+	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
+	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
+	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
+	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
+	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
+	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
+	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
+	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
+	at nl.uu.cs.ape.sat.APE$$Lambda$205.00000000114CF390.accept(Unknown Source)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:523)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:513)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:162)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:185)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:245)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:429)
+	at nl.uu.cs.ape.sat.APE.writeDataFlowGraphs(APE.java:390)
+	at nl.uu.cs.ape.sat.Main.main(Main.java:68)
+Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons: 
+	j2v8_win32_x86_64 (Not found in java.library.path)
+
+	at com.eclipsesource.v8.LibraryLoader.loadLibrary(LibraryLoader.java:75)
+	at com.eclipsesource.v8.V8.load(V8.java:71)
+	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:145)
+	... 34 more
+.....
+
+Graphical files have been generated. Running time: 36.905 sec.
+[main] WARN org.semanticweb.owlapi.util.SAXParsers - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[main] WARN org.semanticweb.owlapi.util.SAXParsers - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'entityExpansionLimit' is not recognized.
+[main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./flowmap/GISTaxonomy_fl.rdf
+-------------------------------------------------------------
+	Constraint templates:
+-------------------------------------------------------------
+{
+  "constraints": [
+{
+   "constraintID": "ngen_t",
+   "description": "Do not generate type ${parameter_1} in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
+},
+{
+   "constraintID": "gen_ite_t",
+   "description": "If we have generated data type ${parameter_1}, then generate type ${parameter_2} subsequently.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
+   ]
+},
+{
+   "constraintID": "use_ite_t",
+   "description": "If we have used data type ${parameter_1}, then use type ${parameter_2} subsequently.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
+   ]
+},
+{
+   "constraintID": "gen_itn_t",
+   "description": "If we have generated data type ${parameter_1}, then do not generate type ${parameter_2} subsequently.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
+   ]
+},
+{
+   "constraintID": "itn_m",
+   "description": "If we use module ${parameter_1}, then do not use ${parameter_2} subsequently.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
+   ]
+},
+{
+   "constraintID": "use_m",
+   "description": "Use module ${parameter_1} in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
+},
+{
+   "constraintID": "ite_m",
+   "description": "If we use module ${parameter_1}, then use ${parameter_2} subsequently.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
+   ]
+},
+{
+   "constraintID": "prev_m",
+   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} as a previous module in the sequence.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
+   ]
+},
+{
+   "constraintID": "nuse_t",
+   "description": "Do not use type ${parameter_1} in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
+},
+{
+   "constraintID": "depend_m",
+   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} prior to it.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
+   ]
+},
+{
+   "constraintID": "use_t",
+   "description": "Use type ${parameter_1} in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
+},
+{
+   "constraintID": "nuse_m",
+   "description": "Do not use module ${parameter_1} in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
+},
+{
+   "constraintID": "last_m",
+   "description": "Use ${parameter_1} as last module in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
+},
+{
+   "constraintID": "next_m",
+   "description": "If we use module ${parameter_1}, then use ${parameter_2} as a next module in the sequence.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
+      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
+   ]
+},
+{
+   "constraintID": "use_itn_t",
+   "description": "If we have used data type ${parameter_1}, then do not use type ${parameter_2} subsequently.",
+   "parameters": [
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
+      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
+   ]
+},
+{
+   "constraintID": "gen_t",
+   "description": "Generate type ${parameter_1} in the solution.",
+   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
+},
+    ]
+}
+
+-------------------------------------------------------------
+	Tool Taxonomy:
+-------------------------------------------------------------
+ Tool[ROOT]
+ . http://flowmap.geo.uu.nl/[ABSTRACT]
+ . . TradeArea[ABSTRACT]
+ . . . TradeArea[LEAF]
+ . . CatchmentArea[ABSTRACT]
+ . . . CatchmentArea[LEAF]
+ . . ThresholdAmount[ABSTRACT]
+ . . . ThresholdAmount[LEAF]
+ . . NetworkAnalysis[ABSTRACT]
+ . . . NetworkAnalysis[LEAF]
+ . . MeasureSize[ABSTRACT]
+ . . . MeasureSize[LEAF]
+ . . DistanceMatrix[ABSTRACT]
+ . . . DistanceMatrix[LEAF]
+ . . FlowMatrix[ABSTRACT]
+ . . . FlowMatrix[LEAF]
+ . . FlowSummation[ABSTRACT]
+ . . . FlowSummation[LEAF]
+ . . FlowAssignment[ABSTRACT]
+ . . . FlowAssignment[LEAF]
+ . . DistanceNetwork[ABSTRACT]
+ . . . DistanceNetwork[LEAF]
+ . . TripLengthAnalysis[ABSTRACT]
+ . . . TripLengthAnalysis[LEAF]
+ . . ThresholdDistance[ABSTRACT]
+ . . . ThresholdDistance[LEAF]
+ . . FunctionalClustering[ABSTRACT]
+ . . . FunctionalClustering[LEAF]
+ . . AccessibilityAnalysis[ABSTRACT]
+ . . . AccessibilityAnalysis[LEAF]
+
+-------------------------------------------------------------
+	Data Taxonomy dimensions:
+
+-------------------------------------------------------------
+	DTypeTaxonomy:
+-------------------------------------------------------------
+ DType[ROOT]
+ . Attribute[ABSTRACT]
+ . . LayerA[ABSTRACT]
+ . . . VectorA[ABSTRACT]
+ . . . . LineA[ABSTRACT]
+ . . . . . LineMeasures[LEAF]
+ . . . . . ObjectLine[LEAF]
+ . . . . VectorTessellationA[LEAF]
+ . . . . PlainVectorRegionA[LEAF]
+ . . . . VectorRegionA[ABSTRACT]
+ . . . . . VectorTessellationA[LEAF]
+ . . . . . PlainVectorRegionA[LEAF]
+ . . . RegionA[ABSTRACT]
+ . . . . PlainVectorRegionA[LEAF]
+ . . . . VectorRegionA[ABSTRACT]
+ . . . . . VectorTessellationA[LEAF]
+ . . . . . PlainVectorRegionA[LEAF]
+ . Quality[ABSTRACT]
+ . . QualityValue[LEAF]
+-------------------------------------------------------------
+	Annotated tools:
+-------------------------------------------------------------
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance[tool], Label:ThresholdDistance|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering[tool], Label:FunctionalClustering|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix[tool], Label:FlowMatrix|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix[tool], Label:DistanceMatrix|,
+|IN:	{ 'LineA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis[tool], Label:AccessibilityAnalysis|,
+|IN:	{ 'VectorRegionA' } ,
+|OUT	{ 'QualityValue' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment[tool], Label:FlowAssignment|,
+|IN:	{ 'VectorRegionA' } { 'LineA' } { 'VectorRegionA' } ,
+|OUT	{ 'LineA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis[tool], Label:NetworkAnalysis|,
+|IN:	{ 'LineA' } { 'VectorRegionA' } ,
+|OUT	{ 'LineA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork[tool], Label:DistanceNetwork|,
+|IN:	{ 'LineA' } ,
+|OUT	{ 'LineA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize[tool], Label:MeasureSize|,
+|IN:	{ 'LineA' } ,
+|OUT	{ 'LineA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis[tool], Label:TripLengthAnalysis|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'QualityValue' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea[tool], Label:CatchmentArea|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
+|IN:	{ 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+______________________________________
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
+|OUT	{ 'VectorRegionA' } 
+|______________________________________
+-------------------------------------------------------------
+	Constraints:
+-------------------------------------------------------------
+Use type ${parameter_1} in the solution.
+-------------------------------------------------------------
+
+-------------------------------------------------------------
+	Workflow discovery - length 1
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
 Tool I/O constraints setup time: 0.01 sec.
-Memory structure encoding setup time: 0.01 sec.
+Memory structure encoding setup time: 0.005 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.01 sec.
-Reading rows setup time: 0.04 sec.
-
-Total problem setup time: 0.09 sec.
-Found 1 solutions. Solving time: 0.139 sec.
-
--------------------------------------------------------------
-	Workflow discovery - length 5
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.002 sec.
-Memory structure encoding setup time: 0.017 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.002 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.01 sec.
-Reading rows setup time: 0.059 sec.
-
-Total problem setup time: 0.09 sec.
-Found 5 solutions. Solving time: 0.07 sec.
-
-APE found 5 solutions. Total solving time: 0.966 sec.
-
--------------------------------------------------------------
-	Geneating graphical representation
-	of the first 5 workflows
--------------------------------------------------------------
-
-Loading[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizCmdLineEngine
-guru.nidi.graphviz.engine.GraphvizException: [dot.exe, dot.bat, dot.cmd] command not found
-[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Starting V8 runtime...
-[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizV8Engine
-java.lang.IllegalStateException: J2V8 native library not loaded
-	at com.eclipsesource.v8.V8.checkNativeLibraryLoaded(V8.java:195)
-	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
-	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$228.00000000115F5AA0.get(Unknown Source)
-	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
-	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
-	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$231.000000001150A460.accept(Unknown Source)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
-	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
-	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
-	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
-	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
-	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
-	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
-	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
-	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
-	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$204.00000000117EA510.accept(Unknown Source)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
-	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:523)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:513)
-	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:162)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:185)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:245)
-	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:429)
-	at nl.uu.cs.ape.sat.APE.writeDataFlowGraphs(APE.java:390)
-	at nl.uu.cs.ape.sat.Main.main(Main.java:68)
-Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons: 
-	j2v8_win32_x86_64 (Not found in java.library.path)
-
-	at com.eclipsesource.v8.LibraryLoader.loadLibrary(LibraryLoader.java:75)
-	at com.eclipsesource.v8.V8.load(V8.java:71)
-	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:145)
-	... 34 more
-.....
-
-Graphical files have been generated. Running time: 27.204 sec.
-[main] WARN org.semanticweb.owlapi.util.SAXParsers - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
-[main] WARN org.semanticweb.owlapi.util.SAXParsers - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'entityExpansionLimit' is not recognized.
-[main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./flowmap/GISTaxonomy_fl.rdf
-Error in file: C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSynthesis\.\flowmap\constraints7.json, at constraint no: 1 (null). Bad format. Constraint skipped.
--------------------------------------------------------------
-	Constraint templates:
--------------------------------------------------------------
-{
-  "constraints": [
-{
-   "constraintID": "ngen_t",
-   "description": "Do not generate type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-{
-   "constraintID": "gen_ite_t",
-   "description": "If we have generated data type ${parameter_1}, then generate type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "use_ite_t",
-   "description": "If we have used data type ${parameter_1}, then use type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "gen_itn_t",
-   "description": "If we have generated data type ${parameter_1}, then do not generate type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "itn_m",
-   "description": "If we use module ${parameter_1}, then do not use ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_m",
-   "description": "Use module ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "ite_m",
-   "description": "If we use module ${parameter_1}, then use ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "prev_m",
-   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} as a previous module in the sequence.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "nuse_t",
-   "description": "Do not use type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-{
-   "constraintID": "depend_m",
-   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} prior to it.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_t",
-   "description": "Use type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-{
-   "constraintID": "nuse_m",
-   "description": "Do not use module ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "last_m",
-   "description": "Use ${parameter_1} as last module in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "next_m",
-   "description": "If we use module ${parameter_1}, then use ${parameter_2} as a next module in the sequence.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_itn_t",
-   "description": "If we have used data type ${parameter_1}, then do not use type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "gen_t",
-   "description": "Generate type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-    ]
-}
-
--------------------------------------------------------------
-	Tool Taxonomy:
--------------------------------------------------------------
- Tool[ROOT]
- . http://flowmap.geo.uu.nl/[ABSTRACT]
- . . TradeArea[ABSTRACT]
- . . . TradeArea[LEAF]
- . . CatchmentArea[ABSTRACT]
- . . . CatchmentArea[LEAF]
- . . ThresholdAmount[ABSTRACT]
- . . . ThresholdAmount[LEAF]
- . . NetworkAnalysis[ABSTRACT]
- . . . NetworkAnalysis[LEAF]
- . . MeasureSize[ABSTRACT]
- . . . MeasureSize[LEAF]
- . . DistanceMatrix[ABSTRACT]
- . . . DistanceMatrix[LEAF]
- . . FlowMatrix[ABSTRACT]
- . . . FlowMatrix[LEAF]
- . . FlowSummation[ABSTRACT]
- . . . FlowSummation[LEAF]
- . . FlowAssignment[ABSTRACT]
- . . . FlowAssignment[LEAF]
- . . DistanceNetwork[ABSTRACT]
- . . . DistanceNetwork[LEAF]
- . . TripLengthAnalysis[ABSTRACT]
- . . . TripLengthAnalysis[LEAF]
- . . ThresholdDistance[ABSTRACT]
- . . . ThresholdDistance[LEAF]
- . . FunctionalClustering[ABSTRACT]
- . . . FunctionalClustering[LEAF]
- . . AccessibilityAnalysis[ABSTRACT]
- . . . AccessibilityAnalysis[LEAF]
-
--------------------------------------------------------------
-	Data Taxonomy dimensions:
-
--------------------------------------------------------------
-	DTypeTaxonomy:
--------------------------------------------------------------
- DType[ROOT]
- . Attribute[ABSTRACT]
- . . LayerA[ABSTRACT]
- . . . VectorA[ABSTRACT]
- . . . . LineA[ABSTRACT]
- . . . . . LineMeasures[LEAF]
- . . . . . ObjectLine[LEAF]
- . . . . VectorTessellationA[LEAF]
- . . . . PlainVectorRegionA[LEAF]
- . . . . VectorRegionA[ABSTRACT]
- . . . . . VectorTessellationA[LEAF]
- . . . . . PlainVectorRegionA[LEAF]
- . . . RegionA[ABSTRACT]
- . . . . PlainVectorRegionA[LEAF]
- . . . . VectorRegionA[ABSTRACT]
- . . . . . VectorTessellationA[LEAF]
- . . . . . PlainVectorRegionA[LEAF]
- . Quality[ABSTRACT]
- . . QualityValue[LEAF]
--------------------------------------------------------------
-	Annotated tools:
--------------------------------------------------------------
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance[tool], Label:ThresholdDistance|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering[tool], Label:FunctionalClustering|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix[tool], Label:FlowMatrix|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix[tool], Label:DistanceMatrix|,
-|IN:	{ 'LineA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis[tool], Label:AccessibilityAnalysis|,
-|IN:	{ 'VectorRegionA' } ,
-|OUT	{ 'QualityValue' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment[tool], Label:FlowAssignment|,
-|IN:	{ 'VectorRegionA' } { 'LineA' } { 'VectorRegionA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis[tool], Label:NetworkAnalysis|,
-|IN:	{ 'LineA' } { 'VectorRegionA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork[tool], Label:DistanceNetwork|,
-|IN:	{ 'LineA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize[tool], Label:MeasureSize|,
-|IN:	{ 'LineA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis[tool], Label:TripLengthAnalysis|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'QualityValue' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea[tool], Label:CatchmentArea|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
-|IN:	{ 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
--------------------------------------------------------------
-	Constraints:
--------------------------------------------------------------
-	No constraints.
--------------------------------------------------------------
-
--------------------------------------------------------------
-	Workflow discovery - length 1
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.016 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.005 sec.
 Type usage encoding setup time: 0.0 sec.
+SLTL constraints setup time: 0.0 sec.
 Reading rows setup time: 0.0 sec.
 
-Total problem setup time: 0.038 sec.
-Found 0 solutions. Solving time: 0.123 sec.
+Total problem setup time: 0.03 sec.
+Found 2 solutions. Solving time: 0.19 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 2
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
 Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.015 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.016 sec.
-Reading rows setup time: 0.0 sec.
-
-Total problem setup time: 0.031 sec.
-Found 1 solutions. Solving time: 0.115 sec.
-
--------------------------------------------------------------
-	Workflow discovery - length 3
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.016 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
-Reading rows setup time: 0.0 sec.
-
-Total problem setup time: 0.038 sec.
-Found 5 solutions. Solving time: 0.147 sec.
-
-APE found 5 solutions. Total solving time: 0.602 sec.
-
--------------------------------------------------------------
-	Geneating graphical representation
-	of the first 5 workflows
--------------------------------------------------------------
-
-Loading[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizCmdLineEngine
-guru.nidi.graphviz.engine.GraphvizException: [dot.exe, dot.bat, dot.cmd] command not found
-[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Starting V8 runtime...
-[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizV8Engine
-java.lang.IllegalStateException: J2V8 native library not loaded
-	at com.eclipsesource.v8.V8.checkNativeLibraryLoaded(V8.java:195)
-	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
-	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$228.00000000110B3E60.get(Unknown Source)
-	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
-	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
-	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$231.00000000110B4770.accept(Unknown Source)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
-	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
-	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
-	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
-	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
-	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
-	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
-	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
-	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
-	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$204.000000001107F260.accept(Unknown Source)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
-	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:523)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:513)
-	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:162)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:185)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:245)
-	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:429)
-	at nl.uu.cs.ape.sat.APE.writeDataFlowGraphs(APE.java:390)
-	at nl.uu.cs.ape.sat.Main.main(Main.java:68)
-Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons: 
-	j2v8_win32_x86_64 (Not found in java.library.path)
-
-	at com.eclipsesource.v8.LibraryLoader.loadLibrary(LibraryLoader.java:75)
-	at com.eclipsesource.v8.V8.load(V8.java:71)
-	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:145)
-	... 34 more
-.....
-
-Graphical files have been generated. Running time: 29.074 sec.
-[main] WARN org.semanticweb.owlapi.util.SAXParsers - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
-[main] WARN org.semanticweb.owlapi.util.SAXParsers - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'entityExpansionLimit' is not recognized.
-[main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./flowmap/GISTaxonomy.rdf
-Error in file: C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSynthesis\.\flowmap\constraints8.json, at constraint no: 1 (null). Bad format. Constraint skipped.
--------------------------------------------------------------
-	Constraint templates:
--------------------------------------------------------------
-{
-  "constraints": [
-{
-   "constraintID": "ngen_t",
-   "description": "Do not generate type ${parameter_1} in the solution.",
-   "parameters": [[
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-   ]]
-},
-{
-   "constraintID": "gen_ite_t",
-   "description": "If we have generated data type ${parameter_1}, then generate type ${parameter_2} subsequently.",
-   "parameters": [
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ],
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ]
-   ]
-},
-{
-   "constraintID": "use_ite_t",
-   "description": "If we have used data type ${parameter_1}, then use type ${parameter_2} subsequently.",
-   "parameters": [
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ],
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ]
-   ]
-},
-{
-   "constraintID": "gen_itn_t",
-   "description": "If we have generated data type ${parameter_1}, then do not generate type ${parameter_2} subsequently.",
-   "parameters": [
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ],
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ]
-   ]
-},
-{
-   "constraintID": "itn_m",
-   "description": "If we use module ${parameter_1}, then do not use ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_m",
-   "description": "Use module ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "ite_m",
-   "description": "If we use module ${parameter_1}, then use ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "prev_m",
-   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} as a previous module in the sequence.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "nuse_t",
-   "description": "Do not use type ${parameter_1} in the solution.",
-   "parameters": [[
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-   ]]
-},
-{
-   "constraintID": "depend_m",
-   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} prior to it.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_t",
-   "description": "Use type ${parameter_1} in the solution.",
-   "parameters": [[
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-   ]]
-},
-{
-   "constraintID": "nuse_m",
-   "description": "Do not use module ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "last_m",
-   "description": "Use ${parameter_1} as last module in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "next_m",
-   "description": "If we use module ${parameter_1}, then use ${parameter_2} as a next module in the sequence.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_itn_t",
-   "description": "If we have used data type ${parameter_1}, then do not use type ${parameter_2} subsequently.",
-   "parameters": [
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ],
-      [
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-      ]
-   ]
-},
-{
-   "constraintID": "gen_t",
-   "description": "Generate type ${parameter_1} in the solution.",
-   "parameters": [[
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
-      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
-   ]]
-},
-    ]
-}
-
--------------------------------------------------------------
-	Tool Taxonomy:
--------------------------------------------------------------
- Tool[ROOT]
- . http://flowmap.geo.uu.nl/[ABSTRACT]
- . . TradeArea[ABSTRACT]
- . . . TradeArea[LEAF]
- . . CatchmentArea[ABSTRACT]
- . . . CatchmentArea[LEAF]
- . . ThresholdAmount[ABSTRACT]
- . . . ThresholdAmount[LEAF]
- . . NetworkAnalysis[ABSTRACT]
- . . . NetworkAnalysis[LEAF]
- . . MeasureSize[ABSTRACT]
- . . . MeasureSize[LEAF]
- . . DistanceMatrix[ABSTRACT]
- . . . DistanceMatrix[LEAF]
- . . FlowMatrix[ABSTRACT]
- . . . FlowMatrix[LEAF]
- . . FlowSummation[ABSTRACT]
- . . . FlowSummation[LEAF]
- . . FlowAssignment[ABSTRACT]
- . . . FlowAssignment[LEAF]
- . . DistanceNetwork[ABSTRACT]
- . . . DistanceNetwork[LEAF]
- . . TripLengthAnalysis[ABSTRACT]
- . . . TripLengthAnalysis[LEAF]
- . . ThresholdDistance[ABSTRACT]
- . . . ThresholdDistance[LEAF]
- . . FunctionalClustering[ABSTRACT]
- . . . FunctionalClustering[LEAF]
- . . AccessibilityAnalysis[ABSTRACT]
- . . . AccessibilityAnalysis[LEAF]
-
--------------------------------------------------------------
-	Data Taxonomy dimensions:
-
--------------------------------------------------------------
-	CoreConceptQTaxonomy:
--------------------------------------------------------------
- CoreConceptQ[ROOT]
- . ObjectQ[LEAF]
- . AmountQ[LEAF]
- . RelationalQ[ABSTRACT]
- . . NetworkQ[LEAF]
- . . MatrixQ[LEAF]
-
--------------------------------------------------------------
-	LayerATaxonomy:
--------------------------------------------------------------
- LayerA[ROOT]
- . RegionA[ABSTRACT]
- . . VectorRegionA[ABSTRACT]
- . . . VectorTessellationA[LEAF]
- . . . PlainVectorRegionA[LEAF]
- . . PlainVectorRegionA[LEAF]
- . VectorA[ABSTRACT]
- . . VectorTessellationA[LEAF]
- . . VectorRegionA[ABSTRACT]
- . . . VectorTessellationA[LEAF]
- . . . PlainVectorRegionA[LEAF]
- . . LineA[LEAF]
- . . PlainVectorRegionA[LEAF]
-
--------------------------------------------------------------
-	NominalATaxonomy:
--------------------------------------------------------------
- NominalA[ROOT]
- . OrdinalA[ABSTRACT]
- . . IntervalA[ABSTRACT]
- . . . RatioA[ABSTRACT]
- . . . . ERA[LEAF]
- . . . . IRA[LEAF]
- . PlainNominalA[LEAF]
--------------------------------------------------------------
-	Annotated tools:
--------------------------------------------------------------
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance[tool], Label:ThresholdDistance|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering[tool], Label:FunctionalClustering|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'ERA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'PlainNominalA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix[tool], Label:FlowMatrix|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'MatrixQ' 'VectorRegionA' 'ERA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix[tool], Label:DistanceMatrix|,
-|IN:	{ 'NetworkQ' 'LineA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'MatrixQ' 'VectorRegionA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis[tool], Label:AccessibilityAnalysis|,
-|IN:	{ 'ObjectQ' 'LayerA' 'IRA' } ,
-|OUT	{ 'AmountQ' 'LayerA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment[tool], Label:FlowAssignment|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'ERA' } { 'NetworkQ' 'LineA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'NetworkQ' 'LineA' 'ERA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis[tool], Label:NetworkAnalysis|,
-|IN:	{ 'NetworkQ' 'LineA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'ObjectQ' 'LineA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork[tool], Label:DistanceNetwork|,
-|IN:	{ 'ObjectQ' 'LineA' 'ERA' } ,
-|OUT	{ 'NetworkQ' 'LineA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize[tool], Label:MeasureSize|,
-|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
-|OUT	{ 'ObjectQ' 'LineA' 'ERA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis[tool], Label:TripLengthAnalysis|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'MatrixQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'AmountQ' 'LayerA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea[tool], Label:CatchmentArea|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'IRA' } { 'MatrixQ' 'VectorRegionA' 'ERA' } { 'ObjectQ' 'VectorRegionA' 'NominalA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'PlainNominalA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
-|IN:	{ 'MatrixQ' 'VectorRegionA' 'ERA' } ,
-|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
-|______________________________________
--------------------------------------------------------------
-	Constraints:
--------------------------------------------------------------
-	No constraints.
--------------------------------------------------------------
-
--------------------------------------------------------------
-	Workflow discovery - length 1
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
 Memory structure encoding setup time: 0.01 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.008 sec.
-Type usage encoding setup time: 0.01 sec.
-Reading rows setup time: 0.002 sec.
-
-Total problem setup time: 0.053 sec.
-Found 1 solutions. Solving time: 0.216 sec.
-
--------------------------------------------------------------
-	Workflow discovery - length 2
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.0 sec.
-Tool exclusions encoding setup time: 0.016 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.007 sec.
-Reading rows setup time: 0.0 sec.
-
-Total problem setup time: 0.023 sec.
-Found 2 solutions. Solving time: 0.084 sec.
-
--------------------------------------------------------------
-	Workflow discovery - length 3
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.0 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.016 sec.
-Type usage encoding setup time: 0.003 sec.
-Reading rows setup time: 0.015 sec.
-
-Total problem setup time: 0.034 sec.
-Found 3 solutions. Solving time: 0.066 sec.
-
--------------------------------------------------------------
-	Workflow discovery - length 4
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.0 sec.
-Tool exclusions encoding setup time: 0.0 sec.
+Tool exclusions encoding setup time: 0.01 sec.
 Tool usage encoding setup time: 0.0 sec.
 Type exclusions encoding setup time: 0.0 sec.
 Type usage encoding setup time: 0.0 sec.
-Reading rows setup time: 0.016 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.013 sec.
 
-Total problem setup time: 0.016 sec.
-Found 4 solutions. Solving time: 0.032 sec.
+Total problem setup time: 0.033 sec.
+Found 5 solutions. Solving time: 0.095 sec.
 
-APE found 4 solutions. Total solving time: 0.694 sec.
-
--------------------------------------------------------------
-	Workflow discovery - length 5
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.006 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.016 sec.
-Reading rows setup time: 0.0 sec.
-
-Total problem setup time: 0.022 sec.
-Found 5 solutions. Solving time: 0.032 sec.
-
-APE found 5 solutions. Total solving time: 0.763 sec.
+APE found 5 solutions. Total solving time: 0.43 sec.
 
 -------------------------------------------------------------
 	Geneating graphical representation
@@ -1224,14 +782,14 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
 	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
 	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$228.00000000113D9830.get(Unknown Source)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.0000000011A51960.get(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
 	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$231.00000000113DA140.accept(Unknown Source)
+	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.0000000011A51FD0.accept(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
@@ -1244,7 +802,7 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
 	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
 	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$204.0000000011279F90.accept(Unknown Source)
+	at nl.uu.cs.ape.sat.APE$$Lambda$205.0000000011BBA940.accept(Unknown Source)
 	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
 	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
 	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
@@ -1265,334 +823,4 @@ Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons:
 	... 34 more
 .....
 
-Graphical files have been generated. Running time: 23.679 sec.
-[main] WARN org.semanticweb.owlapi.util.SAXParsers - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
-[main] WARN org.semanticweb.owlapi.util.SAXParsers - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'entityExpansionLimit' is not recognized.
-[main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./flowmap/GISTaxonomy_fl.rdf
-Error in file: C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSynthesis\.\flowmap\constraints8.json, at constraint no: 1 (null). Bad format. Constraint skipped.
--------------------------------------------------------------
-	Constraint templates:
--------------------------------------------------------------
-{
-  "constraints": [
-{
-   "constraintID": "ngen_t",
-   "description": "Do not generate type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-{
-   "constraintID": "gen_ite_t",
-   "description": "If we have generated data type ${parameter_1}, then generate type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "use_ite_t",
-   "description": "If we have used data type ${parameter_1}, then use type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "gen_itn_t",
-   "description": "If we have generated data type ${parameter_1}, then do not generate type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "itn_m",
-   "description": "If we use module ${parameter_1}, then do not use ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_m",
-   "description": "Use module ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "ite_m",
-   "description": "If we use module ${parameter_1}, then use ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "prev_m",
-   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} as a previous module in the sequence.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "nuse_t",
-   "description": "Do not use type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-{
-   "constraintID": "depend_m",
-   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} prior to it.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_t",
-   "description": "Use type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-{
-   "constraintID": "nuse_m",
-   "description": "Do not use module ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "last_m",
-   "description": "Use ${parameter_1} as last module in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]]
-},
-{
-   "constraintID": "next_m",
-   "description": "If we use module ${parameter_1}, then use ${parameter_2} as a next module in the sequence.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"],
-      ["http://geographicknowledge.de/vocab/GISTools.rdf#Tool"]
-   ]
-},
-{
-   "constraintID": "use_itn_t",
-   "description": "If we have used data type ${parameter_1}, then do not use type ${parameter_2} subsequently.",
-   "parameters": [
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"],
-      ["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]
-   ]
-},
-{
-   "constraintID": "gen_t",
-   "description": "Generate type ${parameter_1} in the solution.",
-   "parameters": [["http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"]]
-},
-    ]
-}
-
--------------------------------------------------------------
-	Tool Taxonomy:
--------------------------------------------------------------
- Tool[ROOT]
- . http://flowmap.geo.uu.nl/[ABSTRACT]
- . . TradeArea[ABSTRACT]
- . . . TradeArea[LEAF]
- . . CatchmentArea[ABSTRACT]
- . . . CatchmentArea[LEAF]
- . . ThresholdAmount[ABSTRACT]
- . . . ThresholdAmount[LEAF]
- . . NetworkAnalysis[ABSTRACT]
- . . . NetworkAnalysis[LEAF]
- . . MeasureSize[ABSTRACT]
- . . . MeasureSize[LEAF]
- . . DistanceMatrix[ABSTRACT]
- . . . DistanceMatrix[LEAF]
- . . FlowMatrix[ABSTRACT]
- . . . FlowMatrix[LEAF]
- . . FlowSummation[ABSTRACT]
- . . . FlowSummation[LEAF]
- . . FlowAssignment[ABSTRACT]
- . . . FlowAssignment[LEAF]
- . . DistanceNetwork[ABSTRACT]
- . . . DistanceNetwork[LEAF]
- . . TripLengthAnalysis[ABSTRACT]
- . . . TripLengthAnalysis[LEAF]
- . . ThresholdDistance[ABSTRACT]
- . . . ThresholdDistance[LEAF]
- . . FunctionalClustering[ABSTRACT]
- . . . FunctionalClustering[LEAF]
- . . AccessibilityAnalysis[ABSTRACT]
- . . . AccessibilityAnalysis[LEAF]
-
--------------------------------------------------------------
-	Data Taxonomy dimensions:
-
--------------------------------------------------------------
-	DTypeTaxonomy:
--------------------------------------------------------------
- DType[ROOT]
- . Attribute[ABSTRACT]
- . . LayerA[ABSTRACT]
- . . . VectorA[ABSTRACT]
- . . . . LineA[ABSTRACT]
- . . . . . LineMeasures[LEAF]
- . . . . . ObjectLine[LEAF]
- . . . . VectorTessellationA[LEAF]
- . . . . PlainVectorRegionA[LEAF]
- . . . . VectorRegionA[ABSTRACT]
- . . . . . VectorTessellationA[LEAF]
- . . . . . PlainVectorRegionA[LEAF]
- . . . RegionA[ABSTRACT]
- . . . . PlainVectorRegionA[LEAF]
- . . . . VectorRegionA[ABSTRACT]
- . . . . . VectorTessellationA[LEAF]
- . . . . . PlainVectorRegionA[LEAF]
- . Quality[ABSTRACT]
- . . QualityValue[LEAF]
--------------------------------------------------------------
-	Annotated tools:
--------------------------------------------------------------
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance[tool], Label:ThresholdDistance|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering[tool], Label:FunctionalClustering|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix[tool], Label:FlowMatrix|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix[tool], Label:DistanceMatrix|,
-|IN:	{ 'LineA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis[tool], Label:AccessibilityAnalysis|,
-|IN:	{ 'VectorRegionA' } ,
-|OUT	{ 'QualityValue' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment[tool], Label:FlowAssignment|,
-|IN:	{ 'VectorRegionA' } { 'LineA' } { 'VectorRegionA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis[tool], Label:NetworkAnalysis|,
-|IN:	{ 'LineA' } { 'VectorRegionA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork[tool], Label:DistanceNetwork|,
-|IN:	{ 'LineA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize[tool], Label:MeasureSize|,
-|IN:	{ 'LineA' } ,
-|OUT	{ 'LineA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis[tool], Label:TripLengthAnalysis|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'QualityValue' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea[tool], Label:CatchmentArea|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
-______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
-|IN:	{ 'VectorRegionA' } ,
-|OUT	{ 'VectorRegionA' } 
-|______________________________________
--------------------------------------------------------------
-	Constraints:
--------------------------------------------------------------
-	No constraints.
--------------------------------------------------------------
-
--------------------------------------------------------------
-	Workflow discovery - length 1
--------------------------------------------------------------
-Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.016 sec.
-Memory structure encoding setup time: 0.0 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
-Reading rows setup time: 0.0 sec.
-
-Total problem setup time: 0.031 sec.
-Found 5 solutions. Solving time: 0.216 sec.
-
-APE found 5 solutions. Total solving time: 0.301 sec.
-
--------------------------------------------------------------
-	Geneating graphical representation
-	of the first 5 workflows
--------------------------------------------------------------
-
-Loading[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizCmdLineEngine
-guru.nidi.graphviz.engine.GraphvizException: [dot.exe, dot.bat, dot.cmd] command not found
-[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Starting V8 runtime...
-[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizV8Engine
-java.lang.IllegalStateException: J2V8 native library not loaded
-	at com.eclipsesource.v8.V8.checkNativeLibraryLoaded(V8.java:195)
-	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
-	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$226.0000000011B53C80.get(Unknown Source)
-	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
-	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
-	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$229.0000000011B542F0.accept(Unknown Source)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
-	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
-	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
-	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
-	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
-	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
-	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
-	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
-	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
-	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
-	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$202.0000000011B1BBD0.accept(Unknown Source)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
-	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:523)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:513)
-	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:162)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:185)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:245)
-	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:429)
-	at nl.uu.cs.ape.sat.APE.writeDataFlowGraphs(APE.java:390)
-	at nl.uu.cs.ape.sat.Main.main(Main.java:68)
-Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons: 
-	j2v8_win32_x86_64 (Not found in java.library.path)
-
-	at com.eclipsesource.v8.LibraryLoader.loadLibrary(LibraryLoader.java:75)
-	at com.eclipsesource.v8.V8.load(V8.java:71)
-	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:145)
-	... 34 more
-.....
-
-Graphical files have been generated. Running time: 20.53 sec.
+Graphical files have been generated. Running time: 27.105 sec.

@@ -1,6 +1,63 @@
 {
   "functions": [
     {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "CatchmentArea",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
+      "inputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "NetworkAnalysis",
+      "outputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
+      ]
+    },
+    {
       "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix",
       "inputs": [
         {
@@ -27,7 +84,7 @@
       ]
     },
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering",
       "inputs": [
         {
           "DType": [
@@ -36,7 +93,28 @@
         },
         {
           "DType": [
-            "LineA"
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FunctionalClustering",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
           ]
         },
         {
@@ -45,7 +123,70 @@
           ]
         }
       ],
-      "label": "FlowAssignment",
+      "label": "FlowMatrix",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FlowSummation",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "AccessibilityAnalysis",
+      "outputs": [
+        {
+          "DType": [
+            "QualityValue"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork",
+      "inputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        }
+      ],
+      "label": "DistanceNetwork",
       "outputs": [
         {
           "DType": [
@@ -54,7 +195,33 @@
         }
       ],
       "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
+        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "TripLengthAnalysis",
+      "outputs": [
+        {
+          "DType": [
+            "QualityValue"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
       ]
     },
     {
@@ -115,86 +282,13 @@
       ]
     },
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
       "inputs": [
         {
           "DType": [
             "VectorRegionA"
           ]
         },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "CatchmentArea",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "AccessibilityAnalysis",
-      "outputs": [
-        {
-          "DType": [
-            "QualityValue"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "TripLengthAnalysis",
-      "outputs": [
-        {
-          "DType": [
-            "QualityValue"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
-      "inputs": [
         {
           "DType": [
             "LineA"
@@ -206,7 +300,7 @@
           ]
         }
       ],
-      "label": "NetworkAnalysis",
+      "label": "FlowAssignment",
       "outputs": [
         {
           "DType": [
@@ -215,101 +309,7 @@
         }
       ],
       "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FlowSummation",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FlowMatrix",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FunctionalClustering",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork",
-      "inputs": [
-        {
-          "DType": [
-            "LineA"
-          ]
-        }
-      ],
-      "label": "DistanceNetwork",
-      "outputs": [
-        {
-          "DType": [
-            "LineA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork"
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
       ]
     },
     {

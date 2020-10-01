@@ -3,7 +3,7 @@
   "solutions_dir_path": "./flowmap/solution2bench/",  
   "tool_annotations_path": "./flowmap/FlowmapDescription_fl.json",
   "ontology_path": "./flowmap/GISTaxonomy_fl.rdf",  
-  "constraints_path": "./flowmap/constraints2.json",
+  "constraints_path": "./flowmap/constraints2bench.json",
   "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",    
   "dataDimensionsTaxonomyRoots": ["DType"],
   "shared_memory": "true",

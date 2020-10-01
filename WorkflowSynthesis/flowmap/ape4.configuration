@@ -24,7 +24,7 @@
 	{
 	"CoreConceptQ": ["ObjectQ"],
     "LayerA": ["VectorTessellationA"],
-	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"]    
+	"NominalA": ["PlainNominalA"]    
     }
   ],
   "outputs": [

@@ -3,7 +3,7 @@
   "solutions_dir_path": "./flowmap/solution8bench/",  
   "tool_annotations_path": "./flowmap/FlowmapDescription_fl.json",
   "ontology_path": "./flowmap/GISTaxonomy_fl.rdf",  
-  "constraints_path": "./flowmap/constraints8.json",
+  "constraints_path": "./flowmap/constraints8bench.json",
   "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",    
   "dataDimensionsTaxonomyRoots": [
     "DType"
@@ -16,6 +16,9 @@
   "inputs": [
     {	
     "DType": ["VectorRegionA"]    
+    },
+	{	
+    "DType": ["LineA"]    
     },
 	{	
     "DType": ["VectorRegionA"]   

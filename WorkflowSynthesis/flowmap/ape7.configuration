@@ -24,7 +24,7 @@
 	{
 	"CoreConceptQ": ["ObjectQ"],
     "LayerA": ["VectorTessellationA"],
-	"NominalA": ["NominalA"]    
+	"NominalA": ["PlainNominalA"]    
     },
 	{
 	"CoreConceptQ": ["MatrixQ"],

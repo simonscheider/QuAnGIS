@@ -1,13 +1,24 @@
 {
   "constraints": [
   {
-      "constraintID": "use_t",
+      "constraintid": "use_t",
 	  "description": "", 
       "parameters": [
 	  [
         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ",
 		"http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA",
 		"http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"
+		]		
+      ]
+    },
+	{
+      "constraintid": "use_t",
+	  "description": "", 
+      "parameters": [
+	  [
+        "http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ",
+		"http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA",
+		"http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"
 		]		
       ]
     }

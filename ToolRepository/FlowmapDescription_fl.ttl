@@ -51,14 +51,14 @@ tools:NetworkAnalysis rdfs:label "Takes a distance network (intensive) of lines 
     wf:output2 [ a ccd:LineA ].
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdDistance.
-tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object amounts which are sums of amounts up to a maximum distance from each object";
+tools:ThresholdAmount rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object amounts which are sums of amounts up to a maximum distance from each object";
     wf:input1 [ a ccd:VectorRegionA ];  
 	wf:input2 [ a ccd:VectorRegionA ];  
     wf:output [ a ccd:VectorRegionA ].
 
 
 <http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdAmount.
-tools:ThresholdAmount rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object distances that contain objects up to a given amount";
+tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object distances that contain objects up to a given amount";
     wf:input1 [ a ccd:VectorRegionA ];  
 	wf:input2 [ a ccd:VectorRegionA ];  
     wf:output [ a ccd:VectorRegionA ].
