@@ -86,9 +86,9 @@ def cleanOWLOntology(ontologyfile= 'CoreConceptData_ct.ttl'): #This takes the co
             
     n_triples(taxonomyclean)
     #add common upper class for all data types, including spatial attributes and spatial data sets. They are not needed otherwise
-    taxonomyclean.add((ADA.ValueList,RDFS.subClassOf,TOOLS.DType))
-    taxonomyclean.add((ADA.SpatialDataSet,RDFS.subClassOf,TOOLS.DType))
-    taxonomyclean.add((ADA.Quality, RDFS.subClassOf, TOOLS.DType))
+    taxonomyclean.add((CCD.Attribute,RDFS.subClassOf,CCD.DType))
+    taxonomyclean.add((ADA.SpatialDataSet,RDFS.subClassOf,CCD.DType))
+    taxonomyclean.add((ADA.Quality, RDFS.subClassOf, CCD.DType))
     return taxonomyclean
 
 """Extracts a taxonomy of toolnames from the tool description."""

@@ -57,6 +57,16 @@
           rdfs:comment "Dataset of amounts of objects"@en .
 
 
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#AmountQ
+:AmountQ rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet> ;
+                               owl:someValuesFrom :AmountDS
+                             ] ;
+         rdfs:subClassOf :CoreConceptQ ;
+         rdfs:comment "An attribute that represents a (quantified) amount, which is a quantity defined by an arbitrary part of space. This can be either an amount of objects or an amount of some field."@en .
+
+
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#AmountRasterDS
 :AmountRasterDS rdf:type owl:Class ;
                 owl:equivalentClass [ owl:intersectionOf ( :AmountDS
@@ -596,7 +606,8 @@
                                           rdf:type owl:Class
                                         ] ;
                     rdfs:subClassOf :RegionA ,
-                                    :VectorA ;
+                                    :VectorA ,
+                                    :VectorRegionA ;
                     rdfs:comment "An attribute of a vector region layer that is not a tessellation"@en .
 
 
@@ -822,6 +833,18 @@
          rdfs:comment "Attribute of some vector data set"@en .
 
 
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA
+:VectorRegionA rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :RegionA
+                                                          :VectorA
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :RegionA ,
+                               :VectorA ;
+               rdfs:comment "An attribute of a region vector layer"@en .
+
+
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellation
 :VectorTessellation rdf:type owl:Class ;
                     owl:equivalentClass [ owl:intersectionOf ( :Tessellation
@@ -841,7 +864,8 @@
                                            rdf:type owl:Class
                                          ] ;
                      rdfs:subClassOf :TessellationA ,
-                                     :VectorA ;
+                                     :VectorA ,
+                                     :VectorRegionA ;
                      rdfs:comment "An attribute of a vector tessellation"@en .
 
 

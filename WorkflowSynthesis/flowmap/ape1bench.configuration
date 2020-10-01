@@ -16,7 +16,7 @@
 	"DType":["LineA"]     
     },
 	{
-	"DType": ["PlainVectorRegionA"]   
+	"DType": ["VectorRegionA"]   
     }
   ],
   "outputs": [

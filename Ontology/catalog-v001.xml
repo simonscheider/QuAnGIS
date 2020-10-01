@@ -3,6 +3,6 @@
     <uri id="Imports Wizard Entry" name="http://geographicknowledge.de/vocab/AnalysisData.rdf" uri="http://geographicknowledge.de/vocab/AnalysisData.ttl"/>
     <uri id="Imports Wizard Entry" name="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf" uri="http://geographicknowledge.de/vocab/ExtensiveMeasures.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1601380622653" name="http://geographicknowledge.de/vocab/CoreConceptData.rdf" uri="CoreConceptData.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1601538361307" name="http://geographicknowledge.de/vocab/CoreConceptData.rdf" uri="CoreConceptData.rdf"/>
     </group>
 </catalog>
