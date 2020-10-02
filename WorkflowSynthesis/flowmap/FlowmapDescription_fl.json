@@ -1,89 +1,6 @@
 {
   "functions": [
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "CatchmentArea",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
-      "inputs": [
-        {
-          "DType": [
-            "LineA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "NetworkAnalysis",
-      "outputs": [
-        {
-          "DType": [
-            "LineA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix",
-      "inputs": [
-        {
-          "DType": [
-            "LineA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "DistanceMatrix",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix"
-      ]
-    },
-    {
       "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering",
       "inputs": [
         {
@@ -110,8 +27,13 @@
       ]
     },
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix",
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea",
       "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
         {
           "DType": [
             "VectorRegionA"
@@ -123,7 +45,7 @@
           ]
         }
       ],
-      "label": "FlowMatrix",
+      "label": "TradeArea",
       "outputs": [
         {
           "DType": [
@@ -132,19 +54,24 @@
         }
       ],
       "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix"
+        "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea"
       ]
     },
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix",
       "inputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        },
         {
           "DType": [
             "VectorRegionA"
           ]
         }
       ],
-      "label": "FlowSummation",
+      "label": "DistanceMatrix",
       "outputs": [
         {
           "DType": [
@@ -153,7 +80,7 @@
         }
       ],
       "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
+        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix"
       ]
     },
     {
@@ -196,120 +123,6 @@
       ],
       "taxonomyOperations": [
         "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "TripLengthAnalysis",
-      "outputs": [
-        {
-          "DType": [
-            "QualityValue"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "ThresholdDistance",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "TradeArea",
-      "outputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
-      "inputs": [
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "DType": [
-            "LineA"
-          ]
-        },
-        {
-          "DType": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FlowAssignment",
-      "outputs": [
-        {
-          "DType": [
-            "LineA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
       ]
     },
     {
@@ -357,6 +170,193 @@
       ],
       "taxonomyOperations": [
         "http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "LineA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FlowAssignment",
+      "outputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "TripLengthAnalysis",
+      "outputs": [
+        {
+          "DType": [
+            "QualityValue"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "CatchmentArea",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FlowMatrix",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "ThresholdDistance",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
+      "inputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FlowSummation",
+      "outputs": [
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
+      "inputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        },
+        {
+          "DType": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "NetworkAnalysis",
+      "outputs": [
+        {
+          "DType": [
+            "LineA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
       ]
     }
   ]
