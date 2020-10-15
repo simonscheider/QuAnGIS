@@ -237,11 +237,6 @@
  . . . RatioA[ABSTRACT]
  . . . . ERA[LEAF]
  . . . . IRA[LEAF]
- . . . . PlainRatioA[LEAF]
- . . . . CountA[LEAF]
- . . . PlainIntervalA[LEAF]
- . . PlainOrdinalA[LEAF]
- . BooleanA[LEAF]
  . PlainNominalA[LEAF]
 -------------------------------------------------------------
 	Annotated tools:
@@ -326,101 +321,101 @@ Use type ${parameter_1} in the solution.
 	Workflow discovery - length 1
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.018 sec.
-Memory structure encoding setup time: 0.006 sec.
-Tool exclusions encoding setup time: 0.001 sec.
+Tool I/O constraints setup time: 0.0 sec.
+Memory structure encoding setup time: 0.01 sec.
+Tool exclusions encoding setup time: 0.01 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.005 sec.
-Type usage encoding setup time: 0.013 sec.
-SLTL constraints setup time: 0.002 sec.
-Reading rows setup time: 0.003 sec.
+Type exclusions encoding setup time: 0.0 sec.
+Type usage encoding setup time: 0.01 sec.
+SLTL constraints setup time: 0.0 sec.
+Reading rows setup time: 0.0 sec.
 
-Total problem setup time: 0.05 sec.
-Found 0 solutions. Solving time: 0.1 sec.
+Total problem setup time: 0.03 sec.
+Found 0 solutions. Solving time: 0.11 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 2
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
 Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.0 sec.
+Memory structure encoding setup time: 0.015 sec.
 Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.016 sec.
+Tool usage encoding setup time: 0.005 sec.
 Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
+Type usage encoding setup time: 0.01 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.0 sec.
+Reading rows setup time: 0.015 sec.
 
-Total problem setup time: 0.016 sec.
-Found 0 solutions. Solving time: 0.045 sec.
+Total problem setup time: 0.05 sec.
+Found 0 solutions. Solving time: 0.12 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 3
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.015 sec.
-Memory structure encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.0 sec.
+Memory structure encoding setup time: 0.01 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.005 sec.
 Type usage encoding setup time: 0.0 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.016 sec.
+Reading rows setup time: 0.01 sec.
 
-Total problem setup time: 0.031 sec.
-Found 1 solutions. Solving time: 0.054 sec.
+Total problem setup time: 0.03 sec.
+Found 0 solutions. Solving time: 0.025 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 4
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.015 sec.
-Memory structure encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.0 sec.
+Memory structure encoding setup time: 0.01 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.016 sec.
+Type exclusions encoding setup time: 0.0 sec.
 Type usage encoding setup time: 0.0 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.016 sec.
+Reading rows setup time: 0.01 sec.
 
-Total problem setup time: 0.047 sec.
-Found 2 solutions. Solving time: 0.054 sec.
+Total problem setup time: 0.02 sec.
+Found 1 solutions. Solving time: 0.075 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 5
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.005 sec.
 Memory structure encoding setup time: 0.0 sec.
 Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.015 sec.
-Type usage encoding setup time: 0.0 sec.
+Tool usage encoding setup time: 0.01 sec.
+Type exclusions encoding setup time: 0.0 sec.
+Type usage encoding setup time: 0.005 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.032 sec.
+Reading rows setup time: 0.005 sec.
 
-Total problem setup time: 0.047 sec.
-Found 4 solutions. Solving time: 0.093 sec.
+Total problem setup time: 0.025 sec.
+Found 4 solutions. Solving time: 0.11 sec.
 
-APE found 4 solutions. Total solving time: 0.717 sec.
+APE found 4 solutions. Total solving time: 0.755 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 6
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
 Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.007 sec.
+Memory structure encoding setup time: 0.015 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.005 sec.
+Type usage encoding setup time: 0.005 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.031 sec.
+Reading rows setup time: 0.008 sec.
 
-Total problem setup time: 0.038 sec.
-Found 5 solutions. Solving time: 0.053 sec.
+Total problem setup time: 0.033 sec.
+Found 5 solutions. Solving time: 0.02 sec.
 
-APE found 5 solutions. Total solving time: 0.824 sec.
+APE found 5 solutions. Total solving time: 0.825 sec.
 
 -------------------------------------------------------------
 	Geneating graphical representation
@@ -436,14 +431,14 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
 	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
 	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.0000000011508EB0.get(Unknown Source)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.00000000012B4590.get(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
 	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.000000001187E990.accept(Unknown Source)
+	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.00000000120D2880.accept(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
@@ -456,7 +451,7 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
 	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
 	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$205.00000000114CF390.accept(Unknown Source)
+	at nl.uu.cs.ape.sat.APE$$Lambda$205.00000000122A9740.accept(Unknown Source)
 	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
 	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
 	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
@@ -477,7 +472,7 @@ Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons:
 	... 34 more
 .....
 
-Graphical files have been generated. Running time: 36.905 sec.
+Graphical files have been generated. Running time: 31.13 sec.
 [main] WARN org.semanticweb.owlapi.util.SAXParsers - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
 [main] WARN org.semanticweb.owlapi.util.SAXParsers - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl, error message: Property 'entityExpansionLimit' is not recognized.
 [main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./flowmap/GISTaxonomy_fl.rdf
@@ -669,12 +664,12 @@ ______________________________________
 |OUT	{ 'VectorRegionA' } 
 |______________________________________
 ______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix[tool], Label:FlowMatrix|,
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
 |IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
 |OUT	{ 'VectorRegionA' } 
 |______________________________________
 ______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount[tool], Label:ThresholdAmount|,
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix[tool], Label:FlowMatrix|,
 |IN:	{ 'VectorRegionA' } { 'VectorRegionA' } ,
 |OUT	{ 'VectorRegionA' } 
 |______________________________________
@@ -719,13 +714,13 @@ ______________________________________
 |OUT	{ 'VectorRegionA' } 
 |______________________________________
 ______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
-|IN:	{ 'VectorRegionA' } ,
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
+|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
 |OUT	{ 'VectorRegionA' } 
 |______________________________________
 ______________________________________
-||ID: http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea[tool], Label:TradeArea|,
-|IN:	{ 'VectorRegionA' } { 'VectorRegionA' } { 'VectorRegionA' } ,
+||ID: http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation[tool], Label:FlowSummation|,
+|IN:	{ 'VectorRegionA' } ,
 |OUT	{ 'VectorRegionA' } 
 |______________________________________
 -------------------------------------------------------------
@@ -738,35 +733,35 @@ Use type ${parameter_1} in the solution.
 	Workflow discovery - length 1
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.01 sec.
-Memory structure encoding setup time: 0.005 sec.
+Tool I/O constraints setup time: 0.0 sec.
+Memory structure encoding setup time: 0.0 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.005 sec.
+Type exclusions encoding setup time: 0.01 sec.
 Type usage encoding setup time: 0.0 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.0 sec.
+Reading rows setup time: 0.01 sec.
 
-Total problem setup time: 0.03 sec.
-Found 2 solutions. Solving time: 0.19 sec.
+Total problem setup time: 0.02 sec.
+Found 1 solutions. Solving time: 0.216 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 2
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.01 sec.
-Tool exclusions encoding setup time: 0.01 sec.
+Tool I/O constraints setup time: 0.005 sec.
+Memory structure encoding setup time: 0.005 sec.
+Tool exclusions encoding setup time: 0.015 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
+Type exclusions encoding setup time: 0.005 sec.
+Type usage encoding setup time: 0.005 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.013 sec.
+Reading rows setup time: 0.01 sec.
 
-Total problem setup time: 0.033 sec.
-Found 5 solutions. Solving time: 0.095 sec.
+Total problem setup time: 0.05 sec.
+Found 5 solutions. Solving time: 0.14 sec.
 
-APE found 5 solutions. Total solving time: 0.43 sec.
+APE found 5 solutions. Total solving time: 0.625 sec.
 
 -------------------------------------------------------------
 	Geneating graphical representation
@@ -782,14 +777,14 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
 	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
 	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.0000000011A51960.get(Unknown Source)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.0000000011F95E80.get(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
 	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.0000000011A51FD0.accept(Unknown Source)
+	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.0000000011EB28B0.accept(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
@@ -802,7 +797,7 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
 	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
 	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$205.0000000011BBA940.accept(Unknown Source)
+	at nl.uu.cs.ape.sat.APE$$Lambda$205.0000000011E7C570.accept(Unknown Source)
 	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
 	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
 	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
@@ -823,4 +818,8 @@ Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons:
 	... 34 more
 .....
 
-Graphical files have been generated. Running time: 27.105 sec.
+Graphical files have been generated. Running time: 28.456 sec.
+Provided path: "./flowmap/ape0.configuration" is not a file.
+Bad path.
+Provided path: "./flowmap/ape0bench.configuration" is not a file.
+Bad path.
