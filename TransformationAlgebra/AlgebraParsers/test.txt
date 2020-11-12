@@ -23,3 +23,4 @@ interpol pointmeasures x deify merge pi2 objectregions y
 groupby_avg bowtie* sigmae lotopo pi1 field x objectregions y in field x
 bowtie field x deify merge pi2 objectregions x
 reify pi1 field x
+groupby_count sigmae otopo objectregions _:source3 bowtie objectregions _:source2 pi1 sigmae otopo objectregions _:source2 sigmae objectregions _:source1 object Amsterdam in in

@@ -170,6 +170,5 @@
 	//Basic lexer rules
 	DATAV : [0-9]+ ;     
     WHITESPACE : ' ';	
-	KEYWORD : ('a'..'z' | 'A'..'Z' | '-' | '_')+ ; // used for naming data
-	WS  : [ \t\r\n]+ -> skip ;
-	
+	KEYWORD : ('a'..'z' | 'A'..'Z' | '-' | '_' | ':' | [0-9] )+ ; // used for naming data
+	WS  : [ \t\r\n]+ -> skip ;	

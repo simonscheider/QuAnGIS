@@ -442,7 +442,7 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
-        <rdfs:comment xml:lang="en">A vector representation of a field. Can be a point or line measure, or a coverage</rdfs:comment>
+        <rdfs:comment xml:lang="en">A vector representation of a field. Can be a point or line measure, or a coverage, or a Patch</rdfs:comment>
     </owl:Class>
     
 
@@ -787,6 +787,27 @@
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA">
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
         <rdfs:comment xml:lang="en">A spatial attribute on ordinal scale level</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#Patch -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Patch">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
+        <rdfs:comment xml:lang="en">An attribute of some dataset representing homogeneous patches of a field as regions.</rdfs:comment>
     </owl:Class>
     
 
