@@ -21,6 +21,8 @@ antlr4 -Dlanguage=Python2 grammar.g4
 ```
 antlr4 grammar.g4
 javac grammar*.java
-grun grammar startrule -tree (or -gui, -tokens) "Test to be parsed"
+grun grammar startrule -tree (or -gui, -tokens) 
+"Test string to be parsed"
+Ctrl+Z
 ```
 
