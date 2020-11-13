@@ -1,7 +1,4 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#AddArea> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm> .
@@ -42,10 +39,28 @@
 <http://geographicknowledge.de/vocab/GISTools.rdf#SelectFeaturesCoverageToExistenceVector> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
 
-<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByAttributeObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByAttributeLineObjects> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
 
-<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByLocationObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByAttributePlainRegionObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByAttributePointObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByAttributeTessObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByLocationLineObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByLocationPlainRegionObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByLocationPointObjects> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#SelectLayerByLocationTessObjects> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#SpatialJoinCountTess> a <http://www.w3.org/2002/07/owl#Class> ;
@@ -71,9 +86,6 @@
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatisticsSize> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#ZonalStatistics> .
-
-<http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> a <http://www.w3.org/2002/07/owl#Class> ;
-    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#MakeLayerFromTable> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
@@ -106,6 +118,9 @@
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
 
 <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByLocation> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tool> .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#FullSelectLayerByAttribute> a <http://www.w3.org/2002/07/owl#Class> ;

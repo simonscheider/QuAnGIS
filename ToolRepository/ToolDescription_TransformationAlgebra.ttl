@@ -9,7 +9,7 @@
 ##from example AmountsObjectsUtrecht
 
 #### Select layer by attribute
-tools:FullSelectLayerByAttribute tools:implements tools:SelectLayerByAttributeObjects, tools:SelectFeaturesContourToExistenceVector,tools:SelectFeaturesCoverageToExistenceVector;
+tools:FullSelectLayerByAttribute tools:implements tools:SelectLayerByAttributePointObjects,  tools:SelectLayerByAttributeLineObjects,  tools:SelectLayerByAttributePlainRegionObjects,tools:SelectLayerByAttributeTessObjects,tools:SelectFeaturesContourToExistenceVector,tools:SelectFeaturesCoverageToExistenceVector;
     wf:edge _:wf1_1, _:wf1_2; 
 	wf:source _:in11;   
     rdfs:label "a SQL query to select features matching a selection criteria.You build a query expression to generate the subset. You can query a dataset based on a field in a layer or a table. Using this selection a new Feature dataset is created with only the selected features using the Copy Features tool. This feature dataset represents all the area's that denounce the presence of a certain criteria".
@@ -22,27 +22,45 @@ _:wf1_2 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 		wf:output _:out12.
 
 #### Object selection variant, needs a nominal attribute
-tools:SelectLayerByAttributeObjects    
-	wf:input1 [ a ccd:ObjectVector, ccd:NominalA ];
-    wf:output [ a ccd:ObjectVector ];
+tools:SelectLayerByAttributePointObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:PointA ];
+    wf:output [ a ccd:ObjectQ, ccd:PointA ];
+    tools:algebraexpression	"sigmae objectregions x object y".
+    
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByAttributeLineObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:LineA ];
+    wf:output [ a ccd:ObjectQ, ccd:LineA ];
+    tools:algebraexpression	"sigmae objectregions x object y".
+    
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByAttributePlainRegionObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:PlainVectorRegionA ];
+    wf:output [ a ccd:ObjectQ, ccd:PlainVectorRegionA ];
+    tools:algebraexpression	"sigmae objectregions x object y".
+
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByAttributeTessObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:VectorTessellationA ];
+    wf:output [ a ccd:ObjectQ, ccd:VectorTessellationA ];
     tools:algebraexpression	"sigmae objectregions x object y".
 
 #### Contour to Existence Vector
 tools:SelectFeaturesContourToExistenceVector 
     wf:input1 [ a ccd:Contour ];
-    wf:output [ a ccd:ExistenceVector ];
+    wf:output [ a ccd:ExistenceVector, ccd:TessellationA ];
     tools:algebraexpression	"sigmale contour x ordinal y".
 
 #### Coverage to Existence Vector
 
 tools:SelectFeaturesCoverageToExistenceVector 
     wf:input1 [ a ccd:Coverage ];
-    wf:output [ a ccd:ExistenceVector ];
+    wf:output [ a ccd:ExistenceVector, ccd:TessellationA ];
     tools:algebraexpression	"sigmae amountpatches x nominal y".
     
     
 #### Select layer by location
-tools:FullSelectLayerByLocation tools:implements tools:SelectLayerByLocationObjects;
+tools:FullSelectLayerByLocation tools:implements tools:SelectLayerByLocationPointObjects, tools:SelectLayerByLocationLineObjects ,tools:SelectLayerByLocationPlainRegionObjects ,tools:SelectLayerByLocationTessObjects  ;
     wf:edge _:wf2_1, _:wf2_2; 
 	wf:source _:in211, _:in212. 
 _:wf2_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/select-layer-by-location.htm> ;
@@ -53,12 +71,36 @@ _:wf2_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 	wf:input1  _:out21;
 	wf:output  _:out22.	
     
-tools:SelectLayerByLocationObjects     
-	wf:input1 [ a ccd:ObjectVector ];
+
+
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByLocationPointObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:PointA ];
 	wf:input2 [ a ccd:ObjectVector ];
-    wf:output [ a ccd:ObjectVector ];
+    wf:output [ a ccd:ObjectQ, ccd:PointA ];
     tools:algebraexpression	"bowtie objectregions x pi1 sigmae otopo objectregions x objectregions y in".
     
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByLocationLineObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:LineA ];
+	wf:input2 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:ObjectQ, ccd:LineA ];
+     tools:algebraexpression	"bowtie objectregions x pi1 sigmae otopo objectregions x objectregions y in".
+    
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByLocationPlainRegionObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:PlainVectorRegionA ];
+	wf:input2 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:ObjectQ, ccd:PlainVectorRegionA ];
+     tools:algebraexpression	"bowtie objectregions x pi1 sigmae otopo objectregions x objectregions y in".
+
+#### Object selection variant, needs a nominal attribute
+tools:SelectLayerByLocationTessObjects    
+	wf:input1 [ a ccd:ObjectQ, ccd:VectorTessellationA ];
+	wf:input2 [ a ccd:ObjectVector ];
+    wf:output [ a ccd:ObjectQ, ccd:VectorTessellationA ];
+     tools:algebraexpression	"bowtie objectregions x pi1 sigmae otopo objectregions x objectregions y in".
+
 
 #### Spatial join
 
@@ -66,17 +108,17 @@ tools:SelectLayerByLocationObjects
 # with JOIN_ONE_TO_ONE parameter, with Merge_RULe sum for Ratio data.
 <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinSumTessRatio.
 tools:SpatialJoinSumTessRatio rdfs:label "Sums the attributes at ratio measurement level from one feature to another based on the spatial relation";
-    wf:input1 [ a ccd:ObjectVector, ccd:RatioA, exm:ERA ];
+    wf:input1 [ a ccd:ObjectVector, exm:ERA ];
     wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA, exm:ERA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, exm:ERA ];
     tools:algebraexpression	"groupby_sum bowtie* sigmae otopo objectregions x objectregions y in objects z".
 
 # with JOIN_ONE_TO_ONE parameter, with Merge_RULe sum for Count data.
 <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinSumTessCount.
 tools:SpatialJoinSumTessCount rdfs:label "Sums the attributes at Count measurement level from one feature to another based on the spatial relation";
-    wf:input1 [ a ccd:ObjectVector, ccd:CountA, exm:ERA ];
+    wf:input1 [ a ccd:ObjectVector, ccd:CountA ];
     wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA ];
     tools:algebraexpression	"groupby_sum bowtie* sigmae otopo objectregions x objectregions y in objectcounts z".
 
 #### spatial join with mean rule
@@ -99,9 +141,9 @@ tools:SpatialJoinMeanTessRatio rdfs:label "Averages the attributes at Ratio meas
 # with JOIN_ONE_TO_ONE parameter, with Merge_RULe mean for Count data.
 <https://pro.arcgis.com/en/pro-app/tool-reference/analysis/spatial-join.htm> tools:implements tools:SpatialJoinMeanTessCount.
 tools:SpatialJoinMeanTessCount rdfs:label "Averages the attributes at Count measurement level from one feature to another based on the spatial relation";
-    wf:input1 [ a ccd:ObjectVector, ccd:CountA, exm:ERA ];
+    wf:input1 [ a ccd:ObjectVector, ccd:CountA ];
     wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA ];
     tools:algebraexpression	"groupby_avg bowtie* sigmae otopo objectregions x objectregions y in objectcounts z".
     
 #### spatial join with the count rule
@@ -110,7 +152,7 @@ tools:SpatialJoinMeanTessCount rdfs:label "Averages the attributes at Count meas
 tools:SpatialJoinCountTess rdfs:label "Counts the number of features from one feature to another based on the spatial relation";
     wf:input1 [ a ccd:ObjectVector ];
     wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA, exm:ERA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:CountA ];
     tools:algebraexpression	"groupby_count sigmae otopo objectregions x objectregions y in".
 
 
@@ -120,15 +162,15 @@ tools:SpatialJoinCountTess rdfs:label "Counts the number of features from one fe
 ###Field Polygon to raster
 <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> tools:implements tools:CoverageToNominalFieldRaster.
 tools:CoverageToNominalFieldRaster rdfs:label "Converts Field polygons to nominal field Rasters";
-    wf:input1 [ a ccd:Coverage, ccd:NominalA ];
-    wf:output [ a ccd:FieldRaster, ccd:NominalA ];
+    wf:input1 [ a ccd:Coverage, ccd:PlainNominalA ];
+    wf:output [ a ccd:FieldRaster, ccd:PlainNominalA ];
     tools:algebraexpression	"revert amountpatches x".
 
 
 <https://pro.arcgis.com/en/pro-app/tool-reference/conversion/polygon-to-raster.htm> tools:implements tools:ContourToFieldRaster.
 tools:ContourToFieldRaster rdfs:label "Converts contour maps to field Rasters";
     wf:input1 [ a ccd:Contour ];
-    wf:output [ a ccd:FieldRaster, ccd:OrdinalA ];
+    wf:output [ a ccd:FieldRaster, ccd:PlainOrdinalA ];
     tools:algebraexpression	"revert contour x".
     
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/raster-calculator.htm>  
@@ -152,7 +194,7 @@ _:wf3_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/conve
 
 tools:RasterToContourInterval rdfs:label "Converts a field raster to a Contour dataset. The raster is first reclassified to an ordinal raster, and then converted to a polygon layer.";
     wf:input1 [ a ccd:FieldRaster, ccd:IntervalA ];
-    wf:output [ a ccd:Contour, ccd:OrdinalA ];
+    wf:output [ a ccd:Contour, ccd:PlainOrdinalA ];
     tools:algebraexpression "invert field x".
 
 #<https://pro.arcgis.com/en/pro-app/tool-reference/spatial-analyst/zonal-statistics-as-table.htm>+<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/join-field.htm>
@@ -172,14 +214,14 @@ _:wf4_1 wf:applicationOf <https://pro.arcgis.com/en/pro-app/tool-reference/data-
 tools:ZonalStatisticsSize rdfs:label "Measures the size of a given field raster inside object regions.";
 	wf:input1 [ a ccd:FieldRaster ];
 	wf:input2 [ a ccd:Lattice, ccd:VectorA ];
-    wf:output [ a ccd:Lattice, ccd:VectorA, ccd:RatioA ];
+    wf:output [ a ccd:Lattice, ccd:VectorA, exm:ERA ];
 tools:algebraexpression "groupby_size sigmae lotopo pi1 field x objectregions y in". 
 
 #<https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm>
 <https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-geometry-attributes.htm> tools:implements tools:AddArea.
 tools:AddArea rdfs:label "Adds an area attribute to an object layer.";
 wf:input1 [ a  ccd:ObjectVector ];
-wf:output [ a ccd:ObjectVector, ccd:RatioA];
+wf:output [ a ccd:ObjectVector, exm:ERA];
 tools:algebraexpression "groupby_size sigmae lotopo deify merge pi2 objectregions x objectregions x in".
 
 

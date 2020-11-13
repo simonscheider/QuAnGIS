@@ -1,43 +1,46 @@
 {
-  "solutions_path": "./testwfalgebra/sat_solutions.txt",
   "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
-  "solution_graphs_folder": "./testwfalgebra/figs",
+  "solutions_dir_path": "./testwfalgebra",
   "tool_annotations_path": "./testwfalgebra/ToolDescription_TransformationAlgebra.json",
   "ontology_path": "./testwfalgebra/GISTaxonomy.rdf",  
   "constraints_path": "./testwfalgebra/constraints.json",
   "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",
-  "dataTaxonomyRoot": "Attribute",
-  "dataSubTaxonomyRoot": [
+  "dataDimensionsTaxonomyRoots": [
     "CoreConceptQ",
     "LayerA",
 	"NominalA"
   ],
-  "shared_memory": "true",
-  "solution_min_length": "1",
-  "solution_max_length": "10",
-  "max_solutions": "20",
+  "shared_memory": "true",  
+  "solution_length": { "min": 1, "max": 10 },  
+  "max_solutions": "5",
   "number_of_execution_scripts": "0",
-  "number_of_generated_graphs": "20",
-  "inputs": [
-    {
-	"CoreConceptQ": ["FieldQ"], 
+  "number_of_generated_graphs": "5",
+  "inputs": [    
+	{
+	"CoreConceptQ": ["ObjectQ"], 
     "LayerA": ["VectorTessellationA"],
-	"NominalA": ["PlainOrdinalA"]      
+	"NominalA": ["PlainNominalA"]      
+    },
+	{
+	"CoreConceptQ": ["ObjectQ"], 
+    "LayerA": ["VectorTessellationA"],
+	"NominalA": ["PlainNominalA"]      
     },
     {
 	"CoreConceptQ": ["ObjectQ"],
-    "LayerA": ["VectorTessellationA"],
-	"NominalA": ["NominalA"]    
+    "LayerA": ["PointA"],
+	"NominalA": ["PlainNominalA"]    
     }
   ],
   "outputs": [
     {
     "CoreConceptQ": ["ObjectQ"], 
-    "LayerA": ["VectorTessellationA"],
-	"NominalA": ["RatioA"] 
+    "LayerA": ["VectorA","TessellationA"],
+	"NominalA": ["CountA"] 
     }
   ],
   "debug_mode": "true",
   "use_workflow_input": "all",
-  "use_all_generated_data": "one"
+  "use_all_generated_data": "all",
+  "tool_seq_repeat": "false"
 }

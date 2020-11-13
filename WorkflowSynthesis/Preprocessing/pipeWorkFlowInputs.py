@@ -21,13 +21,13 @@ CCD= rdflib.Namespace("http://geographicknowledge.de/vocab/CoreConceptData.rdf#"
     
                       
 
-def pipe(tooldescfile = '../../ToolRepository/FlowmapDescription.ttl', ontologyfile = '../../Ontology/CoreConceptData.ttl', targetfolder='../flowmap'):
+#def pipe(tooldescfile = '../../ToolRepository/FlowmapDescription.ttl', ontologyfile = '../../Ontology/CoreConceptData.ttl', targetfolder='../flowmap'):
 #def pipe(tooldescfile = 'ToolDescription.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../test'):  
-#def pipe(tooldescfile = '../../ToolRepository/ToolDescription_TransformationAlgebra.ttl', ontologyfile = 'CoreConceptData.ttl', targetfolder='../testwfalgebra'): 
+def pipe(tooldescfile = '../../ToolRepository/ToolDescription_TransformationAlgebra.ttl', ontologyfile = '../../Ontology/CoreConceptData.ttl', targetfolder='../testwfalgebra'):
     
     dimnodes=[CCD.CoreConceptQ,CCD.LayerA,CCD.NominalA]
-    dimnodes_fl = [CCD.DType]
-    tooldescfile_fl = '../../ToolRepository/FlowmapDescription_fl.ttl'
+    #dimnodes_fl = [CCD.DType]
+    #tooldescfile_fl = '../../ToolRepository/FlowmapDescription_fl.ttl'
 
     
     #1) Generates a taxonomy (_tax) version of the ontology as well as of the given tool hierarchy (using rdfs:subClassOf), by applying reasoning and removing all other statements
@@ -43,8 +43,8 @@ def pipe(tooldescfile = '../../ToolRepository/FlowmapDescription.ttl', ontologyf
     project = projectSemDimensions.main(taxonomy=dto,dimnodes=dimnodes, targetfolder=targetfolder, coretax=coretax)
     #print(project) 
     #Also generates a file 'CoreConceptData_tax_core.ttl' which contains the ontology cleaned from non-core nodes (=not belonging to the core of a dimension)
-    coretax_fl = os.path.join(targetfolder,tax+'_core_fl'+ext) #'CoreConceptData_tax_core.ttl'
-    project_fl = projectSemDimensions.main(taxonomy=dto,dimnodes=dimnodes_fl, targetfolder=targetfolder, coretax=coretax_fl)
+    #coretax_fl = os.path.join(targetfolder,tax+'_core_fl'+ext) #'CoreConceptData_tax_core.ttl'
+    #project_fl = projectSemDimensions.main(taxonomy=dto,dimnodes=dimnodes_fl, targetfolder=targetfolder, coretax=coretax_fl)
     
     #3) Generates a single ontology (of tool_tax + type_tax), and generates a new new tool annotation file (json) with the projected classes as input for APE
     final = rdflib.Graph()
@@ -55,12 +55,12 @@ def pipe(tooldescfile = '../../ToolRepository/FlowmapDescription.ttl', ontologyf
     # Generates a new json file "ToolDescription.json" in the targetfolder to be used as APE input
     toolannotator.main(tooldescfile, project, dimnodes, mainprefix=CCD, targetfolder=targetfolder)
 
-    final = rdflib.Graph()
-    final.parse(os.path.join(targetfolder,coretax_fl), format='turtle')
-    final.parse(os.path.join(targetfolder,to), format='turtle')
-    final.serialize(destination=os.path.join(targetfolder, 'GISTaxonomy_fl.rdf'), format = "application/rdf+xml")
+    # final = rdflib.Graph()
+    # final.parse(os.path.join(targetfolder,coretax_fl), format='turtle')
+    # final.parse(os.path.join(targetfolder,to), format='turtle')
+    # final.serialize(destination=os.path.join(targetfolder, 'GISTaxonomy_fl.rdf'), format = "application/rdf+xml")
 
-    toolannotator.main(tooldescfile_fl, project_fl, dimnodes_fl, mainprefix=CCD, targetfolder=targetfolder)
+    #toolannotator.main(tooldescfile_fl, project_fl, dimnodes_fl, mainprefix=CCD, targetfolder=targetfolder)
 
    
    
