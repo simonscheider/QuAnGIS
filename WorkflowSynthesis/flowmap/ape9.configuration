@@ -30,12 +30,12 @@
   "outputs": [
     {
 	"CoreConceptQ": ["MatrixQ"], 
-    "LayerA": ["VectorRegionA"],
+    "LayerA": ["RegionA"],
 	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"] 
     }
   ],
   "debug_mode": "true",
   "use_workflow_input": "all",
-  "use_all_generated_data": "all",
+  "use_all_generated_data": "one",
   "tool_seq_repeat": "false"
 }

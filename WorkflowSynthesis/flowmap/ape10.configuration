@@ -19,12 +19,7 @@
 	{
 	"CoreConceptQ": ["ObjectQ"],
     "LayerA": ["VectorTessellationA"],
-	"NominalA": ["PlainNominalA"]    
-    },
-	{
-	"CoreConceptQ": ["MatrixQ"],
-    "LayerA": ["VectorTessellationA"],
-	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"]   
+	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"]    
     },
 	{
 	"CoreConceptQ": ["ObjectQ"],
@@ -34,13 +29,13 @@
   ],
   "outputs": [
     {
-	"CoreConceptQ": ["NetworkQ"], 
-    "LayerA": ["LineA"],
-	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA"] 
+	"CoreConceptQ": ["ObjectQ"], 
+    "LayerA": ["VectorRegionA"],
+	"NominalA": ["http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA"] 
     }
   ],
   "debug_mode": "true",
   "use_workflow_input": "all",
-  "use_all_generated_data": "all",
+  "use_all_generated_data": "one",
   "tool_seq_repeat": "false"
 }

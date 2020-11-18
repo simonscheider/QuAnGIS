@@ -13,24 +13,21 @@
   "max_solutions": "5",
   "number_of_execution_scripts": "0",
   "number_of_generated_graphs": "5",
-  "inputs": [
-    {	
-    "DType": ["VectorRegionA"]    
-    },
+  "inputs": [    
 	{	
     "DType": ["VectorRegionA"]    
     },
 	{	
     "DType": ["LineA"]   
-    }
+    }	
   ],
   "outputs": [
-    {	
-    "DType": ["LineA"]
+    { 
+    "DType": ["VectorRegionA"] 
     }
   ],
   "debug_mode": "true",
   "use_workflow_input": "all",
-  "use_all_generated_data": "all",
+  "use_all_generated_data": "one",
   "tool_seq_repeat": "false"
 }
