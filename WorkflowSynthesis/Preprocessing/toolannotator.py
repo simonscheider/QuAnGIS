@@ -108,11 +108,13 @@ def getToollistasDict(toolsinrdf, project, dimnodes, mainprefix):
                 for ix,dim in enumerate(dimnodes):      
                     d[shortURInames(dim)] = getinoutypes(trdf, p, t, project, ix, dim,mainprefix)                
                 inputs += [d]
-        
-        d = {}                
-        for ix,dim in enumerate(dimnodes):
-            d[shortURInames(dim)] = getinoutypes(trdf, WF.output, t, project, ix, dim,mainprefix, dodowncast =True)     #Tool outputs should always be downcasted    
-        outputs = [d]
+        outputs = []
+        for p in [WF.output, WF.output2, WF.output3]:
+            if trdf.value(subject=t, predicate=p, default=None) != None:
+                d = {}
+                for ix,dim in enumerate(dimnodes):
+                    d[shortURInames(dim)] = getinoutypes(trdf, p, t, project, ix, dim,mainprefix, dodowncast =True)     #Tool outputs should always be downcasted
+                outputs += [d]
         
         name = shortURInames(t)
         toolobj ={'id': t, 'label': name}

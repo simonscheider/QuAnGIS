@@ -15,7 +15,10 @@
 <http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
 
-<http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrix> a <http://www.w3.org/2002/07/owl#Class> ;
+<http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrixDoubly> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrixSingly> a <http://www.w3.org/2002/07/owl#Class> ;
     rdfs:subClassOf <http://flowmap.geo.uu.nl/> .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation> a <http://www.w3.org/2002/07/owl#Class> ;

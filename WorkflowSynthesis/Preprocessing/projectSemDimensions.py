@@ -76,7 +76,7 @@ def backtrack(parent,leaf):
         node = parent[node]
         print(node)
         
-"""Measures the size of a taxonomy's set of nodes child nodes"""        
+"""Measures the size of a taxonomy's set of nodes and determines the leafnodes"""
 def measureTaxonomy(g):
     leafnodes = set()
     nodes = list(g.subjects(predicate=RDFS.subClassOf,object=None) )   

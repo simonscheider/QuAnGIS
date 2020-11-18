@@ -68,11 +68,21 @@ tools:AccessibilityAnalysis rdfs:label "Generates some statistics over objects w
     wf:input1 [ a ccd:VectorRegionA ];	  
     wf:output [ a ccd:QualityValue ].
     
-<http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrix.
-tools:FlowMatrix rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates a new flow matrix. An example is gravity modeling.";
+<http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrixDoubly.
+tools:FlowMatrixDoubly rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) for origins and destinations and generates a new flow matrix and some balancing factors for objects. An example is (doubly-constrained) gravity model.";
     wf:input1 [ a ccd:VectorRegionA ];  
 	wf:input2 [ a ccd:VectorRegionA ];  
-    wf:output [ a ccd:VectorRegionA ].
+	wf:input3 [ a ccd:VectorRegionA ]; 
+    wf:output [ a ccd:VectorRegionA ];
+    wf:output2 [ a ccd:VectorRegionA ].
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrixSingly.
+tools:FlowMatrixSingly rdfs:label "Takes a distance matrix (intensive) of regions, some object amounts (extensive object attribute) for origins/destinations and some attrativeness/productivity factors for destinations/origins, and generates a new flow matrix and some object amounts for destinations/origins. An example is a singly constrained gravity model.";
+    wf:input1 [ a ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:VectorRegionA ];  
+	wf:input3 [ a ccd:VectorRegionA ]; 
+    wf:output [ a ccd:VectorRegionA ];
+    wf:output2 [ a ccd:VectorRegionA ]. 
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:FlowSummation.
 tools:FlowSummation rdfs:label "Takes a flow matrix and summarizes flows over origin objects, to generate object amounts";
