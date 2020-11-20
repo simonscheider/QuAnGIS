@@ -521,13 +521,33 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">Attribute of some Line data set</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDS -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
+                        <owl:allValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineData"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS"/>
+        <owl:disjointWith rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
     </owl:Class>
     
 
@@ -550,26 +570,6 @@
     
 
 
-    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDataSet -->
-
-    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDataSet">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
-                        <owl:allValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineData"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:disjointWith rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet"/>
-        <owl:disjointWith rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
-    </owl:Class>
-    
-
-
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineMeasures -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineMeasures">
@@ -579,7 +579,7 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -598,7 +598,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS"/>
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDataSet"/>
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDS"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -692,7 +692,7 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -713,7 +713,7 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -749,7 +749,7 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -800,7 +800,7 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -819,7 +819,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS"/>
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -905,6 +905,25 @@
     
 
 
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegion -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegion">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegion"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegion"/>
+        <rdfs:comment xml:lang="en">Vector regions that are not tessellated</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA">
@@ -945,13 +964,32 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
         <rdfs:comment xml:lang="en">Attribute of some point data set</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
+                        <owl:allValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointData"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
     </owl:Class>
     
 
@@ -974,25 +1012,6 @@
     
 
 
-    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet -->
-
-    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
-                        <owl:allValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointData"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:disjointWith rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
-    </owl:Class>
-    
-
-
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointMeasures -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointMeasures">
@@ -1002,7 +1021,7 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1021,7 +1040,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS"/>
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet"/>
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1096,13 +1115,31 @@
                     <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#ofDataSet"/>
-                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
+                        <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA"/>
         <rdfs:comment xml:lang="en">Atrribute of some region data sets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialDataSet"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
+                        <owl:allValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionData"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -1117,24 +1154,6 @@
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/GISConcepts.rdf#hasAttribute"/>
                         <owl:someValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Region"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet -->
-
-    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialDataSet"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://geographicknowledge.de/vocab/AnalysisData.rdf#hasElement"/>
-                        <owl:allValuesFrom rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionData"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1170,7 +1189,7 @@
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation">
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDataSet"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
         <rdfs:comment xml:lang="en">A region data set where spatial regions are tessellated (jointly covering and mutually non-overlapping) within a spatial extent</rdfs:comment>
     </owl:Class>
     
@@ -1209,7 +1228,7 @@
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TrackDS">
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventDS"/>
-        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDataSet"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS"/>
         <rdfs:comment xml:lang="en">A dataset representing tracks, i.e. point wise events (fixes) of the trajectory of some objects.</rdfs:comment>
     </owl:Class>
     
@@ -1253,6 +1272,24 @@
     
 
 
+    <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegion -->
+
+    <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegion">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
+                    <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector"/>
+        <rdfs:comment xml:lang="en">Dataset with vector regions as geometry</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA -->
 
     <owl:Class rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA">
@@ -1283,6 +1320,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation"/>
+        <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegion"/>
         <rdfs:comment xml:lang="en">This is a vector data set which is tessellated (and no raster)</rdfs:comment>
     </owl:Class>
     
