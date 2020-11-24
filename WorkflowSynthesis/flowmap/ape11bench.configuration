@@ -22,6 +22,9 @@
     },
 	{	
     "DType": ["VectorRegionA"]    
+    },
+	{	
+    "DType": ["VectorRegionA"]    
     }	
   ],
   "outputs": [
