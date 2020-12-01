@@ -84,22 +84,25 @@ def makefile(direct):
 evaluationfile = os.path.join(os.path.join(direct, "evaluation/ExpertWorkflows"),'Evaluation.xlsx')
 df = pd.read_excel(evaluationfile)
 
-df["sort"] = df.apply( lambda x: int(re.findall("\d+", x["Workflow task"].split('solution')[1])[0]), axis = 1)
+df["Task"] = df.apply( lambda x: int(re.findall("\d+", x["Workflow task"].split('solution')[1])[0]), axis = 1)
 #df = df.sort_values(by = ['sort'])
 df["Hard error"] = df["Semantic error"] | df["Syntax error"].astype(int)
-df["No hard error"] = (df["Hard error"]==0).astype(int)
-df["Redundancy plus"] = (df["Redundancy error"] & df["No hard error"]).astype(int)
-grouped = df.groupby(['sort', "Workflow task"]).agg(
+df["Correct"] = (df["Hard error"]==0).astype(int)
+df["Redundant"] = (df["Redundancy error"] & df["Correct"]).astype(int)
+df["Expert rank"] = df.apply(lambda x: (x["Solution NR"]+1 if x["Expert solution"]==1  else 6), axis = 1 )
+grouped = df.groupby(['Task', "Workflow task"]).agg(
     {
     "Workflow length": "mean",
     "Semantic error": "sum",
     "Syntax error": "sum",
     "Hard error" : "sum",
-    "No hard error" : "sum",
-    "Redundancy plus" : "sum",
+    "Correct" : "sum",
+    "Redundant" : "sum",
     "Expert solution": "sum",
-    
+    "Expert rank" : "min"
     }
 )
+grouped = grouped[["Workflow length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert rank"]]
 
-print(grouped)
+#print(grouped)
+print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
