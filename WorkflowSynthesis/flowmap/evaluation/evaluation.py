@@ -89,9 +89,10 @@ df["Task"] = df.apply( lambda x: int(re.findall("\d+", x["Workflow task"].split(
 df["Hard error"] = df["Semantic error"] | df["Syntax error"].astype(int)
 df["Correct"] = (df["Hard error"]==0).astype(int)
 df["Redundant"] = (df["Redundancy error"] & df["Correct"]).astype(int)
-df["Expert rank"] = df.apply(lambda x: (x["Solution NR"]+1 if x["Expert solution"]==1  else 6), axis = 1 )
+df["Expert order"] = df.apply(lambda x: (x["Solution NR"]+1 if x["Expert solution"]==1  else 6), axis = 1 )
 grouped = df.groupby(['Task', "Workflow task"]).agg(
     {
+    "Task" : "count",
     "Workflow length": "mean",
     "Semantic error": "sum",
     "Syntax error": "sum",
@@ -99,10 +100,23 @@ grouped = df.groupby(['Task', "Workflow task"]).agg(
     "Correct" : "sum",
     "Redundant" : "sum",
     "Expert solution": "sum",
-    "Expert rank" : "min"
+    "Expert order" : "min"
     }
-)
-grouped = grouped[["Workflow length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert rank"]]
+).rename(columns={'Task': 'Number',"Workflow task": 'Variant', 'Workflow length': 'Avg length'})
+grouped = grouped[["Number", "Avg length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert order"]]
+
+solution = grouped[~grouped.index.get_level_values(1).str.contains("bench")]
+bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
+for gr in [solution, bench]:
+    print("bench" if "bench" in gr.index.get_level_values(1)[0] else "solution")
+    print("sum: " +str(gr['Number'].sum()))
+    print("mean length: "+str(gr['Avg length'].mean()))
+    print("semantic sum: "+str(gr["Semantic error"].sum()))
+    print("syntax sum: "+str(gr["Syntax error"].sum()))
+    print("correct sum: "+str(gr["Correct"].sum()))
+    print("redundant sum: "+str(gr["Redundant"].sum()))
+    print("expert sum: "+str(gr["Expert solution"].sum()))
+    print("expert rank mean: "+str(gr["Expert order"].mean()))
 
 #print(grouped)
-print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
+print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))

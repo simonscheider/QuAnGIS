@@ -333,99 +333,99 @@ Use type ${parameter_1} in the solution.
 	Workflow discovery - length 1
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.016 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.016 sec.
-SLTL constraints setup time: 0.015 sec.
-Reading rows setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.007 sec.
+Memory structure encoding setup time: 0.013 sec.
+Tool exclusions encoding setup time: 0.031 sec.
+Tool usage encoding setup time: 0.002 sec.
+Type exclusions encoding setup time: 0.013 sec.
+Type usage encoding setup time: 0.014 sec.
+SLTL constraints setup time: 0.006 sec.
+Reading rows setup time: 0.037 sec.
 
-Total problem setup time: 0.047 sec.
-Found 0 solutions. Solving time: 0.1 sec.
+Total problem setup time: 0.174 sec.
+Found 0 solutions. Solving time: 0.283 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 2
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.016 sec.
-Memory structure encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.002 sec.
+Memory structure encoding setup time: 0.01 sec.
 Tool exclusions encoding setup time: 0.0 sec.
 Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.015 sec.
+Type exclusions encoding setup time: 0.003 sec.
+Type usage encoding setup time: 0.007 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.016 sec.
+Reading rows setup time: 0.02 sec.
 
-Total problem setup time: 0.047 sec.
-Found 0 solutions. Solving time: 0.116 sec.
+Total problem setup time: 0.059 sec.
+Found 0 solutions. Solving time: 0.17 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 3
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.0 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.015 sec.
+Memory structure encoding setup time: 0.059 sec.
+Tool exclusions encoding setup time: 0.003 sec.
+Tool usage encoding setup time: 0.007 sec.
+Type exclusions encoding setup time: 0.007 sec.
+Type usage encoding setup time: 0.016 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.031 sec.
+Reading rows setup time: 0.064 sec.
 
-Total problem setup time: 0.063 sec.
-Found 0 solutions. Solving time: 0.069 sec.
+Total problem setup time: 0.176 sec.
+Found 0 solutions. Solving time: 0.119 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 4
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.015 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.009 sec.
+Memory structure encoding setup time: 0.025 sec.
+Tool exclusions encoding setup time: 0.003 sec.
+Tool usage encoding setup time: 0.001 sec.
+Type exclusions encoding setup time: 0.002 sec.
+Type usage encoding setup time: 0.003 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.016 sec.
+Reading rows setup time: 0.029 sec.
 
-Total problem setup time: 0.031 sec.
-Found 0 solutions. Solving time: 0.116 sec.
+Total problem setup time: 0.077 sec.
+Found 0 solutions. Solving time: 0.233 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 5
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.015 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.005 sec.
+Memory structure encoding setup time: 0.103 sec.
+Tool exclusions encoding setup time: 0.002 sec.
+Tool usage encoding setup time: 0.001 sec.
+Type exclusions encoding setup time: 0.005 sec.
+Type usage encoding setup time: 0.002 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.032 sec.
+Reading rows setup time: 0.049 sec.
 
-Total problem setup time: 0.047 sec.
-Found 0 solutions. Solving time: 0.123 sec.
+Total problem setup time: 0.168 sec.
+Found 0 solutions. Solving time: 0.219 sec.
 
 -------------------------------------------------------------
 	Workflow discovery - length 6
 -------------------------------------------------------------
 Automaton encoding setup time: 0.0 sec.
-Tool I/O constraints setup time: 0.0 sec.
-Memory structure encoding setup time: 0.031 sec.
-Tool exclusions encoding setup time: 0.0 sec.
-Tool usage encoding setup time: 0.0 sec.
-Type exclusions encoding setup time: 0.0 sec.
-Type usage encoding setup time: 0.015 sec.
+Tool I/O constraints setup time: 0.007 sec.
+Memory structure encoding setup time: 0.054 sec.
+Tool exclusions encoding setup time: 0.008 sec.
+Tool usage encoding setup time: 0.001 sec.
+Type exclusions encoding setup time: 0.006 sec.
+Type usage encoding setup time: 0.003 sec.
 SLTL constraints setup time: 0.0 sec.
-Reading rows setup time: 0.032 sec.
+Reading rows setup time: 0.047 sec.
 
-Total problem setup time: 0.078 sec.
-Found 5 solutions. Solving time: 0.262 sec.
+Total problem setup time: 0.132 sec.
+Found 5 solutions. Solving time: 0.443 sec.
 
-APE found 5 solutions. Total solving time: 1.364 sec.
+APE found 5 solutions. Total solving time: 2.816 sec.
 
 -------------------------------------------------------------
 	Geneating graphical representation
@@ -441,14 +441,14 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
 	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
 	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
-	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.0000000011716170.get(Unknown Source)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine$$Lambda$229.00000000121439C0.get(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
 	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
 	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
-	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.0000000011716A80.accept(Unknown Source)
+	at guru.nidi.graphviz.engine.Graphviz$$Lambda$232.0000000012076470.accept(Unknown Source)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
 	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
 	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
@@ -461,7 +461,7 @@ java.lang.IllegalStateException: J2V8 native library not loaded
 	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
 	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
 	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
-	at nl.uu.cs.ape.sat.APE$$Lambda$205.00000000115FCC90.accept(Unknown Source)
+	at nl.uu.cs.ape.sat.APE$$Lambda$205.000000001203FBE0.accept(Unknown Source)
 	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:195)
 	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:186)
 	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1385)
@@ -482,4 +482,4 @@ Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons:
 	... 34 more
 .....
 
-Graphical files have been generated. Running time: 32.504 sec.
+Graphical files have been generated. Running time: 93.61 sec.
