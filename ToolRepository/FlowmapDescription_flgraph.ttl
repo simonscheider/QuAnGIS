@@ -1,0 +1,111 @@
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix ccd: <http://geographicknowledge.de/vocab/CoreConceptData.rdf#>.
+@prefix exm: <http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#>.
+@prefix ada: <http://geographicknowledge.de/vocab/AnalysisData.rdf#>.
+
+
+#This is a description of Flowmap functions, an illustration of a prototypical spatial network analysis tool
+
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:MeasureSize.
+tools:MeasureSize rdfs:label "Takes object regions (e.g. street line data set or polygons) and measures their size";
+    wf:input1 [ a ccd:ObjectQ, ccd:LineA ];    
+    wf:output [ a ccd:ObjectQ, ccd:LineA ].
+    
+    
+<http://flowmap.geo.uu.nl/> tools:implements tools:DistanceNetwork.
+tools:DistanceNetwork rdfs:label "Takes object sizes (e.g. a street line data set with lengths) and turns it into a spatial distance network (a network relation between objects with intensive (distance) measures)";
+    wf:input1 [ a ccd:ObjectQ, ccd:LineA ];    
+    wf:output [ a ccd:RelationalQ, ccd:LineA ].   
+
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:DistanceMatrix.
+tools:DistanceMatrix rdfs:label "Takes a spatial distance network (a network relation between objects with intensive (distance) measures) and some object regions and generates a distance matrix between all objects";
+    wf:input1 [ a ccd:RelationalQ, ccd:LineA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];      
+    wf:output [ a ccd:RelationalQ, ccd:VectorRegionA ].  
+
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:FunctionalClustering.
+tools:FunctionalClustering rdfs:label "Takes a flow matrix (extensive) and some object regions and generates clustering of objects (nominal)";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];      
+    wf:output [ a ccd:ObjectQ, ccd:VectorRegionA ].  
+
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:CatchmentArea.
+tools:CatchmentArea rdfs:label "Takes a distance matrix (intensive) and origin/destination object regions and generates a new origin object attribute measuring the distance to the closest destination object";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA];  
+	wf:input3 [ a ccd:ObjectQ, ccd:VectorRegionA]; 	
+    wf:output [ a ccd:ObjectQ, ccd:VectorRegionA ].
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:NetworkAnalysis.
+tools:NetworkAnalysis rdfs:label "Takes a distance network (intensive) of lines and some destination object regions and generates a new network origin object attribute measuring the distance to the closest destination object";
+    wf:input1 [ a ccd:RelationalQ, ccd:LineA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ]; 	
+    wf:output [ a ccd:ObjectQ, ccd:LineA ];
+    wf:output2 [ a ccd:ObjectQ, ccd:LineA ].
+    
+<http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdDistance.
+tools:ThresholdAmount rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object amounts which are sums of amounts up to a maximum distance from each object";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];  
+    wf:output [ a ccd:ObjectQ, ccd:VectorRegionA ].
+
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:ThresholdAmount.
+tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) and generates new object distances that contain objects up to a given amount";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];  
+    wf:output [ a ccd:ObjectQ, ccd:VectorRegionA ].
+    
+<http://flowmap.geo.uu.nl/> tools:implements tools:AccessibilityAnalysis.
+tools:AccessibilityAnalysis rdfs:label "Generates some statistics over objects with distance measures";
+    wf:input1 [ a ccd:ObjectQ, exm:IRA ];	  
+    wf:output [ a ccd:QualityValue, exm:IRA ].
+    
+<http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrixDoubly.
+tools:FlowMatrixDoubly rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) for origins and destinations and generates a new flow matrix and some balancing factors for objects. An example is (doubly-constrained) gravity model.";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];  
+	wf:input3 [ a ccd:ObjectQ, ccd:VectorRegionA ]; 
+    wf:output [ a ccd:RelationalQ, ccd:VectorRegionA ];
+    wf:output2 [ a ccd:ObjectQ, ccd:VectorRegionA ].    
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrixSingly.
+tools:FlowMatrixSingly rdfs:label "Takes a distance matrix (intensive) of regions, some object amounts (extensive object attribute) for origins/destinations and some attrativeness/productivity factors for destinations/origins, and generates a new flow matrix and some object amounts for destinations/origins. An example is a singly constrained gravity model.";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];  
+	wf:input2 [ a ccd:ObjectQ, ccd:VectorRegionA ];  
+	wf:input3 [ a ccd:ObjectQ, ccd:VectorRegionA ]; 
+    wf:output [ a ccd:RelationalQ, ccd:VectorRegionA ];
+    wf:output2 [ a ccd:ObjectQ, ccd:VectorRegionA ].    
+
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:FlowSummation.
+tools:FlowSummation rdfs:label "Takes a flow matrix and summarizes flows over origin objects, to generate object amounts";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA];	  
+    wf:output [ a ccd:ObjectQ, ccd:VectorRegionA ].
+    
+<http://flowmap.geo.uu.nl/> tools:implements tools:TripLengthAnalysis.
+tools:TripLengthAnalysis rdfs:label "Generates some statistics over flow and distance matrices, such as average trip length or trip end ranking";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];	 
+	wf:input2 [ a ccd:RelationalQ, ccd:VectorRegionA ];	    
+    wf:output [ a ccd:QualityValue ]. 
+    
+<http://flowmap.geo.uu.nl/> tools:implements tools:TradeArea.
+tools:TradeArea rdfs:label "Takes a distance and a flow matrix, as well as some object regions, and generates new minimum object regions containing some amount of flow for each object";
+    wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];	 
+	wf:input2 [ a ccd:RelationalQ, ccd:VectorRegionA ];	
+	wf:input3 [	a ccd:ObjectQ, ccd:VectorRegionA];	
+    wf:output [ a ccd:ObjectQ, ccd:VectorRegionA ].
+
+<http://flowmap.geo.uu.nl/> tools:implements tools:FlowAssignment.
+tools:FlowAssignment rdfs:label "Takes a distance network and a flow matrix, as well as some object regions, and assigns flow to the network based on the shortest path between objects in the matrix.";
+	wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];	
+    wf:input2 [ a ccd:RelationalQ, ccd:LineA ];	 
+	wf:input3 [	a ccd:ObjectQ, ccd:VectorRegionA];		
+    wf:output [ a ccd:RelationalQ, ccd:LineA ].

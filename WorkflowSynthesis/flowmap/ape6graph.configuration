@@ -1,0 +1,37 @@
+{
+ "ontologyPrexifIRI": "http://geographicknowledge.de/vocab/CoreConceptData.rdf#",
+  "solutions_dir_path": "./flowmap/solution6graph/",  
+  "tool_annotations_path": "./flowmap/FlowmapDescription_flgraph.json",
+  "ontology_path": "./flowmap/GISTaxonomy_flgraph.rdf",  
+  "constraints_path": "./flowmap/constraints6.json",
+  "toolsTaxonomyRoot": "http://geographicknowledge.de/vocab/GISTools.rdf#Tool",    
+  "dataDimensionsTaxonomyRoots": [
+    "CoreConceptQ",
+    "LayerA"
+  ],
+  "shared_memory": "true",
+  "solution_length": { "min": 1, "max": 10 },
+  "max_solutions": "5",
+  "number_of_execution_scripts": "0",
+  "number_of_generated_graphs": "5",
+  "inputs": [
+    {
+	"CoreConceptQ": ["RelationalQ"],
+    "LayerA": ["VectorRegionA"]    
+    },
+	{
+	"CoreConceptQ": ["ObjectQ"],
+    "LayerA": ["VectorRegionA"]   
+    }
+  ],
+  "outputs": [
+    {
+	"CoreConceptQ": ["ObjectQ"], 
+    "LayerA": ["RegionA"] 
+    }
+  ],
+  "debug_mode": "true",
+  "use_workflow_input": "all",
+  "use_all_generated_data": "one",
+  "tool_seq_repeat": "false"
+}

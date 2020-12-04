@@ -7,16 +7,16 @@ import re
 direct = r"C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\WorkflowSynthesis\flowmap"
 
 
-def makefile(direct):
+def makefile():
     evaldirs=[]
     for root, dirs, files in os.walk(direct):
         for name in dirs:
             #print(os.path.join(root, name))
-            if "solution" in name:
+            if "solution" in name and "11b" not in name:
                 #print(name.split("solution")[1])
                 evaldirs.append(name)
 
-    evaldirs = sorted(evaldirs, key=lambda x: float((x.replace('bench', '') if 'bench' in x else x).split("solution")[1]))
+    evaldirs = sorted(evaldirs, key=lambda x: float((x.replace('bench', '') if 'bench' in x else (x.replace('graph', '') if 'graph' in x else x)).split("solution")[1]))
     print(evaldirs)
     solutions = {}
     for ed in evaldirs:
@@ -81,42 +81,45 @@ def makefile(direct):
 
     workbook.close()
 
-evaluationfile = os.path.join(os.path.join(direct, "evaluation/ExpertWorkflows"),'Evaluation.xlsx')
-df = pd.read_excel(evaluationfile)
+def summarize():
+    evaluationfile = os.path.join(os.path.join(direct, "evaluation/ExpertWorkflows"),'Evaluation.xlsx')
+    df = pd.read_excel(evaluationfile)
 
-df["Task"] = df.apply( lambda x: int(re.findall("\d+", x["Workflow task"].split('solution')[1])[0]), axis = 1)
-#df = df.sort_values(by = ['sort'])
-df["Hard error"] = df["Semantic error"] | df["Syntax error"].astype(int)
-df["Correct"] = (df["Hard error"]==0).astype(int)
-df["Redundant"] = (df["Redundancy error"] & df["Correct"]).astype(int)
-df["Expert order"] = df.apply(lambda x: (x["Solution NR"]+1 if x["Expert solution"]==1  else 6), axis = 1 )
-grouped = df.groupby(['Task', "Workflow task"]).agg(
-    {
-    "Task" : "count",
-    "Workflow length": "mean",
-    "Semantic error": "sum",
-    "Syntax error": "sum",
-    "Hard error" : "sum",
-    "Correct" : "sum",
-    "Redundant" : "sum",
-    "Expert solution": "sum",
-    "Expert order" : "min"
-    }
-).rename(columns={'Task': 'Number',"Workflow task": 'Variant', 'Workflow length': 'Avg length'})
-grouped = grouped[["Number", "Avg length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert order"]]
+    df["Task"] = df.apply( lambda x: int(re.findall("\d+", x["Workflow task"].split('solution')[1])[0]), axis = 1)
+    #df = df.sort_values(by = ['sort'])
+    df["Hard error"] = df["Semantic error"] | df["Syntax error"].astype(int)
+    df["Correct"] = (df["Hard error"]==0).astype(int)
+    df["Redundant"] = (df["Redundancy error"] & df["Correct"]).astype(int)
+    df["Expert order"] = df.apply(lambda x: (x["Solution NR"]+1 if x["Expert solution"]==1  else 6), axis = 1 )
+    grouped = df.groupby(['Task', "Workflow task"]).agg(
+        {
+        "Task" : "count",
+        "Workflow length": "mean",
+        "Semantic error": "sum",
+        "Syntax error": "sum",
+        "Hard error" : "sum",
+        "Correct" : "sum",
+        "Redundant" : "sum",
+        "Expert solution": "sum",
+        "Expert order" : "min"
+        }
+    ).rename(columns={'Task': 'Number',"Workflow task": 'Variant', 'Workflow length': 'Avg length'})
+    grouped = grouped[["Number", "Avg length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert order"]]
 
-solution = grouped[~grouped.index.get_level_values(1).str.contains("bench")]
-bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
-for gr in [solution, bench]:
-    print("bench" if "bench" in gr.index.get_level_values(1)[0] else "solution")
-    print("sum: " +str(gr['Number'].sum()))
-    print("mean length: "+str(gr['Avg length'].mean()))
-    print("semantic sum: "+str(gr["Semantic error"].sum()))
-    print("syntax sum: "+str(gr["Syntax error"].sum()))
-    print("correct sum: "+str(gr["Correct"].sum()))
-    print("redundant sum: "+str(gr["Redundant"].sum()))
-    print("expert sum: "+str(gr["Expert solution"].sum()))
-    print("expert rank mean: "+str(gr["Expert order"].mean()))
+    solution = grouped[~grouped.index.get_level_values(1).str.contains("bench")]
+    bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
+    for gr in [solution, bench]:
+        print("bench" if "bench" in gr.index.get_level_values(1)[0] else "solution")
+        print("sum: " +str(gr['Number'].sum()))
+        print("mean length: "+str(gr['Avg length'].mean()))
+        print("semantic sum: "+str(gr["Semantic error"].sum()))
+        print("syntax sum: "+str(gr["Syntax error"].sum()))
+        print("correct sum: "+str(gr["Correct"].sum()))
+        print("redundant sum: "+str(gr["Redundant"].sum()))
+        print("expert sum: "+str(gr["Expert solution"].sum()))
+        print("expert rank mean: "+str(gr["Expert order"].mean()))
 
-#print(grouped)
-print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
+    #print(grouped)
+    print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
+
+makefile()

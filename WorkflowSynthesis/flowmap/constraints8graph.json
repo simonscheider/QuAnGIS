@@ -1,0 +1,24 @@
+{
+  "constraints": [
+  {
+      "constraintid": "use_t",
+	  "description": "", 
+      "parameters": [
+	  [
+        "http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ",
+		"http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"
+		]		
+      ]
+    },
+	{
+      "constraintid": "use_t",
+	  "description": "", 
+      "parameters": [
+	  [
+        "http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ",
+		"http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"
+		]		
+      ]
+    }
+  ]
+}
