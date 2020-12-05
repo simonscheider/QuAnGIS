@@ -1,189 +1,6 @@
 {
   "functions": [
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FlowSummation",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "LineA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "NetworkAnalysis",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "LineA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "LineA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "TripLengthAnalysis",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "CoreConceptQ"
-          ],
-          "LayerA": [
-            "LayerA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "LineA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FlowAssignment",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "LineA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "LineA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "DistanceMatrix",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix"
-      ]
-    },
-    {
       "id": "http://geographicknowledge.de/vocab/GISTools.rdf#MeasureSize",
       "inputs": [
         {
@@ -211,7 +28,7 @@
       ]
     },
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation",
       "inputs": [
         {
           "CoreConceptQ": [
@@ -220,25 +37,9 @@
           "LayerA": [
             "VectorRegionA"
           ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
         }
       ],
-      "label": "CatchmentArea",
+      "label": "FlowSummation",
       "outputs": [
         {
           "CoreConceptQ": [
@@ -250,190 +51,7 @@
         }
       ],
       "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "ThresholdDistance",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "ThresholdAmount",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "LayerA"
-          ]
-        }
-      ],
-      "label": "AccessibilityAnalysis",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "CoreConceptQ"
-          ],
-          "LayerA": [
-            "LayerA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FunctionalClustering",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering"
-      ]
-    },
-    {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrixDoubly",
-      "inputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "label": "FlowMatrixDoubly",
-      "outputs": [
-        {
-          "CoreConceptQ": [
-            "RelationalQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        },
-        {
-          "CoreConceptQ": [
-            "ObjectQ"
-          ],
-          "LayerA": [
-            "VectorRegionA"
-          ]
-        }
-      ],
-      "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrixDoubly"
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowSummation"
       ]
     },
     {
@@ -488,8 +106,113 @@
       ]
     },
     {
-      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork",
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea",
       "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "CatchmentArea",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#CatchmentArea"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "ThresholdAmount",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdAmount"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "NetworkAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ]
+        },
         {
           "CoreConceptQ": [
             "ObjectQ"
@@ -499,8 +222,40 @@
           ]
         }
       ],
-      "label": "DistanceNetwork",
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#NetworkAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LayerA"
+          ]
+        }
+      ],
+      "label": "AccessibilityAnalysis",
       "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LayerA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#AccessibilityAnalysis"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix",
+      "inputs": [
         {
           "CoreConceptQ": [
             "RelationalQ"
@@ -508,10 +263,64 @@
           "LayerA": [
             "LineA"
           ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "DistanceMatrix",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
         }
       ],
       "taxonomyOperations": [
-        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork"
+        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceMatrix"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "TripLengthAnalysis",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LayerA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#TripLengthAnalysis"
       ]
     },
     {
@@ -555,6 +364,197 @@
       ],
       "taxonomyOperations": [
         "http://geographicknowledge.de/vocab/GISTools.rdf#TradeArea"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FunctionalClustering",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FunctionalClustering"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ]
+        }
+      ],
+      "label": "DistanceNetwork",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#DistanceNetwork"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FlowAssignment",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "LineA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowAssignment"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrixDoubly",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "FlowMatrixDoubly",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#FlowMatrixDoubly"
+      ]
+    },
+    {
+      "id": "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance",
+      "inputs": [
+        {
+          "CoreConceptQ": [
+            "RelationalQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        },
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "label": "ThresholdDistance",
+      "outputs": [
+        {
+          "CoreConceptQ": [
+            "ObjectQ"
+          ],
+          "LayerA": [
+            "VectorRegionA"
+          ]
+        }
+      ],
+      "taxonomyOperations": [
+        "http://geographicknowledge.de/vocab/GISTools.rdf#ThresholdDistance"
       ]
     }
   ]

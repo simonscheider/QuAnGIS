@@ -65,8 +65,8 @@ tools:ThresholdDistance rdfs:label "Takes a distance matrix (intensive) of regio
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:AccessibilityAnalysis.
 tools:AccessibilityAnalysis rdfs:label "Generates some statistics over objects with distance measures";
-    wf:input1 [ a ccd:ObjectQ, exm:IRA ];	  
-    wf:output [ a ccd:QualityValue, exm:IRA ].
+    wf:input1 [ a ccd:ObjectQ ];	  
+    wf:output [ a ccd:ObjectQ ].
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:FlowMatrixDoubly.
 tools:FlowMatrixDoubly rdfs:label "Takes a distance matrix (intensive) of regions and some object amounts (extensive object attribute) for origins and destinations and generates a new flow matrix and some balancing factors for objects. An example is (doubly-constrained) gravity model.";
@@ -94,7 +94,7 @@ tools:FlowSummation rdfs:label "Takes a flow matrix and summarizes flows over or
 tools:TripLengthAnalysis rdfs:label "Generates some statistics over flow and distance matrices, such as average trip length or trip end ranking";
     wf:input1 [ a ccd:RelationalQ, ccd:VectorRegionA ];	 
 	wf:input2 [ a ccd:RelationalQ, ccd:VectorRegionA ];	    
-    wf:output [ a ccd:QualityValue ]. 
+    wf:output [ a ccd:ObjectQ ]. 
     
 <http://flowmap.geo.uu.nl/> tools:implements tools:TradeArea.
 tools:TradeArea rdfs:label "Takes a distance and a flow matrix, as well as some object regions, and generates new minimum object regions containing some amount of flow for each object";
