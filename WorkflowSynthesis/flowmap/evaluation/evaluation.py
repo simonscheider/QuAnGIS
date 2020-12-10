@@ -81,8 +81,8 @@ def makefile():
 
     workbook.close()
 
-def summarize():
-    evaluationfile = os.path.join(os.path.join(direct, "evaluation/ExpertWorkflows"),'Evaluation.xlsx')
+def summarize(file='Evaluation.xlsx'):
+    evaluationfile = os.path.join(os.path.join(direct, "evaluation/ExpertWorkflows"),file)
     df = pd.read_excel(evaluationfile)
 
     df["Task"] = df.apply( lambda x: int(re.findall("\d+", x["Workflow task"].split('solution')[1])[0]), axis = 1)
@@ -106,10 +106,12 @@ def summarize():
     ).rename(columns={'Task': 'Number',"Workflow task": 'Variant', 'Workflow length': 'Avg length'})
     grouped = grouped[["Number", "Avg length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert order"]]
 
-    solution = grouped[~grouped.index.get_level_values(1).str.contains("bench")]
-    bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
-    for gr in [solution, bench]:
-        print("bench" if "bench" in gr.index.get_level_values(1)[0] else "solution")
+    solution = grouped[~(grouped.index.get_level_values(1).str.contains("bench|graph"))]
+    #bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
+    graph = grouped[grouped.index.get_level_values(1).str.contains("graph")]
+    for gr in [solution, graph]:
+        first = gr.index.get_level_values(1)[0]
+        print("bench" if "bench" in first else ("graph" if "graph" in first else "solution"))
         print("sum: " +str(gr['Number'].sum()))
         print("mean length: "+str(gr['Avg length'].mean()))
         print("semantic sum: "+str(gr["Semantic error"].sum()))
@@ -122,4 +124,4 @@ def summarize():
     #print(grouped)
     print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
 
-makefile()
+summarize("EvaluationGraph.xlsx")
