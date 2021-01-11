@@ -101,15 +101,16 @@ def summarize(file='Evaluation.xlsx'):
         "Correct" : "sum",
         "Redundant" : "sum",
         "Expert solution": "sum",
-        "Expert order" : "min"
+        "Expert order" : "min",
+        "syntax_prev": "sum"
         }
     ).rename(columns={'Task': 'Number',"Workflow task": 'Variant', 'Workflow length': 'Avg length'})
-    grouped = grouped[["Number", "Avg length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert order"]]
+    grouped = grouped[["Number", "Avg length", "Semantic error", "Syntax error", "Correct", "Redundant", "Expert solution", "Expert order", "syntax_prev"]]
 
     solution = grouped[~(grouped.index.get_level_values(1).str.contains("bench|graph"))]
-    #bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
-    graph = grouped[grouped.index.get_level_values(1).str.contains("graph")]
-    for gr in [solution, graph]:
+    bench = grouped[grouped.index.get_level_values(1).str.contains("bench")]
+    #graph = grouped[grouped.index.get_level_values(1).str.contains("graph")]
+    for gr in [solution, bench]:
         first = gr.index.get_level_values(1)[0]
         print("bench" if "bench" in first else ("graph" if "graph" in first else "solution"))
         print("sum: " +str(gr['Number'].sum()))
@@ -120,8 +121,9 @@ def summarize(file='Evaluation.xlsx'):
         print("redundant sum: "+str(gr["Redundant"].sum()))
         print("expert sum: "+str(gr["Expert solution"].sum()))
         print("expert rank mean: "+str(gr["Expert order"].mean()))
+        print("syntex_prev sum: " + str(gr["syntax_prev"].sum()))
 
     #print(grouped)
-    print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
+    print(grouped.to_latex(column_format='lp{1.8cm}lp{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}'))
 
-summarize("EvaluationGraph.xlsx")
+summarize("Evaluation.xlsx")

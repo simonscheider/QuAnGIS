@@ -1,9 +1,9 @@
 	grammar TransformationAlgebra;
 	
 	/*
-    * This grammar can be used to parse strings of the Geo-Analytical Transformation Algebra. Each string is an abstract representation of a GIS workflow.
+    * This grammar can be used to parse strings of the Algebra of core concept transformation. Each string is an abstract representation of a GIS workflow.
 	*
-	* Example strings:
+	* Example string:
 	* ratio fcont interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht size pi1 interpol pointmeasures temperature deify merge pi2 sigmae objectregions muni object Utrecht
 	* sigmae objectregions x object y
 	*/
@@ -28,7 +28,7 @@
 	ordv : MAX lord | MIN lord |  MAX oord  | MIN oord |  GET ordinal | intv | ORDV;  	
 	nomv : ordv | GET nom | TOPOV | NOMV;
 	qv : GET  q | nomv | ordv | intv | ratiov | countv;
-	sv : REIFY l | GET  s | MERGE s ;
+	sv : REIFY l | GET  s | MERGE s | SV;
 	lv : GET l ;		
 	ov : GET  o | DATAOBJV ;
 	
@@ -37,7 +37,7 @@
 	// R rules	
 	l : DEIFY sv | PI1  lint  | PI1  lord  | PI1  lnom | PI1  lq | PI1 lratio |  PI1 linto | PI1 lnomo ;	//First apply the most specific function
 	s : PI1  sint  | PI1  sord  | PI1  snom | PI1  lq | PI2 os ;	//First apply the most specific function
-	o : PI1  os  | PI1  oratio  |  PI1  oint  |  PI1  oord  | PI1  onom| PI1  oq | PI1 onomo |PI2 onomo;
+	o : PI1  os  | PI1  oratio  |  PI1  oint  |  PI1  oord  | PI1  onom| PI1  oq | PI1 onomo | PI2 onomo | PI3 lnomo | PI3 onomo;
 	count : PI2 ocount ;   
 	ratio : PI2 oratio | PI2 lratio | count;
 	intt : PI1 ints | PI2 oint |  PI2 lint |ratio ;	
@@ -125,6 +125,7 @@
 	//Relational operations
 	PI1 : 'pi1 ' ; //project 1
 	PI2 : 'pi2 ' ; //project 2
+	PI3	: 'pi3 ' ; //project 3
 	SIGMAE : 'sigmae '  ; //Select  =
 	SIGMASE : 'sigmale '  ; //Select <=
 	BOWTIE : 'bowtie ' ; //Subset relation
@@ -158,6 +159,7 @@
 	DATAOBJCOUNT :  'objectcounts ' KEYWORD  ;
 	DATAFIELD :  'field ' KEYWORD ;	
 	TOPOV : 'in' ;
+	SV : 'region ' DATAV ; 
 	COUNTV : 'count ' DATAV ;
 	RATIOV : 'ratio ' DATAV ;
 	INTV : 'interval ' DATAV ;
