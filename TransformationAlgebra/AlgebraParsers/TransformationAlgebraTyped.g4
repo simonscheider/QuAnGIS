@@ -5,8 +5,9 @@
 	*
 	* Example strings:
 	*  
-	*  -: Nom -: Nom Nom //function from Nom to some function from Nom to Nom
-	*  * O Nom O	//relation ONomO
+	*  	-: Nom -: Nom Nom //function from Nom to some function from Nom to Nom
+	* 	-: Ord -: O -: S * Nom O
+	*  	* O Nom O	//relation ONomO
 	* 	-: NomV * Nom S * O Nom //function from NomV to relation NomS, plus some relation ONom
 	*   -: Nom * Nom S Nom
 	* 	-: (-: Nom NomV) * Nom S //This function type takes a function as input
@@ -19,17 +20,36 @@
     	start  : t | (t WHITESPACE)+ t ; 
 		t : fc | c ;		 
 		
-	//Function Types				
-		ft : t;
-		fc : IMPLIED WHITESPACE c WHITESPACE ft ; 	
-		bfc : '(' fc ')' ; //bracketed function type (used as concept, and thus as input to a function)
+	//Function Types	
+		
+		fh : IMPLIED WHITESPACE c ;
+		fc1 :  fh WHITESPACE c ; 
+		fc2 :	fh WHITESPACE fc1;
+		fc3	:	fh WHITESPACE fc2;
+		fc	: 	fc1 | fc2 | fc3;
+		
     	
-	//Concept types:
-	c 	:  v | r | rr | rrr | bfc;
-	v		: NOMV | ORDV | ITVV | RATV | COUNTV | OV | LV | SV | BOOLV ;
-	r 		: NOM | ORD | ITV | RAT | COUNT | O | L | S | BOOL ;	
-	rr		: REL WHITESPACE r WHITESPACE r ;
-	rrr 	: REL WHITESPACE r WHITESPACE rr;
+	//Concept types (including hierarchy):
+		c 		:  v | r | rr | rrr | bfc;
+		bfc : '(' fc ')' ; //bracketed function type (used as concept, i.e. as input to a function)
+		
+		v		: nomv | OV | LV | SV ;
+		nomv 	: NOMV | ordv | BOOLV ;
+		ordv	: ORDV | itvv ;
+		itvv	: ITVV | ratv ;
+		ratv	: RATV | EV | IV | countv ;
+		countv	: COUNTV;
+		
+		r		: nom | O | L | S ;
+		nom 	: NOM | ord | BOOL ;
+		ord		: ORD | itv ;
+		itv		: ITV | rat ;
+		rat		: RAT | E | I | count ;
+		count	: COUNT;		
+		
+		rr		: REL WHITESPACE r WHITESPACE r ;
+		
+		rrr 	: REL WHITESPACE r WHITESPACE rr;
 	
 	
 	//application rules (implication elimination)
