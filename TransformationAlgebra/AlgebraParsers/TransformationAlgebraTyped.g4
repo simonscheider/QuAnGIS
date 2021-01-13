@@ -1,9 +1,9 @@
 	grammar TransformationAlgebraTyped;
 	
 	/*
-    * This grammar can be used to parse strings of the Algebra of core concept transformation. Each string is an abstract representation of a GIS workflow.
+    * This grammar can be used to parse typed strings of the Algebra of core concept transformation. Each string is a typed representation of a GIS workflow. It consists of a (left to right parsed) sequence of function or concept types. Functions can be be of different arity, and are supposed to be applied to the types to their right depending on their arity. Bracketed functions can be concepts, too. We use prefix notation: -: function prefix, * relation prefix.
 	*
-	* Example strings (in prefix notation: -: function prefix, * relation prefix):
+	* Example strings ():
 	*  
 	*  	-: Nom -: Nom Nom //function from Nom to some function from Nom to Nom (binary function)
 	* 	-: Ord -: O -: S * Nom O // ternary function that outputs a binary relation
