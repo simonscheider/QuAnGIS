@@ -77,6 +77,36 @@ public interface TransformationAlgebraTypedListener extends ParseTreeListener {
 	 */
 	void exitFa(TransformationAlgebraTypedParser.FaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#a1}.
+	 * @param ctx the parse tree
+	 */
+	void enterA1(TransformationAlgebraTypedParser.A1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#a1}.
+	 * @param ctx the parse tree
+	 */
+	void exitA1(TransformationAlgebraTypedParser.A1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#a2}.
+	 * @param ctx the parse tree
+	 */
+	void enterA2(TransformationAlgebraTypedParser.A2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#a2}.
+	 * @param ctx the parse tree
+	 */
+	void exitA2(TransformationAlgebraTypedParser.A2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#a3}.
+	 * @param ctx the parse tree
+	 */
+	void enterA3(TransformationAlgebraTypedParser.A3Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#a3}.
+	 * @param ctx the parse tree
+	 */
+	void exitA3(TransformationAlgebraTypedParser.A3Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fa0}.
 	 * @param ctx the parse tree
 	 */

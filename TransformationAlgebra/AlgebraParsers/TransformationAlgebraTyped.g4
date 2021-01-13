@@ -12,6 +12,7 @@
 	*   -: Nom * Nom S Nom
 	* 	-: (-: Nom NomV) * Nom S //This function type takes a function as input and outputs a binary relation
 	*	workflow example: -: Nom -: O * O Nom Nom O
+	* 	complex workflow example: -: O -: O * O * Nom O -: Nom O Nom O 
 	*/
 	
      /*
@@ -31,10 +32,13 @@
 	
 	//application rules for functions
 		fa 		: 	fa0 | fa1 | fa2 | fa3;
-		fa0		:	c ;
-		fa1		: 	fc1 WHITESPACE fa;
-		fa2		:	fc2 WHITESPACE fa WHITESPACE fa;
-		fa3		: 	fc2 WHITESPACE fa WHITESPACE fa WHITESPACE fa;	
+		a1		: 	fa ; //applicant
+		a2		:   a1 WHITESPACE fa;
+		a3		:   a2 WHITESPACE fa;
+		fa0		:	c ;		
+		fa1		: 	fc1 WHITESPACE a1;
+		fa2		:	fc2 WHITESPACE a2;
+		fa3		: 	fc2 WHITESPACE a3;	
 		
     	
 	//Concept types (including hierarchy):

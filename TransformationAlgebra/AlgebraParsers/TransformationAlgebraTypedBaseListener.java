@@ -99,6 +99,42 @@ public class TransformationAlgebraTypedBaseListener implements TransformationAlg
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterA1(TransformationAlgebraTypedParser.A1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitA1(TransformationAlgebraTypedParser.A1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterA2(TransformationAlgebraTypedParser.A2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitA2(TransformationAlgebraTypedParser.A2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterA3(TransformationAlgebraTypedParser.A3Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitA3(TransformationAlgebraTypedParser.A3Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFa0(TransformationAlgebraTypedParser.Fa0Context ctx) { }
 	/**
 	 * {@inheritDoc}
