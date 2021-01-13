@@ -3,14 +3,14 @@
 	/*
     * This grammar can be used to parse strings of the Algebra of core concept transformation. Each string is an abstract representation of a GIS workflow.
 	*
-	* Example strings:
+	* Example strings (in prefix notation: -: function prefix, * relation prefix):
 	*  
-	*  	-: Nom -: Nom Nom //function from Nom to some function from Nom to Nom
-	* 	-: Ord -: O -: S * Nom O
+	*  	-: Nom -: Nom Nom //function from Nom to some function from Nom to Nom (binary function)
+	* 	-: Ord -: O -: S * Nom O // ternary function that outputs a binary relation
 	*  	* O Nom O	//relation ONomO
 	* 	-: NomV * Nom S * O Nom //function from NomV to relation NomS, plus some relation ONom
 	*   -: Nom * Nom S Nom
-	* 	-: (-: Nom NomV) * Nom S //This function type takes a function as input
+	* 	-: (-: Nom NomV) * Nom S //This function type takes a function as input and outputs a binary relation
 	*/
 	
      /*
@@ -23,9 +23,9 @@
 	//Function Types	
 		
 		fh : IMPLIED WHITESPACE c ;
-		fc1 :  fh WHITESPACE c ; 
-		fc2 :	fh WHITESPACE fc1;
-		fc3	:	fh WHITESPACE fc2;
+		fc1 :  fh WHITESPACE c ; 	//unary functions
+		fc2 :	fh WHITESPACE fc1; 	//binary functions
+		fc3	:	fh WHITESPACE fc2; 	//ternary functions
 		fc	: 	fc1 | fc2 | fc3;
 		
     	
