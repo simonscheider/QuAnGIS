@@ -27,18 +27,6 @@ public class TransformationAlgebraTypedBaseListener implements TransformationAlg
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterT(TransformationAlgebraTypedParser.TContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitT(TransformationAlgebraTypedParser.TContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFh(TransformationAlgebraTypedParser.FhContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -94,6 +82,66 @@ public class TransformationAlgebraTypedBaseListener implements TransformationAlg
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFc(TransformationAlgebraTypedParser.FcContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFa(TransformationAlgebraTypedParser.FaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFa(TransformationAlgebraTypedParser.FaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFa0(TransformationAlgebraTypedParser.Fa0Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFa0(TransformationAlgebraTypedParser.Fa0Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFa1(TransformationAlgebraTypedParser.Fa1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFa1(TransformationAlgebraTypedParser.Fa1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFa2(TransformationAlgebraTypedParser.Fa2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFa2(TransformationAlgebraTypedParser.Fa2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFa3(TransformationAlgebraTypedParser.Fa3Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFa3(TransformationAlgebraTypedParser.Fa3Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

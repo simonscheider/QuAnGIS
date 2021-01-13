@@ -17,16 +17,6 @@ public interface TransformationAlgebraTypedListener extends ParseTreeListener {
 	 */
 	void exitStart(TransformationAlgebraTypedParser.StartContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#t}.
-	 * @param ctx the parse tree
-	 */
-	void enterT(TransformationAlgebraTypedParser.TContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#t}.
-	 * @param ctx the parse tree
-	 */
-	void exitT(TransformationAlgebraTypedParser.TContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fh}.
 	 * @param ctx the parse tree
 	 */
@@ -76,6 +66,56 @@ public interface TransformationAlgebraTypedListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFc(TransformationAlgebraTypedParser.FcContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fa}.
+	 * @param ctx the parse tree
+	 */
+	void enterFa(TransformationAlgebraTypedParser.FaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fa}.
+	 * @param ctx the parse tree
+	 */
+	void exitFa(TransformationAlgebraTypedParser.FaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fa0}.
+	 * @param ctx the parse tree
+	 */
+	void enterFa0(TransformationAlgebraTypedParser.Fa0Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fa0}.
+	 * @param ctx the parse tree
+	 */
+	void exitFa0(TransformationAlgebraTypedParser.Fa0Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fa1}.
+	 * @param ctx the parse tree
+	 */
+	void enterFa1(TransformationAlgebraTypedParser.Fa1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fa1}.
+	 * @param ctx the parse tree
+	 */
+	void exitFa1(TransformationAlgebraTypedParser.Fa1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fa2}.
+	 * @param ctx the parse tree
+	 */
+	void enterFa2(TransformationAlgebraTypedParser.Fa2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fa2}.
+	 * @param ctx the parse tree
+	 */
+	void exitFa2(TransformationAlgebraTypedParser.Fa2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fa3}.
+	 * @param ctx the parse tree
+	 */
+	void enterFa3(TransformationAlgebraTypedParser.Fa3Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fa3}.
+	 * @param ctx the parse tree
+	 */
+	void exitFa3(TransformationAlgebraTypedParser.Fa3Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#c}.
 	 * @param ctx the parse tree
