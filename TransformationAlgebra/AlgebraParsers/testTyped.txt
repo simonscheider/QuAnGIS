@@ -1,0 +1,8 @@
+-: Nom -: Nom Nom Nom Nom			
+-: Ord -: O -: S * Nom O Ord O S	
+* O Nom * O					
+-: NomV * Nom S NomV		
+-: Nom * Nom S Nom
+-: (-: Nom NomV) * Nom S (-: Nom NomV) 
+-: Nom -: O * O Nom Nom O				
+-: O -: O * O * Nom O -: Nom O Nom O 

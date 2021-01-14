@@ -55,9 +55,9 @@
 		countv	: COUNTV;
 		
 		r		: nom | O | L | S ;
-		bool 	: BOOL ;
-		nom 	: NOM | ord | bool ;
-		ord		: ORD | itv ;
+		boolr 	: BOOL ;
+		nom 	: NOM | ordr | boolr ;
+		ordr	: ORD | itv ;
 		itv		: ITV | rat ;		
 		rat		: RAT | e | i | count ;
 		e		: E ;
