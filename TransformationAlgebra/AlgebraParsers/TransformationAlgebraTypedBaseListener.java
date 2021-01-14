@@ -27,13 +27,13 @@ public class TransformationAlgebraTypedBaseListener implements TransformationAlg
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFh(TransformationAlgebraTypedParser.FhContext ctx) { }
+	@Override public void enterFb(TransformationAlgebraTypedParser.FbContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFh(TransformationAlgebraTypedParser.FhContext ctx) { }
+	@Override public void exitFb(TransformationAlgebraTypedParser.FbContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

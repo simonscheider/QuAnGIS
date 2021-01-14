@@ -17,15 +17,15 @@ public interface TransformationAlgebraTypedListener extends ParseTreeListener {
 	 */
 	void exitStart(TransformationAlgebraTypedParser.StartContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fh}.
+	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fb}.
 	 * @param ctx the parse tree
 	 */
-	void enterFh(TransformationAlgebraTypedParser.FhContext ctx);
+	void enterFb(TransformationAlgebraTypedParser.FbContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fh}.
+	 * Exit a parse tree produced by {@link TransformationAlgebraTypedParser#fb}.
 	 * @param ctx the parse tree
 	 */
-	void exitFh(TransformationAlgebraTypedParser.FhContext ctx);
+	void exitFb(TransformationAlgebraTypedParser.FbContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TransformationAlgebraTypedParser#fc1}.
 	 * @param ctx the parse tree

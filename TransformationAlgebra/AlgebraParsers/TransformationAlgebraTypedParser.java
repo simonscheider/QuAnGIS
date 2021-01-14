@@ -21,7 +21,7 @@ public class TransformationAlgebraTypedParser extends Parser {
 		OV=21, LV=22, SV=23, BOOLV=24, REL=25, IMPLIED=26, DATAV=27, WHITESPACE=28, 
 		KEYWORD=29, WS=30;
 	public static final int
-		RULE_start = 0, RULE_fh = 1, RULE_fc1 = 2, RULE_fc2 = 3, RULE_fc3 = 4, 
+		RULE_start = 0, RULE_fb = 1, RULE_fc1 = 2, RULE_fc2 = 3, RULE_fc3 = 4, 
 		RULE_fc = 5, RULE_fa = 6, RULE_a1 = 7, RULE_a2 = 8, RULE_a3 = 9, RULE_fa0 = 10, 
 		RULE_fa1 = 11, RULE_fa2 = 12, RULE_fa3 = 13, RULE_c = 14, RULE_bfc = 15, 
 		RULE_v = 16, RULE_nomv = 17, RULE_ordv = 18, RULE_itvv = 19, RULE_ratv = 20, 
@@ -29,7 +29,7 @@ public class TransformationAlgebraTypedParser extends Parser {
 		RULE_rat = 26, RULE_count = 27, RULE_rr = 28, RULE_rrr = 29;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"start", "fh", "fc1", "fc2", "fc3", "fc", "fa", "a1", "a2", "a3", "fa0", 
+			"start", "fb", "fc1", "fc2", "fc3", "fc", "fa", "a1", "a2", "a3", "fa0", 
 			"fa1", "fa2", "fa3", "c", "bfc", "v", "nomv", "ordv", "itvv", "ratv", 
 			"countv", "r", "nom", "ord", "itv", "rat", "count", "rr", "rrr"
 		};
@@ -143,29 +143,29 @@ public class TransformationAlgebraTypedParser extends Parser {
 		return _localctx;
 	}
 
-	public static class FhContext extends ParserRuleContext {
+	public static class FbContext extends ParserRuleContext {
 		public TerminalNode IMPLIED() { return getToken(TransformationAlgebraTypedParser.IMPLIED, 0); }
 		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public CContext c() {
 			return getRuleContext(CContext.class,0);
 		}
-		public FhContext(ParserRuleContext parent, int invokingState) {
+		public FbContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_fh; }
+		@Override public int getRuleIndex() { return RULE_fb; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TransformationAlgebraTypedListener ) ((TransformationAlgebraTypedListener)listener).enterFh(this);
+			if ( listener instanceof TransformationAlgebraTypedListener ) ((TransformationAlgebraTypedListener)listener).enterFb(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TransformationAlgebraTypedListener ) ((TransformationAlgebraTypedListener)listener).exitFh(this);
+			if ( listener instanceof TransformationAlgebraTypedListener ) ((TransformationAlgebraTypedListener)listener).exitFb(this);
 		}
 	}
 
-	public final FhContext fh() throws RecognitionException {
-		FhContext _localctx = new FhContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_fh);
+	public final FbContext fb() throws RecognitionException {
+		FbContext _localctx = new FbContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_fb);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -189,8 +189,8 @@ public class TransformationAlgebraTypedParser extends Parser {
 	}
 
 	public static class Fc1Context extends ParserRuleContext {
-		public FhContext fh() {
-			return getRuleContext(FhContext.class,0);
+		public FbContext fb() {
+			return getRuleContext(FbContext.class,0);
 		}
 		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public CContext c() {
@@ -217,7 +217,7 @@ public class TransformationAlgebraTypedParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(66);
-			fh();
+			fb();
 			setState(67);
 			match(WHITESPACE);
 			setState(68);
@@ -236,8 +236,8 @@ public class TransformationAlgebraTypedParser extends Parser {
 	}
 
 	public static class Fc2Context extends ParserRuleContext {
-		public FhContext fh() {
-			return getRuleContext(FhContext.class,0);
+		public FbContext fb() {
+			return getRuleContext(FbContext.class,0);
 		}
 		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public Fc1Context fc1() {
@@ -264,7 +264,7 @@ public class TransformationAlgebraTypedParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(70);
-			fh();
+			fb();
 			setState(71);
 			match(WHITESPACE);
 			setState(72);
@@ -283,8 +283,8 @@ public class TransformationAlgebraTypedParser extends Parser {
 	}
 
 	public static class Fc3Context extends ParserRuleContext {
-		public FhContext fh() {
-			return getRuleContext(FhContext.class,0);
+		public FbContext fb() {
+			return getRuleContext(FbContext.class,0);
 		}
 		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public Fc2Context fc2() {
@@ -311,7 +311,7 @@ public class TransformationAlgebraTypedParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(74);
-			fh();
+			fb();
 			setState(75);
 			match(WHITESPACE);
 			setState(76);
@@ -509,12 +509,12 @@ public class TransformationAlgebraTypedParser extends Parser {
 	}
 
 	public static class A2Context extends ParserRuleContext {
-		public A1Context a1() {
-			return getRuleContext(A1Context.class,0);
-		}
-		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public FaContext fa() {
 			return getRuleContext(FaContext.class,0);
+		}
+		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
+		public A1Context a1() {
+			return getRuleContext(A1Context.class,0);
 		}
 		public A2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -537,11 +537,11 @@ public class TransformationAlgebraTypedParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(91);
-			a1();
+			fa();
 			setState(92);
 			match(WHITESPACE);
 			setState(93);
-			fa();
+			a1();
 			}
 		}
 		catch (RecognitionException re) {
@@ -556,12 +556,12 @@ public class TransformationAlgebraTypedParser extends Parser {
 	}
 
 	public static class A3Context extends ParserRuleContext {
-		public A2Context a2() {
-			return getRuleContext(A2Context.class,0);
-		}
-		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public FaContext fa() {
 			return getRuleContext(FaContext.class,0);
+		}
+		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
+		public A2Context a2() {
+			return getRuleContext(A2Context.class,0);
 		}
 		public A3Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -584,11 +584,11 @@ public class TransformationAlgebraTypedParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(95);
-			a2();
+			fa();
 			setState(96);
 			match(WHITESPACE);
 			setState(97);
-			fa();
+			a2();
 			}
 		}
 		catch (RecognitionException re) {
@@ -736,8 +736,8 @@ public class TransformationAlgebraTypedParser extends Parser {
 	}
 
 	public static class Fa3Context extends ParserRuleContext {
-		public Fc2Context fc2() {
-			return getRuleContext(Fc2Context.class,0);
+		public Fc3Context fc3() {
+			return getRuleContext(Fc3Context.class,0);
 		}
 		public TerminalNode WHITESPACE() { return getToken(TransformationAlgebraTypedParser.WHITESPACE, 0); }
 		public A3Context a3() {
@@ -764,7 +764,7 @@ public class TransformationAlgebraTypedParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(109);
-			fc2();
+			fc3();
 			setState(110);
 			match(WHITESPACE);
 			setState(111);
@@ -1790,10 +1790,10 @@ public class TransformationAlgebraTypedParser extends Parser {
 		"NO\5\b\5\2O\13\3\2\2\2PT\5\6\4\2QT\5\b\5\2RT\5\n\6\2SP\3\2\2\2SQ\3\2\2"+
 		"\2SR\3\2\2\2T\r\3\2\2\2UZ\5\26\f\2VZ\5\30\r\2WZ\5\32\16\2XZ\5\34\17\2"+
 		"YU\3\2\2\2YV\3\2\2\2YW\3\2\2\2YX\3\2\2\2Z\17\3\2\2\2[\\\5\16\b\2\\\21"+
-		"\3\2\2\2]^\5\20\t\2^_\7\36\2\2_`\5\16\b\2`\23\3\2\2\2ab\5\22\n\2bc\7\36"+
-		"\2\2cd\5\16\b\2d\25\3\2\2\2ef\5\36\20\2f\27\3\2\2\2gh\5\6\4\2hi\7\36\2"+
+		"\3\2\2\2]^\5\16\b\2^_\7\36\2\2_`\5\20\t\2`\23\3\2\2\2ab\5\16\b\2bc\7\36"+
+		"\2\2cd\5\22\n\2d\25\3\2\2\2ef\5\36\20\2f\27\3\2\2\2gh\5\6\4\2hi\7\36\2"+
 		"\2ij\5\20\t\2j\31\3\2\2\2kl\5\b\5\2lm\7\36\2\2mn\5\22\n\2n\33\3\2\2\2"+
-		"op\5\b\5\2pq\7\36\2\2qr\5\24\13\2r\35\3\2\2\2sy\5\"\22\2ty\5.\30\2uy\5"+
+		"op\5\n\6\2pq\7\36\2\2qr\5\24\13\2r\35\3\2\2\2sy\5\"\22\2ty\5.\30\2uy\5"+
 		":\36\2vy\5<\37\2wy\5 \21\2xs\3\2\2\2xt\3\2\2\2xu\3\2\2\2xv\3\2\2\2xw\3"+
 		"\2\2\2y\37\3\2\2\2z{\7\3\2\2{|\5\f\7\2|}\7\4\2\2}!\3\2\2\2~\u0083\5$\23"+
 		"\2\177\u0083\7\27\2\2\u0080\u0083\7\30\2\2\u0081\u0083\7\31\2\2\u0082"+
