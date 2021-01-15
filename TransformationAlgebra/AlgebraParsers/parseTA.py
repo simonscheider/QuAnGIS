@@ -33,6 +33,42 @@ def toDict(treeasString):
     #print tree
     return tree
 
+test=[['start', ['fa', ['fa2', ['fc2', ['fb', '-:', ['c', ['r', 'O']]], ['fc1', ['fb', '-:', ['c', ['r', 'O']]], ['c', ['rrr', '*', ['r', 'O'], ['rr', '*', ['r', ['nom', 'Nom']], ['r', 'O']]]]]], ['a2', ['fa', ['fa1', ['fc1', ['fb', '-:', ['c', ['r', ['nom', 'Nom']]]], ['c', ['r', 'O']]], ['a1', ['fa', ['fa0', ['c', ['r', ['nom', 'Nom']]]]]]]], ['a1', ['fa', ['fa0', ['c', ['r', 'O']]]]]]]]]]
+
+#This method does type propagation and type checking within a typed workflow parse tree. It adds result types to the workflow nodes and checks for type clashes.
+def typePropagation(treeasNestedArray=test):
+    if treeasNestedArray[0][0] == 'start':
+        tree = treeasNestedArray[0][1]
+        typeappl(tree)
+
+
+def typeappl(tree):
+    inftype = ''
+    if tree[0]== 'fa':
+        fc =tree[1][1] # '[fc]' function concept
+        (goal, bodies) = getfunctionbodies(fc)
+        print(goal)
+        print(bodies)
+    else:
+        raise syntaxerror
+
+def getfunctionbodies(fctree, bodies=[], goal =[]):
+        if fctree[1][1] == '-:':
+            bodyconcept = fctree[1][2]  # '[c  ]'
+            bodies.append(bodyconcept)
+            if fctree[2][0]!= 'c':
+                fc = fctree[2]
+                (goal, bodies) = getfunctionbodies(fc,bodies,goal)
+            else:
+                goal = fctree[2]
+        return (goal, bodies)
+
+
+
+
+
+
+
 # def bracket(tree):
 #     out = ''
 #     function =False
@@ -218,6 +254,7 @@ def parse(line, format=json):
     print(treeasString)
     treearray = toDict(treeasString)
     print(treearray)
+    typePropagation(treearray)
     #pp = pprint.PrettyPrinter(indent=2)
     #outjson = todict(treearray)
     #outbracket = bracket(treearray)
