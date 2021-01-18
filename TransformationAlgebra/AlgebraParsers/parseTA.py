@@ -35,41 +35,67 @@ def toDict(treeasString):
 
 test=[['start', ['fa', ['fa2', ['fc2', ['fb', '-:', ['c', ['r', 'O']]], ['fc1', ['fb', '-:', ['c', ['r', 'O']]], ['c', ['rrr', '*', ['r', 'O'], ['rr', '*', ['r', ['nom', 'Nom']], ['r', 'O']]]]]], ['a2', ['fa', ['fa1', ['fc1', ['fb', '-:', ['c', ['r', ['nom', 'Nom']]]], ['c', ['r', 'O']]], ['a1', ['fa', ['fa0', ['c', ['r', ['nom', 'Nom']]]]]]]], ['a1', ['fa', ['fa0', ['c', ['r', 'O']]]]]]]]]]
 
-#This method does type propagation and type checking within a typed workflow parse tree. It adds result types to the workflow nodes and checks for type clashes.
+#This method does type propagation and type checking within a typed workflow parse tree. It adds inferred types to the workflow nodes and checks for type clashes.
 def typePropagation(treeasNestedArray=test):
     if treeasNestedArray[0][0] == 'start':
         tree = treeasNestedArray[0][1]
-        typeappl(tree)
+        (inftype, newtree) =typeappl(tree)
+        print("newtree: "+str(newtree))
 
-
+'''This method infers the type of a function application (fa). To this end, it checks recursively 
+whether the function body types correspond to the types inferred from the applicants.
+If yes, it outputs the function head type.'''
 def typeappl(tree):
-    inftype = ''
-    if tree[0]== 'fa':
-        bodies = []
-        goal = []
-        fc =tree[1][1] # '[fc]' function concept or simple [c] concept
-        (goal, bodies) = getfunctionbodies(fc, bodies, goal)
-        print("function goal: "+str(goal))
-        print("function bodies: "+str(bodies))
-        if fc[0].__contains__('fc'): # thus the function is at least unary
-            a = tree[1][2] # '[a]' applicant
-            assert a[0].__contains__('a')
-    else:
-        raise syntaxerror
+    assert tree[0]== 'fa'
+    bodies = []
+    head = []
+    applicants = []
+    newtree = []
+    c = tree[1][1]  #concept: '[fc]' function concept or simple [c] concept
+    (head, bodies) = getfunctiontypes(c, bodies, head)
+    inftype = head
+    #newtree.append(inftype)
+    if c[0].__contains__('fc'):  # thus the function is at least unary, then it needs to have also applicants
+        a = tree[1][2]  # '[a]' applicant
+        assert a[0].__contains__('a')
+        (applicants,newtree) = getfunctionapplicants(a, applicants, newtree)
+        assert checkconsistency(bodies, applicants)
+    print("inferred type of "+str(tree[1][0])+": "+ str(inftype))
+    return (inftype, newtree)
 
-def getfunctionbodies(fctree, bodies=[], goal =[]):
-        if fctree[1][1] == '-:':
-            bodyconcept = fctree[1][2]  # '[c  ]'
+'''This method checks whether two lists of nested arrays are equal'''
+def checkconsistency(bodies, applicants):
+    #print("compare applicants: " + str(applicants))
+    #print("to function bodies: " + str(bodies))
+    out = True
+    for idx,i in enumerate(bodies):
+        if i!=applicants[idx]:
+            out = False
+    print("consistent!") if out else print("inconsistent!")
+    return out
+
+'''This method takes a concept tree (function concept or simple concept) and returns the body and head types'''
+def getfunctiontypes(ctree, bodies=[], head =[]):
+        if ctree[1][1] == '-:': # is an n ary function concept
+            bodyconcept = ctree[1][2]  # get function body concept '[c  ]'
             bodies.append(bodyconcept)
-            if fctree[2][0]!= 'c':
-                fc = fctree[2]
-                (goal, bodies) = getfunctionbodies(fc,bodies,goal)
-            else:
-                goal = fctree[2]
-        return (goal, bodies)
+            c = ctree[2] # get head concept of the function
+            (head, bodies) = getfunctiontypes(c,bodies,head)
+        elif ctree[0]== 'c': # is a simple concept
+            head = ctree
+        return (head, bodies)
 
-def getfunctionapplicants():
-    pass
+'''This method retrieves a list of applicant types from a nested array of applicants'''
+def getfunctionapplicants(a, applicants,newtree):
+    assert a[1][0] == 'fa'
+    fa = a[1]
+    (inftype, tree) = typeappl(fa)
+    applicants.append(inftype)
+    newtree.append([inftype,tree])
+    if a[0] != "a1":
+        (applicants,newtree) = getfunctionapplicants(a[2], applicants,newtree)
+    return (applicants,newtree)
+
 
 
 
@@ -257,7 +283,7 @@ def parse(line, format=json):
     tree = parser.start()
     #print tree.getChildCount()
     treeasString = Trees.toStringTree(tree, None, parser)
-    print(treeasString)
+    #print(treeasString)
     treearray = toDict(treeasString)
     print(treearray)
     typePropagation(treearray)
