@@ -45,10 +45,15 @@ def typePropagation(treeasNestedArray=test):
 def typeappl(tree):
     inftype = ''
     if tree[0]== 'fa':
-        fc =tree[1][1] # '[fc]' function concept
-        (goal, bodies) = getfunctionbodies(fc)
-        print(goal)
-        print(bodies)
+        bodies = []
+        goal = []
+        fc =tree[1][1] # '[fc]' function concept or simple [c] concept
+        (goal, bodies) = getfunctionbodies(fc, bodies, goal)
+        print("function goal: "+str(goal))
+        print("function bodies: "+str(bodies))
+        if fc[0].__contains__('fc'): # thus the function is at least unary
+            a = tree[1][2] # '[a]' applicant
+            assert a[0].__contains__('a')
     else:
         raise syntaxerror
 
@@ -63,7 +68,8 @@ def getfunctionbodies(fctree, bodies=[], goal =[]):
                 goal = fctree[2]
         return (goal, bodies)
 
-
+def getfunctionapplicants():
+    pass
 
 
 
