@@ -37,10 +37,11 @@ test=[['start', ['fa', ['fa2', ['fc2', ['fb', '-:', ['c', ['r', 'O']]], ['fc1', 
 
 #This method does type propagation and type checking within a typed workflow parse tree. It adds inferred types to the workflow nodes and checks for type clashes.
 def typePropagation(treeasNestedArray=test):
+    print("infer types")
     if treeasNestedArray[0][0] == 'start':
         tree = treeasNestedArray[0][1]
         (inftype, newtree) =typeappl(tree)
-        print("newtree: "+str(newtree))
+        print("inferred type tree: "+str(newtree))
 
 '''This method infers the type of a function application (fa). To this end, it checks recursively 
 whether the function body types correspond to the types inferred from the applicants.
@@ -50,11 +51,10 @@ def typeappl(tree):
     bodies = []
     head = []
     applicants = []
-    newtree = []
     c = tree[1][1]  #concept: '[fc]' function concept or simple [c] concept
     (head, bodies) = getfunctiontypes(c, bodies, head)
     inftype = head
-    #newtree.append(inftype)
+    newtree = [inftype]
     if c[0].__contains__('fc'):  # thus the function is at least unary, then it needs to have also applicants
         a = tree[1][2]  # '[a]' applicant
         assert a[0].__contains__('a')
@@ -91,7 +91,7 @@ def getfunctionapplicants(a, applicants,newtree):
     fa = a[1]
     (inftype, tree) = typeappl(fa)
     applicants.append(inftype)
-    newtree.append([inftype,tree])
+    newtree.append(tree)
     if a[0] != "a1":
         (applicants,newtree) = getfunctionapplicants(a[2], applicants,newtree)
     return (applicants,newtree)
@@ -270,7 +270,7 @@ def getfunctionapplicants(a, applicants,newtree):
 
 def parse(line, format=json):
     input = InputStream(line)
-    print(input)
+    print("parse: "+str(input))
     #lexer = TransformationAlgebraLexer(input)
     lexer = TransformationAlgebraTypedLexer(input)
     stream = CommonTokenStream(lexer)
