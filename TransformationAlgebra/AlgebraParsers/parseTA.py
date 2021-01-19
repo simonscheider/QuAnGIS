@@ -266,27 +266,40 @@ def getfunctionapplicants(a, applicants,newtree):
 #     #print out
 #     return out
 
-
-
-def parse(line, format=json):
+def parsewithTypeGrammar(line):
     input = InputStream(line)
-    print("parse: "+str(input))
-    #lexer = TransformationAlgebraLexer(input)
+    # lexer = TransformationAlgebraLexer(input)
     lexer = TransformationAlgebraTypedLexer(input)
     stream = CommonTokenStream(lexer)
     # Parse all tokens until EOF
     stream.fill()
     # Print tokens as text (EOF is stripped from the end)
-    #print([token.text for token in stream.tokens][:-1])
-    #parser = TransformationAlgebraParser(stream)
+    # print([token.text for token in stream.tokens][:-1])
+    # parser = TransformationAlgebraParser(stream)
     parser = TransformationAlgebraTypedParser(stream)
     tree = parser.start()
-    #print tree.getChildCount()
+    # print tree.getChildCount()
     treeasString = Trees.toStringTree(tree, None, parser)
-    #print(treeasString)
+    # print(treeasString)
     treearray = toDict(treeasString)
     print(treearray)
-    typePropagation(treearray)
+    return treearray
+
+'''This method takes a workflow in terms of an algebra expression and a list of function names with their algebra types, 
+and substitutes function calls with their types. The typed expression can then be parsed by the algebra type grammar and the 
+nodes in the tree can be typed by the type inference engine.'''
+def typeFunctions(line):
+    list = line.split()
+    print(list)
+
+
+
+def parse(line, format=json):
+    print("parse: " + line)
+    typeFunctions(line)
+    #treearray = parsewithTypeGrammar(line)
+    #typePropagation(treearray)
+
     #pp = pprint.PrettyPrinter(indent=2)
     #outjson = todict(treearray)
     #outbracket = bracket(treearray)
@@ -294,7 +307,7 @@ def parse(line, format=json):
 
     #print(outbracket)
     #print outlatex
-    return treearray #(outjson if format==json else outbracket)
+    return line #(outjson if format==json else outbracket)
 
 
 
@@ -316,5 +329,5 @@ def main(file):
 path = r"C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\TransformationAlgebra\AlgebraParsers"
 if __name__ == '__main__':
     #main(sys.argv)
-    #main('test.txt')
-    main(os.path.join(path,'testTyped.txt'))
+    main(os.path.join(path,'test.txt'))
+    #main(os.path.join(path,'testTyped.txt'))

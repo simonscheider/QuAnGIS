@@ -1,0 +1,73 @@
+
+//Data inputs: 
+'* S Itv' : 'pointmeasures' KEYWORD ;
+'* S Nom' : 'amountpatches' KEYWORD ;
+'* Ord S' : 'contour'  KEYWORD  ;
+'* O Ratio' : 'objects' KEYWORD  ;
+'* O S' : 'objectregions' KEYWORD;
+'OV' : 'object' KEYWORD ;
+'* Itv S' :  'contourline' KEYWORD  ;
+'* O Count' :  'objectcounts' KEYWORD  ;
+'* L Ratio' :  'field' KEYWORD ;	
+'NomV' : 'in' ; // TOPOlogical value
+'SV' : 'region' DATAV ; 
+'CountV' : 'count' DATAV ;
+'RatioV' : 'ratio' DATAV ;
+'ItvV' : 'interval' DATAV ;
+'OrdV' : 'ordinal' DATAV | 'ordinal ' KEYWORD ;	
+'BoolV' : 'true' | 'false';
+'NomV' : 'nominal ' KEYWORD ;
+
+//Functions:
+	
+//Value Derivations
+'-: RatioV -: RatioV RatioV' : 'bratio'  ;
+	
+// Statistical operations
+'-: * O Itv ItvV' : 'avg' ; //* L Int?
+'-: * O Ord OrdV' : 'min' ; //* L Ord?
+'-: * O Ord OrdV' : 'max' ; //* L Ord?
+	
+// Aggregations of collections
+'-: O CountV' : 'count';
+'-: L RatioV' : 'size';
+'-: S SV' : 'merge';
+	
+//Conversions
+'-: L SV' : 'reify' ;
+'-: SV L' : 'deify'	;
+'-: O OV' : 'get' ; //overloaded
+'-: * L Nom * Nom S': 'invert' ;
+'-: * Ord S * L Ord': 'revert' ; //overloaded
+	
+//Amount operations
+'-: * L Itv RatioV' :  'fcont' ;
+'-: * O Ratio RatioV' :  'ocont' ;
+	
+//Relational operations
+'-: * L Nom L' : 'pi1' ; //project 1
+'-: * S Nom S' : 'pi1' ; //project 1
+'-: * O Nom O' : 'pi1' ; //project 1
+PI2 : 'pi2 ' ; //project 2
+PI3	: 'pi3 ' ; //project 3
+SIGMAE : 'sigmae '  ; //Select  =
+SIGMASE : 'sigmale '  ; //Select <=
+BOWTIE : 'bowtie ' ; //Subset relation
+BOWTIESTAR : 'bowtie* '; //Join quality with quantifed relation
+BOWTIERATIO : 'bowtie_ratio ';	//Join two qualities
+GROUPBYAVG : 'groupby_avg ' ; //Group by
+GROUPBYSUM : 'groupby_sum ' ;
+GROUPBYMIN : 'groupby_min ' ;
+GROUPBYMAX : 'groupby_max ' ;
+GROUPBYSIZE : 'groupby_size ' ;
+GROUPBYCOUNT : 'groupby_count ' ;
+	
+	//Geometric transformations
+INTERPOL : 'interpol ' ;
+ODIST : 'odist ' ;
+LDIST : 'ldist ';
+LODIST : 'lodist ' ;
+OTOPO : 'otopo ' ;
+LOTOPO : 'lotopo ' ;
+NDIST : 'ndist ' ;
+LVIS : 'lvis ' ;
