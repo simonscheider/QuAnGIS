@@ -1,4 +1,3 @@
-
 //Data inputs: 
 '* S Itv' : 'pointmeasures' KEYWORD ;
 '* S Nom' : 'amountpatches' KEYWORD ;
@@ -14,60 +13,157 @@
 'CountV' : 'count' DATAV ;
 'RatioV' : 'ratio' DATAV ;
 'ItvV' : 'interval' DATAV ;
-'OrdV' : 'ordinal' DATAV | 'ordinal ' KEYWORD ;	
-'BoolV' : 'true' | 'false';
-'NomV' : 'nominal ' KEYWORD ;
+'OrdV' : 'ordinal' DATAV ;
+'OrdV' : 'ordinal' KEYWORD ;	
+'BoolV' : 'true' ;
+'BoolV' : 'false';
+'NomV' : 'nominal' KEYWORD ;
 
 //Functions:
 	
 //Value Derivations
-'-: RatioV -: RatioV RatioV' : 'bratio'  ;
+'-: RatioV -: RatioV RatioV' : 'ratio'  ;
 	
 // Statistical operations
-'-: * O Itv ItvV' : 'avg' ; //* L Int?
-'-: * O Ord OrdV' : 'min' ; //* L Ord?
-'-: * O Ord OrdV' : 'max' ; //* L Ord?
+'-: * R Itv ItvV' : 'avg' ; 
+'-: * R Ord OrdV' : 'min' ; 
+'-: * R Ord OrdV' : 'max' ; /
 	
 // Aggregations of collections
 '-: O CountV' : 'count';
 '-: L RatioV' : 'size';
 '-: S SV' : 'merge';
+'-: * O Ext ExtV' : 'sum';
+'-: * S Ext ExtV' : 'sum';
+'-: * O Count CountV' : 'sum';
+'-: * S Count CountV' : 'sum';
 	
 //Conversions
 '-: L SV' : 'reify' ;
 '-: SV L' : 'deify'	;
 '-: O OV' : 'get' ; //overloaded
-'-: * L Nom * Nom S': 'invert' ;
-'-: * Ord S * L Ord': 'revert' ; //overloaded
+'-: L LV' : 'get' ; //overloaded
+'-: S SV' : 'get' ; //overloaded
+'-: Nom NomV' : 'get' ; //overloaded
+'-: Ord OrdV' : 'get' ; //overloaded
+'-: Itv ItvV' : 'get' ; //overloaded
+'-: Ratio RatioV' : 'get' ; //overloaded
+'-: * L Nom * Nom S' : 'invert' ;
+'-: * Ord S * L Ord' : 'revert' ; //overloaded
 	
 //Amount operations
-'-: * L Itv RatioV' :  'fcont' ;
-'-: * O Ratio RatioV' :  'ocont' ;
+'-: * L Itv RatioV' : 'fcont' ;
+'-: * O Ratio RatioV' : 'ocont' ;
+
+//Geometric transformations
+'-: * S Itv * L Itv' : 'interpol' ;
+'-: * O S -: * O S * O * Int O' : 'odist' ;
+'-: L -: L * L * Ratio L' : 'ldist';
+'-: L -: O * L * Ratio O' : 'lodist';
+'-: * O S -: * O S * O * Nom O' : 'otopo' ;
+'-: L -: * O S * L * Nom O'  : 'lotopo' ;
+'-: O -: O -: * O * Int O * O * Int O' : 'ndist' ;
+'-: L -: L -: * L Itv * L * Bool L' : 'lvis' ;
 	
 //Relational operations
-'-: * L Nom L' : 'pi1' ; //project 1
-'-: * S Nom S' : 'pi1' ; //project 1
-'-: * O Nom O' : 'pi1' ; //project 1
-PI2 : 'pi2 ' ; //project 2
-PI3	: 'pi3 ' ; //project 3
-SIGMAE : 'sigmae '  ; //Select  =
-SIGMASE : 'sigmale '  ; //Select <=
-BOWTIE : 'bowtie ' ; //Subset relation
-BOWTIESTAR : 'bowtie* '; //Join quality with quantifed relation
-BOWTIERATIO : 'bowtie_ratio ';	//Join two qualities
-GROUPBYAVG : 'groupby_avg ' ; //Group by
-GROUPBYSUM : 'groupby_sum ' ;
-GROUPBYMIN : 'groupby_min ' ;
-GROUPBYMAX : 'groupby_max ' ;
-GROUPBYSIZE : 'groupby_size ' ;
-GROUPBYCOUNT : 'groupby_count ' ;
-	
-	//Geometric transformations
-INTERPOL : 'interpol ' ;
-ODIST : 'odist ' ;
-LDIST : 'ldist ';
-LODIST : 'lodist ' ;
-OTOPO : 'otopo ' ;
-LOTOPO : 'lotopo ' ;
-NDIST : 'ndist ' ;
-LVIS : 'lvis ' ;
+'-: * L R L' : 'pi1' ; //project 1
+'-: * S R S' : 'pi1' ; //project 1
+'-: * O R O' : 'pi1' ; //project 1
+'-: * Ratio R Ratio' : 'pi1' ; //project 1
+'-: * Itv R Itv' : 'pi1' ; //project 1
+'-: * Ord R Ord' : 'pi1' ; //project 1
+'-: * Nom R Nom' : 'pi1' ; //project 1
+'-: * L * R R L' : 'pi1' ; //project 1
+'-: * S * R R S' : 'pi1' ; //project 1
+'-: * O * R R O' : 'pi1' ; //project 1
+'-: * Ratio * R R Ratio' : 'pi1' ; //project 1
+'-: * Itv * R R Itv' : 'pi1' ; //project 1
+'-: * Ord * R R Ord' : 'pi1' ; //project 1
+'-: * Nom * R R Nom' : 'pi1' ; //project 1
+
+'-: * R L L' : 'pi2' ; //project 2
+'-: * R S S' : 'pi2' ; //project 2
+'-: * R O O' : 'pi2' ; //project 2
+'-: * R Ratio Ratio' : 'pi2' ; //project 2
+'-: * R Itv Itv' : 'pi2' ; //project 2
+'-: * R Ord Ord' : 'pi2' ; //project 2
+'-: * R Nom Nom' : 'pi2' ; //project 2
+'-: * R * L R L' : 'pi2' ; //project 2
+'-: * R * S R S' : 'pi2' ; //project 2
+'-: * R * O R O' : 'pi2' ; //project 2
+'-: * R * Ratio R Ratio' : 'pi2' ; //project 2
+'-: * R * Itv R Itv' : 'pi2' ; //project 2
+'-: * R * Ord R Ord' : 'pi2' ; //project 2
+'-: * R * Nom R Nom' : 'pi2' ; //project 2
+
+'-: * R * R L L' : 'pi3' ; //project 3
+'-: * R * R S S' : 'pi3' ; //project 3
+'-: * R * R O O' : 'pi3' ; //project 3
+'-: * R * R Ratio Ratio' : 'pi3' ; //project 3
+'-: * R * R Itv Itv' : 'pi3' ; //project 3
+'-: * R * R Ord Ord' : 'pi3' ; //project 3
+'-: * R * R Nom Nom' : 'pi3' ; //project 3
+
+'-: * O Nom -: NomV * O Nom' : 'sigmae'  ; //Select  =
+'-: * L Nom -: NomV * L Nom' : 'sigmae'  ; //Select  =
+'-: * S Nom -: NomV * S Nom' : 'sigmae'  ; //Select  =
+'-: * O S -: OV * O S' : 'sigmae'  ; //Select  =
+'-: * Nom S -: NomV * Nom S' : 'sigmae'  ; //Select  =
+'-: * O * Nom O -: NomV * O * Nom O' : 'sigmae'  ; //Select  =
+'-: * L * Nom L -: NomV * L * Nom L' : 'sigmae'  ; //Select  =
+'-: * L * Nom O -: NomV * L * Nom O' : 'sigmae'  ; //Select  =
+
+'-: * Ord S -: OrdV * Ord S' : 'sigmale'  ; //Select <=
+'-: * L Ratio -: RatioV * L Ratio' : 'sigmale'  ; //Select <=
+'-: * L Itv -: ItvV * L Itv' : 'sigmale'  ; //Select <=
+'-: * L Ord -: OrdV * L Ord' : 'sigmale'  ; //Select <=
+'-: * O Ratio -: RatioV * O Ratio' : 'sigmale'  ; //Select <=
+'-: * O Itv -: ItvV * O Itv' : 'sigmale'  ; //Select <=
+'-: * O Ord -: OrdV * O Ord' : 'sigmale'  ; //Select <=
+'-: * S Ratio -: RatioV * S Ratio' : 'sigmale'  ; //Select <=
+'-: * S Itv -: ItvV * S Itv' : 'sigmale'  ; //Select <=
+'-: * S Ord -: OrdV * S Ord' : 'sigmale'  ; //Select <=
+'-: * L * Ratio L -: RatioV * L * Ratio L' : 'sigmale'  ; //Select <=
+'-: * L * Itv L -: ItvV * L * Itv L' : 'sigmale'  ; //Select <=
+'-: * L * Ord L -: OrdV * L * Ord L' : 'sigmale'  ; //Select <=
+'-: * L * Ratio O -: RatioV * L * Ratio O' : 'sigmale'  ; //Select <=
+'-: * L * Itv O -: ItvV * L * Itv O' : 'sigmale'  ; //Select <=
+'-: * L * Ord O -: OrdV * L * Ord O' : 'sigmale'  ; //Select <=
+'-: * O * Ratio O -: RatioV * O * Ratio O' : 'sigmale'  ; //Select <=
+'-: * O * Itv O -: ItvV * O * Itv O' : 'sigmale'  ; //Select <=
+'-: * O * Ord O -: OrdV * O * Ord O' : 'sigmale'  ; //Select <=
+
+'-: * L Ratio -: L * L Ratio' : 'bowtie' ; //Subset relation
+'-: * L Itv -: L * L Itv' : 'bowtie' ; //Subset relation
+'-: * L Ord -: L * L Ord' : 'bowtie' ; //Subset relation
+'-: * L Nom -: L * L Nom' : 'bowtie' ; //Subset relation
+'-: * O Count -: O * O Count' : 'bowtie' ; //Subset relation
+'-: * O Ratio -: O * O Ratio' : 'bowtie' ; //Subset relation
+'-: * O Itv -: O * O Itv' : 'bowtie' ; //Subset relation
+'-: * O Ord -: O * O Ord' : 'bowtie' ; //Subset relation
+'-: * O Nom -: O * O Nom' : 'bowtie' ; //Subset relation
+'-: * O S -: O * O S' : 'bowtie' ; //Subset relation
+
+'-: * O * R O -: * O Ratio * O * Ratio O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * O * R O -: * O Itv * O * Itv O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * O * R O -: * O Ord * O * Ord O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * O * R O -: * O Nom * O * Nom O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R L -: * L Ratio * L * Ratio L' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R L -: * L Itv * L * Itv L' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R L -: * L Ord * L * Ord L' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R L -: * L Nom * L * Nom L' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R O -: * L Ratio * L * Ratio O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R O -: * L Itv * L * Itv O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R O -: * L Ord * L * Ord O' : 'bowtie*'; //Join quality with quantifed relation
+'-: * L * R O -: * L Nom * L * Nom O' : 'bowtie*'; //Join quality with quantifed relation
+
+'-: (-: RatioV -: RatioV RatioV) -: * O Ratio -: * O Ratio * O Ratio' : 'bowtie';	//Join two qualities (e.g. forming a ratio)
+
+'-: (-: * R Itv ItvV) -: * O * Itv O * O Itv' : 'groupby' ; //Group by interval agg
+'-: (-: * R Ord OrdV) -: * O * Ord O * O Ord' : 'groupby' ; //Group by ordinal agg
+'-: (-: * R Itv ItvV) -: * L * Itv L * L Itv' : 'groupby' ; //Group by interval agg
+'-: (-: * R Ord OrdV) -: * L * Ord L * L Ord' : 'groupby' ; //Group by ordinal agg
+'-: (-: * R Ext ExtV) -: * O * Ext O * O Ext' : 'groupby' ; //Group by sum
+'-: (-: * R Count CountV) -: * O * Count O * O Count' : 'groupby' ; //Group by sum
+'-: (-: L RatioV) -: * L * R O * O Ratio' : 'groupby' ; //Group by size
+'-: (-: O CountV) -: * O * R O * O Count' : 'groupby' ; //Group by count

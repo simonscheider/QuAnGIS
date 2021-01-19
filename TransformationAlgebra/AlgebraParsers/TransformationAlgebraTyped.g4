@@ -54,7 +54,8 @@
 		iv 		: IV ;
 		countv	: COUNTV;
 		
-		r		: nom | O | L | S ;
+		r		: R | nom | nq ;
+		nq		: NQ | O | L | S
 		boolr 	: BOOL ;
 		nom 	: NOM | ordr | boolr ;
 		ordr	: ORD | itv ;
@@ -83,6 +84,8 @@
 		L 		: 'L';
 		S 		: 'S';
 		BOOL	: 'Bool' ;
+		R		: 'R' ;
+		NQ		: 'NQ'
 		
 		NOMV	: 'NomV';
 		ORDV	: 'OrdV';

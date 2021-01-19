@@ -288,15 +288,64 @@ def parsewithTypeGrammar(line):
 '''This method takes a workflow in terms of an algebra expression and a list of function names with their algebra types, 
 and substitutes function calls with their types. The typed expression can then be parsed by the algebra type grammar and the 
 nodes in the tree can be typed by the type inference engine.'''
-def typeFunctions(line):
-    list = line.split()
-    print(list)
+def typeFunctions(line, dataypes,functiontypes):
+    sline = line.split()
+    newline = ''
+    print(sline)
+    lastkeyword = ''
+    for i, e in reversed(list(enumerate(sline))):
+        if e in dataypes.keys():
+            newline = ' ' + dataypes[e] + newline
+        elif e+' KEYWORD' in dataypes.keys():
+            newline = ' ' + dataypes[e+' KEYWORD'] + newline
+        elif e+' DATAV' in dataypes.keys():
+            newline = ' ' + dataypes[e+' DATAV'] + newline
+        elif e in functiontypes.keys():
+            for t in functiontypes[e]:
+                print(t + newline)
+        else:
+            pass
 
 
 
-def parse(line, format=json):
+'''This method reads a list of function types given in the typefile into dictionaries. Each line is a type declaration of some function. 
+For example: 
+//Value Derivations
+'-: RatioV -: RatioV RatioV' : 'ratio'  ;'''
+def readFunctionTypes(typefile):
+    functiontypes = {}
+    datatypes = {}
+    with open(typefile) as fp:
+        line = fp.readline()
+        #print(line)
+        while line:
+            line = (line.partition('//')[0]).strip()
+            if line is not None and line != '':
+                #print(line.split(' : '))
+                type = (line.split(' : ')[0]).strip().replace('\'', '')
+                expr = (line.split(' : ')[1]).strip(';').strip().split()
+                expr1 =  expr[0].replace('\'', '')
+                if len(expr)== 2:
+                    expr2 = expr[1].strip()
+                    expr1 = expr1 + " " + expr2
+                if type.startswith('-:'):
+                    if expr1 not in functiontypes.keys():
+                        functiontypes[expr1] = [type]
+                    else:
+                        functiontypes[expr1].append(type)
+                else:
+                    datatypes[expr1] = type
+            line = fp.readline()
+    fp.close()
+    print(datatypes)
+    print(functiontypes)
+    return (datatypes, functiontypes)
+
+
+
+def parse(line, datatypes,functiontypes, format=json):
     print("parse: " + line)
-    typeFunctions(line)
+    typeFunctions(line,datatypes,functiontypes)
     #treearray = parsewithTypeGrammar(line)
     #typePropagation(treearray)
 
@@ -309,21 +358,24 @@ def parse(line, format=json):
     #print outlatex
     return line #(outjson if format==json else outbracket)
 
-
-
-def main(file):
+def readwrite(file, datatypes,functiontypes):
     base = os.path.basename(file).split('.')[0]
     outfile = os.path.join(path,base+'.json')
     lines = []
     with open(file) as fp:
         line = fp.readline()
         while line:
-            lines.append(parse(line.rstrip()))
+            lines.append(parse(line.rstrip(), datatypes,functiontypes))
             line = fp.readline()
         fp.close()
     with open(outfile, 'w') as fout:
         json.dump(lines, fout)
         fout.close()
+
+def main(file):
+    (datatypes, functiontypes) = readFunctionTypes(os.path.join(path, 'TransformationAlgebraTypes.txt'))
+    readwrite(file, datatypes,functiontypes)
+
 
 
 path = r"C:\Users\schei008\.matplotlib\Documents\github\QuAnGIS\TransformationAlgebra\AlgebraParsers"
