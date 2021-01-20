@@ -59,7 +59,8 @@ def typeappl(tree):
         a = tree[1][2]  # '[a]' applicant
         assert a[0].__contains__('a')
         (applicants,newtree) = getfunctionapplicants(a, applicants, newtree)
-        assert checkconsistency(bodies, applicants)
+        cons = checkconsistency(bodies, applicants)
+        #print("consistent? "+str(cons))
     print("inferred type of "+str(tree[1][0])+": "+ str(inftype))
     return (inftype, newtree)
 
@@ -288,23 +289,36 @@ def parsewithTypeGrammar(line):
 '''This method takes a workflow in terms of an algebra expression and a list of function names with their algebra types, 
 and substitutes function calls with their types. The typed expression can then be parsed by the algebra type grammar and the 
 nodes in the tree can be typed by the type inference engine.'''
-def typeFunctions(line, dataypes,functiontypes):
+def typeFunctions(line, datatypes,functiontypes):
     sline = line.split()
     newline = ''
     print(sline)
     lastkeyword = ''
     for i, e in reversed(list(enumerate(sline))):
-        if e in dataypes.keys():
-            newline = ' ' + dataypes[e] + newline
-        elif e+' KEYWORD' in dataypes.keys():
-            newline = ' ' + dataypes[e+' KEYWORD'] + newline
-        elif e+' DATAV' in dataypes.keys():
-            newline = ' ' + dataypes[e+' DATAV'] + newline
+        if e in datatypes.keys():
+            print( e+': '+datatypes[e])
+            newline = ' ' + datatypes[e] + newline
+        elif e+' KEYWORD' in datatypes.keys():
+            print(e + ': ' + datatypes[e+' KEYWORD'])
+            newline = ' ' + datatypes[e+' KEYWORD'] + newline
+        elif e+' DATAV' in datatypes.keys():
+            print(e + ': ' + datatypes[e+' DATAV'])
+            newline = ' ' + datatypes[e+' DATAV'] + newline
         elif e in functiontypes.keys():
+            #lines = newline
+            #newline = []
             for t in functiontypes[e]:
-                print(t + newline)
-        else:
-            pass
+                print(e + ': ' + t)
+                newline=t + newline
+                print(newline)
+                treearray = parsewithTypeGrammar(newline)
+                typePropagation(treearray)
+                break
+            newline = ' ' + newline
+    #print(i)
+
+
+
 
 
 
@@ -367,6 +381,7 @@ def readwrite(file, datatypes,functiontypes):
         while line:
             lines.append(parse(line.rstrip(), datatypes,functiontypes))
             line = fp.readline()
+            break
         fp.close()
     with open(outfile, 'w') as fout:
         json.dump(lines, fout)

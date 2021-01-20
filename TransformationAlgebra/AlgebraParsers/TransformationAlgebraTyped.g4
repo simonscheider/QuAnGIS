@@ -19,7 +19,7 @@
      * Parser Rules
      */
 	//Start rules: 
-    	start : fa;				
+    	start : fa (WHITESPACE fa | WHITESPACE c)* ;				
 	
 	//Function Types		
 		fb : IMPLIED WHITESPACE c ; //first input type of a function type
@@ -55,7 +55,7 @@
 		countv	: COUNTV;
 		
 		r		: R | nom | nq ;
-		nq		: NQ | O | L | S
+		nq		: NQ | O | L | S ;
 		boolr 	: BOOL ;
 		nom 	: NOM | ordr | boolr ;
 		ordr	: ORD | itv ;
@@ -85,7 +85,7 @@
 		S 		: 'S';
 		BOOL	: 'Bool' ;
 		R		: 'R' ;
-		NQ		: 'NQ'
+		NQ		: 'NQ' ;
 		
 		NOMV	: 'NomV';
 		ORDV	: 'OrdV';

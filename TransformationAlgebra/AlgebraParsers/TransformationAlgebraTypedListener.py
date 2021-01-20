@@ -242,6 +242,15 @@ class TransformationAlgebraTypedListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by TransformationAlgebraTypedParser#nq.
+    def enterNq(self, ctx:TransformationAlgebraTypedParser.NqContext):
+        pass
+
+    # Exit a parse tree produced by TransformationAlgebraTypedParser#nq.
+    def exitNq(self, ctx:TransformationAlgebraTypedParser.NqContext):
+        pass
+
+
     # Enter a parse tree produced by TransformationAlgebraTypedParser#boolr.
     def enterBoolr(self, ctx:TransformationAlgebraTypedParser.BoolrContext):
         pass
