@@ -69,7 +69,7 @@ def typeappl(tree):
     #print("inferred type of "+str(tree[1][0])+": "+ str(inftype))
     return (cons,newtree)
 
-'''This method checks whether applicant types <= body types (applicant types are subtypes)'''
+'''This method checks whether applicant types <= body types (applicant types are subtypes of function body types)'''
 def checkconsistency(bodies, applicants):
     print("compare applicants: " + str(applicants))
     print("to function bodies: " + str(bodies))
@@ -80,12 +80,13 @@ def checkconsistency(bodies, applicants):
     print("consistent!") if out else print("inconsistent!")
     return out
 
-#This method needs to be generalized
+'''This method implements recursive type comparison, including subsumption'''
 def recomp(body,applicant, parent = ''):
     out = True
     if isinstance(body,str):
-        #This checks whether the type is equal (disregarding case (lexer)) to the parent type. If yes, equivalence was already checked.
-        if body == 'R':
+        #This checks whether body type is equal (disregarding case (lexer)) to the parent type. If yes, equivalence was already checked.
+        #This trick implements subsumption reasoning, because type checking stops in a lexer rule that corresponds to a supertyps that was already checked
+        if body.lower() == parent:
             out = True
         else:
             out = applicant == body
@@ -126,7 +127,6 @@ def getfunctionapplicants(a, applicants,newtree, cons):
     return (applicants,newtree, cons)
 
 
-
 '''Parse typed expression with Antlr4 grammar'''
 def parsewithTypeGrammar(line):
     input = InputStream(line)
@@ -147,26 +147,27 @@ def parsewithTypeGrammar(line):
     print(treearray)
     return treearray
 
-'''This method takes an algebra expression and a list of function names with their algebra types, 
-and substitutes function calls with their types, parses them and also checks for type correctness.
-Furthermore, it takes into account overloading: Building the typed version from the end, it substitutes all function types 
-one by one and keeps only types that make the expression type correct.'''
-def typeFunctions(line, datatypes,functiontypes):
+'''This method takes an algebra expression and a list of function/data names with their algebra types, 
+and substitutes function/data calls with their types, parses them, and checks for type correctness.
+Furthermore, it takes into account overloading: Building a typed exdpression from the end, it tries out function types 
+one by one and keeps only those types that make the expression type correct.'''
+def typeandparseExpression(line, datatypes,functiontypes):
     sline = line.split()
     newline = ''
-    res = ()
+    resulttree = []
+    sline = keywords(sline, datatypes,functiontypes)
     print(sline)
     for i, e in reversed(list(enumerate(sline))):
         cons = 0
         if e in datatypes.keys():
             print( e+': '+datatypes[e])
             newline = ' ' + datatypes[e] + newline
-        elif e+' KEYWORD' in datatypes.keys():
-            print(e + ': ' + datatypes[e+' KEYWORD'])
-            newline = ' ' + datatypes[e+' KEYWORD'] + newline
-        elif e+' DATAV' in datatypes.keys():
-            print(e + ': ' + datatypes[e+' DATAV'])
-            newline = ' ' + datatypes[e+' DATAV'] + newline
+        elif e.split()[0]+' KEYWORD' in datatypes.keys():
+            print(e + ': ' + datatypes[e.split()[0]+' KEYWORD'])
+            newline = ' ' + datatypes[e.split()[0]+' KEYWORD'] + newline
+        elif e.split()[0]+' DATAV' in datatypes.keys():
+            print(e + ': ' + datatypes[e.split()[0]+' DATAV'])
+            newline = ' ' + datatypes[e.split()[0]+' DATAV'] + newline
         elif e in functiontypes.keys():
             #lines = newline
             #newline = []
@@ -186,13 +187,43 @@ def typeFunctions(line, datatypes,functiontypes):
                 break
             else:
                 print("expression is type correct!")
-    return (newline,res)
+    resulttree = res[1]
+    resulttree = addFLabels(resulttree,sline, 0)[1]
+    print(resulttree)
+    return (newline,resulttree)
 
-    #print(i)
+# Recognizes keywords that can occur after an algebra term. It returns a list where keywords are appended to term string
+def keywords(ls, datatypes, functiontypes):
+        out = []
+        for i, e in reversed(list(enumerate(ls))):
+            if e + ' KEYWORD' in datatypes.keys():
+                e = e + ' ' + prev
+                out = [e] + out
+            elif e + ' DATAV' in datatypes.keys():
+                e = e + ' ' + prev
+                out = [e] + out
+            elif e in functiontypes.keys():
+                out = [e] + out
+            else:
+                prev = e
+        return out
 
+#Adds the function labels into the parse tree. The parse tree is walked through in LL direction, and the corresponding
+# function label is added as first child of each node, followed by the (result) type of that node. Tree children
+# are therefore located at index 2 etc. in the nested array
+def addFLabels(resulttree,sline, ind=0):
+    out = [sline[ind]]+[resulttree[0]]
+    #print(ind)
+    for index, item in enumerate(resulttree, start=0):
+        if index >0:
+            ind += 1
+            r = addFLabels(item,sline,ind)
+            out += [r[1]]
+            ind = r[0]
+    return (ind,out)
 
-'''This method reads a list of function types (given in a typefile) into dictionaries. Each line is a type declaration of some function. 
-For example: 
+'''This method reads a list of function types (given in a typefile) into dictionaries. Each line is a type declaration 
+of some function. For example: 
 //Value Derivations
 '-: RatioV -: RatioV RatioV' : 'ratio'  ;'''
 def readFunctionTypes(typefile):
@@ -224,12 +255,10 @@ def readFunctionTypes(typefile):
     print(functiontypes)
     return (datatypes, functiontypes)
 
-
-
 def parse(line, datatypes,functiontypes, format=json):
     print("parse: " + line)
-    (newline,res) = typeFunctions(line,datatypes,functiontypes)
-    return res[1] #(outjson if format==json else outbracket)
+    (newline,res) = typeandparseExpression(line,datatypes,functiontypes)
+    return [line ,res] #(outjson if format==json else outbracket)
 
 def readwrite(file, datatypes,functiontypes):
     base = os.path.basename(file).split('.')[0]
