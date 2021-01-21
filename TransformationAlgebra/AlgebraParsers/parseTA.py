@@ -44,7 +44,7 @@ def typeInference(treeasNestedArray=test):
         (cons,newtree) =typeappl(tree)
         print("inconsistent: " + str(cons))
         print("inferred type tree: "+str(newtree))
-        return cons
+        return (cons,newtree)
 
 '''This method infers the type of a function application (fa). To this end, it checks recursively 
 whether the function body types correspond to the types inferred from the applicants.
@@ -69,7 +69,7 @@ def typeappl(tree):
     #print("inferred type of "+str(tree[1][0])+": "+ str(inftype))
     return (cons,newtree)
 
-'''This method checks whether two lists of nested arrays are equal'''
+'''This method checks whether applicant types <= body types (applicant types are subtypes)'''
 def checkconsistency(bodies, applicants):
     print("compare applicants: " + str(applicants))
     print("to function bodies: " + str(bodies))
@@ -80,7 +80,7 @@ def checkconsistency(bodies, applicants):
     print("consistent!") if out else print("inconsistent!")
     return out
 
-#This needs to be generalized. Grammar needs to be
+#This method needs to be generalized
 def recomp(body,applicant, parent = ''):
     out = True
     if isinstance(body,str):
@@ -99,7 +99,8 @@ def recomp(body,applicant, parent = ''):
     return out
 
 
-'''This method takes a concept tree (function concept or simple concept) and returns the body and head types'''
+'''This method takes a concept tree (function concept or simple concept) and returns the body and head types. In case 
+the concept is simple, it only gives back the tree as head.'''
 def getfunctiontypes(ctree, bodies=[], head =[]):
         if ctree[1][1] == '-:': # is an n ary function concept
             bodyconcept = ctree[1][2]  # get function body concept '[c  ]'
@@ -147,14 +148,14 @@ def parsewithTypeGrammar(line):
     return treearray
 
 '''This method takes an algebra expression and a list of function names with their algebra types, 
-and substitutes function calls with their types, parses athem and checks type correctness.
-It also takes into account overloading: Building the typed version from the end, it substitutes function types and 
-keeps only correct types.'''
+and substitutes function calls with their types, parses them and also checks for type correctness.
+Furthermore, it takes into account overloading: Building the typed version from the end, it substitutes all function types 
+one by one and keeps only types that make the expression type correct.'''
 def typeFunctions(line, datatypes,functiontypes):
     sline = line.split()
     newline = ''
+    res = ()
     print(sline)
-    lastkeyword = ''
     for i, e in reversed(list(enumerate(sline))):
         cons = 0
         if e in datatypes.keys():
@@ -174,7 +175,8 @@ def typeFunctions(line, datatypes,functiontypes):
                 testline=t + newline
                 print(testline)
                 treearray = parsewithTypeGrammar(testline)
-                cons = typeInference(treearray)
+                res = typeInference(treearray)
+                cons = res[0]
                 if cons == 0: #if tree is consistent, continue
                     newline = testline
                     break
@@ -182,12 +184,11 @@ def typeFunctions(line, datatypes,functiontypes):
             if cons > 0:
                 print("expression is not type correct!")
                 break
+            else:
+                print("expression is type correct!")
+    return (newline,res)
 
     #print(i)
-
-
-
-
 
 
 '''This method reads a list of function types (given in a typefile) into dictionaries. Each line is a type declaration of some function. 
@@ -227,18 +228,8 @@ def readFunctionTypes(typefile):
 
 def parse(line, datatypes,functiontypes, format=json):
     print("parse: " + line)
-    typeFunctions(line,datatypes,functiontypes)
-    #treearray = parsewithTypeGrammar(line)
-    #typeInference(treearray)
-
-    #pp = pprint.PrettyPrinter(indent=2)
-    #outjson = todict(treearray)
-    #outbracket = bracket(treearray)
-    #json.dumps(treearray, cls=PyParseEncoder, sort_keys=False, indent=2)
-
-    #print(outbracket)
-    #print outlatex
-    return line #(outjson if format==json else outbracket)
+    (newline,res) = typeFunctions(line,datatypes,functiontypes)
+    return res[1] #(outjson if format==json else outbracket)
 
 def readwrite(file, datatypes,functiontypes):
     base = os.path.basename(file).split('.')[0]
