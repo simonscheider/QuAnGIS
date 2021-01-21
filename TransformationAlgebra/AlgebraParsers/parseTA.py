@@ -26,6 +26,7 @@ import unicodedata
 
 from pyparsing import *
 
+#this takes a LISP tree string and returns a nested array (Json dict)
 def toDict(treeasString):
     enclosed = Forward()
     nestedParens = nestedExpr('(', ')', content=enclosed)
@@ -34,8 +35,10 @@ def toDict(treeasString):
     #print tree
     return tree
 
-test=[['start', ['fa', ['fa2', ['fc2', ['fb', '-:', ['c', ['r', 'O']]], ['fc1', ['fb', '-:', ['c', ['r', 'O']]], ['c', ['rrr', '*', ['r', 'O'], ['rr', '*', ['r', ['nom', 'Nom']], ['r', 'O']]]]]], ['a2', ['fa', ['fa1', ['fc1', ['fb', '-:', ['c', ['r', ['nom', 'Nom']]]], ['c', ['r', 'O']]], ['a1', ['fa', ['fa0', ['c', ['r', ['nom', 'Nom']]]]]]]], ['a1', ['fa', ['fa0', ['c', ['r', 'O']]]]]]]]]]
 
+#--------------------- Methods for type inference and checking of type correctness of a typed parse tree (given as nested array)
+
+test=[['start', ['fa', ['fa2', ['fc2', ['fb', '-:', ['c', ['r', 'O']]], ['fc1', ['fb', '-:', ['c', ['r', 'O']]], ['c', ['rrr', '*', ['r', 'O'], ['rr', '*', ['r', ['nom', 'Nom']], ['r', 'O']]]]]], ['a2', ['fa', ['fa1', ['fc1', ['fb', '-:', ['c', ['r', ['nom', 'Nom']]]], ['c', ['r', 'O']]], ['a1', ['fa', ['fa0', ['c', ['r', ['nom', 'Nom']]]]]]]], ['a1', ['fa', ['fa0', ['c', ['r', 'O']]]]]]]]]]
 #This method does type propagation and type checking within a typed workflow parse tree. It adds inferred types to the workflow nodes and checks for type clashes.
 def typeInference(treeasNestedArray=test):
     print("infer types")
@@ -127,7 +130,11 @@ def getfunctionapplicants(a, applicants,newtree, cons):
     return (applicants,newtree, cons)
 
 
-'''Parse typed expression with Antlr4 grammar'''
+
+#--------------------- Method for typed algebra expression parsing using type grammar
+#-: * O Nom -: NomV * O Nom * O S OV OrdV
+
+'''Parse typed algebra expression with Antlr4 grammar'''
 def parsewithTypeGrammar(line):
     input = InputStream(line)
     # lexer = TransformationAlgebraLexer(input)
@@ -147,7 +154,10 @@ def parsewithTypeGrammar(line):
     print(treearray)
     return treearray
 
-'''This method takes an algebra expression and a list of function/data names with their algebra types, 
+#--------------------- Methods for non-typed algebra expression parsing using a type declaration file and type inference check
+# reify pi1 sigmale bowtie revert contour noise deify
+
+'''This method takes an original (non-typed) algebra expression and a list of function/data names with their type declaration, 
 and substitutes function/data calls with their types, parses them, and checks for type correctness.
 Furthermore, it takes into account overloading: Building a typed exdpression from the end, it tries out function types 
 one by one and keeps only those types that make the expression type correct.'''
@@ -222,9 +232,11 @@ def addFLabels(resulttree,sline, ind=0):
             ind = r[0]
     return (ind,out)
 
-'''This method reads a list of function types (given in a typefile) into dictionaries. Each line is a type declaration 
-of some function. For example: 
-//Value Derivations
+
+#--------------------- Methods for reading type declarations
+
+'''This method reads a list of typed function/data labels (given as a type declaration) into dictionaries. Each line is a type declaration 
+of some function. For example, here is a declaration of the function 'ratio': 
 '-: RatioV -: RatioV RatioV' : 'ratio'  ;'''
 def readFunctionTypes(typefile):
     functiontypes = {}
@@ -254,6 +266,9 @@ def readFunctionTypes(typefile):
     print(datatypes)
     print(functiontypes)
     return (datatypes, functiontypes)
+
+
+#--------------------- Parser methods
 
 def parse(line, datatypes,functiontypes, format=json):
     print("parse: " + line)
