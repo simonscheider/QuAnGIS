@@ -22,6 +22,7 @@ from antlr4.tree.Trees import Trees
 import sys, os, re
 import pprint
 import json
+import unicodedata
 
 from pyparsing import *
 
@@ -36,12 +37,14 @@ def toDict(treeasString):
 test=[['start', ['fa', ['fa2', ['fc2', ['fb', '-:', ['c', ['r', 'O']]], ['fc1', ['fb', '-:', ['c', ['r', 'O']]], ['c', ['rrr', '*', ['r', 'O'], ['rr', '*', ['r', ['nom', 'Nom']], ['r', 'O']]]]]], ['a2', ['fa', ['fa1', ['fc1', ['fb', '-:', ['c', ['r', ['nom', 'Nom']]]], ['c', ['r', 'O']]], ['a1', ['fa', ['fa0', ['c', ['r', ['nom', 'Nom']]]]]]]], ['a1', ['fa', ['fa0', ['c', ['r', 'O']]]]]]]]]]
 
 #This method does type propagation and type checking within a typed workflow parse tree. It adds inferred types to the workflow nodes and checks for type clashes.
-def typePropagation(treeasNestedArray=test):
+def typeInference(treeasNestedArray=test):
     print("infer types")
     if treeasNestedArray[0][0] == 'start':
         tree = treeasNestedArray[0][1]
-        (inftype, newtree) =typeappl(tree)
+        (cons,newtree) =typeappl(tree)
+        print("inconsistent: " + str(cons))
         print("inferred type tree: "+str(newtree))
+        return cons
 
 '''This method infers the type of a function application (fa). To this end, it checks recursively 
 whether the function body types correspond to the types inferred from the applicants.
@@ -50,6 +53,7 @@ def typeappl(tree):
     assert tree[0]== 'fa'
     bodies = []
     head = []
+    cons= 0
     applicants = []
     c = tree[1][1]  #concept: '[fc]' function concept or simple [c] concept
     (head, bodies) = getfunctiontypes(c, bodies, head)
@@ -58,22 +62,42 @@ def typeappl(tree):
     if c[0].__contains__('fc'):  # thus the function is at least unary, then it needs to have also applicants
         a = tree[1][2]  # '[a]' applicant
         assert a[0].__contains__('a')
-        (applicants,newtree) = getfunctionapplicants(a, applicants, newtree)
-        cons = checkconsistency(bodies, applicants)
+        (applicants,newtree, cons) = getfunctionapplicants(a, applicants, newtree, cons)
+        if not checkconsistency(bodies, applicants):
+            cons+= 1
         #print("consistent? "+str(cons))
-    print("inferred type of "+str(tree[1][0])+": "+ str(inftype))
-    return (inftype, newtree)
+    #print("inferred type of "+str(tree[1][0])+": "+ str(inftype))
+    return (cons,newtree)
 
 '''This method checks whether two lists of nested arrays are equal'''
 def checkconsistency(bodies, applicants):
-    #print("compare applicants: " + str(applicants))
-    #print("to function bodies: " + str(bodies))
+    print("compare applicants: " + str(applicants))
+    print("to function bodies: " + str(bodies))
     out = True
     for idx,i in enumerate(bodies):
-        if i!=applicants[idx]:
+        if not recomp(i,applicants[idx]):
             out = False
     print("consistent!") if out else print("inconsistent!")
     return out
+
+#This needs to be generalized. Grammar needs to be
+def recomp(body,applicant, parent = ''):
+    out = True
+    if isinstance(body,str):
+        #This checks whether the type is equal (disregarding case (lexer)) to the parent type. If yes, equivalence was already checked.
+        if body == 'R':
+            out = True
+        else:
+            out = applicant == body
+    elif isinstance(body, list) and isinstance(applicant, list):
+        parent = body[0]
+        for idx, i in enumerate(body):
+            if idx >= len(applicant) or not recomp(i, applicant[idx], parent) :
+                out = False
+    else:
+        return False
+    return out
+
 
 '''This method takes a concept tree (function concept or simple concept) and returns the body and head types'''
 def getfunctiontypes(ctree, bodies=[], head =[]):
@@ -87,186 +111,22 @@ def getfunctiontypes(ctree, bodies=[], head =[]):
         return (head, bodies)
 
 '''This method retrieves a list of applicant types from a nested array of applicants'''
-def getfunctionapplicants(a, applicants,newtree):
+def getfunctionapplicants(a, applicants,newtree, cons):
     assert a[1][0] == 'fa'
     fa = a[1]
-    (inftype, tree) = typeappl(fa)
+    (consl,tree) = typeappl(fa)
+    cons += consl
+    #print("function application: "+str(tree))
+    inftype = tree[0]
     applicants.append(inftype)
     newtree.append(tree)
     if a[0] != "a1":
-        (applicants,newtree) = getfunctionapplicants(a[2], applicants,newtree)
-    return (applicants,newtree)
+        (applicants,newtree, cons) = getfunctionapplicants(a[2], applicants,newtree, cons)
+    return (applicants,newtree, cons)
 
 
 
-
-
-
-# def bracket(tree):
-#     out = ''
-#     function =False
-#     size = len(tree)
-#     for ix, node in enumerate(tree):
-#         comma = ', ' if function == True and ix >2 else ''
-#         if ix ==0:
-#             type = node
-#         else:
-#             if isinstance(node, list):
-#                 inner = bracket(node)
-#                 out+=comma+inner
-#             elif isinstance(node,basestring) :
-#                 if ix == 1 and size > 2:
-#                     out+= node + '('
-#                     function = True
-#                 else:
-#                     out+= comma+node
-#     if function:
-#         out+= ')'
-#         function = False
-#         out +=' :'+type #return type
-#     if ix == 1 and isinstance(node,basestring):
-#         out +=' :'+type #data type
-#     return out
-
-# def latexfunction(string):
-#     if '_' in string:
-#         under =string.split('_')
-#         string = under[0]+'_{'+under[1]+'}'
-#     if 'bowtie' in string:
-#         string = '$\it{\\bowtie'+string.split('bowtie')[1]+'}$'
-#     if 'groupby' in string:
-#         string = '$\it{\\beta'+string.split('groupby')[1]+'}$'
-#     if 'pi' in string:
-#         string = '$\it{\\pi'+string.split('pi')[1]+'}$'
-#     string = string.replace('sigmae','$\sigma_{=}$')
-#     string = string.replace('sigmale','$\sigma_\\leq$')
-#     string = string.replace('sigmage','$\sigma_\\geq$')
-#     string = string.replace('*','^*')
-#     string = string.replace('1', '^1')
-#     string = string.replace('2', '^2')
-#     string = string.replace('topo', 'Topo')
-#     string = string.replace('dist', 'Dist')
-#     return string
-
-# def latextype(string):
-#     if 'ord' in string:
-#         ord =string.split('ord')
-#         if string.endswith('ord'):
-#             string = ord[0].upper()+'Ord'
-#         elif string.startswith('ord'):
-#             string = 'Ord' + ord[1].upper()
-#         else:
-#             string = ord[0].upper()+'Ord'+ord[1].upper()
-#     elif 'nom' in string:
-#         ord =string.split('nom')
-#         if string.endswith('nom'):
-#             string = ord[0].upper()+'Nom'
-#         elif string.startswith('nom'):
-#             string = 'Nom' + ord[1].upper()
-#         else:
-#             string = ord[0].upper()+'Nom'+ord[1].upper()
-#
-#     elif 'int' in string:
-#         ord =string.split('int')
-#         if string.endswith('int'):
-#             string = ord[0].upper()+'Int'
-#         elif string.startswith('int'):
-#             string = 'Int' + ord[1].upper()
-#         else:
-#             string = ord[0].upper()+'Int'+ord[1].upper()
-#
-#     elif 'ratio' in string:
-#         ord =string.split('ratio')
-#         if string.endswith('ratio'):
-#             string = ord[0].upper()+'Ratio'
-#         elif string.startswith('ratio'):
-#             string = 'Ratio' + ord[1].upper()
-#         else:
-#             string = ord[0].upper()+'Ratio'+ord[1].upper()
-#     elif 'count' in string:
-#         ord =string.split('count')
-#         if string.endswith('count'):
-#             string = ord[0].upper()+'Count'
-#         elif string.startswith('count'):
-#             string = 'Count' + ord[1].upper()
-#         else:
-#             string = ord[0].upper()+'Count'+ord[1].upper()
-#     elif 'q' in string:
-#         ord =string.split('q')
-#         if string.endswith('q'):
-#             string = ord[0].upper()+'Q'
-#         elif string.startswith('q'):
-#             string = 'Q' + ord[1].upper()
-#         else:
-#             string = ord[0].upper()+'Q'+ord[1].upper()
-#     else:
-#         string = string.upper()
-#     return string
-#
-#
-# def latex(tree, level=0):
-#     out = ''
-#     function =False
-#     size = len(tree)
-#     indent =  ('$\\vert$\\>'*level) + ''
-#     for ix, node in enumerate(tree):
-#         comma = indent +', \\\ ' if function == True and ix >2 else ''
-#         if ix ==0:
-#             type = latextype(node)
-#         else:
-#             if isinstance(node, list):
-#                 incr = 1
-#                 if ix == 1:
-#                     incr =0
-#                 inner = latex(node,level+incr)
-#                 out+=comma+inner
-#             elif isinstance(node,basestring) :
-#                 node = latexfunction(node)
-#                 if ix == 1 and size > 2:
-#                     out+= indent +node + '( \\\ '
-#                     function = True
-#                 else:
-#
-#                     out+= comma+indent +node +(' :'+type if ix == 1 else '') + ' \\\ '
-#     if function:
-#         out+= indent +')'
-#         function = False
-#         out +=' :'+type + ' \\\ ' #return type
-#     if ix == 1 and isinstance(node,basestring):
-#         pass
-#         #out +=' :'+type + ' \\\ '#data type
-#     return out
-
-
-# def todict(tree):
-#     out = {}
-#     function =False
-#     size = len(tree)
-#     for ix, node in enumerate(tree):
-#         comma = ', ' if function == True and ix >2 else ''
-#         if ix ==0:
-#             type = node
-#         else:
-#             if isinstance(node, list):
-#                 inner = todict(node)
-#                 if out != {}:
-#                     out['input'+str(ix-1)]=inner
-#                 else:
-#                     out = inner
-#             elif isinstance(node,basestring) :
-#                 if ix == 1 and size > 2:
-#                     out['function']= node
-#                     function = True
-#                 else:
-#                     out['input'+str(ix-1)]=node
-#     if function:
-#         function = False
-#         out['type']=type #return type
-#     if ix == 1 and isinstance(node,basestring):
-#         out['type']=type #data type
-#     #print out
-#     return out
-
+'''Parse typed expression with Antlr4 grammar'''
 def parsewithTypeGrammar(line):
     input = InputStream(line)
     # lexer = TransformationAlgebraLexer(input)
@@ -286,15 +146,17 @@ def parsewithTypeGrammar(line):
     print(treearray)
     return treearray
 
-'''This method takes a workflow in terms of an algebra expression and a list of function names with their algebra types, 
-and substitutes function calls with their types. The typed expression can then be parsed by the algebra type grammar and the 
-nodes in the tree can be typed by the type inference engine.'''
+'''This method takes an algebra expression and a list of function names with their algebra types, 
+and substitutes function calls with their types, parses athem and checks type correctness.
+It also takes into account overloading: Building the typed version from the end, it substitutes function types and 
+keeps only correct types.'''
 def typeFunctions(line, datatypes,functiontypes):
     sline = line.split()
     newline = ''
     print(sline)
     lastkeyword = ''
     for i, e in reversed(list(enumerate(sline))):
+        cons = 0
         if e in datatypes.keys():
             print( e+': '+datatypes[e])
             newline = ' ' + datatypes[e] + newline
@@ -307,14 +169,20 @@ def typeFunctions(line, datatypes,functiontypes):
         elif e in functiontypes.keys():
             #lines = newline
             #newline = []
-            for t in functiontypes[e]:
+            for t in functiontypes[e]: #Because of function overloading, we have to test through all possible function types
                 print(e + ': ' + t)
-                newline=t + newline
-                print(newline)
-                treearray = parsewithTypeGrammar(newline)
-                typePropagation(treearray)
+                testline=t + newline
+                print(testline)
+                treearray = parsewithTypeGrammar(testline)
+                cons = typeInference(treearray)
+                if cons == 0: #if tree is consistent, continue
+                    newline = testline
+                    break
+            newline = ' ' + newline #add whitespace
+            if cons > 0:
+                print("expression is not type correct!")
                 break
-            newline = ' ' + newline
+
     #print(i)
 
 
@@ -322,7 +190,7 @@ def typeFunctions(line, datatypes,functiontypes):
 
 
 
-'''This method reads a list of function types given in the typefile into dictionaries. Each line is a type declaration of some function. 
+'''This method reads a list of function types (given in a typefile) into dictionaries. Each line is a type declaration of some function. 
 For example: 
 //Value Derivations
 '-: RatioV -: RatioV RatioV' : 'ratio'  ;'''
@@ -361,7 +229,7 @@ def parse(line, datatypes,functiontypes, format=json):
     print("parse: " + line)
     typeFunctions(line,datatypes,functiontypes)
     #treearray = parsewithTypeGrammar(line)
-    #typePropagation(treearray)
+    #typeInference(treearray)
 
     #pp = pprint.PrettyPrinter(indent=2)
     #outjson = todict(treearray)
