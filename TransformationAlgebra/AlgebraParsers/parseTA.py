@@ -1,19 +1,21 @@
 #-------------------------------------------------------------------------------
 # Name:        parseTA
-# Purpose:     Python script for parsing a textfile of lines written in "TransformationAlgebra.g4" to make use of the parse tree.
-#              The parse tree is read and turned into different forms (typed workflow string, latex, json).
+# Purpose:     Python script for parsing a textfile of lines written in "TransformationAlgebra" making use of a
+#               - higher order type grammar (ANTLR4) and corresponding parser for typed algebra expressions
+#               - a type inference method plus type checker (in Python) for typed algebra expressions
+#               - an algebra parser (in Python) that combines both to parse and type check an algebra expression
 #
 # Author:      Schei008
 #
-# Created:     29-02-2020
-# Copyright:   (c) Schei008 2020
+# Created:     21-01-2021
+# Copyright:   (c) Schei008 2021
 # Licence:     MIT
 #-------------------------------------------------------------------------------
 
 
-from TransformationAlgebraLexer import TransformationAlgebraLexer
-from TransformationAlgebraListener import TransformationAlgebraListener
-from TransformationAlgebraParser import TransformationAlgebraParser
+# from TransformationAlgebraLexer import TransformationAlgebraLexer
+# from TransformationAlgebraListener import TransformationAlgebraListener
+# from TransformationAlgebraParser import TransformationAlgebraParser
 from TransformationAlgebraTypedLexer import TransformationAlgebraTypedLexer
 from TransformationAlgebraTypedListener import TransformationAlgebraTypedListener
 from TransformationAlgebraTypedParser import TransformationAlgebraTypedParser
@@ -27,6 +29,7 @@ import unicodedata
 from pyparsing import *
 
 #this takes a LISP tree string and returns a nested array (Json dict)
+# All trees in this script are LISP trees
 def toDict(treeasString):
     enclosed = Forward()
     nestedParens = nestedExpr('(', ')', content=enclosed)
