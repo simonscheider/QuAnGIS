@@ -7,7 +7,7 @@
 @base <http://geographicknowledge.de/vocab/CoreConceptData.rdf> .
 
 <http://geographicknowledge.de/vocab/CoreConceptData.rdf> rdf:type owl:Ontology ;
-                                                           rdfs:comment "This ontology pattern describes geodata types representing core concepts of spatial information (Kuhn 2012) we well as further semantic attribute distinctions relevant for geocomputation and geo-analysis."@en ;
+                                                           rdfs:comment "This ontology pattern describes geodata types representing core concepts of spatial information (Kuhn 2012) we well as further semantic attribute distinctions relevant for geocomputation and geo-analysis. The ontology was introduced in: Scheider et la. (2020): Ontology of core concept data types for answering geo-analytical questions. Journal of Spatial Information Science 20 (2020): 167-201. https://josis.org/index.php/josis/article/view/125 "@en ;
                                                            rdfs:seeAlso <http://spatial.ucsb.edu/core-concepts-of-spatial-information/> .
 
 #################################################################
@@ -141,6 +141,11 @@
 :CountA rdf:type owl:Class ;
         rdfs:subClassOf :RatioA ;
         rdfs:comment "An attribute that denotes counts of discrete entities (compare Chrisman 1998)"@en .
+        
+###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#CyclicA
+:CyclicA a owl:Class ;
+    rdfs:comment "An attribute that denotes a cyclical measure, like an angle. Note that cyclical measures don't have a natural ordering and thus are not ordinal scaled. (compare Chrisman 1998)"@en ;
+    rdfs:subClassOf :NominalA .
 
 
 ###  http://geographicknowledge.de/vocab/CoreConceptData.rdf#Coverage
