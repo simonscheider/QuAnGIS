@@ -1,0 +1,1326 @@
+[main] INFO org.semanticweb.owlapi.rdf.rdfxml.parser.AbstractState - Notice: root element does not have an xml:base. Relative IRIs will be resolved against file:/C:/Users/schei008/.matplotlib/Documents/github/QuAnGIS/WorkflowSynthesis/./retrievalsynth/taxonomy.rdf
+-------------------------------------------------------------
+	Constraint templates:
+-------------------------------------------------------------
+{
+  "constraints": [
+{
+   "constraintID": "ngen_t",
+   "description": "Do not generate type ${parameter_1} in the solution.",
+   "parameters": [[
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+   ]]
+},
+{
+   "constraintID": "gen_ite_t",
+   "description": "If we have generated data type ${parameter_1}, then generate type ${parameter_2} subsequently.",
+   "parameters": [
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ],
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ]
+   ]
+},
+{
+   "constraintID": "use_ite_t",
+   "description": "If we have used data type ${parameter_1}, then use type ${parameter_2} subsequently.",
+   "parameters": [
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ],
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ]
+   ]
+},
+{
+   "constraintID": "gen_itn_t",
+   "description": "If we have generated data type ${parameter_1}, then do not generate type ${parameter_2} subsequently.",
+   "parameters": [
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ],
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ]
+   ]
+},
+{
+   "constraintID": "itn_m",
+   "description": "If we use module ${parameter_1}, then do not use ${parameter_2} subsequently.",
+   "parameters": [
+      ["https://quangis.github.io/vocab/tool#Abstraction"],
+      ["https://quangis.github.io/vocab/tool#Abstraction"]
+   ]
+},
+{
+   "constraintID": "use_m",
+   "description": "Use module ${parameter_1} in the solution.",
+   "parameters": [["https://quangis.github.io/vocab/tool#Abstraction"]]
+},
+{
+   "constraintID": "ite_m",
+   "description": "If we use module ${parameter_1}, then use ${parameter_2} subsequently.",
+   "parameters": [
+      ["https://quangis.github.io/vocab/tool#Abstraction"],
+      ["https://quangis.github.io/vocab/tool#Abstraction"]
+   ]
+},
+{
+   "constraintID": "prev_m",
+   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} as a previous module in the sequence.",
+   "parameters": [
+      ["https://quangis.github.io/vocab/tool#Abstraction"],
+      ["https://quangis.github.io/vocab/tool#Abstraction"]
+   ]
+},
+{
+   "constraintID": "nuse_t",
+   "description": "Do not use type ${parameter_1} in the solution.",
+   "parameters": [[
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+   ]]
+},
+{
+   "constraintID": "depend_m",
+   "description": "If we use module ${parameter_1}, then we must have used ${parameter_2} prior to it.",
+   "parameters": [
+      ["https://quangis.github.io/vocab/tool#Abstraction"],
+      ["https://quangis.github.io/vocab/tool#Abstraction"]
+   ]
+},
+{
+   "constraintID": "use_t",
+   "description": "Use type ${parameter_1} in the solution.",
+   "parameters": [[
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+   ]]
+},
+{
+   "constraintID": "nuse_m",
+   "description": "Do not use module ${parameter_1} in the solution.",
+   "parameters": [["https://quangis.github.io/vocab/tool#Abstraction"]]
+},
+{
+   "constraintID": "last_m",
+   "description": "Use ${parameter_1} as last module in the solution.",
+   "parameters": [["https://quangis.github.io/vocab/tool#Abstraction"]]
+},
+{
+   "constraintID": "next_m",
+   "description": "If we use module ${parameter_1}, then use ${parameter_2} as a next module in the sequence.",
+   "parameters": [
+      ["https://quangis.github.io/vocab/tool#Abstraction"],
+      ["https://quangis.github.io/vocab/tool#Abstraction"]
+   ]
+},
+{
+   "constraintID": "use_itn_t",
+   "description": "If we have used data type ${parameter_1}, then do not use type ${parameter_2} subsequently.",
+   "parameters": [
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ],
+      [
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+         "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+      ]
+   ]
+},
+{
+   "constraintID": "gen_t",
+   "description": "Generate type ${parameter_1} in the solution.",
+   "parameters": [[
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA",
+      "http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"
+   ]]
+},
+    ]
+}
+
+-------------------------------------------------------------
+	Tool Taxonomy:
+-------------------------------------------------------------
+ Abstraction[ROOT]
+ . AddandCalculateAttribute[ABSTRACT]
+ . . CalculateProdPointObjects[ABSTRACT]
+ . . . CalculateProdPointObjects[LEAF]
+ . . addObjectCapacity[ABSTRACT]
+ . . . addObjectCapacity[LEAF]
+ . . ConvertDist2TravelTimeonObjects[ABSTRACT]
+ . . . ConvertDist2TravelTimeonObjects[LEAF]
+ . . CalculateProd[ABSTRACT]
+ . . . CalculateProd[LEAF]
+ . . CalculateObjectSpatialAmount[ABSTRACT]
+ . . . CalculateObjectSpatialAmount[LEAF]
+ . CalculateObjectVectorDensity[ABSTRACT]
+ . . CalculateObjectVectorDensity[ABSTRACT]
+ . . . CalculateObjectVectorDensity[LEAF]
+ . IDWInterval[ABSTRACT]
+ . . IDWInterval[ABSTRACT]
+ . . . IDWInterval[LEAF]
+ . LoadCountAmounts[ABSTRACT]
+ . . LoadCountAmounts[ABSTRACT]
+ . . . LoadCountAmounts[LEAF]
+ . ClosestFacilityAnalysis[ABSTRACT]
+ . . ClostestFacilityAnalysis[ABSTRACT]
+ . . . ClostestFacilityAnalysis[LEAF]
+ . RasterToIsoRaster[ABSTRACT]
+ . . RasterToIsoRaster[ABSTRACT]
+ . . . RasterToIsoRaster[LEAF]
+ . ZonalStatistics[ABSTRACT]
+ . . ZonalStatisticsMeanRatio[ABSTRACT]
+ . . . ZonalStatisticsMeanRatio[LEAF]
+ . . ZonalStatisticsSize[ABSTRACT]
+ . . . ZonalStatisticsSize[LEAF]
+ . . ZonalStatisticsMeanInterval[ABSTRACT]
+ . . . ZonalStatisticsMeanInterval[LEAF]
+ . . ZonalStatisticsSumCount[ABSTRACT]
+ . . . ZonalStatisticsSumCount[LEAF]
+ . SpatialJoin[ABSTRACT]
+ . . SpatialJoinAmountSumTessRatio[ABSTRACT]
+ . . . SpatialJoinAmountSumTessRatio[LEAF]
+ . . SpatialJoinMeanTessInterval[ABSTRACT]
+ . . . SpatialJoinMeanTessInterval[LEAF]
+ . . SpatialJoinMeanTessRatio[ABSTRACT]
+ . . . SpatialJoinMeanTessRatio[LEAF]
+ . . SpatialJoin[ABSTRACT]
+ . . . SpatialJoin[LEAF]
+ . . SpatialJoinSumTessCount[ABSTRACT]
+ . . . SpatialJoinSumTessCount[LEAF]
+ . . SpatialJoinCountTess[ABSTRACT]
+ . . . SpatialJoinCountTess[LEAF]
+ . . SpatialJoinSumTessRatio[ABSTRACT]
+ . . . SpatialJoinSumTessRatio[LEAF]
+ . . SpatialJoinMeanTessCount[ABSTRACT]
+ . . . SpatialJoinMeanTessCount[LEAF]
+ . . SpatialJoinAmountSumTessCount[ABSTRACT]
+ . . . SpatialJoinAmountSumTessCount[LEAF]
+ . RasterCalculator[ABSTRACT]
+ . . LocalMapAlgebraSubOrder[ABSTRACT]
+ . . . LocalMapAlgebraSubOrder[LEAF]
+ . . LocalMapAlgebraDivide[ABSTRACT]
+ . . . LocalMapAlgebraDivide[LEAF]
+ . . LocalMapAlgebraSubRatio[ABSTRACT]
+ . . . LocalMapAlgebraSubRatio[LEAF]
+ . . LocalMapAlgebraInvert[ABSTRACT]
+ . . . LocalMapAlgebraInvert[LEAF]
+ . CreateRandomPoints[ABSTRACT]
+ . . CreateRandomPoints[ABSTRACT]
+ . . . CreateRandomPoints[LEAF]
+ . InterpolateDensityonObjects2LineObject[ABSTRACT]
+ . . InterpolateDensityonObjects2LineObject[ABSTRACT]
+ . . . InterpolateDensityonObjects2LineObject[LEAF]
+ . SnapPourPoint[ABSTRACT]
+ . . SnapPourPoint[ABSTRACT]
+ . . . SnapPourPoint[LEAF]
+ . CreateNetwork[ABSTRACT]
+ . . CreateAndBuildNetwork[ABSTRACT]
+ . . . CreateAndBuildNetwork[LEAF]
+ . . CreateNetwork[ABSTRACT]
+ . . . CreateNetwork[LEAF]
+ . SummaryStatistics[ABSTRACT]
+ . . SummaryStatistics2[ABSTRACT]
+ . . . SummaryStatistics2[LEAF]
+ . . SummaryStatistics[ABSTRACT]
+ . . . SummaryStatistics[LEAF]
+ . . SummaryStatistics3[ABSTRACT]
+ . . . SummaryStatistics3[LEAF]
+ . . SummaryStatisticsAmount[ABSTRACT]
+ . . . SummaryStatisticsAmount[LEAF]
+ . . ObjectSummaryStatisticsAmount[ABSTRACT]
+ . . . ObjectSummaryStatisticsAmount[LEAF]
+ . ZonalStatisticsSumField[ABSTRACT]
+ . . ZonalStatisticsSumField[ABSTRACT]
+ . . . ZonalStatisticsSumField[LEAF]
+ . Merge[ABSTRACT]
+ . . Merge[ABSTRACT]
+ . . . Merge[LEAF]
+ . ExportFeatures[ABSTRACT]
+ . . ExportFeatures[ABSTRACT]
+ . . . ExportFeatures[LEAF]
+ . SelectLayerByLocation[ABSTRACT]
+ . . SelectLayerByLocation[ABSTRACT]
+ . . . SelectLayerByLocation[LEAF]
+ . VelocityField[ABSTRACT]
+ . . VelocityFieldDEM[ABSTRACT]
+ . . . VelocityFieldDEM[LEAF]
+ . Dissolve[ABSTRACT]
+ . . MergeObjects[ABSTRACT]
+ . . . MergeObjects[LEAF]
+ . JoinObjectRatios[ABSTRACT]
+ . . JoinObjectRatios[ABSTRACT]
+ . . . JoinObjectRatios[LEAF]
+ . Erase[ABSTRACT]
+ . . EraseFieldExtentfromFieldVector[ABSTRACT]
+ . . . EraseFieldExtentfromFieldVector[LEAF]
+ . Clip[ABSTRACT]
+ . . ClipBoolFieldVector2Extent[ABSTRACT]
+ . . . ClipBoolFieldVector2Extent[LEAF]
+ . . ClipNomFieldVector2Extent[ABSTRACT]
+ . . . ClipNomFieldVector2Extent[LEAF]
+ . . ClipObject2Object[ABSTRACT]
+ . . . ClipObject2Object[LEAF]
+ . . ClipFieldRaster2ObjectExtent[ABSTRACT]
+ . . . ClipFieldRaster2ObjectExtent[LEAF]
+ . JoinCountAttribute[ABSTRACT]
+ . . JoinCountAttribute[ABSTRACT]
+ . . . JoinCountAttribute[LEAF]
+ . RegionFromRasterExtent[ABSTRACT]
+ . . RegionFromRasterExtent[ABSTRACT]
+ . . . RegionFromRasterExtent[LEAF]
+ . TSPRouting[ABSTRACT]
+ . . TSPRouting[ABSTRACT]
+ . . . TSPRouting[LEAF]
+ . . RouteAnalysis[ABSTRACT]
+ . . . RouteAnalysis[LEAF]
+ . SelectLayerByAttributeTessObjects[ABSTRACT]
+ . . SelectLayerByAttributeTessObjects2[ABSTRACT]
+ . . . SelectLayerByAttributeTessObjects2[LEAF]
+ . NearPointObjects[ABSTRACT]
+ . . NearPointObjects[ABSTRACT]
+ . . . NearPointObjects[LEAF]
+ . RasterToContour[ABSTRACT]
+ . . RasterToContourInterval[ABSTRACT]
+ . . . RasterToContourInterval[LEAF]
+ . CalculateDiversity4onObjectVector[ABSTRACT]
+ . . CalculateDiversity4onObjectVector[ABSTRACT]
+ . . . CalculateDiversity4onObjectVector[LEAF]
+ . FlowDirection[ABSTRACT]
+ . . FlowDirection[ABSTRACT]
+ . . . FlowDirection[LEAF]
+ . GenerateNearTable[ABSTRACT]
+ . . GenerateNearTable[ABSTRACT]
+ . . . GenerateNearTable[LEAF]
+ . SelectWOZByRatioObjects[ABSTRACT]
+ . . SelectWOZByRatioObjects[ABSTRACT]
+ . . . SelectWOZByRatioObjects[LEAF]
+ . RasterCoverage[ABSTRACT]
+ . . CreateUnitHydrograph[ABSTRACT]
+ . . . CreateUnitHydrograph[LEAF]
+ . CalculateObjectVectorAmountRatio[ABSTRACT]
+ . . CalculateObjectVectorAmountRatio[ABSTRACT]
+ . . . CalculateObjectVectorAmountRatio[LEAF]
+ . KrigingInterval[ABSTRACT]
+ . . KrigingInterval[ABSTRACT]
+ . . . KrigingInterval[LEAF]
+ . SelectObjectByExtent[ABSTRACT]
+ . . SelectObjectbyExtent[ABSTRACT]
+ . . . SelectObjectbyExtent[LEAF]
+ . SelectSchoolsByLocationPointObject[ABSTRACT]
+ . . SelectSchoolsByLocationPointObject[ABSTRACT]
+ . . . SelectSchoolsByLocationPointObject[LEAF]
+ . . SelectLayerByLocationDistTessObject[ABSTRACT]
+ . . . SelectLayerByLocationDistTessObject[LEAF]
+ . . SelectNeighborhoodsByLocationDistPointObject[ABSTRACT]
+ . . . SelectNeighborhoodsByLocationDistPointObject[LEAF]
+ . . SelectLayerByLocationTessObject[ABSTRACT]
+ . . . SelectLayerByLocationTessObject[LEAF]
+ . FullSelectFeatures[ABSTRACT]
+ . . SelectFeaturesByObjectPlainRegionObjects[ABSTRACT]
+ . . . SelectFeaturesByObjectPlainRegionObjects[LEAF]
+ . . SelectFeaturesCoverageToExistenceVector[ABSTRACT]
+ . . . SelectFeaturesCoverageToExistenceVector[LEAF]
+ . GenerateIntersections[ABSTRACT]
+ . . GenerateIntersections[ABSTRACT]
+ . . . GenerateIntersections[LEAF]
+ . KernelDensity[ABSTRACT]
+ . . KernelDensity[ABSTRACT]
+ . . . KernelDensity[LEAF]
+ . makePointObjects[ABSTRACT]
+ . . makePointObjects[ABSTRACT]
+ . . . makePointObjects[LEAF]
+ . Con[ABSTRACT]
+ . . con3[ABSTRACT]
+ . . . con3[LEAF]
+ . . con1[ABSTRACT]
+ . . . con1[LEAF]
+ . . con2[ABSTRACT]
+ . . . con2[LEAF]
+ . CalculateAreaMeasure[ABSTRACT]
+ . . CalculateCountAmountRatio[ABSTRACT]
+ . . . CalculateCountAmountRatio[LEAF]
+ . . CalculateObjectVectorCountAmountRatio[ABSTRACT]
+ . . . CalculateObjectVectorCountAmountRatio[LEAF]
+ . . CalculateVectorFieldAreaPercentage[ABSTRACT]
+ . . . CalculateVectorFieldAreaPercentage[LEAF]
+ . . CalculateObjectAttrRatio[ABSTRACT]
+ . . . CalculateObjectAttrRatio[LEAF]
+ . . CalculateVectorFieldPartialArea[ABSTRACT]
+ . . . CalculateVectorFieldPartialArea[LEAF]
+ . SummarizeWithin[ABSTRACT]
+ . . SummarizeWithin[ABSTRACT]
+ . . . SummarizeWithin[LEAF]
+ . . SummarizeWithin2[ABSTRACT]
+ . . . SummarizeWithin2[LEAF]
+ . Watershed[ABSTRACT]
+ . . Watershed[ABSTRACT]
+ . . . Watershed[LEAF]
+ . ExtractByMask[ABSTRACT]
+ . . ExtractByMask[ABSTRACT]
+ . . . ExtractByMask[LEAF]
+ . FlowAccumulation[ABSTRACT]
+ . . FlowAccumulation[ABSTRACT]
+ . . . FlowAccumulation[LEAF]
+ . PolygonToRaster[ABSTRACT]
+ . . CoverageToNominalFieldRaster[ABSTRACT]
+ . . . CoverageToNominalFieldRaster[LEAF]
+ . . ContourToFieldRaster[ABSTRACT]
+ . . . ContourToFieldRaster[LEAF]
+ . CalculateCountAmountRatio[ABSTRACT]
+ . . CalculateCountAmountRatio2[ABSTRACT]
+ . . . CalculateCountAmountRatio2[LEAF]
+ . Slope[ABSTRACT]
+ . . Slope[ABSTRACT]
+ . . . Slope[LEAF]
+ . convert2PointObjects[ABSTRACT]
+ . . convert2PointObjects[ABSTRACT]
+ . . . convert2PointObjects[LEAF]
+ . FlowLength[ABSTRACT]
+ . . FlowLength[ABSTRACT]
+ . . . FlowLength[LEAF]
+ . SelectLayerByAttribute[ABSTRACT]
+ . . SelectLayerByAttribute2[ABSTRACT]
+ . . . SelectLayerByAttribute2[LEAF]
+ . . SelectLayerByAttribute3[ABSTRACT]
+ . . . SelectLayerByAttribute3[LEAF]
+ . . SelectLayerByAttribute[ABSTRACT]
+ . . . SelectLayerByAttribute[LEAF]
+ . JoinFromTable[ABSTRACT]
+ . . LoadAmountonObjects[ABSTRACT]
+ . . . LoadAmountonObjects[LEAF]
+ . ComputeCountDensityonObject[ABSTRACT]
+ . . ComputeCountDensityonObject[ABSTRACT]
+ . . . ComputeCountDensityonObject[LEAF]
+ . CalculateDensityonObject[ABSTRACT]
+ . . CalculateDensityonObject[ABSTRACT]
+ . . . CalculateDensityonObject[LEAF]
+ . DerivePartsOfPopCenters[ABSTRACT]
+ . . DerivePartsOfPopCenters[ABSTRACT]
+ . . . DerivePartsOfPopCenters[LEAF]
+ . MakeLayerFromTable[ABSTRACT]
+ . . MakePointMeasuresFromTable[ABSTRACT]
+ . . . MakePointMeasuresFromTable[LEAF]
+ . SelectNeighborhoodsByRatioObjects[ABSTRACT]
+ . . SelectNeighborhoodsByAttributeTessObjects[ABSTRACT]
+ . . . SelectNeighborhoodsByAttributeTessObjects[LEAF]
+ . . SelectNeighborhoodsByRatioObjects[ABSTRACT]
+ . . . SelectNeighborhoodsByRatioObjects[LEAF]
+ . FC2FC[ABSTRACT]
+ . . FC2FCObjectTess[ABSTRACT]
+ . . . FC2FCObjectTess[LEAF]
+ . FullSelectLayerByLocation[ABSTRACT]
+ . . SelectLayerByLocationPlainRegionObjectsFieldDist[ABSTRACT]
+ . . . SelectLayerByLocationPlainRegionObjectsFieldDist[LEAF]
+ . . SelectLayerByLocationTessObjects[ABSTRACT]
+ . . . SelectLayerByLocationTessObjects[LEAF]
+ . . SelectLayerByLocationPointObjects[ABSTRACT]
+ . . . SelectLayerByLocationPointObjects[LEAF]
+ . . SelectLayerByLocationPlainRegionObjectsDist[ABSTRACT]
+ . . . SelectLayerByLocationPlainRegionObjectsDist[LEAF]
+ . . SelectLayerByLocationLineObjects[ABSTRACT]
+ . . . SelectLayerByLocationLineObjects[LEAF]
+ . . SelectLayerByLocationPlainRegionObjects[ABSTRACT]
+ . . . SelectLayerByLocationPlainRegionObjects[LEAF]
+ . CalculatePartialAmounts[ABSTRACT]
+ . . CalculatePartialAmountsfromObjects2[ABSTRACT]
+ . . . CalculatePartialAmountsfromObjects2[LEAF]
+ . . CalculatePartialAmountsfromObjects[ABSTRACT]
+ . . . CalculatePartialAmountsfromObjects[LEAF]
+ . IntersectDissolve[ABSTRACT]
+ . . IntersectDissolveField2Object[ABSTRACT]
+ . . . IntersectDissolveField2Object[LEAF]
+ . FullSelectLayerByAttribute[ABSTRACT]
+ . . SelectLayerByRatioTessObjects[ABSTRACT]
+ . . . SelectLayerByRatioTessObjects[LEAF]
+ . . SelectLayerByAttributePointObjects[ABSTRACT]
+ . . . SelectLayerByAttributePointObjects[LEAF]
+ . . SelectLayerByRatioGEQPlainRegionObjects[ABSTRACT]
+ . . . SelectLayerByRatioGEQPlainRegionObjects[LEAF]
+ . . SelectLayerByAttributeLineObjects[ABSTRACT]
+ . . . SelectLayerByAttributeLineObjects[LEAF]
+ . . SelectLayerCoverageToExistenceVector[ABSTRACT]
+ . . . SelectLayerCoverageToExistenceVector[LEAF]
+ . . SelectLayerByAttributePlainRegionObjects[ABSTRACT]
+ . . . SelectLayerByAttributePlainRegionObjects[LEAF]
+ . . SelectLayerByObjectPointObjects[ABSTRACT]
+ . . . SelectLayerByObjectPointObjects[LEAF]
+ . . SelectLayerByRatioLineObjects[ABSTRACT]
+ . . . SelectLayerByRatioLineObjects[LEAF]
+ . . SelectLayerContourToExistenceVector[ABSTRACT]
+ . . . SelectLayerContourToExistenceVector[LEAF]
+ . . SelectLayerByAttributeTessObjects[ABSTRACT]
+ . . . SelectLayerByAttributeTessObjects[LEAF]
+ . . SelectLayerByRatioPlainRegionObjects[ABSTRACT]
+ . . . SelectLayerByRatioPlainRegionObjects[LEAF]
+ . . SelectLayerByObjectPlainRegionObjects[ABSTRACT]
+ . . . SelectLayerByObjectPlainRegionObjects[LEAF]
+ . . SelectLayerByRatioPointObjects[ABSTRACT]
+ . . . SelectLayerByRatioPointObjects[LEAF]
+ . . SelectLayerByObjectLineObjects[ABSTRACT]
+ . . . SelectLayerByObjectLineObjects[LEAF]
+ . . SelectLayerByObjectTessObjects[ABSTRACT]
+ . . . SelectLayerByObjectTessObjects[LEAF]
+ . BufferDissolve[ABSTRACT]
+ . . BufferDissolve[ABSTRACT]
+ . . . BufferDissolve[LEAF]
+ . FeatureClassToFeatureClass[ABSTRACT]
+ . . FeatureClassToFeatureClass[ABSTRACT]
+ . . . FeatureClassToFeatureClass[LEAF]
+ . . FeatureClassToFeatureClass2[ABSTRACT]
+ . . . FeatureClassToFeatureClass2[LEAF]
+ . Buffer[ABSTRACT]
+ . . Buffer[ABSTRACT]
+ . . . Buffer[LEAF]
+
+-------------------------------------------------------------
+	Data Taxonomy dimensions:
+
+-------------------------------------------------------------
+	CoreConceptQTaxonomy:
+-------------------------------------------------------------
+ CoreConceptQ[ROOT]
+ . ObjectQ[LEAF]
+ . AmountQ[LEAF]
+ . FieldQ[LEAF]
+ . RelationalQ[ABSTRACT]
+ . . NetworkQ[LEAF]
+
+-------------------------------------------------------------
+	LayerATaxonomy:
+-------------------------------------------------------------
+ LayerA[ROOT]
+ . RegionA[ABSTRACT]
+ . . TessellationA[ABSTRACT]
+ . . . RasterA[LEAF]
+ . . . VectorTessellationA[LEAF]
+ . . VectorRegionA[ABSTRACT]
+ . . . VectorTessellationA[LEAF]
+ . . . PlainVectorRegionA[LEAF]
+ . . PlainVectorRegionA[LEAF]
+ . VectorA[ABSTRACT]
+ . . PointA[LEAF]
+ . . VectorTessellationA[LEAF]
+ . . VectorRegionA[ABSTRACT]
+ . . . VectorTessellationA[LEAF]
+ . . . PlainVectorRegionA[LEAF]
+ . . LineA[LEAF]
+ . . PlainVectorRegionA[LEAF]
+
+-------------------------------------------------------------
+	NominalATaxonomy:
+-------------------------------------------------------------
+ NominalA[ROOT]
+ . CyclicA[LEAF]
+ . OrdinalA[ABSTRACT]
+ . . IntervalA[ABSTRACT]
+ . . . RatioA[ABSTRACT]
+ . . . . ERA[LEAF]
+ . . . . IRA[LEAF]
+ . . . . ERA[LEAF]
+ . . . . IRA[LEAF]
+ . . . . PlainRatioA[LEAF]
+ . . . . CountA[LEAF]
+ . . . PlainIntervalA[LEAF]
+ . . PlainOrdinalA[LEAF]
+ . BooleanA[LEAF]
+ . PlainNominalA[LEAF]
+-------------------------------------------------------------
+	Annotated tools:
+-------------------------------------------------------------
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttribute3[tool], Label:SelectLayerByAttribute3|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#con2[tool], Label:con2|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#makePointObjects[tool], Label:makePointObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#MakePointMeasuresFromTable[tool], Label:MakePointMeasuresFromTable|,
+|IN:	{ 'FieldQ' 'PointA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'PointA' 'PlainIntervalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttributePlainRegionObjects[tool], Label:SelectLayerByAttributePlainRegionObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinCountTess[tool], Label:SpatialJoinCountTess|,
+|IN:	{ 'ObjectQ' 'VectorA' 'NominalA' } { 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#LoadAmountonObjects[tool], Label:LoadAmountonObjects|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'NominalA' } { 'ObjectQ' 'LayerA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#FeatureClassToFeatureClass2[tool], Label:FeatureClassToFeatureClass2|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#InterpolateDensityonObjects2LineObject[tool], Label:InterpolateDensityonObjects2LineObject|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'IRA' } { 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'LineA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#VelocityFieldDEM[tool], Label:VelocityFieldDEM|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationPointObjects[tool], Label:SelectLayerByLocationPointObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SummarizeWithin[tool], Label:SummarizeWithin|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'FieldQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CoverageToNominalFieldRaster[tool], Label:CoverageToNominalFieldRaster|,
+|IN:	{ 'FieldQ' 'TessellationA' 'PlainNominalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinSumTessRatio[tool], Label:SpatialJoinSumTessRatio|,
+|IN:	{ 'ObjectQ' 'VectorA' 'ERA' } { 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByRatioPointObjects[tool], Label:SelectLayerByRatioPointObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationTessObject[tool], Label:SelectLayerByLocationTessObject|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'CountA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#JoinCountAttribute[tool], Label:JoinCountAttribute|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'LayerA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocation[tool], Label:SelectLayerByLocation|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ExportFeatures[tool], Label:ExportFeatures|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerContourToExistenceVector[tool], Label:SelectLayerContourToExistenceVector|,
+|IN:	{ 'FieldQ' 'VectorTessellationA' 'OrdinalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'PlainOrdinalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByRatioLineObjects[tool], Label:SelectLayerByRatioLineObjects|,
+|IN:	{ 'ObjectQ' 'LineA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'LineA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#MergeObjects[tool], Label:MergeObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateObjectAttrRatio[tool], Label:CalculateObjectAttrRatio|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'ERA' } { 'ObjectQ' 'VectorRegionA' 'ERA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinMeanTessCount[tool], Label:SpatialJoinMeanTessCount|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'VectorA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ClostestFacilityAnalysis[tool], Label:ClostestFacilityAnalysis|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ClipNomFieldVector2Extent[tool], Label:ClipNomFieldVector2Extent|,
+|IN:	{ 'FieldQ' 'VectorRegionA' 'NominalA' } { 'FieldQ' 'VectorRegionA' 'BooleanA' } ,
+|OUT	{ 'FieldQ' 'VectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationLineObjects[tool], Label:SelectLayerByLocationLineObjects|,
+|IN:	{ 'ObjectQ' 'VectorA' 'NominalA' } { 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'LineA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationPlainRegionObjectsDist[tool], Label:SelectLayerByLocationPlainRegionObjectsDist|,
+|IN:	{ 'ObjectQ' 'VectorA' 'NominalA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#LocalMapAlgebraSubOrder[tool], Label:LocalMapAlgebraSubOrder|,
+|IN:	{ 'FieldQ' 'RasterA' 'OrdinalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainOrdinalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationTessObjects[tool], Label:SelectLayerByLocationTessObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'VectorA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectFeaturesByObjectPlainRegionObjects[tool], Label:SelectFeaturesByObjectPlainRegionObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttribute2[tool], Label:SelectLayerByAttribute2|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateProdPointObjects[tool], Label:CalculateProdPointObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'ERA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationDistTessObject[tool], Label:SelectLayerByLocationDistTessObject|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } { 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ZonalStatisticsSize[tool], Label:ZonalStatisticsSize|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'NominalA' } { 'FieldQ' 'RasterA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateObjectSpatialAmount[tool], Label:CalculateObjectSpatialAmount|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'IRA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ContourToFieldRaster[tool], Label:ContourToFieldRaster|,
+|IN:	{ 'FieldQ' 'TessellationA' 'OrdinalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainOrdinalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ZonalStatisticsSumCount[tool], Label:ZonalStatisticsSumCount|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'NominalA' } { 'AmountQ' 'RasterA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationPlainRegionObjectsFieldDist[tool], Label:SelectLayerByLocationPlainRegionObjectsFieldDist|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } { 'FieldQ' 'VectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#con1[tool], Label:con1|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByRatioTessObjects[tool], Label:SelectLayerByRatioTessObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#LocalMapAlgebraSubRatio[tool], Label:LocalMapAlgebraSubRatio|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#EraseFieldExtentfromFieldVector[tool], Label:EraseFieldExtentfromFieldVector|,
+|IN:	{ 'FieldQ' 'VectorRegionA' 'BooleanA' } { 'FieldQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttribute[tool], Label:SelectLayerByAttribute|,
+|IN:	{ 'FieldQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateObjectVectorAmountRatio[tool], Label:CalculateObjectVectorAmountRatio|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } { 'ObjectQ' 'VectorTessellationA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectFeaturesCoverageToExistenceVector[tool], Label:SelectFeaturesCoverageToExistenceVector|,
+|IN:	{ 'FieldQ' 'TessellationA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#FC2FCObjectTess[tool], Label:FC2FCObjectTess|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SummaryStatistics2[tool], Label:SummaryStatistics2|,
+|IN:	{ 'AmountQ' 'PlainVectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'PlainVectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerCoverageToExistenceVector[tool], Label:SelectLayerCoverageToExistenceVector|,
+|IN:	{ 'FieldQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByObjectPointObjects[tool], Label:SelectLayerByObjectPointObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#con3[tool], Label:con3|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinAmountSumTessCount[tool], Label:SpatialJoinAmountSumTessCount|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'AmountQ' 'VectorRegionA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#FeatureClassToFeatureClass[tool], Label:FeatureClassToFeatureClass|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SummaryStatistics[tool], Label:SummaryStatistics|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'PlainVectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#GenerateIntersections[tool], Label:GenerateIntersections|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByObjectLineObjects[tool], Label:SelectLayerByObjectLineObjects|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'LineA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateDiversity4onObjectVector[tool], Label:CalculateDiversity4onObjectVector|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'RatioA' } { 'ObjectQ' 'VectorTessellationA' 'RatioA' } { 'ObjectQ' 'VectorTessellationA' 'RatioA' } { 'ObjectQ' 'VectorTessellationA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#NearPointObjects[tool], Label:NearPointObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#IntersectDissolveField2Object[tool], Label:IntersectDissolveField2Object|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'NominalA' } { 'FieldQ' 'VectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#FlowLength[tool], Label:FlowLength|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateVectorFieldAreaPercentage[tool], Label:CalculateVectorFieldAreaPercentage|,
+|IN:	{ 'FieldQ' 'VectorRegionA' 'BooleanA' } { 'FieldQ' 'VectorRegionA' 'BooleanA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttributeLineObjects[tool], Label:SelectLayerByAttributeLineObjects|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'LineA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#DerivePartsOfPopCenters[tool], Label:DerivePartsOfPopCenters|,
+|IN:	{ 'FieldQ' 'PlainVectorRegionA' 'BooleanA' } { 'ObjectQ' 'PlainVectorRegionA' 'RatioA' } ,
+|OUT	{ 'AmountQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#KernelDensity[tool], Label:KernelDensity|,
+|IN:	{ 'ObjectQ' 'PointA' 'ERA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateCountAmountRatio2[tool], Label:CalculateCountAmountRatio2|,
+|IN:	{ 'AmountQ' 'PlainVectorRegionA' 'CountA' } { 'AmountQ' 'PlainVectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'PlainVectorRegionA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByObjectPlainRegionObjects[tool], Label:SelectLayerByObjectPlainRegionObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByRatioPlainRegionObjects[tool], Label:SelectLayerByRatioPlainRegionObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#convert2PointObjects[tool], Label:convert2PointObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ComputeCountDensityonObject[tool], Label:ComputeCountDensityonObject|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ClipBoolFieldVector2Extent[tool], Label:ClipBoolFieldVector2Extent|,
+|IN:	{ 'FieldQ' 'VectorRegionA' 'BooleanA' } { 'FieldQ' 'VectorRegionA' 'BooleanA' } ,
+|OUT	{ 'FieldQ' 'VectorRegionA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ClipObject2Object[tool], Label:ClipObject2Object|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } { 'ObjectQ' 'PlainVectorRegionA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#IDWInterval[tool], Label:IDWInterval|,
+|IN:	{ 'FieldQ' 'PointA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainIntervalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CreateAndBuildNetwork[tool], Label:CreateAndBuildNetwork|,
+|IN:	{ 'ObjectQ' 'LineA' 'RatioA' } ,
+|OUT	{ 'NetworkQ' 'LineA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ZonalStatisticsMeanInterval[tool], Label:ZonalStatisticsMeanInterval|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'FieldQ' 'RasterA' 'IntervalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainIntervalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateVectorFieldPartialArea[tool], Label:CalculateVectorFieldPartialArea|,
+|IN:	{ 'AmountQ' 'VectorRegionA' 'IRA' } { 'FieldQ' 'VectorRegionA' 'NominalA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinMeanTessRatio[tool], Label:SpatialJoinMeanTessRatio|,
+|IN:	{ 'ObjectQ' 'VectorA' 'RatioA' } { 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectNeighborhoodsByRatioObjects[tool], Label:SelectNeighborhoodsByRatioObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#RegionFromRasterExtent[tool], Label:RegionFromRasterExtent|,
+|IN:	{ 'FieldQ' 'RasterA' 'NominalA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinMeanTessInterval[tool], Label:SpatialJoinMeanTessInterval|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'VectorA' 'IntervalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainIntervalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateProd[tool], Label:CalculateProd|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SummaryStatisticsAmount[tool], Label:SummaryStatisticsAmount|,
+|IN:	{ 'AmountQ' 'VectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateCountAmountRatio[tool], Label:CalculateCountAmountRatio|,
+|IN:	{ 'AmountQ' 'VectorRegionA' 'CountA' } { 'AmountQ' 'VectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByRatioGEQPlainRegionObjects[tool], Label:SelectLayerByRatioGEQPlainRegionObjects|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttributeTessObjects2[tool], Label:SelectLayerByAttributeTessObjects2|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#Buffer[tool], Label:Buffer|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateObjectVectorCountAmountRatio[tool], Label:CalculateObjectVectorCountAmountRatio|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'CountA' } { 'ObjectQ' 'VectorRegionA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorRegionA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#KrigingInterval[tool], Label:KrigingInterval|,
+|IN:	{ 'FieldQ' 'PointA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainIntervalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectObjectbyExtent[tool], Label:SelectObjectbyExtent|,
+|IN:	{ 'ObjectQ' 'VectorA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByLocationPlainRegionObjects[tool], Label:SelectLayerByLocationPlainRegionObjects|,
+|IN:	{ 'ObjectQ' 'VectorA' 'NominalA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculatePartialAmountsfromObjects2[tool], Label:CalculatePartialAmountsfromObjects2|,
+|IN:	{ 'FieldQ' 'PlainVectorRegionA' 'BooleanA' } { 'ObjectQ' 'PlainVectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'PlainVectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#Merge[tool], Label:Merge|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttributePointObjects[tool], Label:SelectLayerByAttributePointObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SummarizeWithin2[tool], Label:SummarizeWithin2|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#Slope[tool], Label:Slope|,
+|IN:	{ 'FieldQ' 'RasterA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ZonalStatisticsSumField[tool], Label:ZonalStatisticsSumField|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } { 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#LoadCountAmounts[tool], Label:LoadCountAmounts|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'LayerA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateDensityonObject[tool], Label:CalculateDensityonObject|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#GenerateNearTable[tool], Label:GenerateNearTable|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectNeighborhoodsByLocationDistPointObject[tool], Label:SelectNeighborhoodsByLocationDistPointObject|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectWOZByRatioObjects[tool], Label:SelectWOZByRatioObjects|,
+|IN:	{ 'ObjectQ' 'LayerA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'LayerA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SummaryStatistics3[tool], Label:SummaryStatistics3|,
+|IN:	{ 'ObjectQ' 'PointA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#JoinObjectRatios[tool], Label:JoinObjectRatios|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } { 'ObjectQ' 'LayerA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#RasterToIsoRaster[tool], Label:RasterToIsoRaster|,
+|IN:	{ 'FieldQ' 'RasterA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainOrdinalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#TSPRouting[tool], Label:TSPRouting|,
+|IN:	{ 'NetworkQ' 'LineA' 'RatioA' } { 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'NetworkQ' 'LineA' 'NominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ZonalStatisticsMeanRatio[tool], Label:ZonalStatisticsMeanRatio|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'IRA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#LocalMapAlgebraInvert[tool], Label:LocalMapAlgebraInvert|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#BufferDissolve[tool], Label:BufferDissolve|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'PlainVectorRegionA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#addObjectCapacity[tool], Label:addObjectCapacity|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SnapPourPoint[tool], Label:SnapPourPoint|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#FlowDirection[tool], Label:FlowDirection|,
+|IN:	{ 'FieldQ' 'RasterA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'CyclicA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#LocalMapAlgebraDivide[tool], Label:LocalMapAlgebraDivide|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculateObjectVectorDensity[tool], Label:CalculateObjectVectorDensity|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#RasterToContourInterval[tool], Label:RasterToContourInterval|,
+|IN:	{ 'FieldQ' 'RasterA' 'IntervalA' } ,
+|OUT	{ 'FieldQ' 'TessellationA' 'PlainOrdinalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ObjectSummaryStatisticsAmount[tool], Label:ObjectSummaryStatisticsAmount|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'CountA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#RouteAnalysis[tool], Label:RouteAnalysis|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } { 'NetworkQ' 'LineA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'LineA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByObjectTessObjects[tool], Label:SelectLayerByObjectTessObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'BooleanA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ClipFieldRaster2ObjectExtent[tool], Label:ClipFieldRaster2ObjectExtent|,
+|IN:	{ 'FieldQ' 'RasterA' 'OrdinalA' } { 'ObjectQ' 'VectorA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainOrdinalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CreateNetwork[tool], Label:CreateNetwork|,
+|IN:	{ 'ObjectQ' 'LineA' 'NominalA' } ,
+|OUT	{ 'NetworkQ' 'LineA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CreateRandomPoints[tool], Label:CreateRandomPoints|,
+|IN:	{ 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ConvertDist2TravelTimeonObjects[tool], Label:ConvertDist2TravelTimeonObjects|,
+|IN:	{ 'ObjectQ' 'PointA' 'RatioA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CalculatePartialAmountsfromObjects[tool], Label:CalculatePartialAmountsfromObjects|,
+|IN:	{ 'ObjectQ' 'VectorRegionA' 'CountA' } { 'FieldQ' 'VectorRegionA' 'BooleanA' } ,
+|OUT	{ 'AmountQ' 'VectorRegionA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#Watershed[tool], Label:Watershed|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'PlainNominalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#CreateUnitHydrograph[tool], Label:CreateUnitHydrograph|,
+|IN:	{ 'FieldQ' 'RasterA' 'OrdinalA' } ,
+|OUT	{ 'AmountQ' 'LayerA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#FlowAccumulation[tool], Label:FlowAccumulation|,
+|IN:	{ 'FieldQ' 'RasterA' 'CyclicA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectLayerByAttributeTessObjects[tool], Label:SelectLayerByAttributeTessObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#ExtractByMask[tool], Label:ExtractByMask|,
+|IN:	{ 'FieldQ' 'RasterA' 'RatioA' } { 'FieldQ' 'RasterA' 'NominalA' } ,
+|OUT	{ 'FieldQ' 'RasterA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectSchoolsByLocationPointObject[tool], Label:SelectSchoolsByLocationPointObject|,
+|IN:	{ 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } { 'ObjectQ' 'PointA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PointA' 'PlainNominalA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinAmountSumTessRatio[tool], Label:SpatialJoinAmountSumTessRatio|,
+|IN:	{ 'AmountQ' 'VectorRegionA' 'ERA' } { 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'ERA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoinSumTessCount[tool], Label:SpatialJoinSumTessCount|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } { 'ObjectQ' 'VectorA' 'CountA' } ,
+|OUT	{ 'ObjectQ' 'VectorTessellationA' 'CountA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SpatialJoin[tool], Label:SpatialJoin|,
+|IN:	{ 'ObjectQ' 'PointA' 'RatioA' } { 'ObjectQ' 'PlainVectorRegionA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainRatioA' } 
+|______________________________________
+______________________________________
+||ID: https://quangis.github.io/tool/abstract#SelectNeighborhoodsByAttributeTessObjects[tool], Label:SelectNeighborhoodsByAttributeTessObjects|,
+|IN:	{ 'ObjectQ' 'VectorTessellationA' 'NominalA' } ,
+|OUT	{ 'ObjectQ' 'PlainVectorRegionA' 'PlainNominalA' } 
+|______________________________________
+-------------------------------------------------------------
+	Constraints:
+-------------------------------------------------------------
+	No constraints.
+-------------------------------------------------------------
+
+-------------------------------------------------------------
+	Workflow discovery - length 1
+-------------------------------------------------------------
+Automaton encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.01 sec.
+Memory structure encoding setup time: 0.008 sec.
+Tool exclusions encoding setup time: 0.022 sec.
+Tool usage encoding setup time: 0.008 sec.
+Type exclusions encoding setup time: 0.002 sec.
+Type usage encoding setup time: 0.0 sec.
+Reading rows setup time: 0.008 sec.
+
+Total problem setup time: 0.058 sec.
+Found 2 solutions. Solving time: 0.202 sec.
+
+-------------------------------------------------------------
+	Workflow discovery - length 2
+-------------------------------------------------------------
+Automaton encoding setup time: 0.0 sec.
+Tool I/O constraints setup time: 0.008 sec.
+Memory structure encoding setup time: 0.042 sec.
+Tool exclusions encoding setup time: 0.033 sec.
+Tool usage encoding setup time: 0.03 sec.
+Type exclusions encoding setup time: 0.0 sec.
+Type usage encoding setup time: 0.0 sec.
+Reading rows setup time: 0.01 sec.
+
+Total problem setup time: 0.131 sec.
+Found 5 solutions. Solving time: 0.08 sec.
+
+APE found 5 solutions. Total solving time: 0.627 sec.
+
+-------------------------------------------------------------
+	Geneating graphical representation
+	of the first 5 workflows
+-------------------------------------------------------------
+
+Loading[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizCmdLineEngine
+guru.nidi.graphviz.engine.GraphvizException: [dot.exe, dot.bat, dot.cmd] command not found
+[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Starting V8 runtime...
+[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizV8Engine
+java.lang.IllegalStateException: J2V8 native library not loaded
+	at com.eclipsesource.v8.V8.checkNativeLibraryLoaded(V8.java:195)
+	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:149)
+	at guru.nidi.graphviz.engine.V8JavascriptEngine.<init>(V8JavascriptEngine.java:36)
+	at guru.nidi.graphviz.engine.GraphvizV8Engine.lambda$new$0(GraphvizV8Engine.java:31)
+	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
+	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.doInit(AbstractJsGraphvizEngine.java:48)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.lambda$doUseEngine$1(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:55)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
+	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
+	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
+	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
+	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
+	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
+	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
+	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
+	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at nl.uu.cs.ape.sat.APE.writeDataFlowGraphs(APE.java:390)
+	at nl.uu.cs.ape.sat.Main.main(Main.java:68)
+Caused by: java.lang.UnsatisfiedLinkError: Could not load J2V8 library. Reasons: 
+	no j2v8_win32_x86_64 in java.library.path: C:\Program Files\Java\jdk-17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;U:\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;U:\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Eclipse Adoptium\jre-8.0.322.6-hotspot\bin;C:\Program Files\Eclipse Adoptium\jre-8.0.322.6-hotspot\bin;C:\Program Files\ImageMagick-7.0.8-Q16;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\MarkLogic\mlcp-9.0.8-bin\mlcp-9.0.8\bin;$JAVA_HOME\bin;C:\Program Files\curl-7.64.0-win64-mingw\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-13.0.2\bin;C:\Program Files\OpenVPN\bin;C:\Program Files\WindowsPowerShell\Scripts\HP.ClientScriptLibrary;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\IcedTeaWeb\WebStart\bin;C:\Program Files\Java\jdk-13.0.2\bin;C:\Users\schei008\AppData\Local\Microsoft\WindowsApps;C:\Users\schei008\AppData\Local\GitHubDesktop\bin;C:\Users\schei008\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Antlr;C:\Users\schei008\AppData\Local\ESRI\conda\envs\gis-py3\Scripts;C:\Users\schei008\PycharmProjects\PyQGIS\venv3\Scripts;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;.
+
+	at com.eclipsesource.v8.LibraryLoader.loadLibrary(LibraryLoader.java:75)
+	at com.eclipsesource.v8.V8.load(V8.java:71)
+	at com.eclipsesource.v8.V8.createV8Runtime(V8.java:145)
+	... 31 more
+[Thread-6] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizJdkEngine
+guru.nidi.graphviz.engine.GraphvizException: You are using a java version of 15 or newer. It does not include the Nashorn javascript engine any more. Use javascript of Graal instead by adding this dependency: org.graalvm.js:js
+	at guru.nidi.graphviz.engine.NashornJavascriptEngine.<init>(NashornJavascriptEngine.java:39)
+	at guru.nidi.graphviz.engine.GraphvizJdkEngine.newEngine(GraphvizJdkEngine.java:35)
+	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:64)
+	at guru.nidi.graphviz.engine.AbstractJsGraphvizEngine.engine(AbstractJsGraphvizEngine.java:56)
+	at guru.nidi.graphviz.engine.GraphvizJdkEngine.doInit(GraphvizJdkEngine.java:49)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.lambda$init$0(AbstractGraphvizEngine.java:44)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread "main" guru.nidi.graphviz.engine.GraphvizException: None of the provided engines could be initialized.
+	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:162)
+	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
+	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
+	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
+	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
+	at nl.uu.cs.ape.sat.core.solutionStructure.SolutionGraph.getWrite2File(SolutionGraph.java:72)
+	at nl.uu.cs.ape.sat.APE.lambda$writeDataFlowGraphs$5(APE.java:394)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at nl.uu.cs.ape.sat.APE.writeDataFlowGraphs(APE.java:390)
+	at nl.uu.cs.ape.sat.Main.main(Main.java:68)

@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#RasterToContourInterval">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#RasterToContour"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#BuildNetwork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CreateNetwork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#makePointObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#makePointObjects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#JoinField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainRatioA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Watershed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SelectLayerByLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BoundedPhen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttributePointObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#ZonalStatisticsAsTable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#PolygonToRaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FC2FC">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#NearPointObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#NearPointObjects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainVectorRegionA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#SelectSchoolsByLocationPointObject">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByObjectPointObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ContourToFieldRaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#PolygonToRaster"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FeatureClassToFeatureClass">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#ComputeCountDensityonObject">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#VelocityField">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#LocalMapAlgebraSubOrder">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#RasterCalculator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Project">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AddGeometryAttributes">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationPlainRegionObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#RasterToIsoRaster">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#RasterToIsoRaster"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ZonalStatisticsMeanRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ZonalStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Quality">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Intersect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#VelocityFieldDEM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#VelocityField"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinCountTess">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateObjectVectorCountAmountRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateAreaMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttribute">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttributeTessObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculateDensityonObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SelectObjectByExtent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ExistenceRaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#GenerateNearTable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Con">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectWOZByRatioObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectWOZByRatioObjects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Merge">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SummaryStatistics">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateObjectSpatialAmount">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#AddandCalculateAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SummarizeWithin">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#IntersectDissolveField2Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#IntersectDissolve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#LocalMapAlgebraSubRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#RasterCalculator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ClipBoolFieldVector2Extent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Clip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#FullSelectFeatures">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ExtractByMask">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#ExtractByMask"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#con3">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Con"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CopyFeatures">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationTessObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectSchoolsByLocationPointObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateObjectVectorDensity">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateObjectVectorDensity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationPlainRegionObjectsFieldDist">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#ExcelToTable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoverageDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainIntervalA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AddFields">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#IDWInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#IDWInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AddObjectVectorRegionArea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#BufferDissolve">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#SelectLayerByAttributeTessObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#FlowDirection">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#FlowDirection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IRA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateObjectAttrRatio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateAreaMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#IRA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CreateNetwork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CreateNetwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#ExportTable">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#LoadAmountonObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#JoinFromTable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#Buffer">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Buffer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectNeighborhoodsByLocationDistPointObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectSchoolsByLocationPointObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculateAreaMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#MergeObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CreateRandomPoints">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#CreateRandomPoints"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#RasterToContour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateProd">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#AddandCalculateAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#RegionFromRasterExtent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#RegionFromRasterExtent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NetworkQ">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#FC2FCObjectTess">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#FC2FC"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RasterA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttribute2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ZonalStatisticsSumField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ZonalStatisticsSumField"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttributeLineObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#JoinObjectRatios">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#JoinObjectRatios"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#MakeLayerFromTable">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainOrdinalA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#JoinCountAttribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerContourToExistenceVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#ZonalStatistics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#Slope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Slope"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#BufferDissolve">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#BufferDissolve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateProdPointObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#AddandCalculateAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SummarizeWithin2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummarizeWithin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PlainNominalA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#JoinObjectRatios">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationLineObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#Spatial">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#TSPRouting">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#TSPRouting"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationPointObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ClipNomFieldVector2Extent">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Clip"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#SelectWOZByRatioObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#KernelDensity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#KernelDensity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateCountAmountRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateAreaMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CyclicA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FeatureVerticesToPoints">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#Merge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Merge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CreateNetworkDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationTessObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#ExtractByMask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CollectEvents">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectSchoolsByLocationPointObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectSchoolsByLocationPointObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#RouteAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#TSPRouting"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FlowLength">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#MakePointMeasuresFromTable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#MakeLayerFromTable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SummaryStatisticsAmount">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummaryStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#DerivePartsOfPopCenters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ClostestFacilityAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ClosestFacilityAnalysis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#LocalMapAlgebraInvert">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#RasterCalculator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#BooleanA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FlowAccumulation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateCountAmountRatio2">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateCountAmountRatio"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/vocab/tool#Tool">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#GenerateIntersections">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#GenerateIntersections"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ZonalStatisticsSize">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ZonalStatistics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByRatioTessObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#KrigingInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#KrigingInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ZonalStatisticsSumCount">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ZonalStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByRatioPlainRegionObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByObjectPlainRegionObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SummaryStatistics2">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummaryStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectObjectbyExtent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SelectObjectByExtent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectFeaturesCoverageToExistenceVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectFeatures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationDistTessObject">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectSchoolsByLocationPointObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#AddandCalculateAttribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculatePartialAmounts">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CoverageToNominalFieldRaster">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#PolygonToRaster"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#MatrixQ">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LineA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#FlowAccumulation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#FlowAccumulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#IDWInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#LoadCountAmounts">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ERA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#SelectNeighborhoodsByRatioObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateObjectVectorAmountRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateObjectVectorAmountRatio"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculateCountAmountRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Slope">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#TSPRouting">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerCoverageToExistenceVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#Watershed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Watershed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#ZonalStatisticsSumField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#convert2PointObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#con1">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Con"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SelectLayerByLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#InterpolateDensityonObjects2LineObject">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#InterpolateDensityonObjects2LineObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FlowDirection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateVectorFieldPartialArea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateAreaMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CalculateField2">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByRatioGEQPlainRegionObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FeatureToPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#JoinFromTable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorTessellationA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegionA"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#TessellationA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#addObjectCapacity">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#AddandCalculateAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ZonalStatisticsMeanInterval">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ZonalStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#KernelDensity">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AddJoin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinSumTessRatio">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#LocalMapAlgebraDivide">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#RasterCalculator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#FC2FCObjectTess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Clip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CalculateGeometryAttributes">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#MergeObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Dissolve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CreateAndBuildNetwork">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CreateNetwork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CreateRandomPoints">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#ObjectBuffer">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#GenerateNearTable">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#GenerateNearTable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#FeatureClassToFeatureClass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#FeatureClassToFeatureClass"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SummaryStatistics3">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummaryStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RelationalQ">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#RegionFromRasterExtent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#EraseFieldExtentfromFieldVector">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Erase"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#EventQ">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectQ">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#GenerateIntersections">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CreateUnitHydrograph">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#RasterCoverage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SummaryStatistics">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummaryStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoin">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#KrigingInterval">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#RasterCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculateObjectVectorAmountRatio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ComputeCountDensityonObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#ComputeCountDensityonObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AddField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#NearPointObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#JoinCountAttribute">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#JoinCountAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#LayerA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ConvertDist2TravelTimeonObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#AddandCalculateAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#NominalA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#IntervalA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#OrdinalA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ObjectSummaryStatisticsAmount">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummaryStatistics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AddLocations">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByRatioPointObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculateObjectVectorDensity">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByRatioLineObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SpatialJoin">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#CalculateField">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#convert2PointObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#convert2PointObjects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#RasterCalculator">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByLocationPlainRegionObjectsDist">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectFeaturesByObjectPlainRegionObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectFeatures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CountA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Dissolve">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SnapPourPoint">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#MakeClosestFacilityAnalysisLayer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RegionDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Aspect">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByObjectTessObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#makePointObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SnapPourPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SnapPourPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculatePartialAmountsfromObjects2">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculatePartialAmounts"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#RasterCalculator1">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttribute3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SelectLayerByAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByObjectLineObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#con2">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Con"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#MakeXyEventLayer">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#IntersectDissolve">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttributeTessObjects2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectLayerByAttributeTessObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectLayerByAttributePlainRegionObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#FullSelectLayerByAttribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#FlowLength">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#FlowLength"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Buffer">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinSumTessCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#TableToTable">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#ClosestFacilityAnalysis">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateVectorFieldAreaPercentage">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateAreaMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Vector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#FullSelectLayerByLocation">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ClipObject2Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Clip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SummarizeWithin">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SummarizeWithin"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculatePartialAmountsfromObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculatePartialAmounts"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Lattice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinMeanTessCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Attribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinMeanTessRatio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateDiversity4onObjectVector">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateDiversity4onObjectVector"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#CalculateDiversity4onObjectVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectNeighborhoodsByAttributeTessObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectNeighborhoodsByRatioObjects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ClipFieldRaster2ObjectExtent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#Clip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#ExportFeatures">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#ExportFeatures"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#ExportFeatures">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#DerivePartsOfPopCenters">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#DerivePartsOfPopCenters"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldQ">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Coverage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptDataSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#FeatureClassToFeatureClass2">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#FeatureClassToFeatureClass"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/ExtensiveMeasures.rdf#ERA">
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#RatioA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinAmountSumTessCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinAmountSumTessRatio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Erase">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#LoadCountAmounts">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#LoadCountAmounts"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#SelectLayerByAttribute">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SpatialJoinMeanTessInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool#SpatialJoin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#RasterToIsoRaster">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#AlterField">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/multi#InterpolateDensityonObjects2LineObject">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/AnalysisData.rdf#SpatialDataSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#DType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#CalculateDensityonObject">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#CalculateDensityonObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#Solve">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#AmountQ">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://geographicknowledge.de/vocab/CoreConceptData.rdf#CoreConceptQ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool#MakeRouteAnalysisLayer">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/vocab/tool#Abstraction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#FieldRaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#Tessellation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#PointDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#VectorRegion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#ObjectDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://quangis.github.io/tool/abstract#SelectNeighborhoodsByRatioObjects">
+    <rdfs:subClassOf rdf:resource="https://quangis.github.io/tool/multi#SelectNeighborhoodsByRatioObjects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geographicknowledge.de/vocab/CoreConceptData.rdf#AmountDS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>
